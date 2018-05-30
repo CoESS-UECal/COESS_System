@@ -52,7 +52,6 @@ namespace System
                 if (pname.Length > 0)
                 {
                     MessageBox.Show("MySQL Server Started");
-                    MessageBox.Show("Pogi si Christer");
                     Form login = new Login();
                     login.Show();
                     this.Hide();
