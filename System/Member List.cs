@@ -166,6 +166,7 @@ namespace System
             form1.ShowDialog();
             textBox1.Text = fullname;
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
+            string potato = "this is america";
         }
 
         private void textBox6_MouseDoubleClick(object sender, MouseEventArgs e)
