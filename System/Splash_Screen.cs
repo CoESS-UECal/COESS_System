@@ -52,6 +52,7 @@ namespace System
                 if (pname.Length > 0)
                 {
                     MessageBox.Show("MySQL Server Started");
+                    //IT FUCKING WORKED
                     Form login = new Login();
                     login.Show();
                     this.Hide();
