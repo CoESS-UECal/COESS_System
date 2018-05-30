@@ -101,7 +101,7 @@ namespace System
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This COESS Master Database System is created by COESS 2018-2019." + Environment.NewLine + "\n©Christer Jude A. Mananquil, Vice President - Internal (2018-2019)\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developer.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("This COESS Master Database System is created by COESS 2018-2019." + Environment.NewLine + "\n©Christer Jude A. Mananquil, Vice President - Internal (2018-2019)\n©Charles Edward D. Bernardo, Lead Programmer(2018-2019)\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developer.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button1_Click(object sender, EventArgs e)
