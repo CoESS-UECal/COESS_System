@@ -50,7 +50,7 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {//std_no,fn,mi,ln,email,home,contact,bday,age,yr,comitte,guar_name,gard_no
-            MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact) values('" +SN.Text + "','" + FN.Text + "','" + MI.Text + "','" + LN.Text + "','" + EMail.Text + "','" + Address.Text + "','" + Contact.Text + "','" + Convert.ToString(Bday.Value.ToShortDateString()) + "'," + Age.Value + ",'" + Year.SelectedItem + "','" + Comm.SelectedItem + "','" + GuardName.Text + "','" + GuardContact.Text + "');");
+            MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address) values('" +SN.Text + "','" + FN.Text + "','" + MI.Text + "','" + LN.Text + "','" + EMail.Text + "','" + Address.Text + "','" + Contact.Text + "','" + Convert.ToString(Bday.Value.ToShortDateString()) + "'," + Age.Value + ",'" + Year.SelectedItem + "','" + Comm.SelectedItem + "','" + GuardName.Text + "','" + GuardContact.Text + "','"+@"C:\\COESS\\Images\\Member\\default.png"+"');");
             FN.Text = null;
             MI.Text = null;
             LN.Text = null;
