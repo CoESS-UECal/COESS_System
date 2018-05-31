@@ -96,8 +96,7 @@ namespace System
                         textBox4.Text = reader.GetString("Year_Level");
                         textBox5.Text = reader.GetString("Guard_Name");
                         textBox6.Text = reader.GetString("Guard_Contact");
-                        pictureBox1.BackgroundImage =Image.FromFile( reader.GetString("ID_Address"));
-                        pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                        pictureBox1.ImageLocation = reader.GetString("ID_Address");
                     }
                 }
                 catch (MySqlException ex)
@@ -167,11 +166,6 @@ namespace System
             form1.ShowDialog();
             textBox1.Text = fullname;
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox6_MouseDoubleClick(object sender, MouseEventArgs e)
