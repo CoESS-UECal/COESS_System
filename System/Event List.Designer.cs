@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Event_List));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -77,6 +77,15 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Event Name";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Date";
             // 
             // groupBox2
             // 
@@ -217,14 +226,6 @@
             this.button3.Text = "Go Back";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Event Name";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Date";
             // 
             // Event_List
             // 

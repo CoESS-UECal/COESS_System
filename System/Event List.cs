@@ -77,5 +77,10 @@ namespace System
             Populate_ListView("select Event_Name,Event_Date from event_list;");
 
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
