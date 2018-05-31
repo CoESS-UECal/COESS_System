@@ -19,61 +19,6 @@ namespace System
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
 
         }
-        string event_name;
-        public void LEI(string ID) // LMI = Load Event Info
-        {
-            string query = "Select * from event_list where Event_Name = '" + ID + "'";
-            if (MainMenu.OpenConnection())
-            {
-                try
-                {
-                    MySqlCommand command = new MySqlCommand(query, MainMenu.conn);
-                    MySqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        textBox1.Text = reader.GetString("Event_Name");
-                        textBox2.Text = reader.GetString("Event_Location");
-                        pictureBox1.ImageLocation = reader.GetString("Event_Pubmat");
-                    }
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    MainMenu.CloseConnection();
-                }
-            }
-        }
-        public void LA(string event_name) // LA=Load Attendees
-        {
-            string query = "Select * from "+ event_name+";";
-            if (MainMenu.OpenConnection())
-            {
-                try
-                {
-                    MySqlCommand command = new MySqlCommand(query, MainMenu.conn);
-                    MySqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        textBox1.Text = reader.GetString("Event_Name");
-                        textBox2.Text = reader.GetString("Event_Location");
-                        pictureBox1.BackgroundImage =Image.FromFile(reader.GetString("Event_Pubmat"));
-                        pictureBox1.BackgroundImageLayout = ImageLayout.Center;
-                    }
-                }
-                catch (MySqlException ex)
-                {
-                     MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    MainMenu.CloseConnection();
-                }
-            }
-        }
-
 
         public void Populate_ListView(string myquery)
         {
@@ -131,20 +76,6 @@ namespace System
         {
             Populate_ListView("select Event_Name,Event_Date from event_list;");
 
-        }
-
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            foreach (ListViewItem item in listView1.SelectedItems)
-            {
-                event_name = item.SubItems[0].Text;
-                event_name = event_name.Replace(' ', '_');
-                LEI(item.SubItems[0].Text);
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                LA(event_name);
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-
-            }
         }
     }
 }

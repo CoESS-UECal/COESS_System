@@ -21,9 +21,8 @@ namespace System
         }
         //Image variables
         string pickedImage = "";
-        string location = @"C:\\COESS\\Images\\Pubmat\\";
+        string location = @"C:\\COESS\\Events\\";
         string fileName = "";
-        public static string finalevent;
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -41,7 +40,7 @@ namespace System
                 pickedImage = openFileDialog1.FileName;
                 event_pubmat.BackgroundImage = Image.FromFile(pickedImage);
                 event_pubmat.BackgroundImageLayout = ImageLayout.Stretch;
-                File.Copy(pickedImage, @"C:\\COESS\\Images\\Pubmat\\"+fileName);
+                File.Copy(pickedImage, @"C:\\COESS\\Events\\"+fileName);
             }
         }
 
@@ -57,11 +56,7 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            finalevent = event_name.Text;
-            finalevent = finalevent.Replace(' ', '_');
             MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_name.Text + "','" + Convert.ToString(event_date.Value.ToShortDateString()) + "','" + event_location.Text + "','" +location+fileName+"');");
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-            MainMenu.Insert("create table " + finalevent + " (Attendee_No int(3) auto_increment, ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, primary key(Attendee_No));");
             event_name.Text = null;
             event_location.Text = null;
             event_date.Value = DateTime.Today;
