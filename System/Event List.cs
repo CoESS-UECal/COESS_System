@@ -34,6 +34,7 @@ namespace System
                         textBox1.Text = reader.GetString("Event_Name");
                         textBox2.Text = reader.GetString("Event_Location");
                         pictureBox1.ImageLocation = reader.GetString("Event_Pubmat");
+                        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                 }
                 catch (MySqlException ex)
