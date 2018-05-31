@@ -119,7 +119,7 @@
             // event_pubmat
             // 
             this.event_pubmat.BackgroundImage = global::System.Properties.Resources.Blank_BG1;
-            this.event_pubmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.event_pubmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.event_pubmat.Location = new System.Drawing.Point(335, 354);
             this.event_pubmat.Name = "event_pubmat";
             this.event_pubmat.Size = new System.Drawing.Size(453, 234);
