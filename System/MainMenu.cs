@@ -74,7 +74,14 @@ namespace System
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    if (Registration.isregistration == true)
+                    {
+                        MessageBox.Show("Invalid ID Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 finally
                 {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Event_List));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -49,6 +50,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -146,7 +149,8 @@
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
             this.listView2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.FullRowSelect = true;
             this.listView2.Location = new System.Drawing.Point(0, 18);
@@ -249,6 +253,14 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "SN";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Event_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,7 +298,6 @@
         private Windows.Forms.Label label1;
         private Windows.Forms.TextBox textBox3;
         private Windows.Forms.GroupBox groupBox3;
-        private Windows.Forms.ListView listView2;
         private Windows.Forms.Button button2;
         private Windows.Forms.Button button1;
         private Windows.Forms.Button button3;
@@ -295,5 +306,8 @@
         private Windows.Forms.ColumnHeader columnHeader3;
         private Windows.Forms.ColumnHeader columnHeader4;
         private Windows.Forms.ColumnHeader columnHeader5;
+        public Windows.Forms.ListView listView2;
+        private Windows.Forms.ColumnHeader columnHeader6;
+        private Windows.Forms.Timer timer1;
     }
 }

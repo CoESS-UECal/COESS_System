@@ -108,6 +108,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Registration_NoID
             // 
@@ -126,6 +127,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registration_NoID";
             this.Text = "Registration_NoID";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_NoID_FormClosing);
+            this.Load += new System.EventHandler(this.Registration_NoID_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

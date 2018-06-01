@@ -16,5 +16,24 @@ namespace System
         {
             InitializeComponent();
         }
+
+        private void Registration_NoID_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+            MainMenu.Insert("insert into " + Event_List.event_name + " (FN, LN, SN) values ('" +textBox1.Text+ "','"+textBox2.Text+"','"+maskedTextBox1.Text+"');");
+            textBox1.Text = null;
+            textBox2.Text = null;
+            maskedTextBox1.Text = null;
+            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+        }
+
+        private void Registration_NoID_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

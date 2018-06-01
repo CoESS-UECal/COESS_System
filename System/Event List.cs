@@ -19,7 +19,7 @@ namespace System
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
 
         }
-        string event_name;
+        public static string event_name;
         public void LEI(string ID) // LMI = Load Event Info
         {
             string query = "Select * from event_list where Event_Name = '" + ID + "'";
@@ -49,31 +49,38 @@ namespace System
         }
         public void LA(string event_name) // LA=Load Attendees
         {
-            string query = "Select * from "+ event_name+";";
+            string query = "Select ID_No, FN, LN, SN from "+ event_name+";";
+            listView2.Items.Clear();
+            ListViewItem iItem;
             if (MainMenu.OpenConnection())
             {
                 try
                 {
-                    MySqlCommand command = new MySqlCommand(query, MainMenu.conn);
-                    MySqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
                     {
-                        textBox1.Text = reader.GetString("Event_Name");
-                        textBox2.Text = reader.GetString("Event_Location");
-                        pictureBox1.BackgroundImage =Image.FromFile(reader.GetString("Event_Pubmat"));
-                        pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+                        iItem = new ListViewItem(dataReader[0].ToString());
+                        iItem.SubItems.Add(dataReader[1].ToString());
+                        iItem.SubItems.Add(dataReader[2].ToString());
+                        iItem.SubItems.Add(dataReader[3].ToString());
+                        listView2.Items.Add(iItem);
+
                     }
                 }
-                catch (MySqlException ex)
+                catch (Exception ex)
                 {
-                     MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {
                     MainMenu.CloseConnection();
                 }
+                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
-        }
+        
+    }
 
 
         public void Populate_ListView(string myquery)
@@ -110,7 +117,7 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            timer1.Start();
             Form registration = new Registration();
             registration.Show();
 
@@ -145,6 +152,18 @@ namespace System
                 LA(event_name);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
 
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (this.Focused)
+            {
+                timer1.Stop();
+            }
+            else
+            {
+                timer1.Start();
             }
         }
     }

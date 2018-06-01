@@ -61,7 +61,7 @@ namespace System
             finalevent = finalevent.Replace(' ', '_');
             MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_name.Text + "','" + Convert.ToString(event_date.Value.ToShortDateString()) + "','" + event_location.Text + "','" +location+fileName+"');");
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-            MainMenu.Insert("create table " + finalevent + " (Attendee_No int(3) auto_increment, ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, primary key(Attendee_No));");
+            MainMenu.Insert("create table " + finalevent + " (Attendee_No int(3) auto_increment, ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(11) not null, primary key(Attendee_No));");
             event_name.Text = null;
             event_location.Text = null;
             event_date.Value = DateTime.Today;
