@@ -12,8 +12,11 @@ namespace System
 {
     public partial class Registration_NoID : Form
     {
-        public Registration_NoID()
+        public Event_List eventlist { get; set; }
+
+        public Registration_NoID(Event_List _form1)
         {
+            eventlist = _form1;
             InitializeComponent();
         }
 
@@ -29,6 +32,7 @@ namespace System
             textBox1.Text = null;
             textBox2.Text = null;
             maskedTextBox1.Text = null;
+            eventlist.LA(Event_List.event_name);
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
         }
 

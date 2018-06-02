@@ -20,6 +20,7 @@ namespace System
 
         }
         public static string event_name;
+        int AI,attendee_no;
         public void LEI(string ID) // LMI = Load Event Info
         {
             string query = "Select * from event_list where Event_Name = '" + ID + "'";
@@ -47,11 +48,45 @@ namespace System
                 }
             }
         }
-        public void LA(string event_name) // LA=Load Attendees
+        
+            public void LA(string event_name) // LA=Load Attendees
+            {
+                string query = "Select Attendee_No, FN, LN, SN, ID_No from " + event_name + ";";
+                listView2.Items.Clear();
+                ListViewItem iItem;
+                if (MainMenu.OpenConnection())
+                {
+                    try
+                    {
+                        MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
+                        MySqlDataReader dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            iItem = new ListViewItem(dataReader[0].ToString());
+                            iItem.SubItems.Add(dataReader[1].ToString());
+                            iItem.SubItems.Add(dataReader[2].ToString());
+                            iItem.SubItems.Add(dataReader[3].ToString());
+                            iItem.SubItems.Add(dataReader[4].ToString());
+                            listView2.Items.Add(iItem);
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        MainMenu.CloseConnection();
+                    }
+                    listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                }
+            }
+
+        public void GetAI(string event_name) // For Auto Increment Value alteration
         {
-            string query = "Select ID_No, FN, LN, SN from "+ event_name+";";
-            listView2.Items.Clear();
-            ListViewItem iItem;
+            string query = "Select auto_increment from tables where table_name = '"+event_name+"';";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -60,12 +95,8 @@ namespace System
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        iItem = new ListViewItem(dataReader[0].ToString());
-                        iItem.SubItems.Add(dataReader[1].ToString());
-                        iItem.SubItems.Add(dataReader[2].ToString());
-                        iItem.SubItems.Add(dataReader[3].ToString());
-                        listView2.Items.Add(iItem);
-
+                        AI=Convert.ToInt32(dataReader[0].ToString());
+                        MessageBox.Show(AI.ToString());
                     }
                 }
                 catch (Exception ex)
@@ -76,12 +107,8 @@ namespace System
                 {
                     MainMenu.CloseConnection();
                 }
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
-        
-    }
-
+        }
 
         public void Populate_ListView(string myquery)
         {
@@ -118,10 +145,10 @@ namespace System
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            Form registration = new Registration();
+            Form registration = new Registration(this);
             registration.Show();
 
-            Form reg_noid = new Registration_NoID();
+            Form reg_noid = new Registration_NoID(this);
             reg_noid.Show();
         }
 
@@ -157,13 +184,24 @@ namespace System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (this.Focused)
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)//remove button
+        {
+            foreach (ListViewItem item in listView2.SelectedItems)
             {
-                timer1.Stop();
-            }
-            else
-            {
-                timer1.Start();
+                attendee_no = Convert.ToInt32(item.SubItems[0].Text);
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+                MainMenu.Insert("delete from " + event_name + " where attendee_no = " + attendee_no + ";");
+                MainMenu.Insert("optimize table " + event_name + ";");
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=information_schema;");
+                GetAI(event_name);
+                AI--;
+                MainMenu.Insert("Update tables set auto_increment = "+AI+" where table_name = '"+event_name+"';");//problem code
+                listView2.Items.Remove(item);
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+
             }
         }
     }

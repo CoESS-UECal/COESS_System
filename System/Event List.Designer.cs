@@ -42,6 +42,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -50,8 +51,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,6 +79,7 @@
             this.listView1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(0, 19);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(395, 425);
             this.listView1.TabIndex = 0;
@@ -150,7 +152,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader7});
             this.listView2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.FullRowSelect = true;
             this.listView2.Location = new System.Drawing.Point(0, 18);
@@ -162,7 +165,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "ID_No";
+            this.columnHeader3.Text = "Attendee_No";
             // 
             // columnHeader4
             // 
@@ -172,6 +175,10 @@
             // 
             this.columnHeader5.Text = "LN";
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "SN";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(220, 287);
@@ -180,6 +187,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -253,13 +261,13 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "SN";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "ID_No";
             // 
             // Event_List
             // 
@@ -309,5 +317,6 @@
         public Windows.Forms.ListView listView2;
         private Windows.Forms.ColumnHeader columnHeader6;
         private Windows.Forms.Timer timer1;
+        private Windows.Forms.ColumnHeader columnHeader7;
     }
 }
