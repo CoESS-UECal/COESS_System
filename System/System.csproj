@@ -201,8 +201,9 @@
   <ItemGroup>
     <Content Include="coess_old_logo_5b1_icon.ico" />
     <Content Include="Resources\Blank BG.png" />
+    <None Include="Resources\remove-new.png" />
+    <None Include="Resources\Untitled-2_new.png" />
     <None Include="Resources\yellow ring.png" />
-    <None Include="Resources\Registration1.png" />
     <None Include="Resources\Main Menu1.png" />
     <None Include="Resources\Login Screen1.png" />
     <None Include="Resources\Events1.png" />
@@ -214,10 +215,11 @@
     <Content Include="Resources\Election.png" />
     <Content Include="Resources\Events.png" />
     <None Include="Resources\full-logo-transparent - clear c.png" />
+    <None Include="Resources\go-back_new.png" />
     <Content Include="Resources\Login Screen.png" />
     <Content Include="Resources\Main Menu.png" />
     <None Include="Resources\red ring.png" />
-    <Content Include="Resources\Registration.png" />
+    <None Include="Resources\register.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
