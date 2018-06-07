@@ -78,21 +78,23 @@
             // 
             // Loginbutton
             // 
+            this.Loginbutton.BackgroundImage = global::System.Properties.Resources.login;
+            this.Loginbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Loginbutton.Location = new System.Drawing.Point(182, 201);
             this.Loginbutton.Name = "Loginbutton";
             this.Loginbutton.Size = new System.Drawing.Size(136, 38);
             this.Loginbutton.TabIndex = 4;
-            this.Loginbutton.Text = "Login";
             this.Loginbutton.UseVisualStyleBackColor = true;
             this.Loginbutton.Click += new System.EventHandler(this.Loginbutton_Click);
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::System.Properties.Resources.quit;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(422, 248);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(66, 40);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Quit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
