@@ -201,6 +201,9 @@
   <ItemGroup>
     <Content Include="coess_old_logo_5b1_icon.ico" />
     <Content Include="Resources\Blank BG.png" />
+    <None Include="Resources\quit.png" />
+    <None Include="Resources\return to main menu.png" />
+    <None Include="Resources\new-event.png" />
     <None Include="Resources\remove-new.png" />
     <None Include="Resources\Untitled-2_new.png" />
     <None Include="Resources\yellow ring.png" />
@@ -213,10 +216,12 @@
     <None Include="Resources\center.png" />
     <None Include="Resources\coess new logo.png" />
     <Content Include="Resources\Election.png" />
+    <None Include="Resources\event-list].png" />
     <Content Include="Resources\Events.png" />
     <None Include="Resources\full-logo-transparent - clear c.png" />
     <None Include="Resources\go-back_new.png" />
     <Content Include="Resources\Login Screen.png" />
+    <None Include="Resources\login.png" />
     <Content Include="Resources\Main Menu.png" />
     <None Include="Resources\red ring.png" />
     <None Include="Resources\register.png" />
