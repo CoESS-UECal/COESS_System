@@ -52,7 +52,7 @@ namespace System
         
             public void LA(string event_name) // LA=Load Attendees
             {
-                string query = "Select Attendee_No, FN, LN, SN, ID_No, Time_In, Time_Out from " + event_name + ";";
+                string query = "Select FN, LN, SN, ID_No, Time_In, Time_Out from " + event_name + ";";
                 listView2.Items.Clear();
                 ListViewItem iItem;
                 if (MainMenu.OpenConnection())
@@ -85,32 +85,6 @@ namespace System
                     listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
-
-        public void GetAI(string event_name) // For Auto Increment Value alteration
-        {
-            string query = "Select auto_increment from tables where table_name = '"+event_name+"';";
-            if (MainMenu.OpenConnection())
-            {
-                try
-                {
-                    MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-                    while (dataReader.Read())
-                    {
-                        AI=Convert.ToInt32(dataReader[0].ToString());
-                        MessageBox.Show(AI.ToString());
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    MainMenu.CloseConnection();
-                }
-            }
-        }
 
         public void Populate_ListView(string myquery)
         {
@@ -208,11 +182,6 @@ namespace System
                 attendee_no = Convert.ToInt32(item.SubItems[0].Text);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
                 MainMenu.Insert("delete from " + event_name + " where attendee_no = " + attendee_no + ";");
-                MainMenu.Insert("optimize table " + event_name + ";");
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=information_schema;");
-                GetAI(event_name);
-                AI--;
-                MainMenu.Insert("Update tables set auto_increment = "+AI+" where table_name = '"+event_name+"';");//problem code
                 listView2.Items.Remove(item);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
 
