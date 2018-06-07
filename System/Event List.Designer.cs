@@ -35,6 +35,8 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -55,8 +57,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -126,6 +126,30 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Event Information";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(302, 365);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 21);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(216, 365);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 21);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Total:";
             // 
             // checkBox1
             // 
@@ -215,21 +239,23 @@
             // 
             // button2
             // 
+            this.button2.BackgroundImage = global::System.Properties.Resources.remove_new;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(220, 314);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 37);
             this.button2.TabIndex = 22;
-            this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::System.Properties.Resources.Untitled_2_new;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(220, 244);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 37);
             this.button1.TabIndex = 21;
-            this.button1.Text = "Registration";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -287,41 +313,18 @@
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::System.Properties.Resources.go_back_new;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Location = new System.Drawing.Point(640, 42);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 32);
             this.button3.TabIndex = 32;
-            this.button3.Text = "Go Back";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(216, 365);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 21);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Total:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(302, 365);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 21);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "0";
             // 
             // menuStrip1
             // 
@@ -347,7 +350,7 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // Event_List
