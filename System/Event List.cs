@@ -175,6 +175,11 @@ namespace System
             }
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)//remove button
         {
             foreach (ListViewItem item in listView2.SelectedItems)
