@@ -57,23 +57,39 @@ namespace System
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
+            if (eventlist.checkBox1.Checked==true)
             {
-                ID = Convert.ToInt32(textBox1.Text);
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-                Max_ID();
-                if(ID<=query_ID)
+                if (e.KeyCode == Keys.Enter)
+                {
+                    ID = Convert.ToInt32(textBox1.Text);
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                    Max_ID();
+                    if (ID <= query_ID)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+                        MainMenu.Insert("insert into " + Event_List.event_name + " (ID_No, FN, LN, SN) select ID_No, FN, LN, SN from coess.member_list where ID_No = " + ID + ";");
+                        MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
+                        textBox1.Text = null;
+                        eventlist.LA(Event_List.event_name);
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid ID Number! Try Again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        textBox1.Text = null;
+                    }
+                }
+            }
+            else if (eventlist.checkBox1.Checked==false)
+            {
+                if (e.KeyCode == Keys.Enter)
                 {
                     MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                    MainMenu.Insert("insert into " + Event_List.event_name + " (ID_No, FN, LN, SN) select ID_No, FN, LN, SN from coess.member_list where ID_No = " + ID + ";");
+                    MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
                     textBox1.Text = null;
                     eventlist.LA(Event_List.event_name);
                     MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-                }
-                else
-                {
-                    MessageBox.Show("Invalid ID Number! Try Again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    textBox1.Text = null;
                 }
             }
         }

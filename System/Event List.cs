@@ -21,6 +21,7 @@ namespace System
         }
         public static string event_name;
         int AI,attendee_no;
+        public static bool istimein=false;
         public void LEI(string ID) // LMI = Load Event Info
         {
             string query = "Select * from event_list where Event_Name = '" + ID + "'";
@@ -51,7 +52,7 @@ namespace System
         
             public void LA(string event_name) // LA=Load Attendees
             {
-                string query = "Select Attendee_No, FN, LN, SN, ID_No from " + event_name + ";";
+                string query = "Select Attendee_No, FN, LN, SN, ID_No, Time_In, Time_Out from " + event_name + ";";
                 listView2.Items.Clear();
                 ListViewItem iItem;
                 if (MainMenu.OpenConnection())
@@ -67,8 +68,9 @@ namespace System
                             iItem.SubItems.Add(dataReader[2].ToString());
                             iItem.SubItems.Add(dataReader[3].ToString());
                             iItem.SubItems.Add(dataReader[4].ToString());
+                            iItem.SubItems.Add(dataReader[5].ToString());
+                            iItem.SubItems.Add(dataReader[6].ToString());
                             listView2.Items.Add(iItem);
-
                         }
                     }
                     catch (Exception ex)
@@ -185,6 +187,18 @@ namespace System
         private void timer1_Tick(object sender, EventArgs e)
         {
             
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                istimein = true;
+            }
+            else
+            {
+                istimein = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)//remove button

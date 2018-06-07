@@ -43,6 +43,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,7 +53,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -98,6 +102,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.groupBox3);
@@ -122,7 +128,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(208, 354);
+            this.label1.Location = new System.Drawing.Point(208, 395);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 15);
             this.label1.TabIndex = 25;
@@ -131,7 +137,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(212, 372);
+            this.textBox3.Location = new System.Drawing.Point(212, 413);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(157, 25);
             this.textBox3.TabIndex = 24;
@@ -153,7 +159,9 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
             this.listView2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.FullRowSelect = true;
             this.listView2.Location = new System.Drawing.Point(0, 18);
@@ -179,9 +187,13 @@
             // 
             this.columnHeader6.Text = "SN";
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "ID_No";
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(220, 287);
+            this.button2.Location = new System.Drawing.Point(220, 314);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 37);
             this.button2.TabIndex = 22;
@@ -265,9 +277,36 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // columnHeader7
+            // checkBox1
             // 
-            this.columnHeader7.Text = "ID_No";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(220, 287);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(75, 21);
+            this.checkBox1.TabIndex = 26;
+            this.checkBox1.Text = "Time In";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(220, 355);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(149, 37);
+            this.button4.TabIndex = 27;
+            this.button4.Text = "Print...";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Time In";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Time Out";
             // 
             // Event_List
             // 
@@ -299,7 +338,6 @@
         private Windows.Forms.ListView listView1;
         private Windows.Forms.GroupBox groupBox2;
         private Windows.Forms.TextBox textBox2;
-        private Windows.Forms.TextBox textBox1;
         private Windows.Forms.Label label3;
         private Windows.Forms.Label label2;
         private Windows.Forms.PictureBox pictureBox1;
@@ -318,5 +356,10 @@
         private Windows.Forms.ColumnHeader columnHeader6;
         private Windows.Forms.Timer timer1;
         private Windows.Forms.ColumnHeader columnHeader7;
+        private Windows.Forms.Button button4;
+        private Windows.Forms.ColumnHeader columnHeader8;
+        private Windows.Forms.ColumnHeader columnHeader9;
+        private Windows.Forms.TextBox textBox1;
+        public Windows.Forms.CheckBox checkBox1;
     }
 }
