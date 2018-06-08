@@ -69,7 +69,6 @@ namespace System
                             iItem.SubItems.Add(dataReader[3].ToString());
                             iItem.SubItems.Add(dataReader[4].ToString());
                             iItem.SubItems.Add(dataReader[5].ToString());
-                            iItem.SubItems.Add(dataReader[6].ToString());
                             listView2.Items.Add(iItem);
                         }
                     }

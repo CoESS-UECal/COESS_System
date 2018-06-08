@@ -42,6 +42,7 @@ namespace System
             {
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
                 MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + maskedTextBox1.Text + "';");
+                eventlist.LA(Event_List.event_name);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
             }
         }
