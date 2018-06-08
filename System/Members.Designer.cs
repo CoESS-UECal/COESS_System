@@ -36,31 +36,34 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::System.Properties.Resources.return_to_main_menu;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(12, 525);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 63);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Return to Main Menu";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackgroundImage = global::System.Properties.Resources.new_member;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(126, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(226, 241);
             this.button2.TabIndex = 1;
-            this.button2.Text = "New Member";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::System.Properties.Resources.members_list_button;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Location = new System.Drawing.Point(449, 215);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(226, 241);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Member List";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

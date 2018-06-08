@@ -101,12 +101,13 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::System.Properties.Resources.register_button_small;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(117, 200);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 39);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

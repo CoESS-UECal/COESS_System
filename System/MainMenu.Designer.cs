@@ -80,11 +80,12 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = global::System.Properties.Resources.members;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(69, 277);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(185, 170);
             this.button1.TabIndex = 1;
-            this.button1.Text = "MEMBERS";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -93,11 +94,12 @@
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackgroundImage = global::System.Properties.Resources.Events1;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(308, 277);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 170);
             this.button2.TabIndex = 2;
-            this.button2.Text = "EVENTS";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -106,21 +108,23 @@
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackgroundImage = global::System.Properties.Resources.election_button;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Location = new System.Drawing.Point(547, 277);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 170);
             this.button3.TabIndex = 3;
-            this.button3.Text = "ELECTION";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.BackgroundImage = global::System.Properties.Resources.go_back_new;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Location = new System.Drawing.Point(640, 42);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(127, 32);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Log - Out";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 

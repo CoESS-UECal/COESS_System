@@ -342,11 +342,12 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::System.Properties.Resources.register_button_new;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(557, 379);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 187);
             this.button1.TabIndex = 27;
-            this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -368,11 +369,12 @@
             // 
             // button2
             // 
+            this.button2.BackgroundImage = global::System.Properties.Resources.go_back_new;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(640, 42);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 32);
             this.button2.TabIndex = 30;
-            this.button2.Text = "Go Back";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

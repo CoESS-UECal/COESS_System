@@ -294,11 +294,13 @@
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::System.Properties.Resources.go_back_new;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Location = new System.Drawing.Point(640, 42);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 32);
             this.button3.TabIndex = 32;
-            this.button3.Text = "Go Back";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

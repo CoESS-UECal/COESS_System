@@ -108,11 +108,12 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::System.Properties.Resources.create_event_button;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(19, 354);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(310, 234);
             this.button1.TabIndex = 10;
-            this.button1.Text = "Create Event";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -145,21 +146,23 @@
             // 
             // button2
             // 
+            this.button2.BackgroundImage = global::System.Properties.Resources.browse;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(613, 309);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 32);
             this.button2.TabIndex = 13;
-            this.button2.Text = "Browse...";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::System.Properties.Resources.go_back_new;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Location = new System.Drawing.Point(640, 42);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 32);
             this.button3.TabIndex = 31;
-            this.button3.Text = "Go Back";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
