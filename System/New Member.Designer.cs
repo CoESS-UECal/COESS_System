@@ -57,6 +57,7 @@
             this.GuardName = new System.Windows.Forms.TextBox();
             this.GuardContact = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             ((System.ComponentModel.ISupportInitialize)(this.Age)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +133,6 @@
             this.label4.Size = new System.Drawing.Size(184, 30);
             this.label4.TabIndex = 8;
             this.label4.Text = "Student Number:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // SN
             // 
@@ -175,7 +175,6 @@
             this.label6.Size = new System.Drawing.Size(162, 30);
             this.label6.TabIndex = 12;
             this.label6.Text = "Home Address:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Address
             // 
@@ -197,7 +196,6 @@
             this.label7.Size = new System.Drawing.Size(183, 30);
             this.label7.TabIndex = 14;
             this.label7.Text = "Contact Number:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Contact
             // 
@@ -229,7 +227,6 @@
             this.Bday.Size = new System.Drawing.Size(244, 25);
             this.Bday.TabIndex = 18;
             this.Bday.Value = new System.DateTime(2018, 5, 6, 11, 30, 34, 0);
-            this.Bday.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label9
             // 
@@ -347,7 +344,7 @@
             this.button1.Location = new System.Drawing.Point(557, 379);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 187);
-            this.button1.TabIndex = 27;
+            this.button1.TabIndex = 29;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -417,6 +414,7 @@
             this.Name = "New_Member";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New_Member";
+            this.Load += new System.EventHandler(this.New_Member_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Age)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -453,5 +451,6 @@
         private Windows.Forms.TextBox GuardName;
         private Windows.Forms.TextBox GuardContact;
         private Windows.Forms.Button button2;
+        private DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }
