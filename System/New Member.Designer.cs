@@ -58,6 +58,8 @@
             this.GuardContact = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Age)).BeginInit();
             this.SuspendLayout();
             // 
@@ -259,7 +261,7 @@
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(174, 367);
+            this.label10.Location = new System.Drawing.Point(169, 367);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(122, 30);
             this.label10.TabIndex = 21;
@@ -276,7 +278,7 @@
             "3rd",
             "4th",
             "5th"});
-            this.Year.Location = new System.Drawing.Point(302, 370);
+            this.Year.Location = new System.Drawing.Point(302, 372);
             this.Year.Name = "Year";
             this.Year.Size = new System.Drawing.Size(203, 25);
             this.Year.TabIndex = 22;
@@ -341,7 +343,7 @@
             // 
             this.button1.BackgroundImage = global::System.Properties.Resources.register_button_new;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(557, 379);
+            this.button1.Location = new System.Drawing.Point(563, 367);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 187);
             this.button1.TabIndex = 29;
@@ -375,12 +377,39 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(17, 567);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(293, 21);
+            this.checkBox1.TabIndex = 31;
+            this.checkBox1.Text = "I have agreed to the Data Privacy Act of 2012.";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.White;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(157, 568);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(152, 17);
+            this.linkLabel1.TabIndex = 32;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Data Privacy Act of 2012.\r\n";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // New_Member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.Registration;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.GuardContact);
             this.Controls.Add(this.GuardName);
@@ -452,5 +481,7 @@
         private Windows.Forms.TextBox GuardContact;
         private Windows.Forms.Button button2;
         private DirectoryServices.DirectoryEntry directoryEntry1;
+        private Windows.Forms.CheckBox checkBox1;
+        private Windows.Forms.LinkLabel linkLabel1;
     }
 }

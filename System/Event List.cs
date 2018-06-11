@@ -20,7 +20,7 @@ namespace System
 
         }
         public static string event_name;
-        int AI,attendee_no;
+        string SN;
         public static bool istimein=false;
         public void LEI(string ID) // LMI = Load Event Info
         {
@@ -183,9 +183,9 @@ namespace System
         {
             foreach (ListViewItem item in listView2.SelectedItems)
             {
-                attendee_no = Convert.ToInt32(item.SubItems[0].Text);
+                SN =item.SubItems[0].Text;
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                MainMenu.Insert("delete from " + event_name + " where attendee_no = " + attendee_no + ";");
+                MainMenu.Insert("delete from " + event_name + " where SN = '" + SN + "';");
                 listView2.Items.Remove(item);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
 

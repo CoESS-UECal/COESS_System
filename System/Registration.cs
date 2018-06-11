@@ -85,11 +85,22 @@ namespace System
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                    MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
-                    textBox1.Text = null;
-                    eventlist.LA(Event_List.event_name);
+                    ID = Convert.ToInt32(textBox1.Text);
                     MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                    Max_ID();
+                    if (ID <= query_ID)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+                        MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
+                        textBox1.Text = null;
+                        eventlist.LA(Event_List.event_name);
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid ID Number! Try Again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        textBox1.Text = null;
+                    }
                 }
             }
         }

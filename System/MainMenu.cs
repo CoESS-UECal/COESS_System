@@ -70,7 +70,7 @@ namespace System
                 {
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data Inserted!", "Insert Successful!");
+                    MessageBox.Show("Operation succeeded.", "Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 catch (MySqlException ex)
                 {
