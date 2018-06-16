@@ -28,7 +28,17 @@ namespace System
         {
 
         }
-
+        public string event_req()
+        {
+            //event_name,event_date,event_location,event_pubmat
+            string event_complete = null;
+            event_complete = EnCryptDecrypt.CryptorEngine.Encrypt(event_name.Text, true);
+            event_complete = event_complete+"','"+ EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
+            event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
+            event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_location.Text), true);
+            event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(location + fileName, true);
+            return event_complete;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             openFileDialog1.Title = "Insert an Image";
@@ -59,7 +69,7 @@ namespace System
         {
             finalevent = event_name.Text;
             finalevent = finalevent.Replace(' ', '_');
-            MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_name.Text + "','" + Convert.ToString(event_date.Value.ToShortDateString()) + "','" + event_location.Text + "','" +location+fileName+"');");
+            MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_req()+"');");
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
             MainMenu.Insert("create table " + finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(11) not null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
             event_name.Text = null;

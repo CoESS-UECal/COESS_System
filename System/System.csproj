@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CryptorEngine.cs" />
     <Compile Include="Event List.cs">
       <SubType>Form</SubType>
     </Compile>

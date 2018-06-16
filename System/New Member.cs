@@ -15,8 +15,7 @@ namespace System
         public New_Member()
         {
             InitializeComponent();
-            //MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-            MainMenu.Initialize("server=localhost;uid=coess;pwd=uecalcpe2018;database=coess;");
+            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
 
         }
 
@@ -28,6 +27,27 @@ namespace System
                 members.Show();
                 Close();
             }
+        }
+        public string requirements()
+        {
+            //SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address
+            //shorten code in insertion
+            string complete =null;
+            complete += EnCryptDecrypt.CryptorEngine.Encrypt(SN.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(FN.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(MI.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(LN.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(EMail.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Address.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Contact.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(Bday.Value.ToShortDateString()), true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Age.Value.ToString(), true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Year.SelectedItem.ToString(), true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Comm.SelectedItem.ToString(), true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(GuardName.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(GuardContact.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(@"C:\\COESS\\Images\\Member\\default.png", true);
+            return complete;
         }
         string error;
         private void button1_Click(object sender, EventArgs e)
@@ -125,7 +145,7 @@ namespace System
             else
             {
        
-            MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address) values('" +SN.Text + "','" + FN.Text + "','" + MI.Text + "','" + LN.Text + "','" + EMail.Text + "','" + Address.Text + "','" + Contact.Text + "','" + Convert.ToString(Bday.Value.ToShortDateString()) + "'," + Age.Value + ",'" + Year.SelectedItem + "','" + Comm.SelectedItem + "','" + GuardName.Text + "','" + GuardContact.Text + "','"+@"C:\\COESS\\Images\\Member\\default.png"+"');");
+            MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address) values('" +requirements()+"');");
             FN.Text = null;
             MI.Text = null;
             LN.Text = null;

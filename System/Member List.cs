@@ -19,9 +19,19 @@ namespace System
             InitializeComponent();
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
         }
-        public static string  fullname, lastname,firstname, mi, idnumber;
+        public static string fullname, lastname,firstname, mi, idnumber;
 
+        public static string decode(string thisDecode)
+        {
+            return EnCryptDecrypt.CryptorEngine.Decrypt(thisDecode,true);
+        }
+        public static string encode(string thisEncode)
+        {
+            if (null == thisEncode)
+                return string.Empty;
 
+            return EnCryptDecrypt.CryptorEngine.Encrypt(thisEncode,true);
+        }
         public void Populate_ListView(string myquery)
         {
             listView1.Items.Clear();
@@ -36,8 +46,8 @@ namespace System
                     while (dataReader.Read())
                     {
                         iItem = new ListViewItem(dataReader[0].ToString());
-                        iItem.SubItems.Add(dataReader[1].ToString());
-                        fullname = dataReader[2].ToString() + " " + dataReader[3].ToString();
+                        iItem.SubItems.Add(decode(dataReader[1].ToString()));
+                                fullname = decode(dataReader[2].ToString()) + " " + decode(dataReader[3].ToString());
                         iItem.SubItems.Add(fullname);
                         listView1.Items.Add(iItem);
 
@@ -57,7 +67,7 @@ namespace System
         }
         public  static void Updated(string col, string data, string ID) //col = column to be edited, data = member info changed, ID = member ID number
         {
-            string query = "UPDATE member_list SET " + col + " = '"+ data  +"' WHERE ID_No = " + ID + ";";
+            string query = "UPDATE member_list SET " + EnCryptDecrypt.CryptorEngine.Encrypt(col,true) + " = '"+ EnCryptDecrypt.CryptorEngine.Encrypt(data,true)  +"' WHERE ID_No = " + ID + ";";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -87,16 +97,16 @@ namespace System
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        lastname = reader.GetString("LN");
-                        firstname = reader.GetString("FN");
-                        mi = reader.GetString("MI");
-                        textBox1.Text = reader.GetString("FN") + " " + reader.GetString("MI") + " " + reader.GetString("LN");
-                        textBox2.Text = reader.GetString("Address");
-                        textBox3.Text = reader.GetString("Contact_No");
-                        textBox4.Text = reader.GetString("Year_Level");
-                        textBox5.Text = reader.GetString("Guard_Name");
-                        textBox6.Text = reader.GetString("Guard_Contact");
-                        pictureBox1.BackgroundImage =Image.FromFile( reader.GetString("ID_Address"));
+                        lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
+                        firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true);
+                        mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true);
+                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
+                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"),true);
+                        textBox3.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"),true);
+                        textBox4.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"),true);
+                        textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"),true);
+                        textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"),true);
+                        pictureBox1.BackgroundImage =Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"),true));
                         pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
@@ -122,6 +132,7 @@ namespace System
 
         private void Member_List_Load(object sender, EventArgs e)
         {
+            
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 

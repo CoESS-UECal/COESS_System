@@ -47,23 +47,10 @@ namespace System
                 progressBar1.Value += rnd;
                 label2.Text = progressBar1.Value.ToString() + "%";
                 fade.Stop();
-                Process.Start(@"C:\xampp\mysql\bin\mysqld.exe");
-                Process[] pname = Process.GetProcessesByName("mysqld");
-                if (pname.Length > 0)
-                {
-                    MessageBox.Show("MySQL Server Started");
-                    Form login = new Login();
-                    login.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("MySQL Server Failed to Start");
-                    Form login = new Login();
-                    login.Show();
-                    this.Hide();
-                }
-                
+                Form login = new Login();
+                login.Show();
+                this.Hide();
+
             }
             else if (progressBar1.Value<=100)
             {

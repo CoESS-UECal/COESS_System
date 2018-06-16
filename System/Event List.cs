@@ -153,7 +153,7 @@ namespace System
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
                 LA(event_name);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-
+               
             }
         }
 
@@ -183,8 +183,8 @@ namespace System
         {
             foreach (ListViewItem item in listView2.SelectedItems)
             {
-                SN =item.SubItems[0].Text;
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+                SN =item.SubItems[2].Text;
+                MainMenu.Initialize("server=localhost;uid=coess;pwd=uecalcpe2018;database=coess_events;");
                 MainMenu.Insert("delete from " + event_name + " where SN = '" + SN + "';");
                 listView2.Items.Remove(item);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");

@@ -22,12 +22,13 @@ namespace System
 
         private void Loginbutton_Click(object sender, EventArgs e)
         {
-                if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == password)
-                {
-                    Form form1 = new MainMenu();
-                    form1.Show();
-                    this.Hide();
-                }
+            if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == password)
+            {
+                Form form1 = new MainMenu();
+                form1.Show();
+                this.Hide();
+            }
+            
                 else if (tries >= 1)
                 {
                     tries--;
@@ -74,23 +75,6 @@ namespace System
         {
             if (DialogResult.Yes==MessageBox.Show("Do you want to quit?","Information",MessageBoxButtons.YesNo,MessageBoxIcon.Information))
             {
-                Process[] _proceses = null;
-                _proceses = Process.GetProcessesByName("mysqld");
-                foreach (Process proces in _proceses)
-                {
-                    proces.Kill();
-                }
-                Process[] pname = Process.GetProcessesByName("mysqld");
-                if (pname.Length > 0)
-                {
-                    if (DialogResult.OK == MessageBox.Show("MySQL Server Stopped", "Information", MessageBoxButtons.OK))
-                        Application.Exit();
-                }
-                else
-                {
-                    if (DialogResult.OK == MessageBox.Show("MySQL Server Failed to Stop", "Information", MessageBoxButtons.OK))
-                    { Application.Exit(); }
-                }
                 Application.Exit();
             }
         }
