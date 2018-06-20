@@ -67,7 +67,7 @@ namespace System
         }
         public  static void Updated(string col, string data, string ID) //col = column to be edited, data = member info changed, ID = member ID number
         {
-            string query = "UPDATE member_list SET " + EnCryptDecrypt.CryptorEngine.Encrypt(col,true) + " = '"+ EnCryptDecrypt.CryptorEngine.Encrypt(data,true)  +"' WHERE ID_No = " + ID + ";";
+            string query = "UPDATE member_list SET " + col + " = '"+ EnCryptDecrypt.CryptorEngine.Encrypt(data,true)  +"' WHERE ID_No = " + ID + ";";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -210,7 +210,7 @@ namespace System
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
-            string location = @"C:\\COESS\\Images\\";
+            string location = @"C:\COESS\Images\Member\";
             string filename = "";
             string pickedImage = "";
            openFileDialog1.Title = "Insert an Image";

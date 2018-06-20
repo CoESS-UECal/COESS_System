@@ -42,7 +42,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Contact = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Bday = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,12 +54,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.GuardName = new System.Windows.Forms.TextBox();
-            this.GuardContact = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Contact = new System.Windows.Forms.MaskedTextBox();
+            this.GuardContact = new System.Windows.Forms.MaskedTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Age)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,10 +103,11 @@
             // 
             // FN
             // 
+            this.FN.BackColor = System.Drawing.Color.White;
             this.FN.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FN.Location = new System.Drawing.Point(143, 153);
             this.FN.Name = "FN";
-            this.FN.Size = new System.Drawing.Size(152, 25);
+            this.FN.Size = new System.Drawing.Size(190, 25);
             this.FN.TabIndex = 3;
             // 
             // MI
@@ -143,7 +146,7 @@
             this.SN.Location = new System.Drawing.Point(202, 208);
             this.SN.Mask = "00000000000";
             this.SN.Name = "SN";
-            this.SN.Size = new System.Drawing.Size(99, 25);
+            this.SN.Size = new System.Drawing.Size(152, 25);
             this.SN.TabIndex = 9;
             // 
             // label5
@@ -199,14 +202,6 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Contact Number:";
             // 
-            // Contact
-            // 
-            this.Contact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Contact.Location = new System.Drawing.Point(201, 315);
-            this.Contact.Name = "Contact";
-            this.Contact.Size = new System.Drawing.Size(180, 25);
-            this.Contact.TabIndex = 15;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -244,15 +239,16 @@
             // 
             // Age
             // 
+            this.Age.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Age.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Age.Location = new System.Drawing.Point(93, 370);
+            this.Age.Location = new System.Drawing.Point(76, 370);
             this.Age.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
             this.Age.Name = "Age";
-            this.Age.Size = new System.Drawing.Size(47, 25);
+            this.Age.Size = new System.Drawing.Size(64, 25);
             this.Age.TabIndex = 20;
             // 
             // label10
@@ -358,14 +354,6 @@
             this.GuardName.Size = new System.Drawing.Size(314, 25);
             this.GuardName.TabIndex = 28;
             // 
-            // GuardContact
-            // 
-            this.GuardContact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardContact.Location = new System.Drawing.Point(297, 531);
-            this.GuardContact.Name = "GuardContact";
-            this.GuardContact.Size = new System.Drawing.Size(208, 25);
-            this.GuardContact.TabIndex = 29;
-            // 
             // button2
             // 
             this.button2.BackgroundImage = global::System.Properties.Resources.go_back_new;
@@ -402,16 +390,46 @@
             this.linkLabel1.Text = "Data Privacy Act of 2012.\r\n";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // Contact
+            // 
+            this.Contact.BeepOnError = true;
+            this.Contact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Contact.Location = new System.Drawing.Point(196, 316);
+            this.Contact.Mask = "00000000000";
+            this.Contact.Name = "Contact";
+            this.Contact.Size = new System.Drawing.Size(185, 25);
+            this.Contact.TabIndex = 33;
+            // 
+            // GuardContact
+            // 
+            this.GuardContact.BeepOnError = true;
+            this.GuardContact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardContact.Location = new System.Drawing.Point(297, 534);
+            this.GuardContact.Mask = "00000000000";
+            this.GuardContact.Name = "GuardContact";
+            this.GuardContact.Size = new System.Drawing.Size(208, 25);
+            this.GuardContact.TabIndex = 34;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 144);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(787, 449);
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            // 
             // New_Member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.Registration;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.GuardContact);
+            this.Controls.Add(this.Contact);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.GuardContact);
             this.Controls.Add(this.GuardName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label13);
@@ -424,7 +442,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Bday);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.Contact);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Address);
             this.Controls.Add(this.label6);
@@ -438,6 +455,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_Member";
@@ -445,6 +463,7 @@
             this.Text = "New_Member";
             this.Load += new System.EventHandler(this.New_Member_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Age)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,11 +484,9 @@
         private Windows.Forms.Label label6;
         private Windows.Forms.TextBox Address;
         private Windows.Forms.Label label7;
-        private Windows.Forms.TextBox Contact;
         private Windows.Forms.Label label8;
         private Windows.Forms.DateTimePicker Bday;
         private Windows.Forms.Label label9;
-        private Windows.Forms.NumericUpDown Age;
         private Windows.Forms.Label label10;
         private Windows.Forms.ComboBox Year;
         private Windows.Forms.Label label11;
@@ -478,10 +495,13 @@
         private Windows.Forms.Label label13;
         private Windows.Forms.Button button1;
         private Windows.Forms.TextBox GuardName;
-        private Windows.Forms.TextBox GuardContact;
         private Windows.Forms.Button button2;
         private DirectoryServices.DirectoryEntry directoryEntry1;
         private Windows.Forms.CheckBox checkBox1;
         private Windows.Forms.LinkLabel linkLabel1;
+        private Windows.Forms.MaskedTextBox Contact;
+        private Windows.Forms.MaskedTextBox GuardContact;
+        private Windows.Forms.NumericUpDown Age;
+        private Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -24,7 +24,7 @@ namespace System
         public static bool istimein=false;
         public void LEI(string ID) // LMI = Load Event Info
         {
-            string query = "Select * from event_list where Event_Name = '" + ID + "'";
+            string query = "Select Event_Name, Event_Location, Event_Pubmat from event_list where Event_Name = '" +EnCryptDecrypt.CryptorEngine.Encrypt(ID,true) + "'";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -33,9 +33,9 @@ namespace System
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        textBox1.Text = reader.GetString("Event_Name");
-                        textBox2.Text = reader.GetString("Event_Location");
-                        pictureBox1.ImageLocation = reader.GetString("Event_Pubmat");
+                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[0].ToString(),true);
+                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[1].ToString(), true);
+                        pictureBox1.ImageLocation = EnCryptDecrypt.CryptorEngine.Decrypt(reader[2].ToString(), true);
                         pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                 }
@@ -63,12 +63,12 @@ namespace System
                         MySqlDataReader dataReader = cmd.ExecuteReader();
                         while (dataReader.Read())
                         {
-                            iItem = new ListViewItem(dataReader[0].ToString());
-                            iItem.SubItems.Add(dataReader[1].ToString());
-                            iItem.SubItems.Add(dataReader[2].ToString());
-                            iItem.SubItems.Add(dataReader[3].ToString());
-                            iItem.SubItems.Add(dataReader[4].ToString());
-                            iItem.SubItems.Add(dataReader[5].ToString());
+                            iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(),true));
+                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(),true));
+                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[2].ToString(),true));
+                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[3].ToString(),true));
+                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[4].ToString(),true));
+                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[5].ToString(),true));
                             listView2.Items.Add(iItem);
                         }
                     }
@@ -98,8 +98,8 @@ namespace System
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        iItem = new ListViewItem(dataReader[0].ToString());
-                        iItem.SubItems.Add(dataReader[1].ToString());
+                        iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(),true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(),true));
                         listView1.Items.Add(iItem);
 
                     }
@@ -185,7 +185,7 @@ namespace System
             {
                 SN =item.SubItems[2].Text;
                 MainMenu.Initialize("server=localhost;uid=coess;pwd=uecalcpe2018;database=coess_events;");
-                MainMenu.Insert("delete from " + event_name + " where SN = '" + SN + "';");
+                MainMenu.Insert("delete from " +event_name + "' where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(SN,true) + "';");
                 listView2.Items.Remove(item);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
 

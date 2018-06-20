@@ -34,7 +34,6 @@ namespace System
             string event_complete = null;
             event_complete = EnCryptDecrypt.CryptorEngine.Encrypt(event_name.Text, true);
             event_complete = event_complete+"','"+ EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
-            event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
             event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_location.Text), true);
             event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(location + fileName, true);
             return event_complete;
@@ -71,12 +70,12 @@ namespace System
             finalevent = finalevent.Replace(' ', '_');
             MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_req()+"');");
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-            MainMenu.Insert("create table " + finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(11) not null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
+            MainMenu.Insert("create table " +finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(255) not null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
             event_name.Text = null;
             event_location.Text = null;
             event_date.Value = DateTime.Today;
             event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
-            if (DialogResult.Yes == MessageBox.Show("Would you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            if (DialogResult.No == MessageBox.Show("Would you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 Form events = new Events();
                 events.Show();
