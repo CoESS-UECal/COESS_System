@@ -41,7 +41,7 @@ namespace System
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Address.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Contact.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(Bday.Value.ToShortDateString()), true);
-            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Age.Value.ToString(), true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Age.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Year.SelectedItem.ToString(), true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Comm.SelectedItem.ToString(), true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(GuardName.Text, true);
@@ -59,15 +59,14 @@ namespace System
             bool email_flag = EMail.Text != "";
             bool address_flag = Address.Text != "";
             bool contact_flag = Contact.Text != "";
-            bool bday_flag = Bday.Value.ToShortDateString() != DateTime.Now.ToShortDateString() && (Bday.Value.Year == DateTime.Now.Year - Age.Value || Bday.Value.Year == DateTime.Now.Year - (Age.Value + 1));
-            bool age_flag = Age.Value != 0 && (Age.Value == DateTime.Now.Year - Bday.Value.Year || Age.Value == DateTime.Now.Year - (Bday.Value.Year + 1));
+            bool bday_flag = Bday.Value.ToShortDateString() != DateTime.Now.ToShortDateString();
             bool year_flag = Year.Text != "";
             bool com_flag = Comm.Text != "";
             bool Guardname_flag = GuardName.Text != "";
             bool Guardcontact_flag =  GuardContact.Text != "";
             bool DPA_flag = checkBox1.Checked != false;
             error = null;
-            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !age_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag||!DPA_flag)
+            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag||!DPA_flag)
             {
                 
                 if(!fn_flag)
@@ -109,17 +108,6 @@ namespace System
                         error += "Date of Birth does not match your Age\n";
                     }
                 }
-                if(!age_flag)
-                {
-                  if(Age.Value == 0)
-                    {
-                        error += "Age must not be equal to 0\n";
-                    }
-                  else
-                    {
-                        error += "Age does not match the Birthday\n";
-                    }
-                }
                 if(!year_flag)
                 {
                     error += "Year Level must not be Empty\n";
@@ -154,7 +142,7 @@ namespace System
             Address.Text = null;
             Contact.Text = null;
             Bday.Value = DateTime.Today;
-            Age.Value = 0;
+            Age.Text = null;
             Year.Text=null;
             Comm.Text=null;
             GuardName.Text = null;
@@ -187,6 +175,20 @@ In addition, I am likewise giving my consent / permission in favor of my parents
             {
                 checkBox1.Checked = true;
             }
+        }
+
+        private void Bday_ValueChanged(object sender, EventArgs e)
+        {
+            int age;
+            if((DateTime.Now.Month - Bday.Value.Month >= 0)&& (DateTime.Now.Day - Bday.Value.Day >= 0))
+            {
+                age = DateTime.Now.Year - Bday.Value.Year;
+            }
+            else
+            {
+                age = DateTime.Now.Year - (Bday.Value.Year+1);
+            }
+            Age.Text = age.ToString();
         }
     }
 }

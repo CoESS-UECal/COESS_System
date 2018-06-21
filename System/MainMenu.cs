@@ -146,5 +146,11 @@ namespace System
         {
             MessageBox.Show("Work in Progress ;)", "O P S", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form report = new Report_Form();
+            report.Show();
+        }
     }
 }

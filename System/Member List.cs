@@ -205,7 +205,7 @@ namespace System
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '"+maskedTextBox1.Text+"%'");
+            Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '"+EnCryptDecrypt.CryptorEngine.Encrypt( maskedTextBox1.Text,true)+"%'");
         }
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
