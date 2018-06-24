@@ -18,6 +18,7 @@ namespace System
             InitializeComponent();
             
         }
+        CrystalReport1 report=new CrystalReport1();
 
         public static void Insert(string q)
         {
@@ -197,10 +198,11 @@ namespace System
 
         private void Report_Form_Load(object sender, EventArgs e)
         {
+            report.Load();
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-
             Insert("Delete from report_table;");
-
+            crystalReportViewer1.ReportSource = report;
+            crystalReportViewer1.RefreshReport();
         }
     }
 }

@@ -171,7 +171,7 @@
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -180,7 +180,6 @@
             this.crystalReportViewer1.DisplayStatusBar = false;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = "C:\\Users\\LENOVO\\Source\\Repos\\COESS_System\\System\\CrystalReport1.rpt";
             this.crystalReportViewer1.ShowCloseButton = false;
             this.crystalReportViewer1.ShowGroupTreeButton = false;
             this.crystalReportViewer1.ShowParameterPanelButton = false;
