@@ -185,6 +185,22 @@ namespace System
 
         }
 
+        private void refreshListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Populate_ListView("select ID_No,SN,FN,LN from member_list;");
+        }
+
+        private void clearMemberInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = null;
+            textBox2.Text = null;
+            textBox3.Text = null;
+            textBox4.Text = null;
+            textBox5.Text = null;
+            textBox6.Text = null;
+            pictureBox1.BackgroundImage = System.Properties.Resources.full_logo_transparent___clear_c;
+        }
+
         private void textBox6_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             GeneralEdit.data = textBox6.Text;
@@ -205,7 +221,16 @@ namespace System
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '"+EnCryptDecrypt.CryptorEngine.Encrypt( maskedTextBox1.Text,true)+"%'");
+            if (maskedTextBox1.Text == null)
+            {
+                Populate_ListView("select ID_No,SN,FN,LN from member_list;");
+            }
+            else
+            {
+                Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "%'");
+                //listView1.FindItemWithText(maskedTextBox1.Text);
+                listView1.Refresh();
+            }
         }
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)

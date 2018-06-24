@@ -22,7 +22,10 @@ namespace System
         public static string event_name;
         string SN;
         public static bool istimein=false;
-        public void LEI(string ID) // LMI = Load Event Info
+
+
+
+        public void LEI(string ID) // LEI = Load Event Info
         {
             string query = "Select Event_Name, Event_Location, Event_Pubmat from event_list where Event_Name = '" +EnCryptDecrypt.CryptorEngine.Encrypt(ID,true) + "'";
             if (MainMenu.OpenConnection())
@@ -35,8 +38,8 @@ namespace System
                     {
                         textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[0].ToString(),true);
                         textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[1].ToString(), true);
-                        pictureBox1.ImageLocation = EnCryptDecrypt.CryptorEngine.Decrypt(reader[2].ToString(), true);
-                        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pictureBox1.BackgroundImage = Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader[2].ToString(), true));
+                        pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
                 catch (MySqlException ex)
@@ -49,8 +52,14 @@ namespace System
                 }
             }
         }
-        
-            public void LA(string event_name) // LA=Load Attendees
+
+        public void LA(string event_name) // LA=Load Attendees
+        {
+            if (event_name == null)
+            {
+                MessageBox.Show("No Event Selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 string query = "Select FN, LN, SN, ID_No, Time_In, Time_Out from " + event_name + ";";
                 listView2.Items.Clear();
@@ -63,12 +72,12 @@ namespace System
                         MySqlDataReader dataReader = cmd.ExecuteReader();
                         while (dataReader.Read())
                         {
-                            iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(),true));
-                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(),true));
-                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[2].ToString(),true));
-                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[3].ToString(),true));
-                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[4].ToString(),true));
-                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[5].ToString(),true));
+                            iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(), true));
+                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(), true));
+                            iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[2].ToString(), true));
+                            iItem.SubItems.Add(dataReader[3].ToString());
+                            iItem.SubItems.Add(dataReader[4].ToString());
+                            iItem.SubItems.Add(dataReader[5].ToString());
                             listView2.Items.Add(iItem);
                         }
                     }
@@ -84,6 +93,7 @@ namespace System
                     listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
+        }
 
         public void Populate_ListView(string myquery)
         {
@@ -120,21 +130,19 @@ namespace System
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            Form reg_noid = new Registration_NoID(this);
             Form registration = new Registration(this);
             registration.Show();
-
-            Form reg_noid = new Registration_NoID(this);
             reg_noid.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Would you like to go back?\n\nAll information will be discarded.", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
+            
                 Form events = new Events();
                 events.Show();
                 Close();
-            }
+                
         }
 
         private void Event_List_Load(object sender, EventArgs e)
@@ -153,6 +161,7 @@ namespace System
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
                 LA(event_name);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                label5.Text = listView2.Items.Count.ToString();
                
             }
         }
@@ -184,11 +193,18 @@ namespace System
             foreach (ListViewItem item in listView2.SelectedItems)
             {
                 SN =item.SubItems[2].Text;
-                MainMenu.Initialize("server=localhost;uid=coess;pwd=uecalcpe2018;database=coess_events;");
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
                 MainMenu.Insert("delete from " +event_name + "' where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(SN,true) + "';");
                 listView2.Items.Remove(item);
                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-
+                if(label5.Text=="0")
+                {
+                    MessageBox.Show("There are no more participants!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                else
+                {
+                    label5.Text = Convert.ToString(Convert.ToInt32(label5.Text) - 1);
+                }
             }
         }
 
@@ -196,6 +212,25 @@ namespace System
         {
             
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Populate_ListView("select Event_Name,Event_Date from event_list;");
+            pictureBox1.BackgroundImage = Properties.Resources.Blank_BG1;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            textBox1.Text = null;
+            textBox2.Text = null;
+            textBox3.Text = null;
+            event_name = null;
+            listView2.Items.Clear();
+            checkBox1.Checked = true;
+            label5.Text = "0";
+        }
+
+        private void Event_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

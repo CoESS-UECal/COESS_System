@@ -67,7 +67,7 @@ namespace System
                     if (ID <= query_ID)
                     {
                         MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                        MainMenu.Insert("insert into " + Event_List.event_name + " (ID_No, FN, LN, SN) select ID_No, FN, LN, SN from coess.member_list where ID_No = " + ID + ";");
+                        MainMenu.Insert("insert into " + Event_List.event_name + " (ID_No, FN, LN, SN, Year_Level) select ID_No, FN, LN, SN,Year_Level from coess.member_list where ID_No = " + ID + ";");
                         MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
                         textBox1.Text = null;
                         eventlist.LA(Event_List.event_name);

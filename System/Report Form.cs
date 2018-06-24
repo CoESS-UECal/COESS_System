@@ -111,34 +111,74 @@ namespace System
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
             Insert("Delete from report_table;");
-            if (comboBox3.Text != "All")
+            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";");
+            if (comboBox1.Text=="CoESS")
             {
-                Populate_ListView("Select ln,fn,sn,year_level from member_list where year_level = '" +EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text,true) + "';");
-                foreach (ListViewItem item in listView1.Items)
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";");
+                if (comboBox3.Text != "All")
                 {
-                    string sn, ln, fn, yr;
-                    ln = item.SubItems[0].Text;
-                    fn = item.SubItems[1].Text;
-                    sn = item.SubItems[2].Text;
-                    yr = item.SubItems[3].Text;
-                    Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
+                    Populate_ListView("Select ln,fn,sn,year_level from member_list where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        string sn, ln, fn, yr;
+                        ln = item.SubItems[0].Text;
+                        fn = item.SubItems[1].Text;
+                        sn = item.SubItems[2].Text;
+                        yr = item.SubItems[3].Text;
+                        Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
+                    }
+                }
+                else
+                {
+                    Populate_ListView("Select ln,fn,sn,year_level from member_list;");
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        string sn, ln, fn, yr;
+                        ln = item.SubItems[0].Text;
+                        fn = item.SubItems[1].Text;
+                        sn = item.SubItems[2].Text;
+                        yr = item.SubItems[3].Text;
+                        Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
+                    }
                 }
             }
-            else
+            else if(comboBox1.Text=="CoESS_Events")
             {
-                Populate_ListView("Select ln,fn,sn,year_level from member_list;");
-                foreach (ListViewItem item in listView1.Items)
+                MessageBox.Show("boi");
+                if (comboBox3.Text != "All")
                 {
-                    string sn, ln, fn, yr;
-                    ln = item.SubItems[0].Text;
-                    fn = item.SubItems[1].Text;
-                    sn = item.SubItems[2].Text;
-                    yr = item.SubItems[3].Text;
-                    Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
+                    Populate_ListView("Select ln,fn,sn,year_level from " +comboBox2.Text+ " where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        string sn, ln, fn, yr;
+                        ln = item.SubItems[0].Text;
+                        fn = item.SubItems[1].Text;
+                        sn = item.SubItems[2].Text;
+                        yr = item.SubItems[3].Text;
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                        Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";");
+                    }
+                }
+                else
+                {
+                    Populate_ListView("Select ln,fn,sn,year_level from "+comboBox2.Text+";");
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        string sn, ln, fn, yr;
+                        ln = item.SubItems[0].Text;
+                        fn = item.SubItems[1].Text;
+                        sn = item.SubItems[2].Text;
+                        yr = item.SubItems[3].Text;
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                        Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";");
+                    }
                 }
             }
-          
+
             crystalReportViewer1.RefreshReport();
         }
 

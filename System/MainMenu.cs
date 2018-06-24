@@ -74,14 +74,14 @@ namespace System
                 }
                 catch (MySqlException ex)
                 {
-                    /*if (Registration.isregistration == true)
+                    if (Registration.isregistration == true)
                     {
-                        MessageBox.Show("Invalid ID Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No Event Selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                    {*/
+                    {
                         MessageBox.Show(ex.Message);
-                    //}
+                    }
                 }
                 finally
                 {

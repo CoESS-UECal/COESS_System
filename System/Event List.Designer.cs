@@ -57,6 +57,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -322,12 +323,23 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(713, 115);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 33;
+            this.button4.Text = "Reset Fields";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Event_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.Events;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -336,6 +348,7 @@
             this.Name = "Event_List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event_List";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Event_List_FormClosing);
             this.Load += new System.EventHandler(this.Event_List_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -375,5 +388,6 @@
         public Windows.Forms.CheckBox checkBox1;
         private Windows.Forms.Label label5;
         private Windows.Forms.Label label4;
+        private Windows.Forms.Button button4;
     }
 }

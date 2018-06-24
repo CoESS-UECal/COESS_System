@@ -27,23 +27,30 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (eventlist.checkBox1.Checked)
+            if (textBox1.Text == null || textBox2.Text == null || maskedTextBox1.Text == null || comboBox1.SelectedIndex == -1)
             {
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                MainMenu.Insert("insert into " + Event_List.event_name + " (FN, LN, SN) values ('" + textBox1.Text + "','" + textBox2.Text + "','" + maskedTextBox1.Text + "');");
-                MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + maskedTextBox1.Text + "';");
-                textBox1.Text = null;
-                textBox2.Text = null;
-                maskedTextBox1.Text = null;
-                eventlist.LA(Event_List.event_name);
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                MessageBox.Show("Fill up all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + maskedTextBox1.Text + "';");
-                eventlist.LA(Event_List.event_name);
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                if (eventlist.checkBox1.Checked)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+                    MainMenu.Insert("insert into " + Event_List.event_name + " (FN, LN, SN) values ('" + textBox1.Text + "','" + textBox2.Text + "','" + maskedTextBox1.Text + "');");
+                    MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + maskedTextBox1.Text + "';");
+                    textBox1.Text = null;
+                    textBox2.Text = null;
+                    maskedTextBox1.Text = null;
+                    eventlist.LA(Event_List.event_name);
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+                    MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + maskedTextBox1.Text + "';");
+                    eventlist.LA(Event_List.event_name);
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                }
             }
         }
 

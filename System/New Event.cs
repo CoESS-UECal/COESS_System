@@ -70,7 +70,7 @@ namespace System
             finalevent = finalevent.Replace(' ', '_');
             MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_req()+"');");
             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-            MainMenu.Insert("create table " +finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(255) not null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
+            MainMenu.Insert("create table " +finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(255) not null, Year_Level varchar(255) null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
             event_name.Text = null;
             event_location.Text = null;
             event_date.Value = DateTime.Today;
