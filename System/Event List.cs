@@ -47,6 +47,9 @@ namespace System
                     {
                         textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[0].ToString(),true);
                         textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[1].ToString(), true);
+                        Image dump = pictureBox1.BackgroundImage;
+                        if (dump != null)
+                            dump.Dispose();
                         pictureBox1.BackgroundImage = Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader[2].ToString(), true));
                         pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
                     }
@@ -239,6 +242,9 @@ namespace System
         private void button4_Click(object sender, EventArgs e)
         {
             Populate_ListView("select Event_Name,Event_Date from event_list;");
+            Image dump = pictureBox1.BackgroundImage;
+            if (dump != null)
+                dump.Dispose();
             pictureBox1.BackgroundImage = Properties.Resources.Blank_BG1;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             textBox1.Text = null;
