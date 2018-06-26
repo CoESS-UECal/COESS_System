@@ -12,16 +12,20 @@ using MySql.Data.MySqlClient;
 namespace System
 {
     public partial class MainMenu : Form
-    {//"server=localhost;uid=root;pwd=;database=coess;"
-        //"server=localhost;uid=root;pwd=;database=coess_events;"
+    {
+        //"server=localhost;uid=root;pwd=;database=coess;"                  // database conection strings
+        //"server=localhost;uid=root;pwd=;database=coess_events;"           //
+
+
+
         //Database connection variables
         public static MySqlConnection conn;
         public static string myConnectionString;
+        public static bool isMaster = false;
 
         public MainMenu()
         {
             InitializeComponent();
-
         }
         
         public static void Initialize(string connstr)
@@ -50,7 +54,7 @@ namespace System
         {
             try
             {
-                conn.Close();
+                conn.Dispose();
                 return true;
             }
             catch (MySqlException ex)
@@ -70,7 +74,7 @@ namespace System
                 {
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Operation succeeded.", "Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    //MessageBox.Show("Operation succeeded.", "Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 catch (MySqlException ex)
                 {
@@ -88,17 +92,6 @@ namespace System
                     CloseConnection();
                 }
             }
-        }
-
-
-
-
-
-
-        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-           
-            
         }
 
         private void imageLocationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,11 +130,6 @@ namespace System
             Close();
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Work in Progress ;)", "O P S", MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -151,6 +139,16 @@ namespace System
         {
             Form report = new Report_Form();
             report.Show();
+        }
+
+        private void localhostToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            isMaster = true;
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            isMaster = false;
         }
     }
 }

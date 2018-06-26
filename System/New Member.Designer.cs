@@ -291,7 +291,8 @@
             "Human Resources",
             "Sports",
             "Grievances",
-            "Outreach"});
+            "Outreach",
+            "None (Alay kana)"});
             this.Comm.Location = new System.Drawing.Point(251, 424);
             this.Comm.Name = "Comm";
             this.Comm.Size = new System.Drawing.Size(254, 25);

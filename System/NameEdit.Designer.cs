@@ -73,7 +73,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NameEdit";
             this.Load += new System.EventHandler(this.NameEdit_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameEdit_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

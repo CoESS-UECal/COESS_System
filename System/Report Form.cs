@@ -32,18 +32,12 @@ namespace System
                 }
                 catch (MySqlException ex)
                 {
-                    /*if (Registration.isregistration == true)
-                    {
-                        MessageBox.Show("Invalid ID Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {*/
                     MessageBox.Show(ex.Message);
-                    //}
                 }
                 finally
                 {
                    MainMenu.CloseConnection();
+                    
                 }
             }
         }
@@ -112,12 +106,40 @@ namespace System
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+
+
             Insert("Delete from report_table;");
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";");
+
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+            }
+
+
             if (comboBox1.Text=="CoESS")
             {
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";");
+                if (MainMenu.isMaster == true)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                }
+
+
                 if (comboBox3.Text != "All")
                 {
                     Populate_ListView("Select ln,fn,sn,year_level from member_list where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
@@ -147,7 +169,6 @@ namespace System
             }
             else if(comboBox1.Text=="CoESS_Events")
             {
-                MessageBox.Show("boi");
                 if (comboBox3.Text != "All")
                 {
                     Populate_ListView("Select ln,fn,sn,year_level from " +comboBox2.Text+ " where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
@@ -158,9 +179,28 @@ namespace System
                         fn = item.SubItems[1].Text;
                         sn = item.SubItems[2].Text;
                         yr = item.SubItems[3].Text;
-                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+
+
                         Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
-                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";");
+
+
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                        }
                     }
                 }
                 else
@@ -173,9 +213,26 @@ namespace System
                         fn = item.SubItems[1].Text;
                         sn = item.SubItems[2].Text;
                         yr = item.SubItems[3].Text;
-                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+
                         Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
-                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";");
+
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                        }
                     }
                 }
             }
@@ -185,8 +242,16 @@ namespace System
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" +comboBox1.Text+";");
-            if(comboBox1.Text == "CoESS")
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+            }
+
+            if (comboBox1.Text == "CoESS")
             {
                 Populate_Combobox("Show Tables where tables_in_coess = 'member_list'");
             }
@@ -199,7 +264,14 @@ namespace System
         private void Report_Form_Load(object sender, EventArgs e)
         {
             report.Load();
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+            }
             Insert("Delete from report_table;");
             crystalReportViewer1.ReportSource = report;
             crystalReportViewer1.RefreshReport();

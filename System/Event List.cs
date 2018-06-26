@@ -16,9 +16,18 @@ namespace System
         public Event_List()
         {
             InitializeComponent();
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
 
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+            }
         }
+
+
         public static string event_name;
         string SN;
         public static bool istimein=false;
@@ -91,6 +100,7 @@ namespace System
                     }
                     listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
                     listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    label5.Text = listView2.Items.Count.ToString();
                 }
             }
         }
@@ -129,7 +139,6 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            timer1.Start();
             Form reg_noid = new Registration_NoID(this);
             Form registration = new Registration(this);
             registration.Show();
@@ -138,11 +147,9 @@ namespace System
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
                 Form events = new Events();
                 events.Show();
-                Close();
-                
+                Close();       
         }
 
         private void Event_List_Load(object sender, EventArgs e)
@@ -158,17 +165,24 @@ namespace System
                 event_name = item.SubItems[0].Text;
                 event_name = event_name.Replace(' ', '_');
                 LEI(item.SubItems[0].Text);
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+                if (MainMenu.isMaster == true)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                }
                 LA(event_name);
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-                label5.Text = listView2.Items.Count.ToString();
-               
+                if (MainMenu.isMaster == true)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                }
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -183,21 +197,35 @@ namespace System
             }
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)//remove button
         {
             foreach (ListViewItem item in listView2.SelectedItems)
             {
                 SN =item.SubItems[2].Text;
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                MainMenu.Insert("delete from " +event_name + "' where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(SN,true) + "';");
+                if (MainMenu.isMaster == true)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                }
+
+
+                MainMenu.Insert("delete from " +event_name + " where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(SN,true) + "';");
+
                 listView2.Items.Remove(item);
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-                if(label5.Text=="0")
+
+                if (MainMenu.isMaster == true)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                }
+
+                if (label5.Text=="0")
                 {
                     MessageBox.Show("There are no more participants!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
@@ -206,12 +234,6 @@ namespace System
                     label5.Text = Convert.ToString(Convert.ToInt32(label5.Text) - 1);
                 }
             }
-        }
-
-        private void printToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -226,11 +248,6 @@ namespace System
             listView2.Items.Clear();
             checkBox1.Checked = true;
             label5.Text = "0";
-        }
-
-        private void Event_List_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
         }
     }
 }

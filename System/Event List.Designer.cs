@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Event_List));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -56,7 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -319,10 +317,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(713, 115);
@@ -348,7 +342,6 @@
             this.Name = "Event_List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event_List";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Event_List_FormClosing);
             this.Load += new System.EventHandler(this.Event_List_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -380,7 +373,6 @@
         private Windows.Forms.ColumnHeader columnHeader5;
         public Windows.Forms.ListView listView2;
         private Windows.Forms.ColumnHeader columnHeader6;
-        private Windows.Forms.Timer timer1;
         private Windows.Forms.ColumnHeader columnHeader7;
         private Windows.Forms.ColumnHeader columnHeader8;
         private Windows.Forms.ColumnHeader columnHeader9;

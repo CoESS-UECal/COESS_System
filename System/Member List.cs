@@ -17,14 +17,21 @@ namespace System
         public Member_List()
         {
             InitializeComponent();
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+            }
         }
         public static string fullname, lastname,firstname, mi, idnumber;
-
         public static string decode(string thisDecode)
         {
             return EnCryptDecrypt.CryptorEngine.Decrypt(thisDecode,true);
         }
+
         public static string encode(string thisEncode)
         {
             if (null == thisEncode)
@@ -32,6 +39,8 @@ namespace System
 
             return EnCryptDecrypt.CryptorEngine.Encrypt(thisEncode,true);
         }
+
+
         public void Populate_ListView(string myquery)
         {
             listView1.Items.Clear();
@@ -47,10 +56,9 @@ namespace System
                     {
                         iItem = new ListViewItem(dataReader[0].ToString());
                         iItem.SubItems.Add(decode(dataReader[1].ToString()));
-                                fullname = decode(dataReader[2].ToString()) + " " + decode(dataReader[3].ToString());
+                        fullname = decode(dataReader[2].ToString()) + " " + decode(dataReader[3].ToString());
                         iItem.SubItems.Add(fullname);
                         listView1.Items.Add(iItem);
-
                     }
                 }
                 catch (Exception ex)
@@ -65,6 +73,7 @@ namespace System
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
+
         public  static void Updated(string col, string data, string ID) //col = column to be edited, data = member info changed, ID = member ID number
         {
             string query = "UPDATE member_list SET " + col + " = '"+ EnCryptDecrypt.CryptorEngine.Encrypt(data,true)  +"' WHERE ID_No = " + ID + ";";
@@ -86,6 +95,7 @@ namespace System
                 }
             }
         }
+
         public void LMI(string ID) // LMI = Load Member Info
         {
             string query = "Select * from member_list where ID_NO = '" + ID + "'";
@@ -106,8 +116,12 @@ namespace System
                         textBox4.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"),true);
                         textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"),true);
                         textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"),true);
+                        Image dump = pictureBox1.BackgroundImage;
+                        if (dump != null)
+                            dump.Dispose();
                         pictureBox1.BackgroundImage =Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"),true));
                         pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                        
                     }
                 }
                 catch (MySqlException ex)
@@ -120,19 +134,16 @@ namespace System
                 }
             }
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Would you like to go back?\n\nAll information will be discarded.", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
                 Form members = new Members();
                 members.Show();
                 Close();
-            }
         }
 
         private void Member_List_Load(object sender, EventArgs e)
         {
-            
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
@@ -180,11 +191,6 @@ namespace System
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void refreshListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
@@ -198,7 +204,10 @@ namespace System
             textBox4.Text = null;
             textBox5.Text = null;
             textBox6.Text = null;
-            pictureBox1.BackgroundImage = System.Properties.Resources.full_logo_transparent___clear_c;
+            Image dump = pictureBox1.BackgroundImage;
+            if (dump != null)
+                dump.Dispose();
+            pictureBox1.BackgroundImage = Properties.Resources.full_logo_transparent___clear_c;
         }
 
         private void textBox6_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -210,12 +219,14 @@ namespace System
             textBox6.Text = GeneralEdit.data;
         }
 
+        
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             foreach(ListViewItem item in listView1.SelectedItems)
             {
                 idnumber = item.SubItems[0].Text;
                 LMI(item.SubItems[0].Text);
+                
             }
         }
 
@@ -228,7 +239,6 @@ namespace System
             else
             {
                 Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "%'");
-                //listView1.FindItemWithText(maskedTextBox1.Text);
                 listView1.Refresh();
             }
         }
@@ -238,7 +248,7 @@ namespace System
             string location = @"C:\COESS\Images\Member\";
             string filename = "";
             string pickedImage = "";
-           openFileDialog1.Title = "Insert an Image";
+            openFileDialog1.Title = "Insert an Image";
             openFileDialog1.InitialDirectory = location;
             openFileDialog1.FileName = "";
             openFileDialog1.Filter = "JPEG Images|*.jpg|GIF Images|*.gif|BITMAPS|*.bmp|TIFF Images|*.tif|PNG Images|*.png|All Files|*.*";
@@ -246,13 +256,13 @@ namespace System
             {
                 string oldimage = pictureBox1.ImageLocation;
                 filename = openFileDialog1.SafeFileName;
-              pickedImage = openFileDialog1.FileName;
+                pickedImage = openFileDialog1.FileName;
                 pictureBox1.ImageLocation = pickedImage;
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     Updated("ID_Address", location + filename, idnumber);
                 }
-               else
+                else
                 {
                     pictureBox1.ImageLocation = oldimage;
                 }

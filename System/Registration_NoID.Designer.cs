@@ -189,8 +189,6 @@
             this.Name = "Registration_NoID";
             this.Text = "Registration_NoID";
             this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_NoID_FormClosing);
-            this.Load += new System.EventHandler(this.Registration_NoID_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

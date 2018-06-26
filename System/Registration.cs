@@ -21,9 +21,42 @@ namespace System
             eventlist = _form1;
             InitializeComponent();
         }
+
         int ID;
         int query_ID;
+
         public static bool isregistration = false;
+        public static bool duplicate = false;
+
+        public static void GetSN(int id)
+        {
+            int dup = 1;
+            string query = "select count(*) from "+Event_List.event_name+" where ID_No = " + id + ";";
+            if (MainMenu.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        if (dup == Convert.ToInt32(dataReader[0].ToString()))
+                        {
+                            duplicate = true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    MainMenu.CloseConnection();
+                }
+            }
+        }
+
         public void Max_ID()
         {
             string query = "select max(ID_No) from member_list;";
@@ -52,7 +85,7 @@ namespace System
 
         private void Registration_Load(object sender, EventArgs e)
         {
-            isregistration = true;
+            //isregistration = true;
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -62,17 +95,45 @@ namespace System
                 if (e.KeyCode == Keys.Enter)
                 {
                     ID = Convert.ToInt32(textBox1.Text);
-                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                    if (MainMenu.isMaster == true)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                    }
+                    else
+                    {
+                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                    }
                     Max_ID();
                     if (ID <= query_ID)
                     {
-                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                        MainMenu.Insert("insert into " + Event_List.event_name + " (ID_No, FN, LN, SN, Year_Level) select ID_No, FN, LN, SN,Year_Level from coess.member_list where ID_No = " + ID + ";");
-                        MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
-                        textBox1.Text = null;
-                        eventlist.LA(Event_List.event_name);
-                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                        }
+                        GetSN(ID);
+                        if(!duplicate)
+                        {
+                            MainMenu.Insert("insert into " + Event_List.event_name + " (ID_No, FN, LN, SN, Year_Level) select ID_No, FN, LN, SN,Year_Level from coess.member_list where ID_No = " + ID + ";");
+                            MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
+                            textBox1.Text = null;
+                            eventlist.LA(Event_List.event_name);
+                            if (MainMenu.isMaster == true)
+                            {
+                                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                            }
+                            else
+                            {
+                                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Duplicate Entry Found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
@@ -86,15 +147,36 @@ namespace System
                 if (e.KeyCode == Keys.Enter)
                 {
                     ID = Convert.ToInt32(textBox1.Text);
-                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                    if (MainMenu.isMaster == true)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                    }
+                    else
+                    {
+                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                    }
                     Max_ID();
                     if (ID <= query_ID)
                     {
-                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                        }
                         MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
                         textBox1.Text = null;
                         eventlist.LA(Event_List.event_name);
-                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
                     }
                     else
                     {
@@ -103,10 +185,6 @@ namespace System
                     }
                 }
             }
-        }
-
-        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
-        {
         }
     }
 }

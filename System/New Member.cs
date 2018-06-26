@@ -15,18 +15,21 @@ namespace System
         public New_Member()
         {
             InitializeComponent();
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
-
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Would you like to go back?\n\nAll information will be discarded.", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
                 Form members = new Members();
                 members.Show();
                 Close();
-            }
         }
         public string requirements()
         {
@@ -49,27 +52,29 @@ namespace System
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(@"C:\\COESS\\Images\\Member\\default.png", true);
             return complete;
         }
+
         string error;
+
         private void button1_Click(object sender, EventArgs e)
         {//std_no,fn,mi,ln,email,home,contact,bday,age,yr,comitte,guar_name,gard_no,dpa
-            bool sn_flag = SN.Text != "";
+            bool sn_flag = SN.MaskCompleted != false;
             bool fn_flag = FN.Text != "";
             bool mi_flag = MI.Text != "";
             bool ln_flag = LN.Text != "";
             bool email_flag = EMail.Text != "";
             bool address_flag = Address.Text != "";
-            bool contact_flag = Contact.Text != "";
+            bool contact_flag = Contact.MaskCompleted != false;
             bool bday_flag = Bday.Value.ToShortDateString() != DateTime.Now.ToShortDateString();
             bool year_flag = Year.Text != "";
             bool com_flag = Comm.Text != "";
             bool Guardname_flag = GuardName.Text != "";
-            bool Guardcontact_flag =  GuardContact.Text != "";
+            bool Guardcontact_flag = GuardContact.MaskCompleted != false;
             bool DPA_flag = checkBox1.Checked != false;
             error = null;
-            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag||!DPA_flag)
+            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag)
             {
-                
-                if(!fn_flag)
+
+                if (!fn_flag)
                 {
                     error += "First Name must not be Empty \n";
                 }
@@ -85,21 +90,21 @@ namespace System
                 {
                     error += "Student Number must not be Empty \n";
                 }
-                if(!email_flag)
+                if (!email_flag)
                 {
                     error += "Email must not be Empty \n";
                 }
-                if(!address_flag)
+                if (!address_flag)
                 {
                     error += "Address must not be Empty \n";
                 }
-                if(!contact_flag)
+                if (!contact_flag)
                 {
                     error += "Contact Number must not be Empty\n";
                 }
-                if(!bday_flag)
+                if (!bday_flag)
                 {
-                    if(Bday.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
+                    if (Bday.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
                     {
                         error += "Date of Birth must not the same as Date Today\n";
                     }
@@ -108,23 +113,23 @@ namespace System
                         error += "Date of Birth does not match your Age\n";
                     }
                 }
-                if(!year_flag)
+                if (!year_flag)
                 {
                     error += "Year Level must not be Empty\n";
                 }
-                if(!com_flag)
+                if (!com_flag)
                 {
                     error += "Commitee Affiliation must not be Empty\n";
                 }
-                if(!Guardname_flag)
+                if (!Guardname_flag)
                 {
                     error += "Guardian Name must not be Empty\n";
                 }
-                if(!Guardcontact_flag)
+                if (!Guardcontact_flag)
                 {
                     error += "Guardian Contact Number must not be Empty\n";
                 }
-                if(!DPA_flag)
+                if (!DPA_flag)
                 {
                     error += "Data Privacy Act of 2012 not checked";
                 }
@@ -132,30 +137,27 @@ namespace System
             }
             else
             {
-       
-            MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address) values('" +requirements()+"');");
-            FN.Text = null;
-            MI.Text = null;
-            LN.Text = null;
-            SN.Text = null;
-            EMail.Text = null;
-            Address.Text = null;
-            Contact.Text = null;
-            Bday.Value = DateTime.Today;
-            Age.Text = null;
-            Year.Text=null;
-            Comm.Text=null;
-            GuardName.Text = null;
-            GuardContact.Text = null;
-            if (DialogResult.Yes == MessageBox.Show("Would you like to go back?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
-                Form members = new Members();
-                members.Show();
-                Close();
+                MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address) values('" + requirements() + "');");
+                FN.Text = null;
+                MI.Text = null;
+                LN.Text = null;
+                SN.Text = null;
+                EMail.Text = null;
+                Address.Text = null;
+                Contact.Text = null;
+                Bday.Value = DateTime.Today;
+                Age.Text = null;
+                Year.Text = null;
+                Comm.Text = null;
+                GuardName.Text = null;
+                GuardContact.Text = null;
+                if (DialogResult.Yes == MessageBox.Show("New Member Registered!\n\nWould you like to go back?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    Form members = new Members();
+                    members.Show();
+                    Close();
+                }
             }
-            }
-         
-
         }
 
         private void New_Member_Load(object sender, EventArgs e)

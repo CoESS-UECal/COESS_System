@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace System
 {
@@ -19,10 +20,35 @@ namespace System
             eventlist = _form1;
             InitializeComponent();
         }
+        public static bool duplicate = false;
 
-        private void Registration_NoID_Load(object sender, EventArgs e)
+        public static void GetSN(string sn)
         {
-
+            int dup = 1;
+            string query = "select count(*) from "+Event_List.event_name+" where SN = '"+sn+"';";
+            if (MainMenu.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while(dataReader.Read())
+                    {
+                        if(dup ==Convert.ToInt32(dataReader[0].ToString()))
+                        {
+                            duplicate = true;
+                        }   
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                        MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    MainMenu.CloseConnection();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,27 +61,72 @@ namespace System
             {
                 if (eventlist.checkBox1.Checked)
                 {
-                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                    MainMenu.Insert("insert into " + Event_List.event_name + " (FN, LN, SN) values ('" + textBox1.Text + "','" + textBox2.Text + "','" + maskedTextBox1.Text + "');");
-                    MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + maskedTextBox1.Text + "';");
-                    textBox1.Text = null;
-                    textBox2.Text = null;
-                    maskedTextBox1.Text = null;
-                    eventlist.LA(Event_List.event_name);
-                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                    if (MainMenu.isMaster == true)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+                    }
+                    else
+                    {
+                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                    }
+                    GetSN(EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text,true));//Finish dis tonight verifying for duplicate SN to avoid error in primary key
+                    if(!duplicate)
+                    {
+                        MainMenu.Insert("insert into " + Event_List.event_name + " (FN, LN, SN,Year_Level) values ('" + EnCryptDecrypt.CryptorEngine.Encrypt(textBox1.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(textBox2.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox1.Text, true) + ");");
+                        MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "';");
+                        textBox1.Text = null;
+                        textBox2.Text = null;
+                        maskedTextBox1.Text = null;
+                        eventlist.LA(Event_List.event_name);
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Duplicate Entry Found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox1.Text = null;
+                        textBox2.Text = null;
+                        maskedTextBox1.Text = null;
+                        eventlist.LA(Event_List.event_name);
+                        if (MainMenu.isMaster == true)
+                        {
+                            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+                        else
+                        {
+                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                        }
+                    }
+
                 }
                 else
                 {
-                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
-                    MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + maskedTextBox1.Text + "';");
+                    if (MainMenu.isMaster == true)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+                    }
+                    else
+                    {
+                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                    }
+                    MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" +EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text,true) + "';");
                     eventlist.LA(Event_List.event_name);
-                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+                    if (MainMenu.isMaster == true)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                    }
+                    else
+                    {
+                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                    }
                 }
             }
-        }
-
-        private void Registration_NoID_FormClosing(object sender, FormClosingEventArgs e)
-        {
         }
     }
 }

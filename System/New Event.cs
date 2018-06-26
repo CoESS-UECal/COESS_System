@@ -17,17 +17,23 @@ namespace System
         public New_Event()
         {
             InitializeComponent();
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+            }
         }
+
         //Image variables
         string pickedImage = "";
         string location = @"C:\\COESS\\Images\\Pubmat\\";
         string fileName = "";
-        public static string finalevent;
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
+        public static string finalevent;
+
         public string event_req()
         {
             //event_name,event_date,event_location,event_pubmat
@@ -38,6 +44,7 @@ namespace System
             event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(location + fileName, true);
             return event_complete;
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             openFileDialog1.Title = "Insert an Image";
@@ -50,18 +57,14 @@ namespace System
                 pickedImage = openFileDialog1.FileName;
                 event_pubmat.BackgroundImage = Image.FromFile(pickedImage);
                 event_pubmat.BackgroundImageLayout = ImageLayout.Stretch;
-                File.Copy(pickedImage, @"C:\\COESS\\Images\\Pubmat\\"+fileName);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Would you like to go back?\n\nAll information will be discarded.", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
                 Form events = new Events();
                 events.Show();
                 Close();
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,13 +72,21 @@ namespace System
             finalevent = event_name.Text;
             finalevent = finalevent.Replace(' ', '_');
             MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_req()+"');");
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;");
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+            }
             MainMenu.Insert("create table " +finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(255) not null, Year_Level varchar(255) null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
+            File.Copy(pickedImage, @"C:\\COESS\\Images\\Pubmat\\" + fileName);
             event_name.Text = null;
             event_location.Text = null;
             event_date.Value = DateTime.Today;
             event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
-            if (DialogResult.No == MessageBox.Show("Would you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            if (DialogResult.No == MessageBox.Show("Event Created!\n\nWould you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 Form events = new Events();
                 events.Show();

@@ -15,10 +15,19 @@ namespace System
         public GeneralEdit()
         {
             InitializeComponent();
-            MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;");
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+            }
         }
+
         public static string data;
         public static string col;
+
         private void GeneralEdit_Load(object sender, EventArgs e)
         {
             textBox1.Text = data;

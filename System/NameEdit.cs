@@ -24,11 +24,6 @@ namespace System
             textBox1.Focus();
         }
 
-        private void NameEdit_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -72,7 +67,6 @@ namespace System
                     MessageBox.Show("Data Updated!", "Update Successful!");
                     Member_List.fullname = textBox1.Text + " " + textBox2.Text + " " + textBox4.Text;
                     Close();
-
                 }
             }
         }
@@ -96,7 +90,6 @@ namespace System
                     MessageBox.Show("Data Updated!", "Update Successful!");
                     Member_List.fullname = textBox1.Text + " " + textBox2.Text + " " + textBox4.Text;
                     Close();
-
                 }
             }
         }
