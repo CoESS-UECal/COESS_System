@@ -23,7 +23,7 @@ namespace System
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
 
@@ -174,7 +174,7 @@ namespace System
                 }
                 else
                 {
-                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                 }
                 LA(event_name);
                 if (MainMenu.isMaster == true)
@@ -183,7 +183,7 @@ namespace System
                 }
                 else
                 {
-                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                 }
             }
         }
@@ -211,7 +211,7 @@ namespace System
                 }
                 else
                 {
-                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                 }
 
 
@@ -225,7 +225,7 @@ namespace System
                 }
                 else
                 {
-                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                 }
 
                 if (label5.Text=="0")
@@ -249,11 +249,11 @@ namespace System
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             textBox1.Text = null;
             textBox2.Text = null;
-            textBox3.Text = null;
             event_name = null;
             listView2.Items.Clear();
             checkBox1.Checked = true;
             label5.Text = "0";
         }
+
     }
 }

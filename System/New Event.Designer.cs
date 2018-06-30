@@ -187,6 +187,7 @@
             this.Name = "New_Event";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New_Event";
+            this.Load += new System.EventHandler(this.New_Event_Load);
             ((System.ComponentModel.ISupportInitialize)(this.event_pubmat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

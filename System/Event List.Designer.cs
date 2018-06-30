@@ -37,8 +37,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -104,8 +102,6 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
@@ -128,7 +124,7 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(302, 365);
+            this.label5.Location = new System.Drawing.Point(302, 395);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 21);
             this.label5.TabIndex = 28;
@@ -140,7 +136,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(216, 365);
+            this.label4.Location = new System.Drawing.Point(216, 395);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 27;
@@ -152,33 +148,13 @@
             this.checkBox1.BackColor = System.Drawing.Color.White;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(220, 287);
+            this.checkBox1.Location = new System.Drawing.Point(220, 296);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(75, 21);
             this.checkBox1.TabIndex = 26;
             this.checkBox1.Text = "Time In";
             this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(208, 395);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 15);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Search Attendees (Surname)";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(212, 413);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(157, 25);
-            this.textBox3.TabIndex = 24;
             // 
             // groupBox3
             // 
@@ -236,7 +212,7 @@
             // 
             this.button2.BackgroundImage = global::System.Properties.Resources.remove_new;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(220, 314);
+            this.button2.Location = new System.Drawing.Point(220, 335);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 37);
             this.button2.TabIndex = 22;
@@ -361,8 +337,6 @@
         private Windows.Forms.Label label3;
         private Windows.Forms.Label label2;
         private Windows.Forms.PictureBox pictureBox1;
-        private Windows.Forms.Label label1;
-        private Windows.Forms.TextBox textBox3;
         private Windows.Forms.GroupBox groupBox3;
         private Windows.Forms.Button button2;
         private Windows.Forms.Button button1;

@@ -112,7 +112,7 @@ namespace System
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
 
 
@@ -124,7 +124,7 @@ namespace System
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
             }
 
 
@@ -136,7 +136,7 @@ namespace System
                 }
                 else
                 {
-                    MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
                 }
 
 
@@ -186,7 +186,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                         }
 
 
@@ -199,7 +199,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
                         }
                     }
                 }
@@ -220,7 +220,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                         }
 
                         Insert("insert into report_table values ('" + ln + "','" + fn + "','" + sn + "','" + yr + "')");
@@ -231,7 +231,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
                         }
                     }
                 }
@@ -248,7 +248,7 @@ namespace System
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
             }
 
             if (comboBox1.Text == "CoESS")
@@ -270,11 +270,24 @@ namespace System
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
             Insert("Delete from report_table;");
             crystalReportViewer1.ReportSource = report;
             crystalReportViewer1.RefreshReport();
+        }
+
+        private void Report_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MainMenu.isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
+            }
+            Insert("Delete from report_table;");
         }
     }
 }

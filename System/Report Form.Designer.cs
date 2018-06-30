@@ -209,6 +209,7 @@
             this.MaximizeBox = false;
             this.Name = "Report_Form";
             this.Text = "Report_Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Report_Form_FormClosing);
             this.Load += new System.EventHandler(this.Report_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

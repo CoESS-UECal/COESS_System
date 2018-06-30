@@ -21,7 +21,7 @@ namespace System
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
 

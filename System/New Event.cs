@@ -23,7 +23,7 @@ namespace System
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
 
@@ -33,6 +33,37 @@ namespace System
         string fileName = "";
 
         public static string finalevent;
+        bool duplicate=false;
+
+        public void GetEname(string ename)
+        {
+            int dup = 1;
+            string query = "select count(Event_Name) from event_list where Event_name = '" +EnCryptDecrypt.CryptorEngine.Encrypt(ename,true) + "';";
+            if (MainMenu.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        if (Convert.ToInt32(dataReader[0].ToString())>= dup)
+                        {
+                            duplicate = true;
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    MainMenu.CloseConnection();
+                }
+            }
+        }
 
         public string event_req()
         {
@@ -71,27 +102,51 @@ namespace System
         {
             finalevent = event_name.Text;
             finalevent = finalevent.Replace(' ', '_');
-            MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_req()+"');");
-            if (MainMenu.isMaster == true)
+            GetEname(event_name.Text);
+            if(!duplicate)
             {
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+                MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_req() + "');");
+                if (MainMenu.isMaster == true)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
+                }
+                MainMenu.Insert("create table " + finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(255) not null, Year_Level varchar(255) null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
+                File.Copy(pickedImage, @"C:\\COESS\\Images\\Pubmat\\" + fileName);
+                event_name.Text = null;
+                event_location.Text = null;
+                event_date.Value = DateTime.Today;
+                Image dump = event_pubmat.BackgroundImage;
+                if (dump != null)
+                    dump.Dispose();
+                event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
+                if (DialogResult.No == MessageBox.Show("Event Created!\n\nWould you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    Form events = new Events();
+                    events.Show();
+                    Close();
+                }
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                MessageBox.Show("Event is already in the database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                event_name.Text = null;
+                event_location.Text = null;
+                event_date.Value = DateTime.Today;
+                Image dump = event_pubmat.BackgroundImage;
+                if (dump != null)
+                    dump.Dispose();
+                event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
             }
-            MainMenu.Insert("create table " +finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(255) not null, Year_Level varchar(255) null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
-            File.Copy(pickedImage, @"C:\\COESS\\Images\\Pubmat\\" + fileName);
-            event_name.Text = null;
-            event_location.Text = null;
-            event_date.Value = DateTime.Today;
-            event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
-            if (DialogResult.No == MessageBox.Show("Event Created!\n\nWould you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
-                Form events = new Events();
-                events.Show();
-                Close();
-            }
+
+        }
+
+        private void New_Event_Load(object sender, EventArgs e)
+        {
+            finalevent = "";
         }
     }
 }

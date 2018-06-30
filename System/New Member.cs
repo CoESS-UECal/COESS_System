@@ -21,7 +21,7 @@ namespace System
             }
             else
             {
-                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
 
@@ -65,13 +65,14 @@ namespace System
             bool address_flag = Address.Text != "";
             bool contact_flag = Contact.MaskCompleted != false;
             bool bday_flag = Bday.Value.ToShortDateString() != DateTime.Now.ToShortDateString();
+            bool age_flag = Int32.Parse(Age.Text) > 0;
             bool year_flag = Year.Text != "";
             bool com_flag = Comm.Text != "";
             bool Guardname_flag = GuardName.Text != "";
             bool Guardcontact_flag = GuardContact.MaskCompleted != false;
             bool DPA_flag = checkBox1.Checked != false;
             error = null;
-            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag)
+            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag || !age_flag)
             {
 
                 if (!fn_flag)
@@ -112,6 +113,10 @@ namespace System
                     {
                         error += "Date of Birth does not match your Age\n";
                     }
+                }
+                if (!age_flag)
+                {
+                    error += "Age must not be 0 or a Negative Value";
                 }
                 if (!year_flag)
                 {

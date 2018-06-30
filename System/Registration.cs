@@ -101,7 +101,7 @@ namespace System
                     }
                     else
                     {
-                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                        MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                     }
                     Max_ID();
                     if (ID <= query_ID)
@@ -112,7 +112,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                         }
                         GetSN(ID);
                         if(!duplicate)
@@ -127,7 +127,7 @@ namespace System
                             }
                             else
                             {
-                                MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                             }
                         }
                         else
@@ -153,7 +153,7 @@ namespace System
                     }
                     else
                     {
-                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                        MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                     }
                     Max_ID();
                     if (ID <= query_ID)
@@ -164,7 +164,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                         }
                         MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
                         textBox1.Text = null;
@@ -175,7 +175,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                         }
                     }
                     else

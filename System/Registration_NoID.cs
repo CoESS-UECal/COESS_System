@@ -25,7 +25,7 @@ namespace System
         public static void GetSN(string sn)
         {
             int dup = 1;
-            string query = "select count(*) from "+Event_List.event_name+" where SN = '"+sn+"';";
+            string query = "select count(SN) from "+Event_List.event_name+" where SN = '"+sn+"';";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -53,7 +53,7 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == null || textBox2.Text == null || maskedTextBox1.Text == null || comboBox1.SelectedIndex == -1)
+            if (textBox1.Text == null || textBox2.Text == null || !maskedTextBox1.MaskCompleted || comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Fill up all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -67,12 +67,12 @@ namespace System
                     }
                     else
                     {
-                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                        MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                     }
                     GetSN(EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text,true));//Finish dis tonight verifying for duplicate SN to avoid error in primary key
                     if(!duplicate)
                     {
-                        MainMenu.Insert("insert into " + Event_List.event_name + " (FN, LN, SN,Year_Level) values ('" + EnCryptDecrypt.CryptorEngine.Encrypt(textBox1.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(textBox2.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox1.Text, true) + ");");
+                        MainMenu.Insert("insert into " + Event_List.event_name + " (FN, LN, SN,Year_Level) values ('" + EnCryptDecrypt.CryptorEngine.Encrypt(textBox1.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(textBox2.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox1.Text, true) + "');");
                         MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "';");
                         textBox1.Text = null;
                         textBox2.Text = null;
@@ -84,7 +84,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                         }
                     }
                     else
@@ -100,7 +100,7 @@ namespace System
                         }
                         else
                         {
-                            MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                            MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                         }
                     }
 
@@ -113,7 +113,7 @@ namespace System
                     }
                     else
                     {
-                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess_events;sslmode=none;");
+                        MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                     }
                     MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" +EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text,true) + "';");
                     eventlist.LA(Event_List.event_name);
@@ -123,10 +123,26 @@ namespace System
                     }
                     else
                     {
-                        MainMenu.Initialize("server=192.168.1.4;uid=root;pwd=;database=coess;sslmode=none;");
+                        MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                     }
                 }
             }
+            duplicate = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
