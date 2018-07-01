@@ -24,7 +24,7 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
-
+        string membership_type;
         private void button2_Click(object sender, EventArgs e)
         {
                 Form members = new Members();
@@ -49,6 +49,7 @@ namespace System
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Comm.SelectedItem.ToString(), true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(GuardName.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(GuardContact.Text, true);
+            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(membership_type, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(@"C:\\COESS\\Images\\Member\\default.png", true);
             return complete;
         }
@@ -71,8 +72,10 @@ namespace System
             bool Guardname_flag = GuardName.Text != "";
             bool Guardcontact_flag = GuardContact.MaskCompleted != false;
             bool DPA_flag = checkBox1.Checked != false;
+            bool membership = radioButton1.Checked != false || radioButton2.Checked != false;
+
             error = null;
-            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag || !age_flag)
+            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag || !age_flag||!membership)
             {
 
                 if (!fn_flag)
@@ -138,11 +141,15 @@ namespace System
                 {
                     error += "Data Privacy Act of 2012 not checked";
                 }
+                if (!membership)
+                {
+                    error += "Select Membership Type";
+                }
                 MessageBox.Show(error, "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Warning); //Error Message Box for Invalid Data
             }
             else
             {
-                MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address) values('" + requirements() + "');");
+                MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,Membership,ID_Address) values('" + requirements() + "');");
                 FN.Text = null;
                 MI.Text = null;
                 LN.Text = null;
@@ -172,12 +179,12 @@ namespace System
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if(DialogResult.OK==MessageBox.Show(
-                @"I am fully aware that Computer Engineering Students' Society (CoESS) or its designated representative is duty bound and obligated under the Data Privacy Act of 2012 to protect all my personal and sensitive information that it collects, processes, and retains upon my enrolment and during my stay in the University.\j
-Student personal information includes any information about my identity, academics, medical conditions, or any documents containing my identity.This includes but not limited to my name, address, names of my parents or guardians, date of birth, grades, attendance, disciplinary records, and other information necessary for basic administration and instruction.
-I understand that my personal information cannot be disclosed without my consent.I understand that the information that was collected and processed relates to my enrolment and to be used by CoESS to pursue its legitimate interests as an educational institution.Likewise, I am fully aware that CoESS may share such information to affiliated or partner organizations as part of its contractual obligations, or with government agencies pursuant to law or legal processes.In this regard, I hereby allow CoESS to collect, process, use and share my personal data in the pursuit of its legitimate interests as an educational institution.
-In addition, I am likewise giving my consent / permission in favor of my parents / guardian / representative or whoever is responsible in providing care for me to access, verify, examine and or inspect my academic and scholastic records, school fees / accounts in the University, the result of my physical medical examination(PME) and all matters that relate to my status as a student of the University.
-     Finally, should I commit any misconduct or should there be a complaint filed against me, before the Student Affairs Office(SAO) or Student Disciplinary Board(SDB) by reason of violation of the provisions of the Student Manual or any laws or ordinances, I hereby authorize and give my full consent in favor of the University to inform my parents, guardian, representative or whoever person is in charge of providing care or custody for me.
+            if (DialogResult.OK == MessageBox.Show(
+                @"I am fully aware that CoESS or its designated representative is duty bound and obligated under the Data Privacy Act of 2012 to protect all my personal and sensitive information that it collects, processes, and retains upon my enrolment and during my stay in the University.\n\n
+Student personal information includes any information about my identity, academics, medical conditions, or any documents containing my identity.This includes but not limited to my name, address, names of my parents or guardians, date of birth, grades, attendance, disciplinary records, and other information necessary for basic administration and instruction.\n\n
+I understand that my personal information cannot be disclosed without my consent.\nI understand that the information that was collected and processed relates to my enrolment and to be used by CoESS to pursue its legitimate interests as an educational institution.\nLikewise, I am fully aware that CoESS may share such information to affiliated or partner organizations as part of its contractual obligations, or with government agencies pursuant to law or legal processes.\nIn this regard, I hereby allow CoESS to collect, process, use and share my personal data in the pursuit of its legitimate interests as an educational institution.\n\n
+In addition, I am likewise giving my consent / permission in favor of my parents / guardian / representative or whoever is responsible in providing care for me to access, verify, examine and or inspect my academic and scholastic records, school fees / accounts in the University, the result of my physical medical examination(PME) and all matters that relate to my status as a student of the University.\n\n
+     Finally, should I commit any misconduct or should there be a complaint filed against me, before the Student Affairs Office(SAO) or Student Disciplinary Board(SDB) by reason of violation of the provisions of the Student Manual or any laws or ordinances, I hereby authorize and give my full consent in favor of the University to inform my parents, guardian, representative or whoever person is in charge of providing care or custody for me.\n\n
   Upon clicking OK, I hereby give my consent for the processing, release, and retention of personal information."))
             {
                 checkBox1.Checked = true;
@@ -196,6 +203,16 @@ In addition, I am likewise giving my consent / permission in favor of my parents
                 age = DateTime.Now.Year - (Bday.Value.Year+1);
             }
             Age.Text = age.ToString();
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            membership_type = radioButton1.Text;
+        }
+
+        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            membership_type = radioButton2.Text;
         }
     }
 }
