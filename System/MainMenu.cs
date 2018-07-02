@@ -69,6 +69,32 @@ namespace System
             }
         }
 
+        public void checkuser()
+        {
+            string query = "select count(user) from mysql.user where user = 'access'";
+            if (MainMenu.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand command = new MySqlCommand(query, MainMenu.conn);
+                    MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        user_accounts = Convert.ToInt32(reader[0].ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    MainMenu.CloseConnection();
+                }
+            }
+        }
+
+
         //create database
         public static void createdb(string q)
         {
@@ -240,6 +266,29 @@ namespace System
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             isMaster = false;
+        }
+
+        private void createSlaveAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainMenu.Initialize("server=localhost;user=root;sslmode=none;");
+            checkuser();
+            if(user_accounts!=2)
+            {
+                Insert("create user 'access'@'192.168.1.2';");
+                Insert("GRANT USAGE ON *.* TO 'access'@'192.168.1.2';");
+                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess\\_events`.*TO 'access'@'192.168.1.2';");
+                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess`.*TO 'access'@'192.168.1.2';");
+                Insert("GRANT ALL PRIVILEGES ON `access\\_ %`.*TO 'access'@'192.168.1.2';");
+
+                Insert("create user 'access'@'192.168.1.3';");
+                Insert("GRANT USAGE ON *.* TO 'access'@'192.168.1.3';");
+                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess\\_events`.*TO 'access'@'192.168.1.3';");
+                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess`.*TO 'access'@'192.168.1.3';");
+                Insert("GRANT ALL PRIVILEGES ON `access\\_ %`.*TO 'access'@'192.168.1.3';");
+
+                MessageBox.Show("User Accounts Created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
     }
 }

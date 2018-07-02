@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.createSlaveAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +86,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printToolStripMenuItem,
-            this.setIPToolStripMenuItem});
+            this.setIPToolStripMenuItem,
+            this.createSlaveAccountToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -93,7 +95,7 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
@@ -103,20 +105,20 @@
             this.localhostToolStripMenuItem,
             this.toolStripMenuItem2});
             this.setIPToolStripMenuItem.Name = "setIPToolStripMenuItem";
-            this.setIPToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.setIPToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.setIPToolStripMenuItem.Text = "Set IP";
             // 
             // localhostToolStripMenuItem
             // 
             this.localhostToolStripMenuItem.Name = "localhostToolStripMenuItem";
-            this.localhostToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.localhostToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.localhostToolStripMenuItem.Text = "localhost";
             this.localhostToolStripMenuItem.Click += new System.EventHandler(this.localhostToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem2.Text = "192.168.1.4";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -173,6 +175,13 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // createSlaveAccountToolStripMenuItem
+            // 
+            this.createSlaveAccountToolStripMenuItem.Name = "createSlaveAccountToolStripMenuItem";
+            this.createSlaveAccountToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.createSlaveAccountToolStripMenuItem.Text = "Create Slave Account";
+            this.createSlaveAccountToolStripMenuItem.Click += new System.EventHandler(this.createSlaveAccountToolStripMenuItem_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,5 +222,6 @@
         private Windows.Forms.ToolStripMenuItem setIPToolStripMenuItem;
         private Windows.Forms.ToolStripMenuItem localhostToolStripMenuItem;
         private Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private Windows.Forms.ToolStripMenuItem createSlaveAccountToolStripMenuItem;
     }
 }
