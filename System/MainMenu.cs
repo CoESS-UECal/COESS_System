@@ -32,7 +32,7 @@ namespace System
         bool coess_eventsdb;
         string coess = "coess";
         string coess_events = "coess_events";
-
+        
         public void checkdb(string ID, string check)
         {
             string query = "show databases like '" + ID + "';";
