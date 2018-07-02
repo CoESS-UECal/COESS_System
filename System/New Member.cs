@@ -163,6 +163,8 @@ namespace System
                 Comm.Text = null;
                 GuardName.Text = null;
                 GuardContact.Text = null;
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
                 if (DialogResult.Yes == MessageBox.Show("New Member Registered!\n\nWould you like to go back?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     Form members = new Members();
@@ -194,7 +196,7 @@ In addition, I am likewise giving my consent / permission in favor of my parents
         private void Bday_ValueChanged(object sender, EventArgs e)
         {
             int age;
-            if((DateTime.Now.Month - Bday.Value.Month >= 0)&& (DateTime.Now.Day - Bday.Value.Day >= 0))
+            if((DateTime.Now.Month - Bday.Value.Month >= 0)&& (DateTime.Now.DayOfYear - Bday.Value.DayOfYear >= 0))
             {
                 age = DateTime.Now.Year - Bday.Value.Year;
             }
