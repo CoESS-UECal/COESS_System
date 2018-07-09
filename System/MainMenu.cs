@@ -30,17 +30,27 @@ namespace System
         int user_accounts;
         bool coessdb;
         bool coess_eventsdb;
+        bool report_table;
         string coess = "coess";
         string coess_events = "coess_events";
-        
+        string reporttable = "report_table_1";
+        CrystalReport2 report = new CrystalReport2();
         public void checkdb(string ID, string check)
         {
             string query = "show databases like '" + ID + "';";
+            MySqlCommand command;
             if (MainMenu.OpenConnection())
             {
                 try
                 {
-                    MySqlCommand command = new MySqlCommand(query, MainMenu.conn);
+                    if (ID == "report_table_1")
+                    {
+                        command = new MySqlCommand("show tables where tables_in_coess = 'report_table_1';", MainMenu.conn);
+                    }
+                    else
+                    {
+                        command = new MySqlCommand(query, MainMenu.conn);
+                    }
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -53,6 +63,10 @@ namespace System
                             if (check == "coess_events")
                             {
                                 coess_eventsdb = true;
+                            }
+                            if (check == "report_table_1")
+                            {
+                                report_table = true;
                             }
                         }
 
@@ -182,6 +196,43 @@ namespace System
             }
         }
 
+        public void Populate_ListView(string myquery)
+        {
+            listView1.Items.Clear();
+            ListViewItem iItem;
+            string query = myquery;
+            if (MainMenu.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[2].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[3].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[4].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[5].ToString(), true));
+
+                        listView1.Items.Add(iItem);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    MainMenu.CloseConnection();
+                }
+                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+        }
+
         private void imageLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Always put all Images in C:\\COESS\\Images\\.\nThank You.","Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -289,6 +340,81 @@ namespace System
                 MessageBox.Show("User Accounts Created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+        }
+
+        private void exportDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            crystalReportViewer1.ReportSource = report;
+            if (isMaster == true)
+            {
+                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+            }
+            else
+            {
+                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
+            }
+            checkdb("report_table_1", reporttable);
+            if (!report_table)
+            {
+                if (isMaster == true)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
+                }
+                Insert("create table report_table_1 (First varchar(255) not null, Middle varchar(255) not null, Last varchar(255) not null,Year_Level varchar(255) not null, Contact_Number varchar(255) not null, Email varchar(255) not null);");
+                Insert("Delete from report_table_1;");
+
+                Populate_ListView("Select fn,mi,ln,year_level,contact_no,email from member_list;");
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    string ln, mi, fn, yr, con, email, gen;
+                    fn = item.SubItems[0].Text;
+                    mi = item.SubItems[1].Text;
+                    ln = item.SubItems[2].Text;
+                    yr = item.SubItems[3].Text;
+                    con = item.SubItems[4].Text;
+                    email = item.SubItems[5].Text;
+                    Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + con + "','" + email + "');");
+                }
+
+                crystalReportViewer1.RefreshReport();
+                crystalReportViewer1.ExportReport();
+                Insert("Delete from report_table_1;");
+            }
+            else
+            {
+                if (isMaster == true)
+                {
+                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                }
+                else
+                {
+                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
+                }
+                Insert("Delete from report_table_1;");
+
+                Populate_ListView("Select fn,mi,ln,year_level,contact_no,email from member_list;");
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    string ln, mi, fn, yr, con, email, gen;
+                    fn = item.SubItems[0].Text;
+                    mi = item.SubItems[1].Text;
+                    ln = item.SubItems[2].Text;
+                    yr = item.SubItems[3].Text;
+                    con = item.SubItems[4].Text;
+                    email = item.SubItems[5].Text;
+                    Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + con + "','" + email + "');");
+                }
+
+                crystalReportViewer1.RefreshReport();
+                crystalReportViewer1.ExportReport();
+                Insert("Delete from report_table_1;");
+
+            }
+
         }
     }
 }

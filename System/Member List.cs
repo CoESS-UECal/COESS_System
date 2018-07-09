@@ -163,7 +163,7 @@ namespace System
         public void countold() //count old member
         {
            
-            string query = "Select count(membership) from member_list where Membership = '0oJH9mE2Sm4='";
+            string query = "Select count(membership) from member_list where Membership = '0oJH9mE2Sm4=';";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -172,7 +172,7 @@ namespace System
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                       string value = EnCryptDecrypt.CryptorEngine.Decrypt(reader[0].ToString(), true);
+                        MessageBox.Show(reader[0].ToString() + " old members.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (MySqlException ex)
@@ -271,6 +271,11 @@ namespace System
             countold();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBox6_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             GeneralEdit.data = textBox6.Text;
@@ -318,14 +323,16 @@ namespace System
                 string oldimage = pictureBox1.ImageLocation;
                 filename = openFileDialog1.SafeFileName;
                 pickedImage = openFileDialog1.FileName;
-                pictureBox1.ImageLocation = pickedImage;
+                //pictureBox1.ImageLocation = pickedImage;
+                pictureBox1.BackgroundImage =Image.FromFile(location + filename);
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     Updated("ID_Address", location + filename, idnumber);
                 }
                 else
                 {
-                    pictureBox1.ImageLocation = oldimage;
+                    // pictureBox1.ImageLocation = oldimage;
+                    pictureBox1.BackgroundImage = Image.FromFile(oldimage);
                 }
             }
         }
