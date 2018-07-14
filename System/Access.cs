@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +10,11 @@ using System.Windows.Forms;
 
 namespace System
 {
-    public partial class Login : Form
+    public partial class Access : Form
     {
-        string password = "CPE1";
+        string password = "Access";
         int tries = 3;
-        public Login()
+        public Access()
         {
             InitializeComponent();
         }
@@ -24,26 +23,26 @@ namespace System
         {
             if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == password)
             {
-                Form form1 = new MainMenu();
-                form1.Show();
-                this.Hide();
+                access = true;
+                Close();
             }
-            
-                else if (tries >= 1)
-                {
-                    tries--;
-                    MessageBox.Show("Invalid Username/Password\nNumber of Tries Left :" + tries.ToString());
-                    if (tries == 0)
-                    {
-                        MessageBox.Show("Application Closing\nUsername/Password Error");
-                        Application.Exit();
-                    }
-                }
-            
-        }
 
-        private void Login_Load(object sender, EventArgs e)
+            else if (tries >= 1)
+            {
+                tries--;
+                MessageBox.Show("Invalid Username/Password\nNumber of Tries Left :" + tries.ToString());
+                if (tries == 0)
+                {
+                    MessageBox.Show("Access Denied\nUsername/Password Error");
+                    Close();
+                }
+            }
+
+        }
+        public static bool access;
+        private void Access_Load(object sender, EventArgs e)
         {
+            access = false;
             Loginbutton.Enabled = false;
         }
 
@@ -73,20 +72,10 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes==MessageBox.Show("Do you want to quit?","Information",MessageBoxButtons.YesNo,MessageBoxIcon.Information))
+            if (DialogResult.Yes == MessageBox.Show("Do you want to go back?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
-                Application.Exit();
+                Close();
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

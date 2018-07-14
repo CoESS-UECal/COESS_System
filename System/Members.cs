@@ -36,9 +36,14 @@ namespace System
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form memberlist = new Member_List();
+            Form access = new Access();
+            access.ShowDialog();
+            if(Access.access)
+            {
+             Form memberlist = new Member_List();
             memberlist.Show();
             Close();
+            }
         }
     }
 }

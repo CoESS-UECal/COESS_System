@@ -276,8 +276,13 @@ namespace System
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form report = new Report_Form();
-            report.Show();
+            Form access = new Access();
+            access.ShowDialog();
+            if (Access.access)
+            {
+                Form report = new Report_Form();
+                report.Show(); 
+            }
         }
 
         private void localhostToolStripMenuItem_Click(object sender, EventArgs e)
@@ -344,18 +349,11 @@ namespace System
 
         private void exportDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            crystalReportViewer1.ReportSource = report;
-            if (isMaster == true)
+            Form access = new Access();
+            access.ShowDialog();
+            if (Access.access)
             {
-                MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
-            }
-            else
-            {
-                MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
-            }
-            checkdb("report_table_1", reporttable);
-            if (!report_table)
-            {
+                crystalReportViewer1.ReportSource = report;
                 if (isMaster == true)
                 {
                     MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
@@ -364,57 +362,73 @@ namespace System
                 {
                     MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                 }
-                Insert("create table report_table_1 (First varchar(255) not null, Middle varchar(255) not null, Last varchar(255) not null,Year_Level varchar(255) not null, Contact_Number varchar(255) not null, Email varchar(255) not null);");
-                Insert("Delete from report_table_1;");
-
-                Populate_ListView("Select fn,mi,ln,year_level,contact_no,email from member_list;");
-                foreach (ListViewItem item in listView1.Items)
+                checkdb("report_table_1", reporttable);
+                if (!report_table)
                 {
-                    string ln, mi, fn, yr, con, email, gen;
-                    fn = item.SubItems[0].Text;
-                    mi = item.SubItems[1].Text;
-                    ln = item.SubItems[2].Text;
-                    yr = item.SubItems[3].Text;
-                    con = item.SubItems[4].Text;
-                    email = item.SubItems[5].Text;
-                    Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + con + "','" + email + "');");
-                }
+                    if (isMaster == true)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                    }
+                    else
+                    {
+                        MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
+                    }
+                    Insert("create table report_table_1 (First varchar(255) not null, Middle varchar(255) not null, Last varchar(255) not null,Year_Level varchar(255) not null, Contact_Number varchar(255) not null, Email varchar(255) not null);");
+                    Insert("Delete from report_table_1;");
 
-                crystalReportViewer1.RefreshReport();
-                crystalReportViewer1.ExportReport();
-                Insert("Delete from report_table_1;");
-            }
-            else
-            {
-                if (isMaster == true)
-                {
-                    MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                    Populate_ListView("Select fn,mi,ln,year_level,contact_no,email from member_list;");
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        string ln, mi, fn, yr, con, email, gen;
+                        fn = item.SubItems[0].Text;
+                        mi = item.SubItems[1].Text;
+                        ln = item.SubItems[2].Text;
+                        yr = item.SubItems[3].Text;
+                        con = item.SubItems[4].Text;
+                        email = item.SubItems[5].Text;
+                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + con + "','" + email + "');");
+                    }
+
+                    crystalReportViewer1.RefreshReport();
+                    crystalReportViewer1.ExportReport();
+                    Insert("Delete from report_table_1;");
                 }
                 else
                 {
-                    MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
+                    if (isMaster == true)
+                    {
+                        MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                    }
+                    else
+                    {
+                        MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
+                    }
+                    Insert("Delete from report_table_1;");
+
+                    Populate_ListView("Select fn,mi,ln,year_level,contact_no,email from member_list;");
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        string ln, mi, fn, yr, con, email, gen;
+                        fn = item.SubItems[0].Text;
+                        mi = item.SubItems[1].Text;
+                        ln = item.SubItems[2].Text;
+                        yr = item.SubItems[3].Text;
+                        con = item.SubItems[4].Text;
+                        email = item.SubItems[5].Text;
+                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + con + "','" + email + "');");
+                    }
+
+                    crystalReportViewer1.RefreshReport();
+                    crystalReportViewer1.ExportReport();
+                    Insert("Delete from report_table_1;");
+
                 }
-                Insert("Delete from report_table_1;");
-
-                Populate_ListView("Select fn,mi,ln,year_level,contact_no,email from member_list;");
-                foreach (ListViewItem item in listView1.Items)
-                {
-                    string ln, mi, fn, yr, con, email, gen;
-                    fn = item.SubItems[0].Text;
-                    mi = item.SubItems[1].Text;
-                    ln = item.SubItems[2].Text;
-                    yr = item.SubItems[3].Text;
-                    con = item.SubItems[4].Text;
-                    email = item.SubItems[5].Text;
-                    Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + con + "','" + email + "');");
-                }
-
-                crystalReportViewer1.RefreshReport();
-                crystalReportViewer1.ExportReport();
-                Insert("Delete from report_table_1;");
-
             }
+        }
 
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dev Mode to be Added");
         }
     }
 }
