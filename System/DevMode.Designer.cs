@@ -1,6 +1,6 @@
 ﻿namespace System
 {
-    partial class Member_List
+    partial class DevMode
     {
         /// <summary>
         /// Required designer variable.

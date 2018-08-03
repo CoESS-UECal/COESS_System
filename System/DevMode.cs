@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace System
 {
-    public partial class Member_List : Form
+    public partial class DevMode : Form
     {
-        public Member_List()
+        public DevMode()
         {
             InitializeComponent();
             if (MainMenu.isMaster == true)
