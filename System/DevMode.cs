@@ -345,7 +345,7 @@ namespace System
         {
             foreach(ListViewItem item in listView1.SelectedItems)
             {
-                idnumber = item.SubItems[0].Text;
+                Member_List.idnumber = item.SubItems[0].Text;
                 LMI(item.SubItems[0].Text);
                 
             }
