@@ -117,6 +117,10 @@ namespace System
                         textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"),true);
                         textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"),true);
                         textBox7.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Age"), true);
+                        textBox8.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("SN"), true);
+                        textBox9.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Comm"), true);
+                        textBox10.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Membership"), true);
+                        textBox11.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("BDay"), true);
                         Image dump = pictureBox1.BackgroundImage;
                         if (dump != null)
                             dump.Dispose();

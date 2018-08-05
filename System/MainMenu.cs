@@ -428,7 +428,19 @@ namespace System
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("Dev Mode to be Added");
+            Form access = new Access();
+            access.ShowDialog();
+            if (Access.access)
+            {
+                Form devmode = new DevMode();
+                devmode.Show();
+                Close();
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
