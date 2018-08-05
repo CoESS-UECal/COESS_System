@@ -196,6 +196,7 @@
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(70, 25);
             this.textBox7.TabIndex = 26;
+            this.textBox7.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox7_MouseDoubleClick);
             // 
             // label8
             // 
@@ -416,6 +417,7 @@
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(223, 25);
             this.textBox8.TabIndex = 28;
+            this.textBox8.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox8_MouseDoubleClick);
             // 
             // label9
             // 
@@ -437,6 +439,7 @@
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(266, 25);
             this.textBox9.TabIndex = 30;
+            this.textBox9.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox9_MouseDoubleClick);
             // 
             // label10
             // 
@@ -458,6 +461,7 @@
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(101, 25);
             this.textBox10.TabIndex = 32;
+            this.textBox10.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox10_MouseDoubleClick);
             // 
             // label11
             // 
@@ -479,6 +483,7 @@
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(97, 25);
             this.textBox11.TabIndex = 34;
+            this.textBox11.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox11_DoubleClick);
             // 
             // label12
             // 

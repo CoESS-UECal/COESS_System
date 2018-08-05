@@ -285,6 +285,52 @@ namespace System
             listView1.Sort();
         }
 
+
+        private void textBox11_DoubleClick(object sender, MouseEventArgs e)
+        {
+            GeneralEdit.data = textBox11.Text;
+            GeneralEdit.col = "BDay";
+            Form form1 = new GeneralEdit();
+            form1.ShowDialog();
+            textBox11.Text = GeneralEdit.data;
+        }
+
+        private void textBox10_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            GeneralEdit.data = textBox10.Text;
+            GeneralEdit.col = "Membership";
+            Form form1 = new GeneralEdit();
+            form1.ShowDialog();
+            textBox10.Text = GeneralEdit.data;
+        }
+
+        private void textBox7_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            GeneralEdit.data = textBox7.Text;
+            GeneralEdit.col = "Age";
+            Form form1 = new GeneralEdit();
+            form1.ShowDialog();
+            textBox7.Text = GeneralEdit.data;
+        }
+
+        private void textBox8_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            GeneralEdit.data = textBox8.Text;
+            GeneralEdit.col = "SN";
+            Form form1 = new GeneralEdit();
+            form1.ShowDialog();
+            textBox8.Text = GeneralEdit.data;
+        }
+
+        private void textBox9_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            GeneralEdit.data = textBox8.Text;
+            GeneralEdit.col = "Comm";
+            Form form1 = new GeneralEdit();
+            form1.ShowDialog();
+            textBox9.Text = GeneralEdit.data;
+        }
+
         private void textBox6_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             GeneralEdit.data = textBox6.Text;
