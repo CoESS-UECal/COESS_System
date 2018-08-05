@@ -107,9 +107,9 @@ namespace System
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
-                        firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true);
-                        mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true);
+                        Member_List.lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
+                        Member_List.firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true);
+                        Member_List.mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true);
                         textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
                         textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"),true);
                         textBox3.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"),true);
