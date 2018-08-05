@@ -324,7 +324,7 @@ namespace System
 
         private void textBox9_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox8.Text;
+            GeneralEdit.data = textBox9.Text;
             GeneralEdit.col = "Comm";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
