@@ -242,7 +242,7 @@ namespace System
         {
             Form form1 = new NameEdit();
             form1.ShowDialog();
-            textBox1.Text = fullname;
+            textBox1.Text = Member_List.fullname;
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
