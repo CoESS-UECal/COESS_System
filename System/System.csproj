@@ -158,6 +158,7 @@
     <Compile Include="GeneralEdit.Designer.cs">
       <DependentUpon>GeneralEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListViewSort.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

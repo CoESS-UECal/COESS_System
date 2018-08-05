@@ -180,9 +180,11 @@
             this.listView2.Location = new System.Drawing.Point(0, 18);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(200, 176);
+            this.listView2.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView2.TabIndex = 1;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView2_ColumnClick);
             // 
             // columnHeader4
             // 
