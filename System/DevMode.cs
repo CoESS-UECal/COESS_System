@@ -121,6 +121,7 @@ namespace System
                         textBox9.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Comm"), true);
                         textBox10.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Membership"), true);
                         textBox11.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("BDay"), true);
+                       // MessageBox.Show(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Email"), true));
                         Image dump = pictureBox1.BackgroundImage;
                         if (dump != null)
                             dump.Dispose();

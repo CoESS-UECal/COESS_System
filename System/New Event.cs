@@ -84,9 +84,15 @@ namespace System
             openFileDialog1.Filter = "JPEG Images|*.jpg|GIF Images|*.gif|BITMAPS|*.bmp|TIFF Images|*.tif|PNG Images|*.png|All Files|*.*";
             if (openFileDialog1.ShowDialog() != DialogResult.Cancel)
             {
-                fileName = openFileDialog1.SafeFileName;
-                pickedImage = openFileDialog1.FileName;
-                event_pubmat.BackgroundImage = Image.FromFile(pickedImage);
+                imageList1.Dispose();
+                imageList1.Images.Clear();
+                string file1 = openFileDialog1.SafeFileName;
+                
+                fileName = openFileDialog1.FileName;
+                MessageBox.Show(fileName);
+                Image pickedImage = Image.FromFile(fileName);
+                imageList1.Images.Add(pickedImage);
+                event_pubmat.BackgroundImage = imageList1.Images[0];
                 event_pubmat.BackgroundImageLayout = ImageLayout.Stretch;
             }
         }

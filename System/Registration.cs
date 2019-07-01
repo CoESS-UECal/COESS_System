@@ -44,6 +44,10 @@ namespace System
                         {
                             duplicate = true;
                         }
+                        else
+                        {
+                            duplicate = false;
+                        }
                     }
                 }
                 catch (MySqlException ex)
