@@ -123,15 +123,15 @@
             // localhostToolStripMenuItem
             // 
             this.localhostToolStripMenuItem.Name = "localhostToolStripMenuItem";
-            this.localhostToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.localhostToolStripMenuItem.Text = "localhost";
+            this.localhostToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.localhostToolStripMenuItem.Text = "Master";
             this.localhostToolStripMenuItem.Click += new System.EventHandler(this.localhostToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
-            this.toolStripMenuItem2.Text = "192.168.1.4";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Text = "Slave";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // createSlaveAccountToolStripMenuItem

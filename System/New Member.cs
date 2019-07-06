@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,31 @@ namespace System
 {
     public partial class New_Member : Form
     {
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern bool EnableMenuItem(IntPtr hMenu, uint uIDEnableItem,
+        uint uEnable);
+
+        private const int SC_CLOSE = 0xF060;
+        private const int MF_BYCOMMAND = 0x0;
+        private const int MF_GRAYED = 0x1;
+        private const int MF_ENABLED = 0x0;
+
+        private void DisableCloseButton(Form form)
+        {
+            try
+            {
+                EnableMenuItem(GetSystemMenu(form.Handle, false),
+                           SC_CLOSE, MF_BYCOMMAND | MF_GRAYED);
+            }
+            catch (Exception /*ex*/)
+            {
+                //System.Console.WriteLine(ex.Message);
+            }
+        }
+
         public New_Member()
         {
             InitializeComponent();
@@ -24,13 +50,16 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
+
         string membership_type;
+
         private void button2_Click(object sender, EventArgs e)
         {
                 Form members = new Members();
                 members.Show();
                 Close();
         }
+
         public string requirements()
         {
             //SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address
@@ -182,14 +211,19 @@ namespace System
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (DialogResult.OK == MessageBox.Show(
-                @"I am fully aware that CoESS or its designated representative is duty bound and obligated under the Data Privacy Act of 2012 to protect all my personal and sensitive information that it collects, processes, and retains upon my enrolment and during my stay in the University.\n\n
-Student personal information includes any information about my identity, academics, medical conditions, or any documents containing my identity.This includes but not limited to my name, address, names of my parents or guardians, date of birth, grades, attendance, disciplinary records, and other information necessary for basic administration and instruction.\n\n
-I understand that my personal information cannot be disclosed without my consent.\nI understand that the information that was collected and processed relates to my enrolment and to be used by CoESS to pursue its legitimate interests as an educational institution.\nLikewise, I am fully aware that CoESS may share such information to affiliated or partner organizations as part of its contractual obligations, or with government agencies pursuant to law or legal processes.\nIn this regard, I hereby allow CoESS to collect, process, use and share my personal data in the pursuit of its legitimate interests as an educational institution.\n\n
-In addition, I am likewise giving my consent / permission in favor of my parents / guardian / representative or whoever is responsible in providing care for me to access, verify, examine and or inspect my academic and scholastic records, school fees / accounts in the University, the result of my physical medical examination(PME) and all matters that relate to my status as a student of the University.\n\n
-     Finally, should I commit any misconduct or should there be a complaint filed against me, before the Student Affairs Office(SAO) or Student Disciplinary Board(SDB) by reason of violation of the provisions of the Student Manual or any laws or ordinances, I hereby authorize and give my full consent in favor of the University to inform my parents, guardian, representative or whoever person is in charge of providing care or custody for me.\n\n
-  Upon clicking OK, I hereby give my consent for the processing, release, and retention of personal information."))
+                "I am fully aware that CoESS or its designated representative is duty bound and obligated under the Data Privacy Act of 2012 to protect all my personal and sensitive information that it collects, processes, and retains upon my enrolment and during my stay in the University.\n\n" +
+                "Student personal information includes any information about my identity, academics, medical conditions, or any documents containing my identity.This includes but not limited to my name, address, names of my parents or guardians, date of birth, grades, attendance, disciplinary records, and other information necessary for basic administration and instruction.\n\n" +
+                "I understand that my personal information cannot be disclosed without my consent.\n\nI understand that the information that was collected and processed relates to my enrolment and to be used by CoESS to pursue its legitimate interests as an educational institution.\n\nLikewise, I am fully aware that CoESS may share such information to affiliated or partner organizations" +
+                "as part of its contractual obligations, or with government agencies pursuant to law or legal processes.\n\nIn this regard, I hereby allow CoESS to collect, process, use and share my personal data in the pursuit of its legitimate interests as an educational institution.\n\n" +
+                "In addition, I am likewise giving my consent / permission in favor of my parents / guardian / representative or whoever is responsible in providing care for me to access, verify, examine and or inspect my academic and scholastic records, school fees / accounts in the University, the result of my physical medical examination(PME) and all matters that relate to my status as a student of the University.\n\n" +
+                "Finally, should I commit any misconduct or should there be a complaint filed against me, before the Student Affairs Office(SAO) or Student Disciplinary Board(SDB) by reason of violation of the provisions of the Student Manual or any laws or ordinances, I hereby authorize and give my full consent in favor of the University to inform my parents, guardian, representative or whoever person is in charge of providing care or custody for me.\n\n" +
+                "Upon clicking OK, I hereby give my consent for the processing, release, and retention of personal information.", "Data Privacy Act of 2012", MessageBoxButtons.OKCancel))
             {
                 checkBox1.Checked = true;
+            }
+            else
+            {
+                checkBox1.Checked = false;
             }
         }
 
