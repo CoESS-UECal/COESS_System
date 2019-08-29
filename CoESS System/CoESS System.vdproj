@@ -2615,15 +2615,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CoESS System"
-        "ProductCode" = "8:{4870CD6F-0A5E-4468-AE05-1419B7AC05BF}"
-        "PackageCode" = "8:{B19C4421-9A60-4F96-BD39-19E7024707E0}"
+        "ProductCode" = "8:{217A6852-E521-447E-BD7B-CBEB525AFB17}"
+        "PackageCode" = "8:{BDFF29BA-0A72-4BB7-952B-605A5194424F}"
         "UpgradeCode" = "8:{227C4AA7-4531-4682-8EF8-419A86EF44D1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.9"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:CoESS - UE CALOOCAN"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -3175,7 +3175,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_23173238DED848C4B48C6012A4FC318D"
             {
-            "SourcePath" = "8:..\\System\\obj\\x86\\Release\\System.exe"
+            "SourcePath" = "8:..\\System\\obj\\x86\\Debug\\System.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D501166DCBF143ED851343C0B57688B6"

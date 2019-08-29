@@ -45,14 +45,18 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ln = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.year = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.guard_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.guard_contact = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bday = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +103,8 @@
             this.printToolStripMenuItem,
             this.setIPToolStripMenuItem,
             this.createSlaveAccountToolStripMenuItem,
-            this.exportDatabaseToolStripMenuItem});
+            this.exportDatabaseToolStripMenuItem,
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -107,7 +112,7 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
@@ -117,34 +122,34 @@
             this.localhostToolStripMenuItem,
             this.toolStripMenuItem2});
             this.setIPToolStripMenuItem.Name = "setIPToolStripMenuItem";
-            this.setIPToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.setIPToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.setIPToolStripMenuItem.Text = "Set IP";
             // 
             // localhostToolStripMenuItem
             // 
             this.localhostToolStripMenuItem.Name = "localhostToolStripMenuItem";
-            this.localhostToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.localhostToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.localhostToolStripMenuItem.Text = "Master";
             this.localhostToolStripMenuItem.Click += new System.EventHandler(this.localhostToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
             this.toolStripMenuItem2.Text = "Slave";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // createSlaveAccountToolStripMenuItem
             // 
             this.createSlaveAccountToolStripMenuItem.Name = "createSlaveAccountToolStripMenuItem";
-            this.createSlaveAccountToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.createSlaveAccountToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.createSlaveAccountToolStripMenuItem.Text = "Create Slave Account";
             this.createSlaveAccountToolStripMenuItem.Click += new System.EventHandler(this.createSlaveAccountToolStripMenuItem_Click);
             // 
             // exportDatabaseToolStripMenuItem
             // 
             this.exportDatabaseToolStripMenuItem.Name = "exportDatabaseToolStripMenuItem";
-            this.exportDatabaseToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.exportDatabaseToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.exportDatabaseToolStripMenuItem.Text = "Export Database";
             this.exportDatabaseToolStripMenuItem.Click += new System.EventHandler(this.exportDatabaseToolStripMenuItem_Click);
             // 
@@ -204,42 +209,58 @@
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
+            this.fn,
+            this.mi,
+            this.ln,
+            this.year,
+            this.sn,
+            this.guard_name,
+            this.guard_contact,
+            this.address,
+            this.bday});
             this.listView1.Location = new System.Drawing.Point(547, 471);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(121, 97);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.Visible = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // fn
             // 
-            this.columnHeader1.Text = "fn";
+            this.fn.Text = "fn";
             // 
-            // columnHeader2
+            // mi
             // 
-            this.columnHeader2.Text = "mi";
+            this.mi.Text = "mi";
             // 
-            // columnHeader3
+            // ln
             // 
-            this.columnHeader3.Text = "ln";
+            this.ln.Text = "ln";
             // 
-            // columnHeader5
+            // year
             // 
-            this.columnHeader5.Text = "year";
+            this.year.Text = "year";
             // 
-            // columnHeader6
+            // sn
             // 
-            this.columnHeader6.Text = "con";
+            this.sn.Text = "sn";
             // 
-            // columnHeader7
+            // guard_name
             // 
-            this.columnHeader7.Text = "email";
+            this.guard_name.Text = "guard_name";
+            // 
+            // guard_contact
+            // 
+            this.guard_contact.Text = "guard_contact";
+            // 
+            // address
+            // 
+            this.address.Text = "address";
+            // 
+            // bday
+            // 
+            this.bday.Text = "bday";
             // 
             // crystalReportViewer1
             // 
@@ -271,6 +292,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
+            // 
+            // convertPlaintextCSVToEncryptedCSVToolStripMenuItem
+            // 
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Name = "convertPlaintextCSVToEncryptedCSVToolStripMenuItem";
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Text = "Convert Plaintext CSV to EncryptedCSV";
             // 
             // MainMenu
             // 
@@ -319,13 +346,17 @@
         private Windows.Forms.ToolStripMenuItem createSlaveAccountToolStripMenuItem;
         private Windows.Forms.ToolStripMenuItem exportDatabaseToolStripMenuItem;
         private Windows.Forms.ListView listView1;
-        private Windows.Forms.ColumnHeader columnHeader1;
-        private Windows.Forms.ColumnHeader columnHeader2;
-        private Windows.Forms.ColumnHeader columnHeader3;
-        private Windows.Forms.ColumnHeader columnHeader5;
-        private Windows.Forms.ColumnHeader columnHeader6;
-        private Windows.Forms.ColumnHeader columnHeader7;
+        private Windows.Forms.ColumnHeader fn;
+        private Windows.Forms.ColumnHeader mi;
+        private Windows.Forms.ColumnHeader ln;
+        private Windows.Forms.ColumnHeader year;
+        private Windows.Forms.ColumnHeader sn;
+        private Windows.Forms.ColumnHeader guard_name;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private Windows.Forms.PictureBox pictureBox1;
+        private Windows.Forms.ColumnHeader guard_contact;
+        private Windows.Forms.ColumnHeader address;
+        private Windows.Forms.ColumnHeader bday;
+        private Windows.Forms.ToolStripMenuItem convertPlaintextCSVToEncryptedCSVToolStripMenuItem;
     }
 }

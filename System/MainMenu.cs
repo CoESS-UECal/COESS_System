@@ -215,7 +215,9 @@ namespace System
                         iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[3].ToString(), true));
                         iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[4].ToString(), true));
                         iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[5].ToString(), true));
-
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[6].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[7].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[8].ToString(), true));
                         listView1.Items.Add(iItem);
 
                     }
@@ -373,20 +375,23 @@ namespace System
                     {
                         MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                     }
-                    Insert("create table report_table_1 (First varchar(255) not null, Middle varchar(255) not null, Last varchar(255) not null,Year_Level varchar(255) not null, Contact_Number varchar(255) not null, Email varchar(255) not null);");
+                    Insert("create table report_table_1 (First varchar(255) not null, Middle varchar(255) not null, Last varchar(255) not null,Year_Level varchar(255) not null, SN varchar(255) not null, Guardian_Name varchar(255) not null, `Guardian_Contact` VARCHAR(255) NOT NULL,address varchar(255) not null,bday varchar(255) not null);");
                     Insert("Delete from report_table_1;");
 
-                    Populate_ListView("Select fn,mi,ln,year_level,contact_no,email from member_list;");
+                    Populate_ListView("Select fn,mi,ln,year_level,SN,Guard_name,Guard_contact,address,bday from member_list;");
                     foreach (ListViewItem item in listView1.Items)
                     {
-                        string ln, mi, fn, yr, con, email, gen;
+                        string ln, mi, fn, yr, sn, guard_name, guard_contact, address, bday;
                         fn = item.SubItems[0].Text;
                         mi = item.SubItems[1].Text;
                         ln = item.SubItems[2].Text;
                         yr = item.SubItems[3].Text;
-                        con = item.SubItems[4].Text;
-                        email = item.SubItems[5].Text;
-                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + con + "','" + email + "');");
+                        sn = item.SubItems[4].Text;
+                        guard_name = item.SubItems[5].Text;
+                        guard_contact = item.SubItems[6].Text;
+                        address = item.SubItems[7].Text;
+                        bday = item.SubItems[8].Text;
+                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + sn + "','" + guard_name + "','" + guard_contact + "','"+address+"','"+bday+"');");
                     }
 
                     crystalReportViewer1.RefreshReport();
@@ -405,17 +410,20 @@ namespace System
                     }
                     Insert("Delete from report_table_1;");
 
-                    Populate_ListView("Select fn,mi,ln,year_level,contact_no,email from member_list;");
+                    Populate_ListView("Select fn,mi,ln,year_level,SN,Guard_name,Guard_contact,address,bday from member_list;");
                     foreach (ListViewItem item in listView1.Items)
                     {
-                        string ln, mi, fn, yr, con, email, gen;
+                        string ln, mi, fn, yr, sn, guard_name, guard_contact, address, bday;
                         fn = item.SubItems[0].Text;
                         mi = item.SubItems[1].Text;
                         ln = item.SubItems[2].Text;
                         yr = item.SubItems[3].Text;
-                        con = item.SubItems[4].Text;
-                        email = item.SubItems[5].Text;
-                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + con + "','" + email + "');");
+                        sn = item.SubItems[4].Text;
+                        guard_name = item.SubItems[5].Text;
+                        guard_contact = item.SubItems[6].Text;
+                        address = item.SubItems[7].Text;
+                        bday = item.SubItems[8].Text;
+                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + sn + "','" + guard_name + "','" + guard_contact + "','" + address + "','" + bday + "');");
                     }
 
                     crystalReportViewer1.RefreshReport();
@@ -439,6 +447,11 @@ namespace System
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

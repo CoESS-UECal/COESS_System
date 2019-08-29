@@ -31,7 +31,7 @@ namespace System
         string pickedImage = "";
         string location = @"C:\\COESS\\Images\\Pubmat\\";
         string fileName = "";
-
+        string file1;
         public static string finalevent;
         bool duplicate=false;
 
@@ -72,7 +72,7 @@ namespace System
             event_complete = EnCryptDecrypt.CryptorEngine.Encrypt(event_name.Text, true);
             event_complete = event_complete+"','"+ EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
             event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_location.Text), true);
-            event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(location + fileName, true);
+            event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(location + file1, true);
             return event_complete;
         }
 
@@ -86,11 +86,12 @@ namespace System
             {
                 imageList1.Dispose();
                 imageList1.Images.Clear();
-                string file1 = openFileDialog1.SafeFileName;
-                
+                file1 = openFileDialog1.SafeFileName;
+                //MessageBox.Show(file1);
                 fileName = openFileDialog1.FileName;
-                MessageBox.Show(fileName);
+                //MessageBox.Show(fileName);
                 Image pickedImage = Image.FromFile(fileName);
+
                 imageList1.Images.Add(pickedImage);
                 event_pubmat.BackgroundImage = imageList1.Images[0];
                 event_pubmat.BackgroundImageLayout = ImageLayout.Stretch;
@@ -121,7 +122,7 @@ namespace System
                     MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                 }
                 MainMenu.Insert("create table " + finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(255) not null, Year_Level varchar(255) null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
-                File.Copy(pickedImage, @"C:\\COESS\\Images\\Pubmat\\" + fileName);
+                File.Copy(fileName, @"C:\\COESS\\Images\\Pubmat\\" + file1);
                 event_name.Text = null;
                 event_location.Text = null;
                 event_date.Value = DateTime.Today;

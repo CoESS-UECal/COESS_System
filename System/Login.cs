@@ -45,6 +45,8 @@ namespace System
         private void Login_Load(object sender, EventArgs e)
         {
             Loginbutton.Enabled = false;
+            //MessageBox.Show(EnCryptDecrypt.CryptorEngine.Encrypt("20151163018", true));
+            //Clipboard.SetText(EnCryptDecrypt.CryptorEngine.Encrypt("20151163018", true));
         }
 
         private void UserBox_TextChanged(object sender, EventArgs e)
