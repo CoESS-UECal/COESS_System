@@ -230,6 +230,11 @@
     <Compile Include="New Member.Designer.cs">
       <DependentUpon>New Member.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QR_Camera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +314,11 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="QR_Camera.resx">
       <DependentUpon>QR_Camera.cs</DependentUpon>
@@ -348,8 +358,8 @@
   <ItemGroup>
     <Content Include="coess_old_logo_5b1_icon.ico" />
     <Content Include="Resources\Blank BG.png" />
-    <None Include="Resources\on.png" />
-    <None Include="Resources\off.png" />
+    <None Include="Resources\on_button.png" />
+    <None Include="Resources\off_button.png" />
     <None Include="Resources\register-button-small.png" />
     <None Include="Resources\register-button-new.png" />
     <None Include="Resources\members-list-button.png" />

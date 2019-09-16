@@ -336,7 +336,7 @@
             // connToggle
             // 
             this.connToggle.AutoSize = false;
-            this.connToggle.BackgroundImage = global::System.Properties.Resources.on;
+           // this.connToggle.BackgroundImage = global::System.Properties.Resources.on;
             this.connToggle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.connToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.connToggle.ImageTransparentColor = System.Drawing.Color.Magenta;
