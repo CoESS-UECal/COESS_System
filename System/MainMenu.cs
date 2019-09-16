@@ -21,7 +21,7 @@ namespace System
         //Database connection variables
         public static MySqlConnection conn;
         public static string myConnectionString;
-        public static bool isMaster = false;
+        public static bool isMaster = true;
 
         public MainMenu()
         {
@@ -463,7 +463,33 @@ namespace System
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            //connToggle.BackgroundImage = System.Properties.Resources.on
+            if(isMaster)
+            {
+                toolStripLabel3.BackgroundImage = System.Properties.Resources.on_button;
+                toolStripLabel2.Text = "Master";
+            }
+            else
+            {
+                toolStripLabel3.BackgroundImage = System.Properties.Resources.off_button;
+                toolStripLabel2.Text = "Slave";
+            }
+        }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+            if (!isMaster)
+            {
+                isMaster = true;
+                Initialize("server=localhost;user=root;sslmode=none;");
+                toolStripLabel3.BackgroundImage = System.Properties.Resources.on_button;
+                toolStripLabel2.Text = "Master";
+            }
+            else
+            {
+                toolStripLabel3.BackgroundImage = System.Properties.Resources.off_button;
+                isMaster = false;
+                toolStripLabel2.Text = "Slave";
+            }
         }
     }
 }

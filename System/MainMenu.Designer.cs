@@ -60,8 +60,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.connToggle = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -313,11 +313,11 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripSeparator1,
-            this.connToggle,
+            this.toolStripLabel3,
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 574);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(272, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(345, 25);
             this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -333,22 +333,20 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // connToggle
-            // 
-            this.connToggle.AutoSize = false;
-           // this.connToggle.BackgroundImage = global::System.Properties.Resources.on;
-            this.connToggle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.connToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.connToggle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.connToggle.Name = "connToggle";
-            this.connToggle.Size = new System.Drawing.Size(50, 22);
-            this.connToggle.Text = "toolStripButton1";
-            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(43, 22);
             this.toolStripLabel2.Text = "Master";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.AutoSize = false;
+            this.toolStripLabel3.BackgroundImage = global::System.Properties.Resources.on_button;
+            this.toolStripLabel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(50, 22);
+            this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
             // 
             // MainMenu
             // 
@@ -414,9 +412,9 @@
         private Windows.Forms.ColumnHeader bday;
         private Windows.Forms.ToolStripMenuItem convertPlaintextCSVToEncryptedCSVToolStripMenuItem;
         private Windows.Forms.ToolStrip toolStrip1;
-        private Windows.Forms.ToolStripButton connToggle;
         private Windows.Forms.ToolStripLabel toolStripLabel1;
         private Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private Windows.Forms.ToolStripLabel toolStripLabel2;
+        private Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }
