@@ -455,5 +455,15 @@ namespace System
         {
 
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            //connToggle.BackgroundImage = System.Properties.Resources.on
+        }
     }
 }

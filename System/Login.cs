@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace System
@@ -24,9 +17,11 @@ namespace System
         {
             if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == password)
             {
+                Process.Start(@"C:\xampp\mysql\bin\mysqld.exe");
                 Form form1 = new MainMenu();
                 form1.Show();
                 this.Hide();
+                
             }
             
                 else if (tries >= 1)

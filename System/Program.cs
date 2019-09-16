@@ -16,7 +16,7 @@ namespace System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QR_Camera());
+            Application.Run(new Login());
         }
     }
 }
