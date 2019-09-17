@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace System
@@ -17,7 +16,15 @@ namespace System
         {
             if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == Properties.Settings.Default.Password)
             {
-                Process.Start(@"C:\xampp\mysql\bin\mysqld.exe");
+                Process[] pname = Process.GetProcessesByName("mysqld");
+                if (pname.Length == 0)
+                {
+                    Process.Start(@"C:\xampp\mysql\bin\mysqld.exe");
+                }
+                else
+                {
+
+                }
                 Form form1 = new MainMenu();
                 form1.Show();
                 this.Hide();
