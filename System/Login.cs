@@ -6,7 +6,7 @@ namespace System
 {
     public partial class Login : Form
     {
-        string password = "CPE1";
+        
         int tries = 3;
         public Login()
         {
@@ -15,7 +15,7 @@ namespace System
 
         private void Loginbutton_Click(object sender, EventArgs e)
         {
-            if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == password)
+            if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == Properties.Settings.Default.Password)
             {
                 Process.Start(@"C:\xampp\mysql\bin\mysqld.exe");
                 Form form1 = new MainMenu();

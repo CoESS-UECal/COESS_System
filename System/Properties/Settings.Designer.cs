@@ -22,5 +22,29 @@ namespace System.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Alay Ka Na")]
+        public string Security_Key {
+            get {
+                return ((string)(this["Security_Key"]));
+            }
+            set {
+                this["Security_Key"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CPE1")]
+        public string Password {
+            get {
+                return ((string)(this["Password"]));
+            }
+            set {
+                this["Password"] = value;
+            }
+        }
     }
 }

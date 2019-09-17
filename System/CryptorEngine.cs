@@ -19,9 +19,9 @@ namespace EnCryptDecrypt
             byte[] keyArray;
             byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 
-            System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
+
             // Get the key from config file
-            string key = (string)settingsReader.GetValue("SecurityKey", typeof(String));
+            string key = System.Properties.Settings.Default.Security_Key;
             //System.Windows.Forms.MessageBox.Show(key);
             if (useHashing)
             {
@@ -53,10 +53,9 @@ namespace EnCryptDecrypt
             byte[] keyArray;
             byte[] toEncryptArray = Convert.FromBase64String(cipherString);
 
-            System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
             //Get your key from config file to open the lock!
-            string key = (string)settingsReader.GetValue("SecurityKey", typeof(String));
-            
+            string key = System.Properties.Settings.Default.Security_Key;
+
             if (useHashing)
             {
                 MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();

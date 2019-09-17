@@ -259,6 +259,7 @@
     <Compile Include="Report Form.Designer.cs">
       <DependentUpon>Report Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Splash_Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,7 +312,7 @@
     <EmbeddedResource Include="New Member.resx">
       <DependentUpon>New Member.cs</DependentUpon>
     </EmbeddedResource>
-        <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>

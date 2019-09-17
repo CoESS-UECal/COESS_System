@@ -35,9 +35,6 @@
             this.imageLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localhostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.createSlaveAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +57,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -107,7 +105,6 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printToolStripMenuItem,
-            this.setIPToolStripMenuItem,
             this.createSlaveAccountToolStripMenuItem,
             this.exportDatabaseToolStripMenuItem,
             this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem});
@@ -121,29 +118,6 @@
             this.printToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
-            // 
-            // setIPToolStripMenuItem
-            // 
-            this.setIPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.localhostToolStripMenuItem,
-            this.toolStripMenuItem2});
-            this.setIPToolStripMenuItem.Name = "setIPToolStripMenuItem";
-            this.setIPToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
-            this.setIPToolStripMenuItem.Text = "Set IP";
-            // 
-            // localhostToolStripMenuItem
-            // 
-            this.localhostToolStripMenuItem.Name = "localhostToolStripMenuItem";
-            this.localhostToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.localhostToolStripMenuItem.Text = "Master";
-            this.localhostToolStripMenuItem.Click += new System.EventHandler(this.localhostToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
-            this.toolStripMenuItem2.Text = "Slave";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // createSlaveAccountToolStripMenuItem
             // 
@@ -309,11 +283,13 @@
             // 
             this.toolStrip1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.White;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripSeparator1,
             this.toolStripLabel3,
+            this.toolStripLabel4,
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 574);
             this.toolStrip1.Name = "toolStrip1";
@@ -333,12 +309,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(43, 22);
-            this.toolStripLabel2.Text = "Master";
-            // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.AutoSize = false;
@@ -347,6 +317,19 @@
             this.toolStripLabel3.Name = "toolStripLabel3";
             this.toolStripLabel3.Size = new System.Drawing.Size(50, 22);
             this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.BackColor = System.Drawing.Color.White;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(43, 22);
+            this.toolStripLabel2.Text = "Master";
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(13, 22);
+            this.toolStripLabel4.Text = "  ";
             // 
             // MainMenu
             // 
@@ -393,9 +376,6 @@
         private Windows.Forms.Button button4;
         private Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private Windows.Forms.ToolStripMenuItem setIPToolStripMenuItem;
-        private Windows.Forms.ToolStripMenuItem localhostToolStripMenuItem;
-        private Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private Windows.Forms.ToolStripMenuItem createSlaveAccountToolStripMenuItem;
         private Windows.Forms.ToolStripMenuItem exportDatabaseToolStripMenuItem;
         private Windows.Forms.ListView listView1;
@@ -416,5 +396,6 @@
         private Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private Windows.Forms.ToolStripLabel toolStripLabel2;
         private Windows.Forms.ToolStripLabel toolStripLabel3;
+        private Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }
