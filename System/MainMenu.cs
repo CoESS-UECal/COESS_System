@@ -491,5 +491,15 @@ namespace System
                 toolStripLabel2.Text = "Slave";
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripLabel5.Text = "Today is "+DateTime.Now.ToShortDateString()+" and the time is "+DateTime.Now.ToLongTimeString();
+        }
+
+        private void convertPlaintextCSVToEncryptedCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

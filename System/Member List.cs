@@ -329,7 +329,7 @@ namespace System
                 filename = openFileDialog1.SafeFileName;
                 pickedImage = openFileDialog1.FileName;
                 //pictureBox1.ImageLocation = pickedImage;
-                pictureBox1.BackgroundImage =Image.FromFile(location + filename);
+                pictureBox1.BackgroundImage =Image.FromFile(pickedImage);
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     Updated("ID_Address", location + filename, idnumber);

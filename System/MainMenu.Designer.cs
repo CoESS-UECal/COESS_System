@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,8 +59,11 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -138,6 +142,7 @@
             this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Name = "convertPlaintextCSVToEncryptedCSVToolStripMenuItem";
             this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Text = "Convert Plaintext CSV to EncryptedCSV";
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Click += new System.EventHandler(this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -290,10 +295,12 @@
             this.toolStripSeparator1,
             this.toolStripLabel3,
             this.toolStripLabel4,
-            this.toolStripLabel2});
+            this.toolStripLabel2,
+            this.toolStripSeparator2,
+            this.toolStripLabel5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 574);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(345, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(493, 25);
             this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -318,6 +325,12 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(50, 22);
             this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
             // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(13, 22);
+            this.toolStripLabel4.Text = "  ";
+            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.BackColor = System.Drawing.Color.White;
@@ -325,11 +338,22 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(43, 22);
             this.toolStripLabel2.Text = "Master";
             // 
-            // toolStripLabel4
+            // toolStripSeparator2
             // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(13, 22);
-            this.toolStripLabel4.Text = "  ";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(63, 22);
+            this.toolStripLabel5.Text = "HH:mm:ss";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainMenu
             // 
@@ -397,5 +421,8 @@
         private Windows.Forms.ToolStripLabel toolStripLabel2;
         private Windows.Forms.ToolStripLabel toolStripLabel3;
         private Windows.Forms.ToolStripLabel toolStripLabel4;
+        private Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private Windows.Forms.ToolStripLabel toolStripLabel5;
+        private Windows.Forms.Timer timer1;
     }
 }

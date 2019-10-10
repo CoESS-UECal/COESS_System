@@ -287,5 +287,10 @@ namespace System
             // Perform the sort with these new sort options.
             this.listView2.Sort();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

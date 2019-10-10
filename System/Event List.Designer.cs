@@ -54,7 +54,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.NameLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -68,7 +67,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 144);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 444);
+            this.groupBox1.Size = new System.Drawing.Size(299, 444);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Event List";
@@ -87,6 +86,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // columnHeader1
@@ -112,9 +112,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(413, 144);
+            this.groupBox2.Location = new System.Drawing.Point(317, 144);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(375, 444);
+            this.groupBox2.Size = new System.Drawing.Size(471, 444);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Event Information";
@@ -125,7 +125,7 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(302, 395);
+            this.label5.Location = new System.Drawing.Point(446, 397);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 21);
             this.label5.TabIndex = 28;
@@ -137,7 +137,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(216, 395);
+            this.label4.Location = new System.Drawing.Point(360, 397);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 27;
@@ -149,7 +149,7 @@
             this.checkBox1.BackColor = System.Drawing.Color.White;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(220, 296);
+            this.checkBox1.Location = new System.Drawing.Point(390, 297);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(75, 21);
             this.checkBox1.TabIndex = 26;
@@ -162,7 +162,7 @@
             this.groupBox3.Controls.Add(this.listView2);
             this.groupBox3.Location = new System.Drawing.Point(6, 244);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 194);
+            this.groupBox3.Size = new System.Drawing.Size(304, 194);
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Registered";
@@ -180,7 +180,7 @@
             this.listView2.FullRowSelect = true;
             this.listView2.Location = new System.Drawing.Point(0, 18);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(200, 176);
+            this.listView2.Size = new System.Drawing.Size(304, 176);
             this.listView2.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView2.TabIndex = 1;
             this.listView2.UseCompatibleStateImageBehavior = false;
@@ -215,7 +215,7 @@
             // 
             this.button2.BackgroundImage = global::System.Properties.Resources.remove_new;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(220, 335);
+            this.button2.Location = new System.Drawing.Point(316, 334);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 37);
             this.button2.TabIndex = 22;
@@ -226,7 +226,7 @@
             // 
             this.button1.BackgroundImage = global::System.Properties.Resources.Untitled_2_new;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(220, 244);
+            this.button1.Location = new System.Drawing.Point(316, 244);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 37);
             this.button1.TabIndex = 21;
@@ -239,7 +239,7 @@
             this.textBox2.Location = new System.Drawing.Point(86, 213);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(283, 25);
+            this.textBox2.Size = new System.Drawing.Size(379, 25);
             this.textBox2.TabIndex = 20;
             // 
             // textBox1
@@ -248,7 +248,7 @@
             this.textBox1.Location = new System.Drawing.Point(72, 180);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(297, 25);
+            this.textBox1.Size = new System.Drawing.Size(393, 25);
             this.textBox1.TabIndex = 19;
             // 
             // label3
@@ -281,7 +281,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Location = new System.Drawing.Point(10, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(359, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(455, 150);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -306,25 +306,12 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // NameLbl
-            // 
-            this.NameLbl.AutoSize = true;
-            this.NameLbl.BackColor = System.Drawing.Color.White;
-            this.NameLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLbl.ForeColor = System.Drawing.Color.Black;
-            this.NameLbl.Location = new System.Drawing.Point(295, 114);
-            this.NameLbl.Name = "NameLbl";
-            this.NameLbl.Size = new System.Drawing.Size(60, 21);
-            this.NameLbl.TabIndex = 29;
-            this.NameLbl.Text = "Name:";
-            // 
             // Event_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.Events;
             this.ClientSize = new System.Drawing.Size(800, 600);
-            this.Controls.Add(this.NameLbl);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
@@ -341,7 +328,6 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -372,6 +358,5 @@
         private Windows.Forms.Label label5;
         private Windows.Forms.Label label4;
         private Windows.Forms.Button button4;
-        public Windows.Forms.Label NameLbl;
     }
 }

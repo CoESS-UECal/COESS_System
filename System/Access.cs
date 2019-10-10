@@ -12,7 +12,6 @@ namespace System
 {
     public partial class Access : Form
     {
-        string password = "Access";
         int tries = 3;
         public Access()
         {
@@ -21,7 +20,7 @@ namespace System
 
         private void Loginbutton_Click(object sender, EventArgs e)
         {
-            if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == password)
+            if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == Properties.Settings.Default.Alt_Pass)
             {
                 access = true;
                 Close();

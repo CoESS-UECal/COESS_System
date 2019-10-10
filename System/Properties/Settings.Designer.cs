@@ -46,5 +46,17 @@ namespace System.Properties {
                 this["Password"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Access")]
+        public string Alt_Pass {
+            get {
+                return ((string)(this["Alt_Pass"]));
+            }
+            set {
+                this["Alt_Pass"] = value;
+            }
+        }
     }
 }
