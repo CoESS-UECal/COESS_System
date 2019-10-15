@@ -110,6 +110,8 @@
             this.FN.Name = "FN";
             this.FN.Size = new System.Drawing.Size(190, 25);
             this.FN.TabIndex = 2;
+            this.FN.Enter += new System.EventHandler(this.FN_Enter);
+            this.FN.Leave += new System.EventHandler(this.FN_Leave);
             // 
             // MI
             // 
@@ -118,6 +120,8 @@
             this.MI.Name = "MI";
             this.MI.Size = new System.Drawing.Size(43, 25);
             this.MI.TabIndex = 3;
+            this.MI.Enter += new System.EventHandler(this.MI_Enter);
+            this.MI.Leave += new System.EventHandler(this.MI_Leave);
             // 
             // LN
             // 
@@ -127,6 +131,8 @@
             this.LN.Name = "LN";
             this.LN.Size = new System.Drawing.Size(193, 26);
             this.LN.TabIndex = 4;
+            this.LN.Enter += new System.EventHandler(this.LN_Enter);
+            this.LN.Leave += new System.EventHandler(this.LN_Leave);
             // 
             // label4
             // 
@@ -145,8 +151,9 @@
             this.SN.BeepOnError = true;
             this.SN.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SN.Location = new System.Drawing.Point(202, 208);
-            this.SN.Mask = "00000000000";
+            this.SN.Mask = "\\2\\0000000000";
             this.SN.Name = "SN";
+            this.SN.PromptChar = 'X';
             this.SN.Size = new System.Drawing.Size(152, 25);
             this.SN.TabIndex = 5;
             // 
@@ -169,6 +176,8 @@
             this.EMail.Name = "EMail";
             this.EMail.Size = new System.Drawing.Size(266, 25);
             this.EMail.TabIndex = 6;
+            this.EMail.Enter += new System.EventHandler(this.EMail_Enter);
+            this.EMail.Leave += new System.EventHandler(this.EMail_Leave);
             // 
             // label6
             // 
@@ -190,6 +199,8 @@
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(608, 26);
             this.Address.TabIndex = 7;
+            this.Address.Enter += new System.EventHandler(this.Address_Enter);
+            this.Address.Leave += new System.EventHandler(this.Address_Leave);
             // 
             // label7
             // 
@@ -342,6 +353,8 @@
             this.GuardName.Name = "GuardName";
             this.GuardName.Size = new System.Drawing.Size(314, 25);
             this.GuardName.TabIndex = 12;
+            this.GuardName.Enter += new System.EventHandler(this.GuardName_Enter);
+            this.GuardName.Leave += new System.EventHandler(this.GuardName_Leave);
             // 
             // button2
             // 
@@ -386,6 +399,7 @@
             this.Contact.Location = new System.Drawing.Point(196, 316);
             this.Contact.Mask = "00000000000";
             this.Contact.Name = "Contact";
+            this.Contact.PromptChar = 'X';
             this.Contact.Size = new System.Drawing.Size(185, 25);
             this.Contact.TabIndex = 8;
             // 
@@ -396,6 +410,7 @@
             this.GuardContact.Location = new System.Drawing.Point(297, 534);
             this.GuardContact.Mask = "00000000000";
             this.GuardContact.Name = "GuardContact";
+            this.GuardContact.PromptChar = 'X';
             this.GuardContact.Size = new System.Drawing.Size(208, 25);
             this.GuardContact.TabIndex = 13;
             // 

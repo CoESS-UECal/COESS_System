@@ -49,10 +49,22 @@ namespace System
             {
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
+            FN.Text = "First Name";
+            FN.ForeColor = SystemColors.GrayText;
+            MI.Text = "MI";
+            MI.ForeColor = SystemColors.GrayText;
+            LN.Text = "Last Name";
+            LN.ForeColor = SystemColors.GrayText;
+            EMail.Text = "someone@example.com";
+            EMail.ForeColor = SystemColors.GrayText;
+            Address.Text = "Address";
+            Address.ForeColor = SystemColors.GrayText;
+            GuardName.Text = "Guardian Name";
+            GuardName.ForeColor = SystemColors.GrayText;
         }
-
+        #region codes
         string membership_type;
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
                 Form members = new Members();
@@ -249,6 +261,114 @@ namespace System
         private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
         {
             membership_type = radioButton2.Text;
+        }
+
+        private void FN_Leave(object sender, EventArgs e)
+        {
+            if(FN.Text.Length == 0)
+            {
+                FN.Text = "First Name";
+                FN.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void FN_Enter(object sender, EventArgs e)
+        {
+            if(FN.Text == "First Name")
+            {
+                FN.Text = "";
+                FN.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void MI_Enter(object sender, EventArgs e)
+        {
+            if (MI.Text == "MI")
+            {
+                MI.Text = "";
+                MI.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void MI_Leave(object sender, EventArgs e)
+        {
+            if (MI.Text.Length == 0)
+            {
+                MI.Text = "MI";
+                MI.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void LN_Enter(object sender, EventArgs e)
+        {
+            if (LN.Text == "Last Name")
+            {
+                LN.Text = "";
+                LN.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void LN_Leave(object sender, EventArgs e)
+        {
+            if (LN.Text.Length == 0)
+            {
+                LN.Text = "Last Name";
+                LN.ForeColor = SystemColors.GrayText;
+            }
+        }
+        #endregion
+        private void EMail_Enter(object sender, EventArgs e)
+        {
+            if (EMail.Text == "someone@example.com")
+            {
+                EMail.Text = "";
+                EMail.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void EMail_Leave(object sender, EventArgs e)
+        {
+            if (EMail.Text.Length == 0)
+            {
+                EMail.Text = "someone@example.com";
+                EMail.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void Address_Enter(object sender, EventArgs e)
+        {
+            if (Address.Text == "Address")
+            {
+                Address.Text = "";
+                Address.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void Address_Leave(object sender, EventArgs e)
+        {
+            if (Address.Text.Length == 0)
+            {
+                Address.Text = "Address";
+                Address.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void GuardName_Enter(object sender, EventArgs e)
+        {
+            if (GuardName.Text == "Guardian Name")
+            {
+                GuardName.Text = "";
+                GuardName.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void GuardName_Leave(object sender, EventArgs e)
+        {
+            if (GuardName.Text.Length == 0)
+            {
+                GuardName.Text = "Guardian Name";
+                GuardName.ForeColor = SystemColors.GrayText;
+            }
         }
     }
 }
