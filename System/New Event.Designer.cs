@@ -54,6 +54,8 @@
             this.event_name.Name = "event_name";
             this.event_name.Size = new System.Drawing.Size(592, 26);
             this.event_name.TabIndex = 5;
+            this.event_name.Enter += new System.EventHandler(this.event_name_Enter);
+            this.event_name.Leave += new System.EventHandler(this.event_name_Leave);
             // 
             // label1
             // 
@@ -87,6 +89,8 @@
             this.event_location.Name = "event_location";
             this.event_location.Size = new System.Drawing.Size(557, 26);
             this.event_location.TabIndex = 7;
+            this.event_location.Enter += new System.EventHandler(this.event_location_Enter);
+            this.event_location.Leave += new System.EventHandler(this.event_location_Leave);
             // 
             // label3
             // 
