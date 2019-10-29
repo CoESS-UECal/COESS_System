@@ -203,6 +203,7 @@ namespace System
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
+     
         private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             GeneralEdit.data = textBox2.Text;

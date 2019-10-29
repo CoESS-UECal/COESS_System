@@ -45,6 +45,41 @@ namespace System
             Loginbutton.Enabled = false;
         }
 
+        private void UserBox_Leave(object sender, EventArgs e)
+        {
+            if (UserBox.Text.Length == 0)
+            {
+                UserBox.Text = "Username";
+                UserBox.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void UserBox_Enter(object sender, EventArgs e)
+        {
+            if (UserBox.Text == "Username")
+            {
+                UserBox.Text = "";
+                UserBox.ForeColor = Color.White;
+            }
+        }
+
+        private void PasswordBox_Leave(object sender, EventArgs e)
+        {
+            if (PasswordBox.Text.Length == 0)
+            {
+                PasswordBox.Text = "Password";
+                PasswordBox.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void PasswordBox_Enter(object sender, EventArgs e)
+        {
+            if (PasswordBox.Text == "Password")
+            {
+                PasswordBox.Text = "";
+                PasswordBox.ForeColor = Color.White;
+            }
+        }
         private void UserBox_TextChanged(object sender, EventArgs e)
         {
             if (UserBox.Text == "" || PasswordBox.Text == "")

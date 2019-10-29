@@ -360,6 +360,10 @@
   <ItemGroup>
     <Content Include="coess_old_logo_5b1_icon.ico" />
     <Content Include="Resources\Blank BG.png" />
+    <None Include="Resources\Secure_50px1.png" />
+    <None Include="Resources\Secure_50px.png" />
+    <None Include="Resources\Male User_50px.png" />
+    <None Include="Resources\User Male_50px.png" />
     <None Include="Resources\NewMemberBackgroundVersion2.png" />
     <None Include="Resources\on_button.png" />
     <None Include="Resources\off_button.png" />
@@ -393,6 +397,7 @@
     <None Include="Resources\Events2.png" />
     <Content Include="Resources\Login Screen.png" />
     <None Include="Resources\login.png" />
+    <None Include="Resources\logo.png" />
     <Content Include="Resources\Main Menu.png" />
     <None Include="Resources\red ring.png" />
     <None Include="Resources\register.png" />

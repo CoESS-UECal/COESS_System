@@ -16,7 +16,7 @@ namespace System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new New_Member());
+            Application.Run(new MainMenu());
         }
     }
 }
