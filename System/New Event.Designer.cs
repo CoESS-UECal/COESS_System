@@ -38,7 +38,6 @@
             this.event_date = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.event_pubmat = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -48,20 +47,22 @@
             // 
             // event_name
             // 
+            this.event_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.event_name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.event_name.Location = new System.Drawing.Point(196, 188);
+            this.event_name.ForeColor = System.Drawing.Color.White;
+            this.event_name.Location = new System.Drawing.Point(196, 65);
             this.event_name.Multiline = true;
             this.event_name.Name = "event_name";
-            this.event_name.Size = new System.Drawing.Size(592, 26);
+            this.event_name.Size = new System.Drawing.Size(445, 26);
             this.event_name.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 183);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 37);
             this.label1.TabIndex = 4;
@@ -70,10 +71,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(12, 237);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(213, 37);
             this.label2.TabIndex = 6;
@@ -81,20 +82,22 @@
             // 
             // event_location
             // 
+            this.event_location.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.event_location.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.event_location.Location = new System.Drawing.Point(231, 242);
+            this.event_location.ForeColor = System.Drawing.Color.White;
+            this.event_location.Location = new System.Drawing.Point(231, 119);
             this.event_location.Multiline = true;
             this.event_location.Name = "event_location";
-            this.event_location.Size = new System.Drawing.Size(557, 26);
+            this.event_location.Size = new System.Drawing.Size(410, 26);
             this.event_location.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(12, 307);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(16, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 37);
             this.label3.TabIndex = 8;
@@ -103,18 +106,18 @@
             // event_date
             // 
             this.event_date.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.event_date.Location = new System.Drawing.Point(181, 315);
+            this.event_date.Location = new System.Drawing.Point(185, 181);
             this.event_date.Name = "event_date";
-            this.event_date.Size = new System.Drawing.Size(200, 20);
+            this.event_date.Size = new System.Drawing.Size(197, 20);
             this.event_date.TabIndex = 9;
             // 
             // button1
             // 
             this.button1.BackgroundImage = global::System.Properties.Resources.create_event_button;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(19, 354);
+            this.button1.Location = new System.Drawing.Point(421, 168);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(310, 234);
+            this.button1.Size = new System.Drawing.Size(220, 33);
             this.button1.TabIndex = 10;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -123,23 +126,11 @@
             // 
             this.event_pubmat.BackgroundImage = global::System.Properties.Resources.Blank_BG1;
             this.event_pubmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.event_pubmat.Location = new System.Drawing.Point(335, 354);
+            this.event_pubmat.Location = new System.Drawing.Point(19, 224);
             this.event_pubmat.Name = "event_pubmat";
-            this.event_pubmat.Size = new System.Drawing.Size(453, 234);
+            this.event_pubmat.Size = new System.Drawing.Size(622, 300);
             this.event_pubmat.TabIndex = 11;
             this.event_pubmat.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(404, 307);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 37);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Event Pubmat:";
             // 
             // openFileDialog1
             // 
@@ -149,9 +140,9 @@
             // 
             this.button2.BackgroundImage = global::System.Properties.Resources.browse;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(613, 309);
+            this.button2.Location = new System.Drawing.Point(19, 530);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 32);
+            this.button2.Size = new System.Drawing.Size(300, 32);
             this.button2.TabIndex = 13;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -160,7 +151,7 @@
             // 
             this.button3.BackgroundImage = global::System.Properties.Resources.go_back_new;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(640, 42);
+            this.button3.Location = new System.Drawing.Point(12, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 32);
             this.button3.TabIndex = 31;
@@ -177,11 +168,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::System.Properties.Resources.Events;
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.BackgroundImage = global::System.Properties.Resources.NewMemberBackgroundVersion2;
+            this.ClientSize = new System.Drawing.Size(1024, 576);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.event_pubmat);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.event_date);
@@ -212,7 +202,6 @@
         private Windows.Forms.DateTimePicker event_date;
         private Windows.Forms.Button button1;
         private Windows.Forms.PictureBox event_pubmat;
-        private Windows.Forms.Label label4;
         private Windows.Forms.OpenFileDialog openFileDialog1;
         private Windows.Forms.Button button2;
         private Windows.Forms.Button button3;

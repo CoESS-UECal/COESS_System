@@ -17,7 +17,7 @@ namespace System
         {
             InitializeComponent();
         }
-
+        //---------------------------------
         private void Loginbutton_Click(object sender, EventArgs e)
         {
             if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == Properties.Settings.Default.Alt_Pass)
@@ -38,6 +38,8 @@ namespace System
             }
 
         }
+
+//------------------------------
         public static bool access;
         private void Access_Load(object sender, EventArgs e)
         {
@@ -111,5 +113,7 @@ namespace System
                 Close();
             }
         }
+
+        //----------------------
     }
 }

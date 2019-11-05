@@ -79,7 +79,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -151,9 +151,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackgroundImage = global::System.Properties.Resources.members;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(69, 277);
+            this.button1.Location = new System.Drawing.Point(62, 219);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 170);
+            this.button1.Size = new System.Drawing.Size(218, 146);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -165,9 +165,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackgroundImage = global::System.Properties.Resources.Events1;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(308, 277);
+            this.button2.Location = new System.Drawing.Point(387, 229);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(185, 170);
+            this.button2.Size = new System.Drawing.Size(199, 146);
             this.button2.TabIndex = 2;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -179,9 +179,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackgroundImage = global::System.Properties.Resources.election_button;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(547, 277);
+            this.button3.Location = new System.Drawing.Point(681, 219);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(185, 170);
+            this.button3.Size = new System.Drawing.Size(261, 146);
             this.button3.TabIndex = 3;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -190,7 +190,7 @@
             // 
             this.button4.BackgroundImage = global::System.Properties.Resources.go_back_new;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(640, 42);
+            this.button4.Location = new System.Drawing.Point(12, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(127, 32);
             this.button4.TabIndex = 4;
@@ -209,7 +209,7 @@
             this.guard_contact,
             this.address,
             this.bday});
-            this.listView1.Location = new System.Drawing.Point(547, 471);
+            this.listView1.Location = new System.Drawing.Point(554, 467);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(121, 97);
             this.listView1.TabIndex = 9;
@@ -262,13 +262,13 @@
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.DisplayStatusBar = false;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(674, 511);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(681, 540);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ShowCloseButton = false;
             this.crystalReportViewer1.ShowGroupTreeButton = false;
             this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(67, 57);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(291, 33);
             this.crystalReportViewer1.TabIndex = 8;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.Visible = false;
@@ -276,7 +276,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.Location = new System.Drawing.Point(775, 574);
+            this.pictureBox1.Location = new System.Drawing.Point(999, 548);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 26);
             this.pictureBox1.TabIndex = 10;
@@ -298,7 +298,7 @@
             this.toolStripLabel2,
             this.toolStripSeparator2,
             this.toolStripLabel5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 574);
+            this.toolStrip1.Location = new System.Drawing.Point(3, 548);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(493, 25);
             this.toolStrip1.TabIndex = 11;
@@ -359,8 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::System.Properties.Resources.Main_Menu;
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(1024, 576);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listView1);
