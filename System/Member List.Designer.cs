@@ -104,7 +104,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::System.Properties.Resources.full_logo_transparent___clear_c;
+            this.pictureBox1.BackgroundImage = global::System.Properties.Resources.full_logo_transparent_clear_c;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ImageLocation = "";
             this.pictureBox1.Location = new System.Drawing.Point(212, 37);
