@@ -90,12 +90,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID Number";
-            this.columnHeader1.Width = 32;
+            this.columnHeader1.Width = 33;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "SN";
-            this.columnHeader2.Width = 148;
+            this.columnHeader2.Width = 134;
             // 
             // columnHeader3
             // 
@@ -104,7 +104,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::System.Properties.Resources.full_logo_transparent_clear_c;
+            this.pictureBox1.BackgroundImage = global::System.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ImageLocation = "";
             this.pictureBox1.Location = new System.Drawing.Point(212, 37);
@@ -361,14 +361,17 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::System.Properties.Resources.go_back_new;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = global::System.Properties.Resources.BACK;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(8, 7);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.button3.Location = new System.Drawing.Point(9, 8);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 32);
+            this.button3.Size = new System.Drawing.Size(40, 40);
             this.button3.TabIndex = 32;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // openFileDialog1

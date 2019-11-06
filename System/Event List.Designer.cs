@@ -34,6 +34,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -53,7 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -123,6 +123,19 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Event Information";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(428, 464);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(153, 33);
+            this.button4.TabIndex = 33;
+            this.button4.Text = "RESET FIELDS";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label5
             // 
@@ -301,27 +314,17 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::System.Properties.Resources.go_back_new;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(12, 12);
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = global::System.Properties.Resources.BACK;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.button3.Location = new System.Drawing.Point(12, 10);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 32);
+            this.button3.Size = new System.Drawing.Size(40, 40);
             this.button3.TabIndex = 32;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(428, 464);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 33);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "RESET FIELDS";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Event_List
             // 

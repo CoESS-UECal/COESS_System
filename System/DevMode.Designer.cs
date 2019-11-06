@@ -81,7 +81,7 @@
             this.listView1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 19);
+            this.listView1.Location = new System.Drawing.Point(14, 23);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(555, 445);
@@ -110,7 +110,7 @@
             this.pictureBox1.BackgroundImage = global::System.Properties.Resources.full_logo_transparent_clear_c;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(733, 117);
+            this.pictureBox1.Location = new System.Drawing.Point(763, 120);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(123, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -410,14 +410,17 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::System.Properties.Resources.go_back_new;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = global::System.Properties.Resources.BACK;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(12, 12);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.button3.Location = new System.Drawing.Point(13, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 32);
+            this.button3.Size = new System.Drawing.Size(40, 40);
             this.button3.TabIndex = 32;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // openFileDialog1

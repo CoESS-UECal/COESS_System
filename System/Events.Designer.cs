@@ -37,9 +37,8 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::System.Properties.Resources.event_list;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(449, 215);
+            this.button3.Location = new System.Drawing.Point(588, 166);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(226, 241);
             this.button3.TabIndex = 5;
@@ -50,7 +49,7 @@
             // 
             this.button2.BackgroundImage = global::System.Properties.Resources.new_event;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(126, 215);
+            this.button2.Location = new System.Drawing.Point(228, 166);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(226, 241);
             this.button2.TabIndex = 4;
@@ -91,7 +90,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Events";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Events";
+            this.Text = "s";
             this.ResumeLayout(false);
             this.PerformLayout();
 

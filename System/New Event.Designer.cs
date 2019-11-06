@@ -53,7 +53,7 @@
             this.event_name.Location = new System.Drawing.Point(196, 65);
             this.event_name.Multiline = true;
             this.event_name.Name = "event_name";
-            this.event_name.Size = new System.Drawing.Size(445, 26);
+            this.event_name.Size = new System.Drawing.Size(452, 26);
             this.event_name.TabIndex = 5;
             // 
             // label1
@@ -88,7 +88,7 @@
             this.event_location.Location = new System.Drawing.Point(231, 119);
             this.event_location.Multiline = true;
             this.event_location.Name = "event_location";
-            this.event_location.Size = new System.Drawing.Size(410, 26);
+            this.event_location.Size = new System.Drawing.Size(417, 26);
             this.event_location.TabIndex = 7;
             // 
             // label3
@@ -113,13 +113,16 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::System.Properties.Resources.create_event_button;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(421, 168);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::System.Properties.Resources.CREATE_EVENT;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.button1.Location = new System.Drawing.Point(175, 498);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 33);
+            this.button1.Size = new System.Drawing.Size(260, 60);
             this.button1.TabIndex = 10;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // event_pubmat
@@ -128,7 +131,7 @@
             this.event_pubmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.event_pubmat.Location = new System.Drawing.Point(19, 224);
             this.event_pubmat.Name = "event_pubmat";
-            this.event_pubmat.Size = new System.Drawing.Size(622, 300);
+            this.event_pubmat.Size = new System.Drawing.Size(629, 263);
             this.event_pubmat.TabIndex = 11;
             this.event_pubmat.TabStop = false;
             // 
@@ -138,24 +141,30 @@
             // 
             // button2
             // 
-            this.button2.BackgroundImage = global::System.Properties.Resources.browse;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(19, 530);
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::System.Properties.Resources.image;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.button2.Location = new System.Drawing.Point(598, 224);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(300, 32);
+            this.button2.Size = new System.Drawing.Size(50, 50);
             this.button2.TabIndex = 13;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::System.Properties.Resources.go_back_new;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
             this.button3.Location = new System.Drawing.Point(12, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 32);
+            this.button3.Size = new System.Drawing.Size(40, 40);
             this.button3.TabIndex = 31;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // imageList1
@@ -170,9 +179,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.NewMemberBackgroundVersion2;
             this.ClientSize = new System.Drawing.Size(1024, 576);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.event_pubmat);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.event_date);
             this.Controls.Add(this.label3);
@@ -180,6 +188,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.event_name);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.event_pubmat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_Event";
