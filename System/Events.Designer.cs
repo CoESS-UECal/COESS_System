@@ -36,7 +36,7 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::System.Properties.Resources.event_list_;
+            this.button3.BackgroundImage = global::System.Properties.Resources.event_list;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Location = new System.Drawing.Point(449, 215);
             this.button3.Name = "button3";
