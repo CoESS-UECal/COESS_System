@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace System
@@ -10,6 +11,10 @@ namespace System
         public Login()
         {
             InitializeComponent();
+            UserBox.Text = "Username";
+            UserBox.ForeColor = SystemColors.GrayText;
+            PasswordBox.Text = "Password";
+            PasswordBox.ForeColor = SystemColors.GrayText;
         }
 
         private void Loginbutton_Click(object sender, EventArgs e)
@@ -91,6 +96,42 @@ namespace System
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UserBox_Enter(object sender, EventArgs e)
+        {
+            if (UserBox.Text == "Username")
+            {
+                UserBox.Text = "";
+                UserBox.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void UserBox_Leave(object sender, EventArgs e)
+        {
+            if (UserBox.Text.Length == 0)
+            {
+                UserBox.Text = "Username";
+                UserBox.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void PasswordBox_Enter(object sender, EventArgs e)
+        {
+            if (PasswordBox.Text == "Password")
+            {
+                PasswordBox.Text = "";
+                PasswordBox.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void PasswordBox_Leave(object sender, EventArgs e)
+        {
+            if (PasswordBox.Text.Length == 0)
+            {
+                PasswordBox.Text = "Password";
+                PasswordBox.ForeColor = SystemColors.GrayText;
+            }
         }
     }
 }
