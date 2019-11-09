@@ -47,9 +47,9 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button1.Location = new System.Drawing.Point(962, 12);
+            this.button1.Location = new System.Drawing.Point(970, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -57,9 +57,9 @@
             // Loginbutton
             // 
             this.Loginbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
-            this.Loginbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loginbutton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.Loginbutton.ForeColor = System.Drawing.Color.White;
-            this.Loginbutton.Location = new System.Drawing.Point(413, 423);
+            this.Loginbutton.Location = new System.Drawing.Point(413, 399);
             this.Loginbutton.Name = "Loginbutton";
             this.Loginbutton.Size = new System.Drawing.Size(199, 69);
             this.Loginbutton.TabIndex = 10;
@@ -70,11 +70,11 @@
             // PasswordBox
             // 
             this.PasswordBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordBox.ForeColor = System.Drawing.Color.White;
-            this.PasswordBox.Location = new System.Drawing.Point(327, 370);
+            this.PasswordBox.Location = new System.Drawing.Point(327, 334);
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(371, 38);
+            this.PasswordBox.Size = new System.Drawing.Size(371, 43);
             this.PasswordBox.TabIndex = 9;
             this.PasswordBox.UseSystemPasswordChar = true;
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
@@ -82,11 +82,11 @@
             // UserBox
             // 
             this.UserBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.UserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserBox.ForeColor = System.Drawing.Color.White;
-            this.UserBox.Location = new System.Drawing.Point(327, 310);
+            this.UserBox.Location = new System.Drawing.Point(327, 269);
             this.UserBox.Name = "UserBox";
-            this.UserBox.Size = new System.Drawing.Size(371, 38);
+            this.UserBox.Size = new System.Drawing.Size(371, 43);
             this.UserBox.TabIndex = 8;
             this.UserBox.TextChanged += new System.EventHandler(this.UserBox_TextChanged);
             // 
@@ -94,7 +94,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::System.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(425, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(422, 67);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 180);
             this.pictureBox1.TabIndex = 12;
@@ -105,9 +105,9 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::System.Properties.Resources.Male_User_50px;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(283, 310);
+            this.pictureBox2.Location = new System.Drawing.Point(278, 269);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox2.Size = new System.Drawing.Size(43, 43);
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
@@ -116,9 +116,9 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = global::System.Properties.Resources.Secure_50px;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(283, 370);
+            this.pictureBox3.Location = new System.Drawing.Point(278, 334);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox3.Size = new System.Drawing.Size(43, 43);
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 

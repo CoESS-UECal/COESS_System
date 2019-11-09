@@ -76,6 +76,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
             this.helpToolStripMenuItem,
@@ -83,7 +84,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1024, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -202,12 +203,12 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button4.Location = new System.Drawing.Point(11, 9);
+            this.button4.Location = new System.Drawing.Point(9, 9);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 50);
+            this.button4.Size = new System.Drawing.Size(35, 35);
             this.button4.TabIndex = 4;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -305,6 +306,7 @@
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.BackColor = System.Drawing.Color.Transparent;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripSeparator1,
@@ -315,7 +317,7 @@
             this.toolStripLabel5});
             this.toolStrip1.Location = new System.Drawing.Point(10, 541);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(331, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(370, 25);
             this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -323,7 +325,7 @@
             // 
             this.toolStripLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(107, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(124, 22);
             this.toolStripLabel1.Text = "Connection Status:";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -345,7 +347,7 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(13, 22);
+            this.toolStripLabel4.Size = new System.Drawing.Size(16, 22);
             this.toolStripLabel4.Text = "  ";
             // 
             // toolStripLabel2
@@ -353,7 +355,7 @@
             this.toolStripLabel2.BackColor = System.Drawing.Color.White;
             this.toolStripLabel2.ForeColor = System.Drawing.Color.White;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(43, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(50, 22);
             this.toolStripLabel2.Text = "Master";
             // 
             // toolStripSeparator2
@@ -365,7 +367,7 @@
             // 
             this.toolStripLabel5.ForeColor = System.Drawing.Color.White;
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(63, 22);
+            this.toolStripLabel5.Size = new System.Drawing.Size(72, 22);
             this.toolStripLabel5.Text = "HH:mm:ss";
             // 
             // timer1

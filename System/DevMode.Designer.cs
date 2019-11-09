@@ -81,10 +81,10 @@
             this.listView1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(14, 23);
+            this.listView1.Location = new System.Drawing.Point(6, 20);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(555, 445);
+            this.listView1.Size = new System.Drawing.Size(562, 488);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -93,24 +93,26 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "ID Number";
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 35;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "SN";
+            this.columnHeader2.Text = "Student Number";
+            this.columnHeader2.Width = 200;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Name";
-            this.columnHeader3.Width = 229;
+            this.columnHeader3.Width = 320;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = global::System.Properties.Resources.full_logo_transparent_clear_c;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::System.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(763, 120);
+            this.pictureBox1.Location = new System.Drawing.Point(744, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(123, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,7 +127,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(607, 71);
+            this.label1.Location = new System.Drawing.Point(621, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 21);
             this.label1.TabIndex = 2;
@@ -135,24 +137,24 @@
             // 
             this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.maskedTextBox1.BeepOnError = true;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.White;
-            this.maskedTextBox1.Location = new System.Drawing.Point(803, 67);
+            this.maskedTextBox1.Location = new System.Drawing.Point(819, 64);
             this.maskedTextBox1.Mask = "00000000000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(165, 25);
+            this.maskedTextBox1.Size = new System.Drawing.Size(165, 29);
             this.maskedTextBox1.TabIndex = 10;
             this.maskedTextBox1.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
             // 
             // textBox11
             // 
             this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox11.ForeColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(703, 302);
+            this.textBox11.Location = new System.Drawing.Point(710, 268);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(97, 25);
+            this.textBox11.Size = new System.Drawing.Size(97, 29);
             this.textBox11.TabIndex = 34;
             this.textBox11.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox11_DoubleClick);
             // 
@@ -162,7 +164,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(624, 304);
+            this.label12.Location = new System.Drawing.Point(622, 271);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 21);
             this.label12.TabIndex = 33;
@@ -171,12 +173,12 @@
             // textBox10
             // 
             this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox10.ForeColor = System.Drawing.Color.White;
-            this.textBox10.Location = new System.Drawing.Point(734, 267);
+            this.textBox10.Location = new System.Drawing.Point(735, 232);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(101, 25);
+            this.textBox10.Size = new System.Drawing.Size(111, 29);
             this.textBox10.TabIndex = 32;
             this.textBox10.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox10_MouseDoubleClick);
             // 
@@ -186,7 +188,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(624, 269);
+            this.label11.Location = new System.Drawing.Point(622, 235);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(114, 21);
             this.label11.TabIndex = 31;
@@ -195,12 +197,12 @@
             // textBox9
             // 
             this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox9.ForeColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(720, 466);
+            this.textBox9.Location = new System.Drawing.Point(718, 448);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(266, 25);
+            this.textBox9.Size = new System.Drawing.Size(266, 29);
             this.textBox9.TabIndex = 30;
             this.textBox9.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox9_MouseDoubleClick);
             // 
@@ -210,7 +212,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(623, 466);
+            this.label10.Location = new System.Drawing.Point(621, 451);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 21);
             this.label10.TabIndex = 29;
@@ -219,12 +221,12 @@
             // textBox8
             // 
             this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox8.ForeColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(763, 335);
+            this.textBox8.Location = new System.Drawing.Point(761, 304);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(223, 25);
+            this.textBox8.Size = new System.Drawing.Size(223, 29);
             this.textBox8.TabIndex = 28;
             this.textBox8.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox8_MouseDoubleClick);
             // 
@@ -234,7 +236,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(623, 335);
+            this.label9.Location = new System.Drawing.Point(621, 307);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(142, 21);
             this.label9.TabIndex = 27;
@@ -243,12 +245,12 @@
             // textBox7
             // 
             this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(915, 264);
+            this.textBox7.Location = new System.Drawing.Point(902, 232);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(70, 25);
+            this.textBox7.Size = new System.Drawing.Size(82, 29);
             this.textBox7.TabIndex = 26;
             this.textBox7.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox7_MouseDoubleClick);
             // 
@@ -258,7 +260,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(853, 267);
+            this.label8.Location = new System.Drawing.Point(852, 235);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 21);
             this.label8.TabIndex = 25;
@@ -267,72 +269,72 @@
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(844, 529);
+            this.textBox6.Location = new System.Drawing.Point(842, 520);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(142, 25);
+            this.textBox6.Size = new System.Drawing.Size(142, 29);
             this.textBox6.TabIndex = 24;
             this.textBox6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox6_MouseDoubleClick);
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(763, 498);
+            this.textBox5.Location = new System.Drawing.Point(761, 484);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(223, 25);
+            this.textBox5.Size = new System.Drawing.Size(223, 29);
             this.textBox5.TabIndex = 23;
             this.textBox5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox5_MouseDoubleClick);
             // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(915, 300);
+            this.textBox4.Location = new System.Drawing.Point(902, 268);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(71, 25);
+            this.textBox4.Size = new System.Drawing.Size(82, 29);
             this.textBox4.TabIndex = 22;
             this.textBox4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox4_MouseDoubleClick);
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(770, 430);
+            this.textBox3.Location = new System.Drawing.Point(768, 412);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(216, 25);
+            this.textBox3.Size = new System.Drawing.Size(216, 29);
             this.textBox3.TabIndex = 21;
             this.textBox3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox3_MouseDoubleClick);
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(703, 399);
+            this.textBox2.Location = new System.Drawing.Point(701, 376);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(283, 25);
+            this.textBox2.Size = new System.Drawing.Size(283, 29);
             this.textBox2.TabIndex = 20;
             this.textBox2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDoubleClick);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(689, 366);
+            this.textBox1.Location = new System.Drawing.Point(687, 340);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(297, 25);
+            this.textBox1.Size = new System.Drawing.Size(297, 29);
             this.textBox1.TabIndex = 19;
             this.textBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseDoubleClick);
             // 
@@ -342,7 +344,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(623, 531);
+            this.label7.Location = new System.Drawing.Point(622, 523);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(215, 21);
             this.label7.TabIndex = 18;
@@ -354,7 +356,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(623, 498);
+            this.label6.Location = new System.Drawing.Point(621, 487);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 21);
             this.label6.TabIndex = 17;
@@ -366,7 +368,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(806, 305);
+            this.label5.Location = new System.Drawing.Point(805, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 21);
             this.label5.TabIndex = 16;
@@ -378,7 +380,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(623, 432);
+            this.label4.Location = new System.Drawing.Point(621, 415);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 21);
             this.label4.TabIndex = 15;
@@ -390,7 +392,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(623, 399);
+            this.label3.Location = new System.Drawing.Point(621, 379);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 21);
             this.label3.TabIndex = 14;
@@ -402,7 +404,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(623, 366);
+            this.label2.Location = new System.Drawing.Point(621, 343);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 21);
             this.label2.TabIndex = 13;
@@ -416,9 +418,9 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button3.Location = new System.Drawing.Point(13, 12);
+            this.button3.Location = new System.Drawing.Point(9, 9);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 40);
+            this.button3.Size = new System.Drawing.Size(35, 35);
             this.button3.TabIndex = 32;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -430,12 +432,13 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1024, 25);
             this.menuStrip1.TabIndex = 33;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -446,35 +449,36 @@
             this.clearMemberInfoToolStripMenuItem,
             this.countNewMemberToolStripMenuItem,
             this.countOldMemberToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // refreshListToolStripMenuItem
             // 
             this.refreshListToolStripMenuItem.Name = "refreshListToolStripMenuItem";
-            this.refreshListToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.refreshListToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.refreshListToolStripMenuItem.Text = "Refresh List";
             this.refreshListToolStripMenuItem.Click += new System.EventHandler(this.refreshListToolStripMenuItem_Click);
             // 
             // clearMemberInfoToolStripMenuItem
             // 
             this.clearMemberInfoToolStripMenuItem.Name = "clearMemberInfoToolStripMenuItem";
-            this.clearMemberInfoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.clearMemberInfoToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.clearMemberInfoToolStripMenuItem.Text = "Clear Member Info";
             this.clearMemberInfoToolStripMenuItem.Click += new System.EventHandler(this.clearMemberInfoToolStripMenuItem_Click);
             // 
             // countNewMemberToolStripMenuItem
             // 
             this.countNewMemberToolStripMenuItem.Name = "countNewMemberToolStripMenuItem";
-            this.countNewMemberToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.countNewMemberToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.countNewMemberToolStripMenuItem.Text = "Count New Member";
             this.countNewMemberToolStripMenuItem.Click += new System.EventHandler(this.countNewMemberToolStripMenuItem_Click);
             // 
             // countOldMemberToolStripMenuItem
             // 
             this.countOldMemberToolStripMenuItem.Name = "countOldMemberToolStripMenuItem";
-            this.countOldMemberToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.countOldMemberToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.countOldMemberToolStripMenuItem.Text = "Count Old Member";
             this.countOldMemberToolStripMenuItem.Click += new System.EventHandler(this.countOldMemberToolStripMenuItem_Click);
             // 
@@ -482,10 +486,11 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 84);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(12, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(575, 480);
+            this.groupBox1.Size = new System.Drawing.Size(575, 514);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Member List";
@@ -497,6 +502,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.BackgroundImage = global::System.Properties.Resources.NewMemberBackgroundVersion2;
             this.ClientSize = new System.Drawing.Size(1024, 576);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label12);
@@ -520,7 +526,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox1);
@@ -531,7 +536,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DevMode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Member_List";
+            this.Text = "v";
             this.Load += new System.EventHandler(this.Member_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
