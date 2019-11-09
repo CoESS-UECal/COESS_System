@@ -54,6 +54,8 @@
             this.UserBox.Size = new System.Drawing.Size(371, 43);
             this.UserBox.TabIndex = 2;
             this.UserBox.TextChanged += new System.EventHandler(this.UserBox_TextChanged);
+            this.UserBox.Enter += new System.EventHandler(this.UserBox_Enter);
+            this.UserBox.Leave += new System.EventHandler(this.UserBox_Leave);
             // 
             // PasswordBox
             // 
@@ -69,6 +71,8 @@
             this.PasswordBox.TabIndex = 3;
             this.PasswordBox.UseSystemPasswordChar = true;
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
+            this.PasswordBox.Enter += new System.EventHandler(this.PasswordBox_Enter);
+            this.PasswordBox.Leave += new System.EventHandler(this.PasswordBox_Leave);
             // 
             // Loginbutton
             // 

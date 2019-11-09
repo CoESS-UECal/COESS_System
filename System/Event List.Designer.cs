@@ -143,7 +143,8 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(556, 406);
+            this.label5.Location = new System.Drawing.Point(556, 411);
+
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 21);
             this.label5.TabIndex = 28;
@@ -313,6 +314,7 @@
             this.pictureBox1.BackgroundImage = global::System.Properties.Resources.Blank_BG1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Location = new System.Drawing.Point(9, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(567, 150);
             this.pictureBox1.TabIndex = 1;

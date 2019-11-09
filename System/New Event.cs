@@ -25,6 +25,10 @@ namespace System
             {
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
+            event_location.Text = "Event Location";
+            event_location.ForeColor = SystemColors.GrayText;
+            event_name.Text = "Event Name";
+            event_name.ForeColor = SystemColors.GrayText;
         }
 
         //Image variables
@@ -154,6 +158,42 @@ namespace System
         private void New_Event_Load(object sender, EventArgs e)
         {
             finalevent = "";
+        }
+
+        private void event_name_Leave(object sender, EventArgs e)
+        {
+            if (event_name.Text.Length == 0)
+            {
+                event_name.Text = "Event Name";
+                event_name.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void event_name_Enter(object sender, EventArgs e)
+        {
+            if (event_name.Text == "Event Name")
+            {
+                event_name.Text = "";
+                event_name.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void event_location_Enter(object sender, EventArgs e)
+        {
+            if (event_location.Text == "Event Location")
+            {
+                event_location.Text = "";
+                event_location.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void event_location_Leave(object sender, EventArgs e)
+        {
+            if (event_location.Text.Length == 0)
+            {
+                event_location.Text = "Event Location";
+                event_location.ForeColor = SystemColors.GrayText;
+            }
         }
     }
 }
