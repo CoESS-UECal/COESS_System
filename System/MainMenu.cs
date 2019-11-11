@@ -244,7 +244,7 @@ namespace System
         {
             MessageBox.Show("This CoESS Master Database System is created by CoESS 2018-2019." + Environment.NewLine + 
             "\n©Christer Jude A. Mananquil, Vice President - Internal (2018-2019)\n©Charles Edward D. Bernardo, Lead Programmer (2018-2019)\n©Mark Generson D. Espiritu, "+
-            "Lead Designer (2018-2019)\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developer.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            "Lead Designer (2018-2019)\n©Kent Andrew Norca, Lead Designer (2019-2020)\n\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developers.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button1_Click(object sender, EventArgs e)
