@@ -501,5 +501,38 @@ namespace System
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form access = new Access();
+            access.ShowDialog();
+            if (Access.access)
+            {
+                Form memberlist = new Member_List();
+                memberlist.Show();
+                Close();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form newmember = new New_Member();
+            newmember.Show();
+            Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form newevent = new New_Event();
+            newevent.Show();
+            Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form eventlist = new Event_List();
+            eventlist.Show();
+            Close();
+        }
     }
 }

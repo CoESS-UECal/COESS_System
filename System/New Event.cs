@@ -133,7 +133,7 @@ namespace System
                 Image dump = event_pubmat.BackgroundImage;
                 if (dump != null)
                     dump.Dispose();
-                event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
+           //     event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
                 if (DialogResult.No == MessageBox.Show("Event Created!\n\nWould you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     Form events = new Events();
@@ -150,7 +150,7 @@ namespace System
                 Image dump = event_pubmat.BackgroundImage;
                 if (dump != null)
                     dump.Dispose();
-                event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
+           //     event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
             }
 
         }

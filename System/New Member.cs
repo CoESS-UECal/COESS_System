@@ -277,7 +277,7 @@ namespace System
             if(FN.Text == "First Name")
             {
                 FN.Text = "";
-                FN.ForeColor = SystemColors.WindowText;
+                FN.ForeColor = Color.White;
             }
         }
 
@@ -286,7 +286,7 @@ namespace System
             if (MI.Text == "MI")
             {
                 MI.Text = "";
-                MI.ForeColor = SystemColors.WindowText;
+                MI.ForeColor = Color.White;
             }
         }
 
@@ -304,7 +304,7 @@ namespace System
             if (LN.Text == "Last Name")
             {
                 LN.Text = "";
-                LN.ForeColor = SystemColors.WindowText;
+                LN.ForeColor = Color.White;
             }
         }
 
@@ -322,7 +322,7 @@ namespace System
             if (EMail.Text == "someone@example.com")
             {
                 EMail.Text = "";
-                EMail.ForeColor = SystemColors.WindowText;
+                EMail.ForeColor = Color.White;
             }
         }
 
@@ -340,7 +340,7 @@ namespace System
             if (Address.Text == "Address")
             {
                 Address.Text = "";
-                Address.ForeColor = SystemColors.WindowText;
+                Address.ForeColor = Color.White;
             }
         }
 
@@ -358,7 +358,7 @@ namespace System
             if (GuardName.Text == "Guardian Name")
             {
                 GuardName.Text = "";
-                GuardName.ForeColor = SystemColors.WindowText;
+                GuardName.ForeColor = Color.White;
             }
         }
 

@@ -203,6 +203,7 @@ namespace System
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
+     
         private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             GeneralEdit.data = textBox2.Text;
@@ -263,7 +264,7 @@ namespace System
             Image dump = pictureBox1.BackgroundImage;
             if (dump != null)
                 dump.Dispose();
-            pictureBox1.BackgroundImage = Properties.Resources.full_logo_transparent___clear_c;
+            pictureBox1.BackgroundImage = Properties.Resources.full_logo_transparent_clear_c;
         }
 
         private void countNewMemberToolStripMenuItem_Click(object sender, EventArgs e)
