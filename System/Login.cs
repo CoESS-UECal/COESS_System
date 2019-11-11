@@ -8,6 +8,7 @@ namespace System
     {
         
         int tries = 3;
+
         public Login()
         {
             InitializeComponent();
@@ -33,10 +34,8 @@ namespace System
                 Form form1 = new MainMenu();
                 form1.Show();
                 this.Hide();
-                
             }
-            
-                else if (tries >= 1)
+            else if (tries >= 1)
                 {
                     tries--;
                     MessageBox.Show("Invalid Username/Password\nNumber of Tries Left :" + tries.ToString());
@@ -46,14 +45,11 @@ namespace System
                         Application.Exit();
                     }
                 }
-            
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
             Loginbutton.Enabled = false;
-            //MessageBox.Show(EnCryptDecrypt.CryptorEngine.Encrypt("20151163018", true));
-            //Clipboard.SetText(EnCryptDecrypt.CryptorEngine.Encrypt("20151163018", true));
         }
 
         private void UserBox_TextChanged(object sender, EventArgs e)
@@ -86,16 +82,6 @@ namespace System
             {
                 Application.Exit();
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void UserBox_Enter(object sender, EventArgs e)
@@ -133,5 +119,6 @@ namespace System
                 PasswordBox.ForeColor = SystemColors.GrayText;
             }
         }
+
     }
 }

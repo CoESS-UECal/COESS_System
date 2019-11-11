@@ -12,6 +12,10 @@ namespace System
 {
     public partial class GeneralEdit : Form
     {
+
+        public static string data;
+        public static string col;
+
         public GeneralEdit()
         {
             InitializeComponent();
@@ -24,9 +28,6 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
-
-        public static string data;
-        public static string col;
 
         private void GeneralEdit_Load(object sender, EventArgs e)
         {
@@ -54,5 +55,6 @@ namespace System
                 }
             }
         }
+
     }
 }

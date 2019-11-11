@@ -38,6 +38,9 @@ namespace System
             }
         }
 
+        string membership_type;
+        string error;
+
         public New_Member()
         {
             InitializeComponent();
@@ -62,13 +65,11 @@ namespace System
             GuardName.Text = "Guardian Name";
             GuardName.ForeColor = SystemColors.GrayText;
         }
-        #region codes
-        string membership_type;
         
         private void button2_Click(object sender, EventArgs e)
         {
-                Form members = new Members();
-                members.Show();
+                Form mainmenu = new MainMenu();
+                mainmenu.Show();
                 Close();
         }
 
@@ -94,8 +95,6 @@ namespace System
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(@"C:\\COESS\\Images\\Member\\default.png", true);
             return complete;
         }
-
-        string error;
 
         private void button1_Click(object sender, EventArgs e)
         {//std_no,fn,mi,ln,email,home,contact,bday,age,yr,comitte,guar_name,gard_no,dpa
@@ -208,8 +207,8 @@ namespace System
                 radioButton2.Checked = false;
                 if (DialogResult.Yes == MessageBox.Show("New Member Registered!\n\nWould you like to go back?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    Form members = new Members();
-                    members.Show();
+                    Form mainmenu = new MainMenu();
+                    mainmenu.Show();
                     Close();
                 }
             }
@@ -316,7 +315,7 @@ namespace System
                 LN.ForeColor = SystemColors.GrayText;
             }
         }
-        #endregion
+
         private void EMail_Enter(object sender, EventArgs e)
         {
             if (EMail.Text == "someone@example.com")
@@ -370,6 +369,7 @@ namespace System
                 GuardName.ForeColor = SystemColors.GrayText;
             }
         }
+
     }
 }
 

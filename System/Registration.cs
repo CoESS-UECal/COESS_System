@@ -16,17 +16,17 @@ namespace System
         
         public Event_List eventlist { get; set; }
 
-        public Registration(Event_List _form1)
-        {
-            eventlist = _form1;
-            InitializeComponent();
-        }
-
         int ID;
         int query_ID;
 
         public static bool isregistration = false;
         public static bool duplicate = false;
+
+        public Registration(Event_List _form1)
+        {
+            eventlist = _form1;
+            InitializeComponent();
+        }
 
         public static void GetSN(int id)
         {
@@ -86,12 +86,6 @@ namespace System
             }
         }
 
-
-        private void Registration_Load(object sender, EventArgs e)
-        {
-            //isregistration = true;
-        }
-
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (eventlist.checkBox1.Checked==true)
@@ -99,6 +93,7 @@ namespace System
                 if (e.KeyCode == Keys.Enter)
                 {
                     ID = Convert.ToInt32(textBox1.Text);
+
                     if (MainMenu.isMaster == true)
                     {
                         MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
@@ -107,7 +102,9 @@ namespace System
                     {
                         MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                     }
+
                     Max_ID();
+
                     if (ID <= query_ID)
                     {
                         if (MainMenu.isMaster == true)
@@ -118,13 +115,16 @@ namespace System
                         {
                             MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                         }
+
                         GetSN(ID);
+
                         if(!duplicate)
                         {
                             MainMenu.Insert("insert into " + Event_List.event_name + " (ID_No, FN, LN, SN, Year_Level) select ID_No, FN, LN, SN,Year_Level from coess.member_list where ID_No = " + ID + ";");
                             MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
                             textBox1.Text = null;
                             eventlist.LA(Event_List.event_name);
+
                             if (MainMenu.isMaster == true)
                             {
                                 MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
@@ -159,7 +159,9 @@ namespace System
                     {
                         MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                     }
+
                     Max_ID();
+
                     if (ID <= query_ID)
                     {
                         if (MainMenu.isMaster == true)
@@ -173,6 +175,7 @@ namespace System
                         MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where ID_No = " + ID + ";");
                         textBox1.Text = null;
                         eventlist.LA(Event_List.event_name);
+
                         if (MainMenu.isMaster == true)
                         {
                             MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
@@ -190,5 +193,6 @@ namespace System
                 }
             }
         }
+
     }
 }

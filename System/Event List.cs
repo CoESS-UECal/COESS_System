@@ -14,6 +14,10 @@ namespace System
     public partial class Event_List : Form
     {
         private ListViewColumnSorter lvwColumnSorter;
+        public static string event_name;
+        string SN;
+        public static bool istimein = false;
+
         public Event_List()
         {
             InitializeComponent();
@@ -31,13 +35,6 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
-
-
-        public static string event_name;
-        string SN;
-        public static bool istimein=false;
-
-
 
         public void LEI(string ID) // LEI = Load Event Info
         {
@@ -288,9 +285,5 @@ namespace System
             this.listView2.Sort();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

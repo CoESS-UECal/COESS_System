@@ -14,6 +14,8 @@ namespace System
 {
     public partial class Member_List : Form
     {
+        public static string fullname, lastname, firstname, mi, idnumber;
+
         public Member_List()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
-        public static string fullname, lastname,firstname, mi, idnumber;
+        
         public static string decode(string thisDecode)
         {
             return EnCryptDecrypt.CryptorEngine.Decrypt(thisDecode,true);
@@ -39,7 +41,6 @@ namespace System
 
             return EnCryptDecrypt.CryptorEngine.Encrypt(thisEncode,true);
         }
-
 
         public void Populate_ListView(string myquery)
         {
@@ -122,7 +123,6 @@ namespace System
                             dump.Dispose();
                         pictureBox1.BackgroundImage =Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"),true));
                         pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-                        
                     }
                 }
                 catch (MySqlException ex)
@@ -160,6 +160,7 @@ namespace System
                 }
             }
         }
+
         public void countold() //count old member
         {
            
@@ -186,6 +187,7 @@ namespace System
                 }
             }
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
                 Form mainmenu = new MainMenu();
@@ -271,11 +273,6 @@ namespace System
             countold();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             listView1.Sort();
@@ -289,7 +286,6 @@ namespace System
             form1.ShowDialog();
             textBox6.Text = GeneralEdit.data;
         }
-
         
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -341,5 +337,6 @@ namespace System
                 }
             }
         }
+
     }
 }

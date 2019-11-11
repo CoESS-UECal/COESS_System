@@ -14,6 +14,9 @@ namespace System
 {
     public partial class DevMode : Form
     {
+
+        public static string fullname, lastname, firstname, mi, idnumber;
+
         public DevMode()
         {
             InitializeComponent();
@@ -26,7 +29,7 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
-        public static string fullname, lastname,firstname, mi, idnumber;
+
         public static string decode(string thisDecode)
         {
             return EnCryptDecrypt.CryptorEngine.Decrypt(thisDecode,true);
@@ -39,7 +42,6 @@ namespace System
 
             return EnCryptDecrypt.CryptorEngine.Encrypt(thisEncode,true);
         }
-
 
         public void Populate_ListView(string myquery)
         {
@@ -165,6 +167,7 @@ namespace System
                 }
             }
         }
+
         public void countold() //count old member
         {
            
@@ -191,6 +194,7 @@ namespace System
                 }
             }
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
                 Form mainmenu = new MainMenu();
@@ -203,7 +207,6 @@ namespace System
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
-     
         private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             GeneralEdit.data = textBox2.Text;
@@ -286,7 +289,6 @@ namespace System
         {
             listView1.Sort();
         }
-
 
         private void textBox11_DoubleClick(object sender, MouseEventArgs e)
         {
@@ -393,5 +395,6 @@ namespace System
                 }
             }
         }
+
     }
 }

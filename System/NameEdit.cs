@@ -43,7 +43,6 @@ namespace System
                     MessageBox.Show("Data Updated!", "Update Successful!");
                     Member_List.fullname = textBox1.Text + " " + textBox2.Text + " " + textBox4.Text;
                     Close();
-
                 }
             }
         }
@@ -93,5 +92,6 @@ namespace System
                 }
             }
         }
+
     }
 }

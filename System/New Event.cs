@@ -14,6 +14,15 @@ namespace System
 {
     public partial class New_Event : Form
     {
+
+        //Image variables
+        string pickedImage = "";
+        string location = @"C:\\COESS\\Images\\Pubmat\\";
+        string fileName = "";
+        string file1;
+        public static string finalevent;
+        bool duplicate = false;
+
         public New_Event()
         {
             InitializeComponent();
@@ -30,14 +39,6 @@ namespace System
             event_name.Text = "Event Name";
             event_name.ForeColor = SystemColors.GrayText;
         }
-
-        //Image variables
-        string pickedImage = "";
-        string location = @"C:\\COESS\\Images\\Pubmat\\";
-        string fileName = "";
-        string file1;
-        public static string finalevent;
-        bool duplicate=false;
 
         public void GetEname(string ename)
         {
@@ -91,11 +92,8 @@ namespace System
                 imageList1.Dispose();
                 imageList1.Images.Clear();
                 file1 = openFileDialog1.SafeFileName;
-                //MessageBox.Show(file1);
                 fileName = openFileDialog1.FileName;
-                //MessageBox.Show(fileName);
                 Image pickedImage = Image.FromFile(fileName);
-
                 imageList1.Images.Add(pickedImage);
                 event_pubmat.BackgroundImage = imageList1.Images[0];
                 event_pubmat.BackgroundImageLayout = ImageLayout.Stretch;
@@ -104,8 +102,8 @@ namespace System
 
         private void button3_Click(object sender, EventArgs e)
         {
-                Form events = new Events();
-                events.Show();
+                Form mainmenu = new MainMenu();
+                mainmenu.Show();
                 Close();
         }
 
@@ -133,11 +131,10 @@ namespace System
                 Image dump = event_pubmat.BackgroundImage;
                 if (dump != null)
                     dump.Dispose();
-           //     event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
                 if (DialogResult.No == MessageBox.Show("Event Created!\n\nWould you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    Form events = new Events();
-                    events.Show();
+                    Form mainmenu = new MainMenu();
+                    mainmenu.Show();
                     Close();
                 }
             }
@@ -150,9 +147,7 @@ namespace System
                 Image dump = event_pubmat.BackgroundImage;
                 if (dump != null)
                     dump.Dispose();
-           //     event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
             }
-
         }
 
         private void New_Event_Load(object sender, EventArgs e)
@@ -195,5 +190,6 @@ namespace System
                 event_location.ForeColor = SystemColors.GrayText;
             }
         }
+
     }
 }

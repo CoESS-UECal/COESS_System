@@ -13,12 +13,13 @@ namespace System
 {
     public partial class Report_Form : Form
     {
+        CrystalReport1 report = new CrystalReport1();
+
         public Report_Form()
         {
             InitializeComponent();
             
         }
-        CrystalReport1 report=new CrystalReport1();
 
         public static void Insert(string q)
         {
@@ -41,7 +42,6 @@ namespace System
                 }
             }
         }
-
 
         public void Populate_ListView(string myquery)
         {
@@ -76,6 +76,7 @@ namespace System
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
+
         public void Populate_Combobox(string myquery)
         {
             comboBox2.Items.Clear();
@@ -104,6 +105,7 @@ namespace System
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (MainMenu.isMaster == true)
@@ -114,7 +116,6 @@ namespace System
             {
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
-
 
             Insert("Delete from report_table;");
 
@@ -127,7 +128,6 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
             }
 
-
             if (comboBox1.Text=="CoESS")
             {
                 if (MainMenu.isMaster == true)
@@ -138,8 +138,6 @@ namespace System
                 {
                     MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
                 }
-
-
                 if (comboBox3.Text != "All")
                 {
                     Populate_ListView("Select ln,fn,sn,year_level from member_list where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
@@ -236,7 +234,6 @@ namespace System
                     }
                 }
             }
-
             crystalReportViewer1.RefreshReport();
         }
 
@@ -289,5 +286,6 @@ namespace System
             }
             Insert("Delete from report_table;");
         }
+
     }
 }
