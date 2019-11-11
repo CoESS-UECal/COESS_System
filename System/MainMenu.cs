@@ -13,10 +13,8 @@ namespace System
 {
     public partial class MainMenu : Form
     {
-        //"server=localhost;uid=root;pwd=;database=coess;"                  // database conection strings
+        //"server=localhost;uid=root;pwd=;database=coess;"                  // database connection strings
         //"server=localhost;uid=root;pwd=;database=coess_events;"           //
-
-
 
         //Database connection variables
         public static MySqlConnection conn;
@@ -27,6 +25,7 @@ namespace System
         {
             InitializeComponent();
         }
+
         int user_accounts;
         bool coessdb;
         bool coess_eventsdb;
@@ -35,6 +34,7 @@ namespace System
         string coess_events = "coess_events";
         string reporttable = "report_table_1";
         CrystalReport2 report = new CrystalReport2();
+
         public void checkdb(string ID, string check)
         {
             string query = "show databases like '" + ID + "';";
@@ -108,7 +108,6 @@ namespace System
             }
         }
 
-
         //create database
         public static void createdb(string q)
         {
@@ -130,6 +129,8 @@ namespace System
                 }
             }
         }
+
+        //Initialize database connection strings
         public static void Initialize(string connstr)
         {
             myConnectionString =connstr;
@@ -247,13 +248,6 @@ namespace System
             "Lead Designer (2018-2019)\n©Kent Andrew Norca, Lead Designer (2019-2020)\n\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developers.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form members = new Members();
-            members.Show();
-            Close();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("You will be Logged Out. Continue?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
@@ -262,13 +256,6 @@ namespace System
                 login.Show();
                 Close();
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form events = new Events();
-            events.Show();
-            Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -444,21 +431,6 @@ namespace System
                 devmode.Show();
                 Close();
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
