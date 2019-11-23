@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -38,7 +31,7 @@ namespace System
 
         public void LEI(string ID) // LEI = Load Event Info
         {
-            string query = "Select Event_Name, Event_Location, Event_Pubmat from event_list where Event_Name = '" +EnCryptDecrypt.CryptorEngine.Encrypt(ID,true) + "'";
+            string query = "Select Event_Name, Event_Location, Event_Pubmat from event_list where Event_Name = '" + EnCryptDecrypt.CryptorEngine.Encrypt(ID, true) + "'";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -47,7 +40,7 @@ namespace System
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[0].ToString(),true);
+                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[0].ToString(), true);
                         textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[1].ToString(), true);
                         Image dump = pictureBox1.BackgroundImage;
                         if (dump != null)
@@ -124,8 +117,8 @@ namespace System
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(),true));
-                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(),true));
+                        iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(), true));
                         listView1.Items.Add(iItem);
 
                     }
@@ -153,16 +146,14 @@ namespace System
 
         private void button3_Click(object sender, EventArgs e)
         {
-                Form mainmenu = new MainMenu();
-                mainmenu.Show();
-                Close();       
+            Form mainmenu = new MainMenu();
+            mainmenu.Show();
+            Close();
         }
 
         private void Event_List_Load(object sender, EventArgs e)
         {
             Populate_ListView("select Event_Name,Event_Date from event_list;");
-            
-
         }
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -194,7 +185,7 @@ namespace System
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox1.Checked)
+            if (checkBox1.Checked)
             {
                 istimein = true;
             }
@@ -208,7 +199,7 @@ namespace System
         {
             foreach (ListViewItem item in listView2.SelectedItems)
             {
-                SN =item.SubItems[2].Text;
+                SN = item.SubItems[2].Text;
                 if (MainMenu.isMaster == true)
                 {
                     MainMenu.Initialize("server=localhost;uid=root;pwd=;database=coess_events;sslmode=none;");
@@ -219,7 +210,7 @@ namespace System
                 }
 
 
-                MainMenu.Insert("delete from " +event_name + " where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(SN,true) + "';");
+                MainMenu.Insert("delete from " + event_name + " where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(SN, true) + "';");
 
                 listView2.Items.Remove(item);
 
@@ -232,7 +223,7 @@ namespace System
                     MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                 }
 
-                if (label5.Text=="0")
+                if (label5.Text == "0")
                 {
                     MessageBox.Show("There are no more participants!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }

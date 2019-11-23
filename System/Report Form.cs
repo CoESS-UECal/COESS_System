@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace System
@@ -18,7 +10,6 @@ namespace System
         public Report_Form()
         {
             InitializeComponent();
-            
         }
 
         public static void Insert(string q)
@@ -28,7 +19,7 @@ namespace System
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand(query,MainMenu. conn);
+                    MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
                     cmd.ExecuteNonQuery();
                 }
                 catch (MySqlException ex)
@@ -37,8 +28,7 @@ namespace System
                 }
                 finally
                 {
-                   MainMenu.CloseConnection();
-                    
+                    MainMenu.CloseConnection();
                 }
             }
         }
@@ -56,12 +46,11 @@ namespace System
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt( dataReader[0].ToString(),true));
-                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(),true));
-                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[2].ToString(),true));
-                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[3].ToString(),true));
+                        iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[2].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[3].ToString(), true));
                         listView1.Items.Add(iItem);
-
                     }
                 }
                 catch (Exception ex)
@@ -128,7 +117,7 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
             }
 
-            if (comboBox1.Text=="CoESS")
+            if (comboBox1.Text == "CoESS")
             {
                 if (MainMenu.isMaster == true)
                 {
@@ -165,11 +154,11 @@ namespace System
                     }
                 }
             }
-            else if(comboBox1.Text=="CoESS_Events")
+            else if (comboBox1.Text == "CoESS_Events")
             {
                 if (comboBox3.Text != "All")
                 {
-                    Populate_ListView("Select ln,fn,sn,year_level from " +comboBox2.Text+ " where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
+                    Populate_ListView("Select ln,fn,sn,year_level from " + comboBox2.Text + " where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
                     foreach (ListViewItem item in listView1.Items)
                     {
                         string sn, ln, fn, yr;
@@ -203,7 +192,7 @@ namespace System
                 }
                 else
                 {
-                    Populate_ListView("Select ln,fn,sn,year_level from "+comboBox2.Text+";");
+                    Populate_ListView("Select ln,fn,sn,year_level from " + comboBox2.Text + ";");
                     foreach (ListViewItem item in listView1.Items)
                     {
                         string sn, ln, fn, yr;

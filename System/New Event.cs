@@ -1,12 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.IO;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -16,7 +9,6 @@ namespace System
     {
 
         //Image variables
-        string pickedImage = "";
         string location = @"C:\\COESS\\Images\\Pubmat\\";
         string fileName = "";
         string file1;
@@ -43,7 +35,7 @@ namespace System
         public void GetEname(string ename)
         {
             int dup = 1;
-            string query = "select count(Event_Name) from event_list where Event_name = '" +EnCryptDecrypt.CryptorEngine.Encrypt(ename,true) + "';";
+            string query = "select count(Event_Name) from event_list where Event_name = '" + EnCryptDecrypt.CryptorEngine.Encrypt(ename, true) + "';";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -53,7 +45,7 @@ namespace System
 
                     while (dataReader.Read())
                     {
-                        if (Convert.ToInt32(dataReader[0].ToString())>= dup)
+                        if (Convert.ToInt32(dataReader[0].ToString()) >= dup)
                         {
                             duplicate = true;
                         }
@@ -75,7 +67,7 @@ namespace System
             //event_name,event_date,event_location,event_pubmat
             string event_complete = null;
             event_complete = EnCryptDecrypt.CryptorEngine.Encrypt(event_name.Text, true);
-            event_complete = event_complete+"','"+ EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
+            event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
             event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_location.Text), true);
             event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(location + file1, true);
             return event_complete;
@@ -102,9 +94,9 @@ namespace System
 
         private void button3_Click(object sender, EventArgs e)
         {
-                Form mainmenu = new MainMenu();
-                mainmenu.Show();
-                Close();
+            Form mainmenu = new MainMenu();
+            mainmenu.Show();
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,7 +104,7 @@ namespace System
             finalevent = event_name.Text;
             finalevent = finalevent.Replace(' ', '_');
             GetEname(event_name.Text);
-            if(!duplicate)
+            if (!duplicate)
             {
                 MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_req() + "');");
                 if (MainMenu.isMaster == true)
