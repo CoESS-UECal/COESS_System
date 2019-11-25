@@ -235,6 +235,7 @@
     <Compile Include="New Member.Designer.cs">
       <DependentUpon>New Member.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -358,6 +359,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="coess_old_logo_5b1_icon.ico" />
+    <None Include="Resources\NEW_EVENT_BACKGROUND.png" />
+    <None Include="Resources\MEMBER_LIST_V2.png" />
     <None Include="Resources\MEMBER_LIST.png" />
     <None Include="Resources\Reg_No_Id.png" />
     <None Include="Resources\MEMBER_LIST_21.png" />
@@ -402,12 +405,15 @@
     <None Include="Resources\EVENTLIST.png" />
     <None Include="Resources\ELECTION.png" />
     <None Include="Resources\CREATE_EVENT.png" />
+    <None Include="Resources\CREATE_NEW.png" />
+    <None Include="Resources\ELECTION_SYSTEM_V2.png" />
     <Content Include="Resources\Events.png" />
     <None Include="Resources\full-logo-transparent - clear c.png" />
     <None Include="Resources\go-back_new.png" />
     <None Include="Resources\Events2.png" />
     <None Include="Resources\EVENT_LIST1.png" />
     <None Include="Resources\image.png" />
+    <None Include="Resources\EVENT_LIST_V2.png" />
     <Content Include="Resources\Login Screen.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\logo.png" />

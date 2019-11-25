@@ -173,6 +173,16 @@ namespace System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CREATE_NEW {
+            get {
+                object obj = ResourceManager.GetObject("CREATE_NEW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CREATE_NEW_EVENT {
             get {
                 object obj = ResourceManager.GetObject("CREATE_NEW_EVENT", resourceCulture);
@@ -213,9 +223,29 @@ namespace System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ELECTION_SYSTEM_V2 {
+            get {
+                object obj = ResourceManager.GetObject("ELECTION_SYSTEM_V2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ELECTION1 {
             get {
                 object obj = ResourceManager.GetObject("ELECTION1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EVENT_LIST_V2 {
+            get {
+                object obj = ResourceManager.GetObject("EVENT_LIST_V2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,6 +393,16 @@ namespace System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MEMBER_LIST_V2 {
+            get {
+                object obj = ResourceManager.GetObject("MEMBER_LIST_V2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap members {
             get {
                 object obj = ResourceManager.GetObject("members", resourceCulture);
@@ -386,6 +426,16 @@ namespace System.Properties {
         internal static System.Drawing.Bitmap new_event {
             get {
                 object obj = ResourceManager.GetObject("new_event", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NEW_EVENT_BACKGROUND {
+            get {
+                object obj = ResourceManager.GetObject("NEW_EVENT_BACKGROUND", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

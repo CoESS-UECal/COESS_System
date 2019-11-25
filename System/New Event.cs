@@ -14,6 +14,8 @@ namespace System
 {
     public partial class New_Event : Form
     {
+        int PW;
+        bool Hided;
         public New_Event()
         {
             InitializeComponent();
@@ -29,6 +31,8 @@ namespace System
             event_location.ForeColor = SystemColors.GrayText;
             event_name.Text = "Event Name";
             event_name.ForeColor = SystemColors.GrayText;
+            PW = pnlEventDetails.Width;
+            Hided = false;
         }
 
         //Image variables
@@ -194,6 +198,43 @@ namespace System
                 event_location.Text = "Event Location";
                 event_location.ForeColor = SystemColors.GrayText;
             }
+        }
+
+        private void pnlEventDetailsNext_Click(object sender, EventArgs e)
+        {
+            if (Hided) btnEventDetailsNext.Text = "NEXT";
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Hided)
+            {
+                pnlEventDetails.Width = pnlEventDetails.Width + 20;
+                if(pnlEventDetails.Width >= PW)
+                {
+                    timer1.Stop();
+                    Hided = false;
+                    this.Refresh();
+                }
+
+            }
+            else
+            {
+                pnlEventDetails.Width = pnlEventDetails.Width - 20;
+                if (pnlEventDetails.Width <= 0)
+                {
+                    timer1.Stop();
+                    Hided = true;
+                    this.Refresh();
+                }
+            }
+        }
+
+        private void pnlEventImageBack_Click(object sender, EventArgs e)
+        {
+            if (Hided) btnEventImageBack.Text = "BACK";
+            timer1.Start();
         }
     }
 }
