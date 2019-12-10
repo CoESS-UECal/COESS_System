@@ -1,12 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -14,6 +6,9 @@ namespace System
 {
     public partial class DevMode : Form
     {
+
+        public static string fullname, lastname, firstname, mi, idnumber;
+
         public DevMode()
         {
             InitializeComponent();
@@ -26,10 +21,10 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
-        public static string fullname, lastname,firstname, mi, idnumber;
+
         public static string decode(string thisDecode)
         {
-            return EnCryptDecrypt.CryptorEngine.Decrypt(thisDecode,true);
+            return EnCryptDecrypt.CryptorEngine.Decrypt(thisDecode, true);
         }
 
         public static string encode(string thisEncode)
@@ -37,9 +32,8 @@ namespace System
             if (null == thisEncode)
                 return string.Empty;
 
-            return EnCryptDecrypt.CryptorEngine.Encrypt(thisEncode,true);
+            return EnCryptDecrypt.CryptorEngine.Encrypt(thisEncode, true);
         }
-
 
         public void Populate_ListView(string myquery)
         {
@@ -74,16 +68,15 @@ namespace System
             }
         }
 
-        public  static void Updated(string col, string data, string ID) //col = column to be edited, data = member info changed, ID = member ID number
+        public static void Updated(string col, string data, string ID) //col = column to be edited, data = member info changed, ID = member ID number
         {
-            string query = "UPDATE member_list SET " + col + " = '"+ EnCryptDecrypt.CryptorEngine.Encrypt(data,true)  +"' WHERE ID_No = " + ID + ";";
+            string query = "UPDATE member_list SET " + col + " = '" + EnCryptDecrypt.CryptorEngine.Encrypt(data, true) + "' WHERE ID_No = " + ID + ";";
             if (MainMenu.OpenConnection())
             {
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
                     cmd.ExecuteNonQuery();
-             
                 }
                 catch (MySqlException ex)
                 {
@@ -107,27 +100,27 @@ namespace System
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        Member_List.lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
-                        Member_List.firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true);
-                        Member_List.mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true);
-                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
-                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"),true);
-                        textBox3.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"),true);
-                        textBox4.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"),true);
-                        textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"),true);
-                        textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"),true);
+                        Member_List.lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
+                        Member_List.firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true);
+                        Member_List.mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true);
+                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
+                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"), true);
+                        textBox3.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"), true);
+                        textBox4.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"), true);
+                        textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"), true);
+                        textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"), true);
                         textBox7.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Age"), true);
                         textBox8.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("SN"), true);
                         textBox9.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Comm"), true);
                         textBox10.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Membership"), true);
                         textBox11.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("BDay"), true);
-                       // MessageBox.Show(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Email"), true));
+                        // MessageBox.Show(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Email"), true));
                         Image dump = pictureBox1.BackgroundImage;
                         if (dump != null)
                             dump.Dispose();
-                        pictureBox1.BackgroundImage =Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"),true));
+                        pictureBox1.BackgroundImage = Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"), true));
                         pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-                        
+
                     }
                 }
                 catch (MySqlException ex)
@@ -165,9 +158,10 @@ namespace System
                 }
             }
         }
+
         public void countold() //count old member
         {
-           
+
             string query = "Select count(membership) from member_list where Membership = '0oJH9mE2Sm4=';";
             if (MainMenu.OpenConnection())
             {
@@ -187,15 +181,16 @@ namespace System
                 finally
                 {
                     MainMenu.CloseConnection();
-                    
+
                 }
             }
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
-                Form members = new Members();
-                members.Show();
-                Close();
+            Form mainmenu = new MainMenu();
+            mainmenu.Show();
+            Close();
         }
 
         private void Member_List_Load(object sender, EventArgs e)
@@ -203,12 +198,11 @@ namespace System
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
-     
         private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             GeneralEdit.data = textBox2.Text;
             GeneralEdit.col = "Address";
-             Form form1 = new GeneralEdit();
+            Form form1 = new GeneralEdit();
             form1.ShowDialog();
             textBox2.Text = GeneralEdit.data;
         }
@@ -239,7 +233,7 @@ namespace System
             form1.ShowDialog();
             textBox5.Text = GeneralEdit.data;
         }
-        
+
         private void textBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Form form1 = new NameEdit();
@@ -277,16 +271,10 @@ namespace System
             countold();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             listView1.Sort();
         }
-
 
         private void textBox11_DoubleClick(object sender, MouseEventArgs e)
         {
@@ -342,14 +330,12 @@ namespace System
             textBox6.Text = GeneralEdit.data;
         }
 
-        
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            foreach(ListViewItem item in listView1.SelectedItems)
+            foreach (ListViewItem item in listView1.SelectedItems)
             {
                 Member_List.idnumber = item.SubItems[0].Text;
                 LMI(item.SubItems[0].Text);
-                
             }
         }
 
@@ -380,18 +366,17 @@ namespace System
                 string oldimage = pictureBox1.ImageLocation;
                 filename = openFileDialog1.SafeFileName;
                 pickedImage = openFileDialog1.FileName;
-                //pictureBox1.ImageLocation = pickedImage;
-                pictureBox1.BackgroundImage =Image.FromFile(location + filename);
+                pictureBox1.BackgroundImage = Image.FromFile(location + filename);
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     Updated("ID_Address", location + filename, idnumber);
                 }
                 else
                 {
-                    // pictureBox1.ImageLocation = oldimage;
                     pictureBox1.BackgroundImage = Image.FromFile(oldimage);
                 }
             }
         }
+
     }
 }

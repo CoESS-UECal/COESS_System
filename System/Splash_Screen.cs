@@ -17,8 +17,10 @@ namespace System
         {
             InitializeComponent();
         }
+
         Random random = new Random();
         int val;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
         }

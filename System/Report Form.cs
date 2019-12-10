@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace System
 {
     public partial class Report_Form : Form
     {
+        CrystalReport1 report = new CrystalReport1();
+
         public Report_Form()
         {
             InitializeComponent();
-            
         }
-        CrystalReport1 report=new CrystalReport1();
 
         public static void Insert(string q)
         {
@@ -27,7 +19,7 @@ namespace System
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand(query,MainMenu. conn);
+                    MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
                     cmd.ExecuteNonQuery();
                 }
                 catch (MySqlException ex)
@@ -36,12 +28,10 @@ namespace System
                 }
                 finally
                 {
-                   MainMenu.CloseConnection();
-                    
+                    MainMenu.CloseConnection();
                 }
             }
         }
-
 
         public void Populate_ListView(string myquery)
         {
@@ -56,12 +46,11 @@ namespace System
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt( dataReader[0].ToString(),true));
-                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(),true));
-                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[2].ToString(),true));
-                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[3].ToString(),true));
+                        iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[2].ToString(), true));
+                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[3].ToString(), true));
                         listView1.Items.Add(iItem);
-
                     }
                 }
                 catch (Exception ex)
@@ -76,6 +65,7 @@ namespace System
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
+
         public void Populate_Combobox(string myquery)
         {
             comboBox2.Items.Clear();
@@ -104,6 +94,7 @@ namespace System
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (MainMenu.isMaster == true)
@@ -114,7 +105,6 @@ namespace System
             {
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
-
 
             Insert("Delete from report_table;");
 
@@ -127,8 +117,7 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
             }
 
-
-            if (comboBox1.Text=="CoESS")
+            if (comboBox1.Text == "CoESS")
             {
                 if (MainMenu.isMaster == true)
                 {
@@ -138,8 +127,6 @@ namespace System
                 {
                     MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=" + comboBox1.Text + ";sslmode=none;");
                 }
-
-
                 if (comboBox3.Text != "All")
                 {
                     Populate_ListView("Select ln,fn,sn,year_level from member_list where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
@@ -167,11 +154,11 @@ namespace System
                     }
                 }
             }
-            else if(comboBox1.Text=="CoESS_Events")
+            else if (comboBox1.Text == "CoESS_Events")
             {
                 if (comboBox3.Text != "All")
                 {
-                    Populate_ListView("Select ln,fn,sn,year_level from " +comboBox2.Text+ " where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
+                    Populate_ListView("Select ln,fn,sn,year_level from " + comboBox2.Text + " where year_level = '" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox3.Text, true) + "';");
                     foreach (ListViewItem item in listView1.Items)
                     {
                         string sn, ln, fn, yr;
@@ -205,7 +192,7 @@ namespace System
                 }
                 else
                 {
-                    Populate_ListView("Select ln,fn,sn,year_level from "+comboBox2.Text+";");
+                    Populate_ListView("Select ln,fn,sn,year_level from " + comboBox2.Text + ";");
                     foreach (ListViewItem item in listView1.Items)
                     {
                         string sn, ln, fn, yr;
@@ -236,7 +223,6 @@ namespace System
                     }
                 }
             }
-
             crystalReportViewer1.RefreshReport();
         }
 
@@ -289,5 +275,6 @@ namespace System
             }
             Insert("Delete from report_table;");
         }
+
     }
 }

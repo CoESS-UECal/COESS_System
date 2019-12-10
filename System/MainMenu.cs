@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace System
 {
     public partial class MainMenu : Form
     {
-        //"server=localhost;uid=root;pwd=;database=coess;"                  // database conection strings
+        //"server=localhost;uid=root;pwd=;database=coess;"                  // database connection strings
         //"server=localhost;uid=root;pwd=;database=coess_events;"           //
-
-
 
         //Database connection variables
         public static MySqlConnection conn;
@@ -27,6 +17,7 @@ namespace System
         {
             InitializeComponent();
         }
+
         int user_accounts;
         bool coessdb;
         bool coess_eventsdb;
@@ -35,6 +26,7 @@ namespace System
         string coess_events = "coess_events";
         string reporttable = "report_table_1";
         CrystalReport2 report = new CrystalReport2();
+
         public void checkdb(string ID, string check)
         {
             string query = "show databases like '" + ID + "';";
@@ -108,7 +100,6 @@ namespace System
             }
         }
 
-
         //create database
         public static void createdb(string q)
         {
@@ -130,9 +121,11 @@ namespace System
                 }
             }
         }
+
+        //Initialize database connection strings
         public static void Initialize(string connstr)
         {
-            myConnectionString =connstr;
+            myConnectionString = connstr;
             conn = new MySqlConnection(myConnectionString);
         }
 
@@ -237,21 +230,14 @@ namespace System
 
         private void imageLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Always put all Images in C:\\COESS\\Images\\.\nThank You.","Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Always put all Images in C:\\COESS\\Images\\.\nThank You.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This CoESS Master Database System is created by CoESS 2018-2019." + Environment.NewLine + 
-            "\n©Christer Jude A. Mananquil, Vice President - Internal (2018-2019)\n©Charles Edward D. Bernardo, Lead Programmer (2018-2019)\n©Mark Generson D. Espiritu, "+
-            "Lead Designer (2018-2019)\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developer.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form members = new Members();
-            members.Show();
-            Close();
+            MessageBox.Show("This CoESS Master Database System is created by CoESS 2018-2019." + Environment.NewLine +
+            "\n©Christer Jude A. Mananquil, Vice President - Internal (2018-2019)\n©Charles Edward D. Bernardo, Lead Programmer (2018-2019)\n©Mark Generson D. Espiritu, " +
+            "Lead Designer (2018-2019)\n©Kent Andrew Norca, Lead Designer (2019-2020)\n\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developers.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -262,13 +248,6 @@ namespace System
                 login.Show();
                 Close();
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form events = new Events();
-            events.Show();
-            Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -283,7 +262,7 @@ namespace System
             if (Access.access)
             {
                 Form report = new Report_Form();
-                report.Show(); 
+                report.Show();
             }
         }
 
@@ -330,7 +309,7 @@ namespace System
         {
             MainMenu.Initialize("server=localhost;user=root;sslmode=none;");
             checkuser();
-            if(user_accounts!=2)
+            if (user_accounts != 2)
             {
                 Insert("create user 'access'@'192.168.1.2';");
                 Insert("GRANT USAGE ON *.* TO 'access'@'192.168.1.2';");
@@ -391,7 +370,7 @@ namespace System
                         guard_contact = item.SubItems[6].Text;
                         address = item.SubItems[7].Text;
                         bday = item.SubItems[8].Text;
-                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + sn + "','" + guard_name + "','" + guard_contact + "','"+address+"','"+bday+"');");
+                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + sn + "','" + guard_name + "','" + guard_contact + "','" + address + "','" + bday + "');");
                     }
 
                     crystalReportViewer1.RefreshReport();
@@ -446,24 +425,9 @@ namespace System
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            if(isMaster)
+            if (isMaster)
             {
                 toolStripLabel3.BackgroundImage = System.Properties.Resources.on_button;
                 toolStripLabel2.Text = "Master";
@@ -494,7 +458,7 @@ namespace System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            toolStripLabel5.Text = "Today is "+DateTime.Now.ToShortDateString()+" and the time is "+DateTime.Now.ToLongTimeString();
+            toolStripLabel5.Text = "Today is " + DateTime.Now.ToShortDateString() + " and the time is " + DateTime.Now.ToLongTimeString();
         }
 
         private void convertPlaintextCSVToEncryptedCSVToolStripMenuItem_Click(object sender, EventArgs e)
