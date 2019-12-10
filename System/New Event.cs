@@ -14,8 +14,7 @@ namespace System
 {
     public partial class New_Event : Form
     {
-        int PW;
-        bool Hided;
+
         public New_Event()
         {
             InitializeComponent();
@@ -31,10 +30,17 @@ namespace System
             event_location.ForeColor = SystemColors.GrayText;
             event_name.Text = "Event Name";
             event_name.ForeColor = SystemColors.GrayText;
-            PW = pnlEventDetails.Width;
-            Hided = false;
+            lblEnterEventName.Visible = false;
+            lblEnterLocation.Visible = false;
+
         }
 
+        //Color
+        Pen red = new Pen(Color.Red);
+        System.Drawing.SolidBrush fillRed = new System.Drawing.SolidBrush(Color.Red);
+        Rectangle rect_event_name = new Rectangle();
+        Rectangle rect_event_location = new Rectangle();
+        
         //Image variables
         string pickedImage = "";
         string location = @"C:\\COESS\\Images\\Pubmat\\";
@@ -162,6 +168,7 @@ namespace System
         private void New_Event_Load(object sender, EventArgs e)
         {
             finalevent = "";
+
         }
 
         private void event_name_Leave(object sender, EventArgs e)
@@ -179,6 +186,7 @@ namespace System
             {
                 event_name.Text = "";
                 event_name.ForeColor = SystemColors.WindowText;
+                lblEventName.Visible = true;
             }
         }
 
@@ -200,41 +208,71 @@ namespace System
             }
         }
 
-        private void pnlEventDetailsNext_Click(object sender, EventArgs e)
+
+
+        private void New_Event_Paint(object sender, PaintEventArgs e)
         {
-            if (Hided) btnEventDetailsNext.Text = "NEXT";
-            timer1.Start();
+           Graphics g = e.Graphics;
+           g.DrawRectangle(red, rect_event_name);
+           g.DrawRectangle(red, rect_event_location);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btnEventDetailsNext_Click(object sender, EventArgs e)
         {
-            if (Hided)
+            if(event_name.Text != "Event Name" && event_location.Text != "Event Location")
             {
-                pnlEventDetails.Width = pnlEventDetails.Width + 20;
-                if(pnlEventDetails.Width >= PW)
-                {
-                    timer1.Stop();
-                    Hided = false;
-                    this.Refresh();
-                }
+                pnlEventImage.BringToFront();
+                button3.Visible = false;
+            }
+
+            if (event_name.Text == "Event Name")
+            {
+                event_name.BorderStyle = BorderStyle.None;
+                rect_event_name.X = event_name.Location.X - 2;
+                rect_event_name.Y = event_name.Location.Y + 49;
+                rect_event_name.Height = event_name.Height + 2;
+                rect_event_name.Width = event_name.Width + 2;
+                lblEnterEventName.ForeColor = Color.FromArgb(249, 69, 69);
+                lblEnterEventName.Visible = true;
+          
+            }
+           else if (lblEnterEventName.Visible = true)
+            {
+                event_name.BorderStyle = BorderStyle.Fixed3D;
+                rect_event_name.Height = 0;
+                rect_event_name.Width = 0;
+                lblEnterEventName.Visible = false;
+     
+            }
+
+            Invalidate();
+            if (event_location.Text == "Event Location") { 
+                event_location.BorderStyle = BorderStyle.None;
+                rect_event_location.X = event_location.Location.X - 2;
+                rect_event_location.Y = event_location.Location.Y + 49;
+                rect_event_location.Height = event_location.Height + 2;
+                rect_event_location.Width = event_location.Width + 2;
+                lblEnterLocation.ForeColor = Color.FromArgb(249, 69, 69);
+                lblEnterLocation.Visible = true;
 
             }
-            else
+            else if(lblEnterLocation.Visible = true)
             {
-                pnlEventDetails.Width = pnlEventDetails.Width - 20;
-                if (pnlEventDetails.Width <= 0)
-                {
-                    timer1.Stop();
-                    Hided = true;
-                    this.Refresh();
-                }
+                event_location.BorderStyle = BorderStyle.Fixed3D;
+                rect_event_location.Height = 0;
+                rect_event_location.Width = 0;
+                lblEnterLocation.Visible = false;
+       
             }
+
+            Invalidate();
         }
 
-        private void pnlEventImageBack_Click(object sender, EventArgs e)
+        private void btnEventImageBack_Click(object sender, EventArgs e)
         {
-            if (Hided) btnEventImageBack.Text = "BACK";
-            timer1.Start();
+            pnlEventDetails.BringToFront();
+            button3.Visible = true;
         }
     }
-}
+    }
+
