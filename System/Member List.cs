@@ -1,12 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -14,6 +6,8 @@ namespace System
 {
     public partial class Member_List : Form
     {
+        public static string fullname, lastname, firstname, mi, idnumber;
+
         public Member_List()
         {
             InitializeComponent();
@@ -26,10 +20,10 @@ namespace System
                 MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
             }
         }
-        public static string fullname, lastname,firstname, mi, idnumber;
+
         public static string decode(string thisDecode)
         {
-            return EnCryptDecrypt.CryptorEngine.Decrypt(thisDecode,true);
+            return EnCryptDecrypt.CryptorEngine.Decrypt(thisDecode, true);
         }
 
         public static string encode(string thisEncode)
@@ -37,9 +31,8 @@ namespace System
             if (null == thisEncode)
                 return string.Empty;
 
-            return EnCryptDecrypt.CryptorEngine.Encrypt(thisEncode,true);
+            return EnCryptDecrypt.CryptorEngine.Encrypt(thisEncode, true);
         }
-
 
         public void Populate_ListView(string myquery)
         {
@@ -74,16 +67,16 @@ namespace System
             }
         }
 
-        public  static void Updated(string col, string data, string ID) //col = column to be edited, data = member info changed, ID = member ID number
+        public static void Updated(string col, string data, string ID) //col = column to be edited, data = member info changed, ID = member ID number
         {
-            string query = "UPDATE member_list SET " + col + " = '"+ EnCryptDecrypt.CryptorEngine.Encrypt(data,true)  +"' WHERE ID_No = " + ID + ";";
+            string query = "UPDATE member_list SET " + col + " = '" + EnCryptDecrypt.CryptorEngine.Encrypt(data, true) + "' WHERE ID_No = " + ID + ";";
             if (MainMenu.OpenConnection())
             {
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
                     cmd.ExecuteNonQuery();
-             
+
                 }
                 catch (MySqlException ex)
                 {
@@ -107,22 +100,21 @@ namespace System
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
-                        firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true);
-                        mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true);
-                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"),true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"),true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"),true);
-                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"),true);
-                        textBox3.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"),true);
-                        textBox4.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"),true);
-                        textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"),true);
-                        textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"),true);
+                        lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
+                        firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true);
+                        mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true);
+                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
+                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"), true);
+                        textBox3.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"), true);
+                        textBox4.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"), true);
+                        textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"), true);
+                        textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"), true);
                         textBox7.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Age"), true);
                         Image dump = pictureBox1.BackgroundImage;
                         if (dump != null)
                             dump.Dispose();
-                        pictureBox1.BackgroundImage =Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"),true));
+                        pictureBox1.BackgroundImage = Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"), true));
                         pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-                        
                     }
                 }
                 catch (MySqlException ex)
@@ -160,9 +152,10 @@ namespace System
                 }
             }
         }
+
         public void countold() //count old member
         {
-           
+
             string query = "Select count(membership) from member_list where Membership = '0oJH9mE2Sm4=';";
             if (MainMenu.OpenConnection())
             {
@@ -182,15 +175,16 @@ namespace System
                 finally
                 {
                     MainMenu.CloseConnection();
-                    
+
                 }
             }
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
-                Form members = new Members();
-                members.Show();
-                Close();
+            Form mainmenu = new MainMenu();
+            mainmenu.Show();
+            Close();
         }
 
         private void Member_List_Load(object sender, EventArgs e)
@@ -202,7 +196,7 @@ namespace System
         {
             GeneralEdit.data = textBox2.Text;
             GeneralEdit.col = "Address";
-             Form form1 = new GeneralEdit();
+            Form form1 = new GeneralEdit();
             form1.ShowDialog();
             textBox2.Text = GeneralEdit.data;
         }
@@ -233,7 +227,7 @@ namespace System
             form1.ShowDialog();
             textBox5.Text = GeneralEdit.data;
         }
-        
+
         private void textBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Form form1 = new NameEdit();
@@ -271,11 +265,6 @@ namespace System
             countold();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             listView1.Sort();
@@ -290,14 +279,12 @@ namespace System
             textBox6.Text = GeneralEdit.data;
         }
 
-        
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            foreach(ListViewItem item in listView1.SelectedItems)
+            foreach (ListViewItem item in listView1.SelectedItems)
             {
                 idnumber = item.SubItems[0].Text;
                 LMI(item.SubItems[0].Text);
-                
             }
         }
 
@@ -329,7 +316,7 @@ namespace System
                 filename = openFileDialog1.SafeFileName;
                 pickedImage = openFileDialog1.FileName;
                 //pictureBox1.ImageLocation = pickedImage;
-                pictureBox1.BackgroundImage =Image.FromFile(pickedImage);
+                pictureBox1.BackgroundImage = Image.FromFile(pickedImage);
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     Updated("ID_Address", location + filename, idnumber);
@@ -341,5 +328,6 @@ namespace System
                 }
             }
         }
+
     }
 }

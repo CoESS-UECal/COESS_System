@@ -174,12 +174,6 @@
     <Compile Include="Event List.Designer.cs">
       <DependentUpon>Event List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Events.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Events.Designer.cs">
-      <DependentUpon>Events.cs</DependentUpon>
-    </Compile>
     <Compile Include="GeneralEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,12 +204,6 @@
     </Compile>
     <Compile Include="Member List.Designer.cs">
       <DependentUpon>Member List.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Members.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Members.Designer.cs">
-      <DependentUpon>Members.cs</DependentUpon>
     </Compile>
     <Compile Include="NameEdit.cs">
       <SubType>Form</SubType>
@@ -288,9 +276,6 @@
     <EmbeddedResource Include="Event List.resx">
       <DependentUpon>Event List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Events.resx">
-      <DependentUpon>Events.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GeneralEdit.resx">
       <DependentUpon>GeneralEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,9 +290,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Member List.resx">
       <DependentUpon>Member List.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Members.resx">
-      <DependentUpon>Members.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NameEdit.resx">
       <DependentUpon>NameEdit.cs</DependentUpon>

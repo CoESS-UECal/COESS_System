@@ -1,24 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace System
 {
     public partial class New_Member : Form
     {
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        private static extern bool EnableMenuItem(IntPtr hMenu, uint uIDEnableItem,
-        uint uEnable);
+        string membership_type;
+        string error;
 
         private const int SC_CLOSE = 0xF060;
         private const int MF_BYCOMMAND = 0x0;
@@ -37,7 +25,7 @@ namespace System
                 //System.Console.WriteLine(ex.Message);
             }
         }
-      
+
         public New_Member()
         {
             InitializeComponent();
@@ -65,36 +53,19 @@ namespace System
         }
         #region codes
         string membership_type;
-       
-        //Color
-        Pen red = new Pen(Color.Red);
-        System.Drawing.SolidBrush fillRed = new System.Drawing.SolidBrush(Color.Red);
-        Rectangle rectFirstName = new Rectangle();
-        Rectangle rectMiddleInitial = new Rectangle();
-        Rectangle rectLastName = new Rectangle();
-        Rectangle rectStudentNumber = new Rectangle();
-        Rectangle rectYear = new Rectangle();
-        Rectangle rectBday= new Rectangle();
-        Rectangle rectCommittee = new Rectangle();
-        Rectangle rectEmail = new Rectangle();
-        Rectangle rectPhoneNumber = new Rectangle();
-        Rectangle rectAddress = new Rectangle();
-        Rectangle rectGuardianName = new Rectangle();
-        Rectangle rectGuardianPhoneNumber = new Rectangle();
-
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-                Form members = new Members();
-                members.Show();
-                Close();
+            Form mainmenu = new MainMenu();
+            mainmenu.Show();
+            Close();
         }
 
         public string requirements()
         {
             //SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,ID_Address
             //shorten code in insertion
-            string complete =null;
+            string complete = null;
             complete += EnCryptDecrypt.CryptorEngine.Encrypt(SN.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(FN.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(MI.Text, true);
@@ -112,8 +83,6 @@ namespace System
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(@"C:\\COESS\\Images\\Member\\default.png", true);
             return complete;
         }
-
-        string error;
 
         private void button1_Click(object sender, EventArgs e)
         {//std_no,fn,mi,ln,email,home,contact,bday,age,yr,comitte,guar_name,gard_no,dpa
@@ -134,7 +103,7 @@ namespace System
             bool membership = radioButton1.Checked != false || radioButton2.Checked != false;
 
             error = null;
-            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag || !age_flag||!membership)
+            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag || !age_flag || !membership)
             {
 
                 if (!fn_flag)
@@ -226,8 +195,8 @@ namespace System
                 radioButton2.Checked = false;
                 if (DialogResult.Yes == MessageBox.Show("New Member Registered!\n\nWould you like to go back?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    Form members = new Members();
-                    members.Show();
+                    Form mainmenu = new MainMenu();
+                    mainmenu.Show();
                     Close();
                 }
             }
@@ -260,13 +229,13 @@ namespace System
         private void Bday_ValueChanged(object sender, EventArgs e)
         {
             int age;
-            if((DateTime.Now.Month - Bday.Value.Month >= 0)&& (DateTime.Now.DayOfYear - Bday.Value.DayOfYear >= 0))
+            if ((DateTime.Now.Month - Bday.Value.Month >= 0) && (DateTime.Now.DayOfYear - Bday.Value.DayOfYear >= 0))
             {
                 age = DateTime.Now.Year - Bday.Value.Year;
             }
             else
             {
-                age = DateTime.Now.Year - (Bday.Value.Year+1);
+                age = DateTime.Now.Year - (Bday.Value.Year + 1);
             }
             Age.Text = age.ToString();
         }
@@ -283,7 +252,7 @@ namespace System
 
         private void FN_Leave(object sender, EventArgs e)
         {
-            if(FN.Text.Length == 0)
+            if (FN.Text.Length == 0)
             {
                 FN.Text = "First Name";
                 FN.ForeColor = SystemColors.GrayText;
@@ -292,7 +261,7 @@ namespace System
 
         private void FN_Enter(object sender, EventArgs e)
         {
-            if(FN.Text == "First Name")
+            if (FN.Text == "First Name")
             {
                 FN.Text = "";
                 FN.ForeColor = Color.White;
@@ -334,7 +303,7 @@ namespace System
                 LN.ForeColor = SystemColors.GrayText;
             }
         }
-        #endregion
+
         private void EMail_Enter(object sender, EventArgs e)
         {
             if (EMail.Text == "someone@example.com")
@@ -682,6 +651,7 @@ namespace System
         {
             pnlContact.BringToFront();
         }
+
     }
 }
 

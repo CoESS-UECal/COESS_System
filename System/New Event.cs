@@ -1,12 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.IO;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -14,6 +7,7 @@ namespace System
 {
     public partial class New_Event : Form
     {
+
 
         public New_Event()
         {
@@ -52,7 +46,7 @@ namespace System
         public void GetEname(string ename)
         {
             int dup = 1;
-            string query = "select count(Event_Name) from event_list where Event_name = '" +EnCryptDecrypt.CryptorEngine.Encrypt(ename,true) + "';";
+            string query = "select count(Event_Name) from event_list where Event_name = '" + EnCryptDecrypt.CryptorEngine.Encrypt(ename, true) + "';";
             if (MainMenu.OpenConnection())
             {
                 try
@@ -62,7 +56,7 @@ namespace System
 
                     while (dataReader.Read())
                     {
-                        if (Convert.ToInt32(dataReader[0].ToString())>= dup)
+                        if (Convert.ToInt32(dataReader[0].ToString()) >= dup)
                         {
                             duplicate = true;
                         }
@@ -84,7 +78,7 @@ namespace System
             //event_name,event_date,event_location,event_pubmat
             string event_complete = null;
             event_complete = EnCryptDecrypt.CryptorEngine.Encrypt(event_name.Text, true);
-            event_complete = event_complete+"','"+ EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
+            event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_date.Value.ToShortDateString()), true);
             event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(event_location.Text), true);
             event_complete = event_complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(location + file1, true);
             return event_complete;
@@ -101,11 +95,8 @@ namespace System
                 imageList1.Dispose();
                 imageList1.Images.Clear();
                 file1 = openFileDialog1.SafeFileName;
-                //MessageBox.Show(file1);
                 fileName = openFileDialog1.FileName;
-                //MessageBox.Show(fileName);
                 Image pickedImage = Image.FromFile(fileName);
-
                 imageList1.Images.Add(pickedImage);
                 event_pubmat.BackgroundImage = imageList1.Images[0];
                 event_pubmat.BackgroundImageLayout = ImageLayout.Stretch;
@@ -114,9 +105,9 @@ namespace System
 
         private void button3_Click(object sender, EventArgs e)
         {
-                Form events = new Events();
-                events.Show();
-                Close();
+            Form mainmenu = new MainMenu();
+            mainmenu.Show();
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,7 +115,7 @@ namespace System
             finalevent = event_name.Text;
             finalevent = finalevent.Replace(' ', '_');
             GetEname(event_name.Text);
-            if(!duplicate)
+            if (!duplicate)
             {
                 MainMenu.Insert("insert into event_list (event_name,event_date,event_location,event_pubmat) values ('" + event_req() + "');");
                 if (MainMenu.isMaster == true)
@@ -143,11 +134,10 @@ namespace System
                 Image dump = event_pubmat.BackgroundImage;
                 if (dump != null)
                     dump.Dispose();
-           //     event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
                 if (DialogResult.No == MessageBox.Show("Event Created!\n\nWould you like to create another event?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    Form events = new Events();
-                    events.Show();
+                    Form mainmenu = new MainMenu();
+                    mainmenu.Show();
                     Close();
                 }
             }
@@ -160,9 +150,7 @@ namespace System
                 Image dump = event_pubmat.BackgroundImage;
                 if (dump != null)
                     dump.Dispose();
-           //     event_pubmat.BackgroundImage = System.Properties.Resources.Blank_BG1;
             }
-
         }
 
         private void New_Event_Load(object sender, EventArgs e)
@@ -207,6 +195,7 @@ namespace System
                 event_location.ForeColor = SystemColors.GrayText;
             }
         }
+
 
 
 
@@ -274,5 +263,6 @@ namespace System
             button3.Visible = true;
         }
     }
+
     }
 

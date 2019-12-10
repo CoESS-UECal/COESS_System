@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace System
@@ -15,34 +7,35 @@ namespace System
     {
         public Event_List eventlist { get; set; }
 
+        public static bool duplicate = false;
+
         public Registration_NoID(Event_List _form1)
         {
             eventlist = _form1;
             InitializeComponent();
         }
-        public static bool duplicate = false;
 
         public static void GetSN(string sn)
         {
             int dup = 1;
-            string query = "select count(SN) from "+Event_List.event_name+" where SN = '"+sn+"';";
+            string query = "select count(SN) from " + Event_List.event_name + " where SN = '" + sn + "';";
             if (MainMenu.OpenConnection())
             {
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand(query, MainMenu.conn);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
-                    while(dataReader.Read())
+                    while (dataReader.Read())
                     {
-                        if(dup ==Convert.ToInt32(dataReader[0].ToString()))
+                        if (dup == Convert.ToInt32(dataReader[0].ToString()))
                         {
                             duplicate = true;
-                        }   
+                        }
                     }
                 }
                 catch (MySqlException ex)
                 {
-                        MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {
@@ -69,8 +62,10 @@ namespace System
                     {
                         MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                     }
-                    GetSN(EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text,true));//Finish dis tonight verifying for duplicate SN to avoid error in primary key
-                    if(!duplicate)
+
+                    GetSN(EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true));//Finish dis tonight verifying for duplicate SN to avoid error in primary key
+
+                    if (!duplicate)
                     {
                         MainMenu.Insert("insert into " + Event_List.event_name + " (FN, LN, SN,Year_Level) values ('" + EnCryptDecrypt.CryptorEngine.Encrypt(textBox1.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(textBox2.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(comboBox1.Text, true) + "');");
                         MainMenu.Insert("update " + Event_List.event_name + " set Time_In = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "';");
@@ -115,7 +110,7 @@ namespace System
                     {
                         MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                     }
-                    MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" +EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text,true) + "';");
+                    MainMenu.Insert("update " + Event_List.event_name + " set Time_Out = '" + DateTime.Now.ToString("HH:mm") + "' where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "';");
                     eventlist.LA(Event_List.event_name);
                     if (MainMenu.isMaster == true)
                     {
@@ -130,19 +125,5 @@ namespace System
             duplicate = false;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
