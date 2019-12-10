@@ -37,7 +37,7 @@ namespace System
                 //System.Console.WriteLine(ex.Message);
             }
         }
-
+      
         public New_Member()
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace System
             }
             FN.Text = "First Name";
             FN.ForeColor = SystemColors.GrayText;
-            MI.Text = "MI";
+            MI.Text = "Middle Initial";
             MI.ForeColor = SystemColors.GrayText;
             LN.Text = "Last Name";
             LN.ForeColor = SystemColors.GrayText;
@@ -61,10 +61,28 @@ namespace System
             Address.ForeColor = SystemColors.GrayText;
             GuardName.Text = "Guardian Name";
             GuardName.ForeColor = SystemColors.GrayText;
+           
         }
         #region codes
         string membership_type;
-        
+       
+        //Color
+        Pen red = new Pen(Color.Red);
+        System.Drawing.SolidBrush fillRed = new System.Drawing.SolidBrush(Color.Red);
+        Rectangle rectFirstName = new Rectangle();
+        Rectangle rectMiddleInitial = new Rectangle();
+        Rectangle rectLastName = new Rectangle();
+        Rectangle rectStudentNumber = new Rectangle();
+        Rectangle rectYear = new Rectangle();
+        Rectangle rectBday= new Rectangle();
+        Rectangle rectCommittee = new Rectangle();
+        Rectangle rectEmail = new Rectangle();
+        Rectangle rectPhoneNumber = new Rectangle();
+        Rectangle rectAddress = new Rectangle();
+        Rectangle rectGuardianName = new Rectangle();
+        Rectangle rectGuardianPhoneNumber = new Rectangle();
+
+
         private void button2_Click(object sender, EventArgs e)
         {
                 Form members = new Members();
@@ -283,7 +301,7 @@ namespace System
 
         private void MI_Enter(object sender, EventArgs e)
         {
-            if (MI.Text == "MI")
+            if (MI.Text == "Middle Initial")
             {
                 MI.Text = "";
                 MI.ForeColor = Color.White;
@@ -294,7 +312,7 @@ namespace System
         {
             if (MI.Text.Length == 0)
             {
-                MI.Text = "MI";
+                MI.Text = "Middle Initial";
                 MI.ForeColor = SystemColors.GrayText;
             }
         }
@@ -369,6 +387,300 @@ namespace System
                 GuardName.Text = "Guardian Name";
                 GuardName.ForeColor = SystemColors.GrayText;
             }
+        }
+
+        private void pnlInformation_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.DrawRectangle(red, rectFirstName);
+            g.DrawRectangle(red, rectMiddleInitial);
+            g.DrawRectangle(red, rectLastName);
+            g.DrawRectangle(red, rectStudentNumber);
+            g.DrawRectangle(red, rectYear);
+            g.DrawRectangle(red, rectBday);
+            g.DrawRectangle(red, rectCommittee);
+            }
+        private void pnlContact_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.DrawRectangle(red, rectEmail);
+            g.DrawRectangle(red, rectPhoneNumber);
+            g.DrawRectangle(red, rectAddress);
+            g.DrawRectangle(red, rectGuardianName);
+            g.DrawRectangle(red, rectGuardianPhoneNumber);
+        }
+       
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bool age_flag = Int32.Parse(Age.Text) > 0;
+
+            if (FN.Text != "First Name" && MI.Text != "Middle Initial" && LN.Text != "Last Name" && SN.MaskCompleted != false && Year.Text.Length > 0 && Comm.Text.Length > 0 && Age.Text.Length > 0)
+            {
+                pnlContact.BringToFront();
+                button2.Visible = false;
+            }
+
+            if (FN.Text == "First Name") {
+                FN.BorderStyle = BorderStyle.FixedSingle;
+                rectFirstName.X = FN.Location.X -2;
+                rectFirstName.Y = FN.Location.Y -2;
+                rectFirstName.Height = FN.Height + 2;
+                rectFirstName.Width = FN.Width + 2;
+                lblFirstName.ForeColor = Color.FromArgb(249, 69, 69);
+                lblFirstName.Visible = true;
+
+            }
+            else if(lblFirstName.Visible = true)
+            {
+                FN.BorderStyle = BorderStyle.Fixed3D;
+                rectFirstName.Height = 0;
+                rectFirstName.Width = 0;
+                lblFirstName.Visible = false;
+            }
+            Invalidate();
+
+
+            if (MI.Text == "Middle Initial")
+            {
+                MI.BorderStyle = BorderStyle.FixedSingle;
+                rectMiddleInitial.X = MI.Location.X - 2;
+                rectMiddleInitial.Y = MI.Location.Y - 2;
+                rectMiddleInitial.Height = MI.Height + 2;
+                rectMiddleInitial.Width = MI.Width + 2;
+                lblMiddleName.ForeColor = Color.FromArgb(249, 69, 69);
+                lblMiddleName.Visible = true;
+            }
+            else if (lblMiddleName.Visible = true)
+            {
+                MI.BorderStyle = BorderStyle.Fixed3D;
+                rectMiddleInitial.Height = 0;
+                rectMiddleInitial.Width = 0;
+                lblMiddleName.Visible = false;
+
+            }
+            Invalidate();
+
+            if (LN.Text == "Last Name")
+            {
+                LN.BorderStyle = BorderStyle.FixedSingle;
+                rectLastName.X = LN.Location.X - 2;
+                rectLastName.Y = LN.Location.Y - 2;
+                rectLastName.Height = LN.Height + 2;
+                rectLastName.Width = LN.Width + 2;
+                lblLastName.ForeColor = Color.FromArgb(249, 69, 69);
+                lblLastName.Visible = true;
+            }
+            else if (lblLastName.Visible = true)
+            {
+                LN.BorderStyle = BorderStyle.Fixed3D;
+                rectLastName.Height = 0;
+                rectLastName.Width = 0;
+                lblLastName.Visible = false;
+            }
+            Invalidate();
+
+       
+            if (SN.MaskCompleted != true)
+            {
+                SN.BorderStyle = BorderStyle.FixedSingle;
+                rectStudentNumber.X = SN.Location.X - 2;
+                rectStudentNumber.Y = SN.Location.Y - 2;
+                rectStudentNumber.Height = SN.Height + 2;
+                rectStudentNumber.Width = SN.Width + 2;
+                lblStudentNumber.ForeColor = Color.FromArgb(249, 69, 69);
+                lblStudentNumber.Visible = true;
+            }
+            else if (lblStudentNumber.Visible = true)
+            {
+                SN.BorderStyle = BorderStyle.Fixed3D;
+                rectStudentNumber.Height = 0;
+                rectStudentNumber.Width = 0;
+                lblStudentNumber.Visible = false;
+            }
+            Invalidate();
+
+
+            if (Year.Text.Length == 0)
+            {
+                rectYear.X = Year.Location.X - 2;
+                rectYear.Y = Year.Location.Y - 2;
+                rectYear.Height = Year.Height + 2;
+                rectYear.Width = Year.Width + 2;
+                lblYear.ForeColor = Color.FromArgb(249, 69, 69);
+                lblYear.Visible = true;
+            }
+            else if (lblYear.Visible = true)
+            {
+                rectYear.Height = 0;
+                rectYear.Width = 0;
+                lblYear.Visible = false;
+
+            }
+
+        
+
+           if (!age_flag)
+            {
+                //Age.BorderStyle = BorderStyle.FixedSingle;
+                rectBday.X = Bday.Location.X - 2;
+                rectBday.Y = Bday.Location.Y - 2;
+                rectBday.Height = Bday.Height + 2;
+                rectBday.Width = Bday.Width + 2;
+                lblBday.ForeColor = Color.FromArgb(249, 69, 69);
+                lblBday.Visible = true;
+            }
+            else if (lblBday.Visible = true)
+            {
+                //     Bday.BorderStyle = BorderStyle.Fixed3D;
+                rectBday.Height = 0;
+                rectBday.Width = 0;
+                lblBday.Visible = false;
+
+            }
+         
+
+            if (Comm.Text.Length == 0)
+            {
+                rectCommittee.X = Comm.Location.X - 2;
+                rectCommittee.Y = Comm.Location.Y - 2;
+                rectCommittee.Height = Comm.Height + 2;
+                rectCommittee.Width = Comm.Width + 2;
+                lblCommittee.ForeColor = Color.FromArgb(249, 69, 69);
+                lblCommittee.Visible = true;
+            }
+            else if (lblCommittee.Visible = true)
+            {
+                rectCommittee.Height = 0;
+                rectCommittee.Width = 0;
+                lblCommittee.Visible = false;
+
+            }
+
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pnlInformation.BringToFront();
+            button2.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (EMail.Text != "someone@example.com" && Contact.MaskCompleted != false && Address.Text != "Address" && GuardName.Text != "Guardian Name" && GuardContact.MaskCompleted != false && radioButton1.Checked == true || radioButton2.Checked == true)
+            {
+                pnlUAC.BringToFront();
+                button2.Visible = false;
+            }
+
+
+            if (EMail.Text == "someone@example.com")
+            {
+                EMail.BorderStyle = BorderStyle.FixedSingle;
+                rectEmail.X = EMail.Location.X - 2;
+                rectEmail.Y = EMail.Location.Y - 2;
+                rectEmail.Height = EMail.Height + 2;
+                rectEmail.Width = EMail.Width + 2;
+                lblEmail.ForeColor = Color.FromArgb(249, 69, 69);
+                lblEmail.Visible = true;
+            }
+            else if (lblEmail.Visible = true)
+            {
+                EMail.BorderStyle = BorderStyle.Fixed3D;
+                rectEmail.Height = 0;
+                rectEmail.Width = 0;
+                lblEmail.Visible = false;
+            }
+
+            if (Contact.MaskCompleted != true)
+            {
+                Contact.BorderStyle = BorderStyle.FixedSingle;
+                rectPhoneNumber.X = Contact.Location.X - 2;
+                rectPhoneNumber.Y = Contact.Location.Y - 2;
+                rectPhoneNumber.Height = Contact.Height + 2;
+                rectPhoneNumber.Width = Contact.Width + 2;
+                lblPhoneNumber.ForeColor = Color.FromArgb(249, 69, 69);
+                lblPhoneNumber.Visible = true;
+            }
+            else if (lblPhoneNumber.Visible = true)
+            {
+                Contact.BorderStyle = BorderStyle.Fixed3D;
+                rectPhoneNumber.Height = 0;
+                rectPhoneNumber.Width = 0;
+                lblPhoneNumber.Visible = false;
+            }
+
+
+            if (Address.Text == "Address")
+            {
+                Address.BorderStyle = BorderStyle.FixedSingle;
+                rectAddress.X = Address.Location.X - 2;
+                rectAddress.Y = Address.Location.Y - 2;
+                rectAddress.Height = Address.Height + 2;
+                rectAddress.Width = Address.Width + 2;
+                lblAddress.ForeColor = Color.FromArgb(249, 69, 69);
+                lblAddress.Visible = true;
+            }
+            else if (lblAddress.Visible = true)
+            {
+                Address.BorderStyle = BorderStyle.Fixed3D;
+                rectAddress.Height = 0;
+                rectAddress.Width = 0;
+                lblAddress.Visible = false;
+            }
+
+            if (GuardName.Text == "Guardian Name")
+            {
+                GuardName.BorderStyle = BorderStyle.FixedSingle;
+                rectGuardianName.X = GuardName.Location.X - 2;
+                rectGuardianName.Y = GuardName.Location.Y - 2;
+                rectGuardianName.Height = GuardName.Height + 2;
+                rectGuardianName.Width = GuardName.Width + 2;
+                lblGaurdianName.ForeColor = Color.FromArgb(249, 69, 69);
+                lblGaurdianName.Visible = true;
+            }
+            else if (lblGaurdianName.Visible = true)
+            {
+                GuardName.BorderStyle = BorderStyle.Fixed3D;
+                rectGuardianName.Height = 0;
+                rectGuardianName.Width = 0;
+                lblGaurdianName.Visible = false;
+            }
+
+            if (GuardContact.MaskCompleted != true)
+            {
+                GuardContact.BorderStyle = BorderStyle.FixedSingle;
+                rectGuardianPhoneNumber.X = GuardContact.Location.X - 2;
+                rectGuardianPhoneNumber.Y = GuardContact.Location.Y - 2;
+                rectGuardianPhoneNumber.Height = GuardContact.Height + 2;
+                rectGuardianPhoneNumber.Width = GuardContact.Width + 2;
+                lblGaurdianContactNumber.ForeColor = Color.FromArgb(249, 69, 69);
+                lblGaurdianContactNumber.Visible = true;
+            }
+            else if (lblGaurdianContactNumber.Visible = true)
+            {
+                GuardContact.BorderStyle = BorderStyle.Fixed3D;
+                rectGuardianPhoneNumber.Height = 0;
+                rectGuardianPhoneNumber.Width = 0;
+                lblGaurdianContactNumber.Visible = false;
+            }
+
+            if (radioButton1.Checked == false && radioButton2.Checked == false)
+            {
+                lblMembership.ForeColor = Color.FromArgb(249, 69, 69);
+                lblMembership.Visible = true;
+            }
+            else
+            {
+                lblMembership.Visible = false;
+            }
+
+            Invalidate();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            pnlContact.BringToFront();
         }
     }
 }

@@ -93,7 +93,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(252, 316);
+            this.button1.Location = new System.Drawing.Point(258, 373);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 60);
             this.button1.TabIndex = 10;
@@ -107,7 +107,7 @@
             this.event_pubmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.event_pubmat.Location = new System.Drawing.Point(17, 29);
             this.event_pubmat.Name = "event_pubmat";
-            this.event_pubmat.Size = new System.Drawing.Size(478, 230);
+            this.event_pubmat.Size = new System.Drawing.Size(478, 307);
             this.event_pubmat.TabIndex = 11;
             this.event_pubmat.TabStop = false;
             // 
@@ -257,7 +257,7 @@
             this.pnlEventImage.Controls.Add(this.event_pubmat);
             this.pnlEventImage.Location = new System.Drawing.Point(0, 50);
             this.pnlEventImage.Name = "pnlEventImage";
-            this.pnlEventImage.Size = new System.Drawing.Size(512, 426);
+            this.pnlEventImage.Size = new System.Drawing.Size(512, 470);
             this.pnlEventImage.TabIndex = 33;
             // 
             // btnEventImageBack
@@ -265,7 +265,7 @@
             this.btnEventImageBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
             this.btnEventImageBack.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnEventImageBack.ForeColor = System.Drawing.Color.White;
-            this.btnEventImageBack.Location = new System.Drawing.Point(46, 316);
+            this.btnEventImageBack.Location = new System.Drawing.Point(52, 373);
             this.btnEventImageBack.Name = "btnEventImageBack";
             this.btnEventImageBack.Size = new System.Drawing.Size(200, 60);
             this.btnEventImageBack.TabIndex = 37;
