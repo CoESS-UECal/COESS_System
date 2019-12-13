@@ -13,18 +13,19 @@ namespace System
         private const int MF_GRAYED = 0x1;
         private const int MF_ENABLED = 0x0;
 
-        private void DisableCloseButton(Form form)
+       private void DisableCloseButton(Form form)
         {
             try
             {
-                EnableMenuItem(GetSystemMenu(form.Handle, false),
-                           SC_CLOSE, MF_BYCOMMAND | MF_GRAYED);
+                //EnableMenuItem(GetSystemMenu(form.Handle, false),
+             //   SC_CLOSE, MF_BYCOMMAND | MF_GRAYED);
             }
             catch (Exception /*ex*/)
             {
                 //System.Console.WriteLine(ex.Message);
             }
-        }
+        } 
+    
 
         public New_Member()
         {
@@ -49,11 +50,28 @@ namespace System
             Address.ForeColor = SystemColors.GrayText;
             GuardName.Text = "Guardian Name";
             GuardName.ForeColor = SystemColors.GrayText;
-           
+
         }
         #region codes
-        string membership_type;
-        
+    //    string membership_type;
+
+        Pen red = new Pen(Color.Red);
+        System.Drawing.SolidBrush fillRed = new System.Drawing.SolidBrush(Color.Red);
+        Rectangle rectFirstName = new Rectangle();
+        Rectangle rectLastName = new Rectangle();
+        Rectangle rectMiddleName = new Rectangle();
+        Rectangle rectGuardianPhoneNumber = new Rectangle();
+        Rectangle rectGuardianName = new Rectangle();
+        Rectangle rectEmail = new Rectangle();
+        Rectangle rectBday = new Rectangle();
+        Rectangle rectAddress = new Rectangle();
+        Rectangle rectYear = new Rectangle();
+        Rectangle rectStudentNumber = new Rectangle();
+        Rectangle rectPhoneNumber = new Rectangle();
+        Rectangle rectMiddleInitial = new Rectangle();
+        Rectangle rectCommittee = new Rectangle();
+
+
         private void button2_Click(object sender, EventArgs e)
         {
             Form mainmenu = new MainMenu();
@@ -358,6 +376,8 @@ namespace System
             }
         }
 
+
+
         private void pnlInformation_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -368,7 +388,7 @@ namespace System
             g.DrawRectangle(red, rectYear);
             g.DrawRectangle(red, rectBday);
             g.DrawRectangle(red, rectCommittee);
-            }
+        }
         private void pnlContact_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -378,12 +398,12 @@ namespace System
             g.DrawRectangle(red, rectGuardianName);
             g.DrawRectangle(red, rectGuardianPhoneNumber);
         }
-       
+
         private void button3_Click(object sender, EventArgs e)
         {
             bool age_flag = Int32.Parse(Age.Text) > 0;
 
-            if (FN.Text != "First Name" && MI.Text != "Middle Initial" && LN.Text != "Last Name" && SN.MaskCompleted != false && Year.Text.Length > 0 && Comm.Text.Length > 0 && Age.Text.Length > 0)
+            if (FN.Text != "First Name" && MI.Text != "Middle Initial" && LN.Text != "Last Name" && SN.MaskCompleted != false && Year.Text.Length > 0 && Comm.Text.Length > 0 && age_flag)
             {
                 pnlContact.BringToFront();
                 button2.Visible = false;
@@ -391,15 +411,15 @@ namespace System
 
             if (FN.Text == "First Name") {
                 FN.BorderStyle = BorderStyle.FixedSingle;
-                rectFirstName.X = FN.Location.X -2;
-                rectFirstName.Y = FN.Location.Y -2;
+                rectFirstName.X = FN.Location.X - 2;
+                rectFirstName.Y = FN.Location.Y - 2;
                 rectFirstName.Height = FN.Height + 2;
                 rectFirstName.Width = FN.Width + 2;
                 lblFirstName.ForeColor = Color.FromArgb(249, 69, 69);
                 lblFirstName.Visible = true;
 
             }
-            else if(lblFirstName.Visible = true)
+            else if (lblFirstName.Visible = true)
             {
                 FN.BorderStyle = BorderStyle.Fixed3D;
                 rectFirstName.Height = 0;
@@ -448,7 +468,7 @@ namespace System
             }
             Invalidate();
 
-       
+
             if (SN.MaskCompleted != true)
             {
                 SN.BorderStyle = BorderStyle.FixedSingle;
@@ -486,9 +506,9 @@ namespace System
 
             }
 
-        
 
-           if (!age_flag)
+
+            if (!age_flag)
             {
                 //Age.BorderStyle = BorderStyle.FixedSingle;
                 rectBday.X = Bday.Location.X - 2;
@@ -506,7 +526,7 @@ namespace System
                 lblBday.Visible = false;
 
             }
-         
+
 
             if (Comm.Text.Length == 0)
             {
@@ -536,7 +556,7 @@ namespace System
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (EMail.Text != "someone@example.com" && Contact.MaskCompleted != false && Address.Text != "Address" && GuardName.Text != "Guardian Name" && GuardContact.MaskCompleted != false && radioButton1.Checked == true || radioButton2.Checked == true)
+            if (EMail.Text != "someone@example.com" && Contact.MaskCompleted != false && Address.Text != "Address" && GuardName.Text != "Guardian Name" && GuardContact.MaskCompleted != false && (radioButton1.Checked == true || radioButton2.Checked == true))
             {
                 pnlUAC.BringToFront();
                 button2.Visible = false;
@@ -654,4 +674,4 @@ namespace System
 
     }
 }
-
+#endregion
