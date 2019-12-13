@@ -47,7 +47,48 @@
             this.GuardContact = new System.Windows.Forms.MaskedTextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnlInformation = new System.Windows.Forms.Panel();
+            this.lblBday = new System.Windows.Forms.Label();
+            this.lblCommittee = new System.Windows.Forms.Label();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblStudentNumber = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.Bday = new System.Windows.Forms.DateTimePicker();
+            this.Age = new System.Windows.Forms.TextBox();
+            this.lblMiddleName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.pnlContact = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMembership = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblGaurdianContactNumber = new System.Windows.Forms.Label();
+            this.lblGaurdianName = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.pnlUAC = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pnlInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlContact.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlUAC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // FN
@@ -55,7 +96,7 @@
             this.FN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.FN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.FN.ForeColor = System.Drawing.Color.White;
-            this.FN.Location = new System.Drawing.Point(28, 171);
+            this.FN.Location = new System.Drawing.Point(11, 46);
             this.FN.Name = "FN";
             this.FN.Size = new System.Drawing.Size(221, 39);
             this.FN.TabIndex = 1;
@@ -68,7 +109,7 @@
             this.MI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.MI.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MI.ForeColor = System.Drawing.Color.White;
-            this.MI.Location = new System.Drawing.Point(204, 171);
+            this.MI.Location = new System.Drawing.Point(239, 46);
             this.MI.Name = "MI";
             this.MI.Size = new System.Drawing.Size(160, 39);
             this.MI.TabIndex = 2;
@@ -80,7 +121,7 @@
             this.LN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.LN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LN.ForeColor = System.Drawing.Color.White;
-            this.LN.Location = new System.Drawing.Point(330, 171);
+            this.LN.Location = new System.Drawing.Point(406, 46);
             this.LN.Name = "LN";
             this.LN.Size = new System.Drawing.Size(221, 39);
             this.LN.TabIndex = 3;
@@ -93,7 +134,7 @@
             this.SN.BeepOnError = true;
             this.SN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SN.ForeColor = System.Drawing.Color.White;
-            this.SN.Location = new System.Drawing.Point(28, 236);
+            this.SN.Location = new System.Drawing.Point(11, 124);
             this.SN.Mask = "\\2\\0000000000";
             this.SN.Name = "SN";
             this.SN.PromptChar = 'X';
@@ -105,7 +146,7 @@
             this.EMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.EMail.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.EMail.ForeColor = System.Drawing.Color.White;
-            this.EMail.Location = new System.Drawing.Point(28, 301);
+            this.EMail.Location = new System.Drawing.Point(11, 49);
             this.EMail.Name = "EMail";
             this.EMail.Size = new System.Drawing.Size(346, 39);
             this.EMail.TabIndex = 9;
@@ -117,24 +158,12 @@
             this.Address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.Address.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.Address.ForeColor = System.Drawing.Color.White;
-            this.Address.Location = new System.Drawing.Point(28, 366);
+            this.Address.Location = new System.Drawing.Point(11, 118);
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(543, 39);
             this.Address.TabIndex = 11;
             this.Address.Enter += new System.EventHandler(this.Address_Enter);
             this.Address.Leave += new System.EventHandler(this.Address_Leave);
-            // 
-            // Bday
-            // 
-            this.Bday.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Bday.Location = new System.Drawing.Point(187, 300);
-            this.Bday.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
-            this.Bday.Name = "Bday";
-            this.Bday.Size = new System.Drawing.Size(154, 33);
-            this.Bday.TabIndex = 9;
-            this.Bday.Value = new System.DateTime(2018, 5, 6, 11, 30, 34, 0);
-            this.Bday.ValueChanged += new System.EventHandler(this.Bday_ValueChanged);
             // 
             // Year
             // 
@@ -145,12 +174,12 @@
             this.Year.ForeColor = System.Drawing.Color.White;
             this.Year.FormattingEnabled = true;
             this.Year.Items.AddRange(new object[] {
-            "1st",
-            "2nd",
-            "3rd",
-            "4th",
-            "5th"});
-            this.Year.Location = new System.Drawing.Point(346, 236);
+            "1st Year",
+            "2nd Year",
+            "3rd Year",
+            "4th Year",
+            "5th Year"});
+            this.Year.Location = new System.Drawing.Point(239, 123);
             this.Year.Name = "Year";
             this.Year.Size = new System.Drawing.Size(160, 40);
             this.Year.TabIndex = 5;
@@ -173,7 +202,7 @@
             "Grievances",
             "Outreach",
             "None (Alay kana)"});
-            this.Comm.Location = new System.Drawing.Point(524, 235);
+            this.Comm.Location = new System.Drawing.Point(11, 341);
             this.Comm.Name = "Comm";
             this.Comm.Size = new System.Drawing.Size(388, 33);
             this.Comm.TabIndex = 7;
@@ -183,7 +212,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(382, 449);
+            this.button1.Location = new System.Drawing.Point(575, 342);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(261, 71);
             this.button1.TabIndex = 17;
@@ -196,7 +225,7 @@
             this.GuardName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.GuardName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.GuardName.ForeColor = System.Drawing.Color.White;
-            this.GuardName.Location = new System.Drawing.Point(524, 171);
+            this.GuardName.Location = new System.Drawing.Point(11, 232);
             this.GuardName.Name = "GuardName";
             this.GuardName.Size = new System.Drawing.Size(346, 39);
             this.GuardName.TabIndex = 12;
@@ -224,7 +253,7 @@
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(524, 370);
+            this.checkBox1.Location = new System.Drawing.Point(20, 423);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(434, 29);
             this.checkBox1.TabIndex = 16;
@@ -238,7 +267,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.ForeColor = System.Drawing.Color.White;
             this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
-            this.linkLabel1.Location = new System.Drawing.Point(724, 370);
+            this.linkLabel1.Location = new System.Drawing.Point(218, 423);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(234, 25);
             this.linkLabel1.TabIndex = 15;
@@ -252,7 +281,7 @@
             this.Contact.BeepOnError = true;
             this.Contact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.Contact.ForeColor = System.Drawing.Color.White;
-            this.Contact.Location = new System.Drawing.Point(187, 236);
+            this.Contact.Location = new System.Drawing.Point(363, 49);
             this.Contact.Mask = "00000000000";
             this.Contact.Name = "Contact";
             this.Contact.PromptChar = 'X';
@@ -265,23 +294,12 @@
             this.GuardContact.BeepOnError = true;
             this.GuardContact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.GuardContact.ForeColor = System.Drawing.Color.White;
-            this.GuardContact.Location = new System.Drawing.Point(764, 171);
+            this.GuardContact.Location = new System.Drawing.Point(363, 233);
             this.GuardContact.Mask = "00000000000";
             this.GuardContact.Name = "GuardContact";
             this.GuardContact.PromptChar = 'X';
             this.GuardContact.Size = new System.Drawing.Size(190, 39);
             this.GuardContact.TabIndex = 13;
-            // 
-            // Age
-            // 
-            this.Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.Age.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Age.ForeColor = System.Drawing.Color.White;
-            this.Age.Location = new System.Drawing.Point(346, 301);
-            this.Age.Name = "Age";
-            this.Age.ReadOnly = true;
-            this.Age.Size = new System.Drawing.Size(154, 33);
-            this.Age.TabIndex = 36;
             // 
             // radioButton2
             // 
@@ -289,7 +307,7 @@
             this.radioButton2.BackColor = System.Drawing.Color.Transparent;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(703, 304);
+            this.radioButton2.Location = new System.Drawing.Point(173, 346);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(89, 29);
             this.radioButton2.TabIndex = 15;
@@ -303,7 +321,7 @@
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(524, 302);
+            this.radioButton1.Location = new System.Drawing.Point(17, 346);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(150, 29);
             this.radioButton1.TabIndex = 14;
@@ -858,32 +876,25 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 576);
             this.ControlBox = false;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.Age);
-            this.Controls.Add(this.GuardContact);
-            this.Controls.Add(this.Contact);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.GuardName);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Comm);
-            this.Controls.Add(this.Year);
-            this.Controls.Add(this.Bday);
-            this.Controls.Add(this.Address);
-            this.Controls.Add(this.EMail);
-            this.Controls.Add(this.SN);
-            this.Controls.Add(this.LN);
-            this.Controls.Add(this.MI);
-            this.Controls.Add(this.FN);
+            this.Controls.Add(this.pnlInformation);
+            this.Controls.Add(this.pnlContact);
+            this.Controls.Add(this.pnlUAC);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_Member";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.New_Member_Load);
+            this.pnlInformation.ResumeLayout(false);
+            this.pnlInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlContact.ResumeLayout(false);
+            this.pnlContact.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlUAC.ResumeLayout(false);
+            this.pnlUAC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -907,6 +918,41 @@
         private Windows.Forms.MaskedTextBox GuardContact;
         private Windows.Forms.RadioButton radioButton2;
         private Windows.Forms.RadioButton radioButton1;
-        private Windows.Forms.Label label1;
+        private Windows.Forms.Panel pnlInformation;
+        private Windows.Forms.Panel pnlContact;
+        private Windows.Forms.Panel pnlUAC;
+        private Windows.Forms.Label lblStudentNumber;
+        private Windows.Forms.Label lblLastName;
+        private Windows.Forms.Label lblMiddleName;
+        private Windows.Forms.Label lblFirstName;
+        private Windows.Forms.DateTimePicker Bday;
+        private Windows.Forms.TextBox Age;
+        private Windows.Forms.Label lblGaurdianContactNumber;
+        private Windows.Forms.Label lblGaurdianName;
+        private Windows.Forms.Label lblAddress;
+        private Windows.Forms.Label lblPhoneNumber;
+        private Windows.Forms.Label lblEmail;
+        private Windows.Forms.Button button3;
+        private Windows.Forms.Label label14;
+        private Windows.Forms.Label label13;
+        private Windows.Forms.Button button5;
+        private Windows.Forms.Button button4;
+        private Windows.Forms.Label label12;
+        private Windows.Forms.Label label11;
+        private Windows.Forms.RichTextBox richTextBox1;
+        private Windows.Forms.Label label15;
+        private Windows.Forms.PictureBox pictureBox2;
+        private Windows.Forms.PictureBox pictureBox1;
+        private Windows.Forms.Label label18;
+        private Windows.Forms.Label label5;
+        private Windows.Forms.Label label16;
+        private Windows.Forms.Label label17;
+        private Windows.Forms.PictureBox pictureBox3;
+        private Windows.Forms.Label lblYear;
+        private Windows.Forms.Label lblCommittee;
+        private Windows.Forms.Label lblBday;
+        private Windows.Forms.Label label2;
+        private Windows.Forms.Label lblMembership;
+        private Windows.Forms.Button button6;
     }
 }
