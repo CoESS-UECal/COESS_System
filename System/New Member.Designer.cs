@@ -282,7 +282,7 @@
             this.Contact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.Contact.ForeColor = System.Drawing.Color.White;
             this.Contact.Location = new System.Drawing.Point(363, 49);
-            this.Contact.Mask = "00000000000";
+            this.Contact.Mask = "\\0\\9000000000";
             this.Contact.Name = "Contact";
             this.Contact.PromptChar = 'X';
             this.Contact.Size = new System.Drawing.Size(191, 39);
@@ -295,7 +295,7 @@
             this.GuardContact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.GuardContact.ForeColor = System.Drawing.Color.White;
             this.GuardContact.Location = new System.Drawing.Point(363, 233);
-            this.GuardContact.Mask = "00000000000";
+            this.GuardContact.Mask = "\\0\\9000000000";
             this.GuardContact.Name = "GuardContact";
             this.GuardContact.PromptChar = 'X';
             this.GuardContact.Size = new System.Drawing.Size(190, 39);
@@ -415,7 +415,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(178, 75);
             this.label5.TabIndex = 54;
-            this.label5.Text = "We are not just an \r\norganization\r\nwe are a FAMILY.";
+            this.label5.Text = "We are not just an \r\nORGANIZATION.\r\nWe are a FAMILY.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -592,11 +592,11 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(619, 277);
+            this.label16.Location = new System.Drawing.Point(583, 277);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(171, 75);
+            this.label16.Size = new System.Drawing.Size(244, 75);
             this.label16.TabIndex = 55;
-            this.label16.Text = "Your personal\r\ninformation\r\nis private and safe";
+            this.label16.Text = "Your personal\r\ninformation\r\nis private and safe with us.";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
@@ -754,11 +754,11 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(648, 269);
+            this.label17.Location = new System.Drawing.Point(645, 269);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(116, 50);
+            this.label17.Size = new System.Drawing.Size(120, 50);
             this.label17.TabIndex = 55;
-            this.label17.Text = "Your data is\r\nsafe with us";
+            this.label17.Text = "Your data is\r\nsafe with us.";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
