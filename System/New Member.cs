@@ -59,7 +59,7 @@ namespace System
         System.Drawing.SolidBrush fillRed = new System.Drawing.SolidBrush(Color.Red);
         Rectangle rectFirstName = new Rectangle();
         Rectangle rectLastName = new Rectangle();
-        Rectangle rectMiddleName = new Rectangle();
+        //Rectangle rectMiddleName = new Rectangle();
         Rectangle rectGuardianPhoneNumber = new Rectangle();
         Rectangle rectGuardianName = new Rectangle();
         Rectangle rectEmail = new Rectangle();
@@ -419,7 +419,7 @@ namespace System
                 lblFirstName.Visible = true;
 
             }
-            else if (lblFirstName.Visible = true)
+            else if (lblFirstName.Visible == true)
             {
                 FN.BorderStyle = BorderStyle.Fixed3D;
                 rectFirstName.Height = 0;
@@ -439,7 +439,7 @@ namespace System
                 lblMiddleName.ForeColor = Color.FromArgb(249, 69, 69);
                 lblMiddleName.Visible = true;
             }
-            else if (lblMiddleName.Visible = true)
+            else if (lblMiddleName.Visible == true)
             {
                 MI.BorderStyle = BorderStyle.Fixed3D;
                 rectMiddleInitial.Height = 0;
@@ -459,7 +459,7 @@ namespace System
                 lblLastName.ForeColor = Color.FromArgb(249, 69, 69);
                 lblLastName.Visible = true;
             }
-            else if (lblLastName.Visible = true)
+            else if (lblLastName.Visible == true)
             {
                 LN.BorderStyle = BorderStyle.Fixed3D;
                 rectLastName.Height = 0;
@@ -479,7 +479,7 @@ namespace System
                 lblStudentNumber.ForeColor = Color.FromArgb(249, 69, 69);
                 lblStudentNumber.Visible = true;
             }
-            else if (lblStudentNumber.Visible = true)
+            else if (lblStudentNumber.Visible == true)
             {
                 SN.BorderStyle = BorderStyle.Fixed3D;
                 rectStudentNumber.Height = 0;
@@ -498,7 +498,7 @@ namespace System
                 lblYear.ForeColor = Color.FromArgb(249, 69, 69);
                 lblYear.Visible = true;
             }
-            else if (lblYear.Visible = true)
+            else if (lblYear.Visible == true)
             {
                 rectYear.Height = 0;
                 rectYear.Width = 0;
@@ -518,7 +518,7 @@ namespace System
                 lblBday.ForeColor = Color.FromArgb(249, 69, 69);
                 lblBday.Visible = true;
             }
-            else if (lblBday.Visible = true)
+            else if (lblBday.Visible == true)
             {
                 //     Bday.BorderStyle = BorderStyle.Fixed3D;
                 rectBday.Height = 0;
@@ -537,7 +537,7 @@ namespace System
                 lblCommittee.ForeColor = Color.FromArgb(249, 69, 69);
                 lblCommittee.Visible = true;
             }
-            else if (lblCommittee.Visible = true)
+            else if (lblCommittee.Visible == true)
             {
                 rectCommittee.Height = 0;
                 rectCommittee.Width = 0;
@@ -573,7 +573,7 @@ namespace System
                 lblEmail.ForeColor = Color.FromArgb(249, 69, 69);
                 lblEmail.Visible = true;
             }
-            else if (lblEmail.Visible = true)
+            else if (lblEmail.Visible == true)
             {
                 EMail.BorderStyle = BorderStyle.Fixed3D;
                 rectEmail.Height = 0;
@@ -591,7 +591,7 @@ namespace System
                 lblPhoneNumber.ForeColor = Color.FromArgb(249, 69, 69);
                 lblPhoneNumber.Visible = true;
             }
-            else if (lblPhoneNumber.Visible = true)
+            else if (lblPhoneNumber.Visible == true)
             {
                 Contact.BorderStyle = BorderStyle.Fixed3D;
                 rectPhoneNumber.Height = 0;
@@ -610,7 +610,7 @@ namespace System
                 lblAddress.ForeColor = Color.FromArgb(249, 69, 69);
                 lblAddress.Visible = true;
             }
-            else if (lblAddress.Visible = true)
+            else if (lblAddress.Visible == true)
             {
                 Address.BorderStyle = BorderStyle.Fixed3D;
                 rectAddress.Height = 0;
@@ -628,7 +628,7 @@ namespace System
                 lblGaurdianName.ForeColor = Color.FromArgb(249, 69, 69);
                 lblGaurdianName.Visible = true;
             }
-            else if (lblGaurdianName.Visible = true)
+            else if (lblGaurdianName.Visible == true)
             {
                 GuardName.BorderStyle = BorderStyle.Fixed3D;
                 rectGuardianName.Height = 0;
@@ -646,7 +646,7 @@ namespace System
                 lblGaurdianContactNumber.ForeColor = Color.FromArgb(249, 69, 69);
                 lblGaurdianContactNumber.Visible = true;
             }
-            else if (lblGaurdianContactNumber.Visible = true)
+            else if (lblGaurdianContactNumber.Visible == true)
             {
                 GuardContact.BorderStyle = BorderStyle.Fixed3D;
                 rectGuardianPhoneNumber.Height = 0;

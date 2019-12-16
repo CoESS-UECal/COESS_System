@@ -36,7 +36,7 @@ namespace System
         Rectangle rect_event_location = new Rectangle();
         
         //Image variables
-        string pickedImage = "";
+        //string pickedImage = "";
         string location = @"C:\\COESS\\Images\\Pubmat\\";
         string fileName = "";
         string file1;
@@ -225,7 +225,7 @@ namespace System
                 lblEnterEventName.Visible = true;
           
             }
-           else if (lblEnterEventName.Visible = true)
+           else if (lblEnterEventName.Visible == true)
             {
                 event_name.BorderStyle = BorderStyle.Fixed3D;
                 rect_event_name.Height = 0;
@@ -245,7 +245,7 @@ namespace System
                 lblEnterLocation.Visible = true;
 
             }
-            else if(lblEnterLocation.Visible = true)
+            else if(lblEnterLocation.Visible == true)
             {
                 event_location.BorderStyle = BorderStyle.Fixed3D;
                 rect_event_location.Height = 0;

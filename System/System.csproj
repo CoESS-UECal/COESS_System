@@ -337,6 +337,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\coess.reg" />
+    <None Include="Resources\coess_events.reg" />
     <None Include="Resources\main.png" />
   </ItemGroup>
   <ItemGroup>
@@ -348,64 +350,35 @@
     <None Include="Resources\MEMBER_LIST_V2.png" />
     <None Include="Resources\MEMBER_LIST.png" />
     <None Include="Resources\Reg_No_Id.png" />
-    <None Include="Resources\MEMBER_LIST_21.png" />
-    <None Include="Resources\MEMBER_LIST_2.png" />
     <None Include="Resources\BG.png" />
     <None Include="Resources\BG2.png" />
     <None Include="Resources\BG21.png" />
     <None Include="Resources\BACK.png" />
-    <Content Include="Resources\Blank BG.png" />
     <None Include="Resources\Secure_50px1.png" />
     <None Include="Resources\Secure_50px.png" />
-    <None Include="Resources\Male User_50px.png" />
-    <None Include="Resources\User Male_50px.png" />
     <None Include="Resources\NewMemberBackgroundVersion2.png" />
     <None Include="Resources\on_button.png" />
     <None Include="Resources\off_button.png" />
-    <None Include="Resources\register-button-small.png" />
-    <None Include="Resources\register-button-new.png" />
-    <None Include="Resources\members-list-button.png" />
-    <None Include="Resources\new-member.png" />
     <None Include="Resources\members.png" />
     <None Include="Resources\quit.png" />
-    <None Include="Resources\return to main menu.png" />
-    <None Include="Resources\new-event.png" />
-    <None Include="Resources\remove-new.png" />
-    <None Include="Resources\Untitled-2_new.png" />
-    <None Include="Resources\yellow ring.png" />
-    <None Include="Resources\Main Menu1.png" />
-    <None Include="Resources\Login Screen1.png" />
     <None Include="Resources\Events1.png" />
     <None Include="Resources\Election1.png" />
-    <None Include="Resources\Blank BG1.png" />
-    <None Include="Resources\Blank BG2.png" />
     <None Include="Resources\center.png" />
-    <None Include="Resources\coess new logo.png" />
-    <None Include="Resources\election-button.png" />
     <None Include="Resources\browse.png" />
-    <None Include="Resources\create-event-button.png" />
     <None Include="Resources\CREATE_NEW_MEMBER.png" />
     <None Include="Resources\CREATE_NEW_EVENT.png" />
-    <None Include="Resources\event-list].png" />
     <None Include="Resources\EVENTLIST.png" />
     <None Include="Resources\ELECTION.png" />
     <None Include="Resources\CREATE_EVENT.png" />
     <None Include="Resources\CREATE_NEW.png" />
     <None Include="Resources\ELECTION_SYSTEM_V2.png" />
     <Content Include="Resources\Events.png" />
-    <None Include="Resources\full-logo-transparent - clear c.png" />
-    <None Include="Resources\go-back_new.png" />
     <None Include="Resources\Events2.png" />
-    <None Include="Resources\EVENT_LIST1.png" />
     <None Include="Resources\image.png" />
     <None Include="Resources\EVENT_LIST_V2.png" />
-    <Content Include="Resources\Login Screen.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\logout_white.png" />
-    <Content Include="Resources\Main Menu.png" />
-    <None Include="Resources\red ring.png" />
-    <None Include="Resources\register.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
