@@ -63,6 +63,26 @@ namespace System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_Image_64px {
+            get {
+                object obj = ResourceManager.GetObject("Add_Image_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Add_List_50px {
+            get {
+                object obj = ResourceManager.GetObject("Add_List_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BACK {
             get {
                 object obj = ResourceManager.GetObject("BACK", resourceCulture);
@@ -143,6 +163,16 @@ namespace System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_Window_40px {
+            get {
+                object obj = ResourceManager.GetObject("Close_Window_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coess_new_logo {
             get {
                 object obj = ResourceManager.GetObject("coess_new_logo", resourceCulture);
@@ -196,6 +226,16 @@ namespace System.Properties {
         internal static System.Drawing.Bitmap CREATE_NEW_MEMBER {
             get {
                 object obj = ResourceManager.GetObject("CREATE_NEW_MEMBER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Customer_50px {
+            get {
+                object obj = ResourceManager.GetObject("Customer_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

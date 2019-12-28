@@ -121,11 +121,26 @@
   <data name="EVENTLIST" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EVENTLIST.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="full_logo_transparent_clear_c" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\full_logo_transparent_clear_c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Customer_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customer_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_List_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add List_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="security_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\security_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="full_logo_transparent_clear_c" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\full_logo_transparent_clear_c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Main_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Main_Menu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="new_member" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_member.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,20 +154,23 @@
   <data name="new_event" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_event.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BG21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BG21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MEMBER_LIST_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MEMBER_LIST_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CREATE_NEW_MEMBER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CREATE_NEW_MEMBER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coess_new_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coess_new_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="members" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\members.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="members_list_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\members_list_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Blank_BG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blank_BG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="register_button_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\register_button_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Close_Window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close Window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Male_User_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Male_User_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +184,14 @@
   <data name="create_event_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\create_event_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="security_uac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\security_uac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BACK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BACK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CREATE_NEW_EVENT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CREATE_NEW_EVENT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User_Male_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User_Male_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,11 +199,14 @@
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login_Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login_Screen1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellow_ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellow_ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NewMemberBackgroundVersion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewMemberBackgroundVersion2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BG21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NEW_EVENT_BACKGROUND" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NEW_EVENT_BACKGROUND.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="return_to_main_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\return_to_main_menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +220,20 @@
   <data name="quit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="yellow_ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yellow_ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CREATE_EVENT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CREATE_EVENT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="security_information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\security_information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CREATE_NEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CREATE_NEW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="members" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\members.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ELECTION_SYSTEM_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ELECTION_SYSTEM_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MEMBER_LIST" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MEMBER_LIST.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +247,8 @@
   <data name="remove_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\remove_new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="red_ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red_ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EVENT_LIST_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EVENT_LIST_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Blank_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blank_BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,17 +259,23 @@
   <data name="election_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\election_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="red_ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red_ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Events" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Events1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="center" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="members_list_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\members_list_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Reg_No_Id" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Reg_No_Id.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Main_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Main_Menu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logout_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_Screen1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Untitled_2_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled_2_new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,52 +289,19 @@
   <data name="Election" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Election1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CREATE_NEW_EVENT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CREATE_NEW_EVENT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CREATE_NEW_MEMBER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CREATE_NEW_MEMBER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ELECTION1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ELECTION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Reg_No_Id" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Reg_No_Id.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logout_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NewMemberBackgroundVersion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewMemberBackgroundVersion2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CREATE_EVENT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CREATE_EVENT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="register_button_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\register_button_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CREATE_NEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CREATE_NEW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ELECTION_SYSTEM_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ELECTION_SYSTEM_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EVENT_LIST_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EVENT_LIST_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MEMBER_LIST_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MEMBER_LIST_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NEW_EVENT_BACKGROUND" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NEW_EVENT_BACKGROUND.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="security_information" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\security_information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="security_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\security_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="security_uac" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\security_uac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Add_Image_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add_Image_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

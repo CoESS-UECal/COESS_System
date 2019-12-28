@@ -133,7 +133,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(114, 302);
+            this.button1.Location = new System.Drawing.Point(101, 302);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 69);
             this.button1.TabIndex = 6;

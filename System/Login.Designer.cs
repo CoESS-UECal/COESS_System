@@ -83,11 +83,14 @@
             this.Loginbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
             this.Loginbutton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.Loginbutton.ForeColor = System.Drawing.Color.White;
+            this.Loginbutton.Image = global::System.Properties.Resources.Customer_50px;
             this.Loginbutton.Location = new System.Drawing.Point(413, 399);
             this.Loginbutton.Name = "Loginbutton";
             this.Loginbutton.Size = new System.Drawing.Size(199, 69);
             this.Loginbutton.TabIndex = 4;
             this.Loginbutton.Text = "LOGIN";
+            this.Loginbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Loginbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Loginbutton.UseVisualStyleBackColor = false;
             this.Loginbutton.Click += new System.EventHandler(this.Loginbutton_Click);
             // 
@@ -97,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::System.Properties.Resources.logout_white;
+            this.button1.BackgroundImage = global::System.Properties.Resources.Close_Window_40px;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));

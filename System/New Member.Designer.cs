@@ -83,6 +83,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlContact.SuspendLayout();
@@ -332,6 +333,7 @@
             // pnlInformation
             // 
             this.pnlInformation.BackColor = System.Drawing.Color.Transparent;
+            this.pnlInformation.Controls.Add(this.label1);
             this.pnlInformation.Controls.Add(this.lblBday);
             this.pnlInformation.Controls.Add(this.lblCommittee);
             this.pnlInformation.Controls.Add(this.lblYear);
@@ -364,7 +366,7 @@
             this.lblBday.AutoSize = true;
             this.lblBday.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBday.ForeColor = System.Drawing.Color.White;
-            this.lblBday.Location = new System.Drawing.Point(21, 275);
+            this.lblBday.Location = new System.Drawing.Point(11, 275);
             this.lblBday.Name = "lblBday";
             this.lblBday.Size = new System.Drawing.Size(145, 20);
             this.lblBday.TabIndex = 58;
@@ -376,7 +378,7 @@
             this.lblCommittee.AutoSize = true;
             this.lblCommittee.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCommittee.ForeColor = System.Drawing.Color.White;
-            this.lblCommittee.Location = new System.Drawing.Point(21, 383);
+            this.lblCommittee.Location = new System.Drawing.Point(11, 383);
             this.lblCommittee.Name = "lblCommittee";
             this.lblCommittee.Size = new System.Drawing.Size(198, 20);
             this.lblCommittee.TabIndex = 57;
@@ -388,7 +390,7 @@
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYear.ForeColor = System.Drawing.Color.White;
-            this.lblYear.Location = new System.Drawing.Point(247, 169);
+            this.lblYear.Location = new System.Drawing.Point(239, 169);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(130, 20);
             this.lblYear.TabIndex = 56;
@@ -408,14 +410,13 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(658, 287);
+            this.label5.Location = new System.Drawing.Point(655, 287);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 75);
+            this.label5.Size = new System.Drawing.Size(178, 126);
             this.label5.TabIndex = 54;
-            this.label5.Text = "We are not just an \r\nORGANIZATION.\r\nWe are a FAMILY.";
+            this.label5.Text = "We are not just an \r\nORGANIZATION.\r\n                            We are a FAMILY.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -446,7 +447,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(19, 302);
+            this.label14.Location = new System.Drawing.Point(11, 302);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(247, 32);
             this.label14.TabIndex = 48;
@@ -457,7 +458,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(19, 11);
+            this.label13.Location = new System.Drawing.Point(11, 11);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(277, 32);
             this.label13.TabIndex = 47;
@@ -468,7 +469,7 @@
             this.lblStudentNumber.AutoSize = true;
             this.lblStudentNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudentNumber.ForeColor = System.Drawing.Color.White;
-            this.lblStudentNumber.Location = new System.Drawing.Point(21, 169);
+            this.lblStudentNumber.Location = new System.Drawing.Point(11, 169);
             this.lblStudentNumber.Name = "lblStudentNumber";
             this.lblStudentNumber.Size = new System.Drawing.Size(167, 20);
             this.lblStudentNumber.TabIndex = 45;
@@ -480,7 +481,7 @@
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastName.ForeColor = System.Drawing.Color.White;
-            this.lblLastName.Location = new System.Drawing.Point(413, 91);
+            this.lblLastName.Location = new System.Drawing.Point(406, 91);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(125, 20);
             this.lblLastName.TabIndex = 44;
@@ -504,7 +505,7 @@
             this.Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.Age.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.Age.ForeColor = System.Drawing.Color.White;
-            this.Age.Location = new System.Drawing.Point(193, 233);
+            this.Age.Location = new System.Drawing.Point(387, 235);
             this.Age.Name = "Age";
             this.Age.ReadOnly = true;
             this.Age.Size = new System.Drawing.Size(39, 39);
@@ -515,7 +516,7 @@
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMiddleName.ForeColor = System.Drawing.Color.White;
-            this.lblMiddleName.Location = new System.Drawing.Point(247, 91);
+            this.lblMiddleName.Location = new System.Drawing.Point(239, 91);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(142, 20);
             this.lblMiddleName.TabIndex = 43;
@@ -527,7 +528,7 @@
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstName.ForeColor = System.Drawing.Color.White;
-            this.lblFirstName.Location = new System.Drawing.Point(21, 91);
+            this.lblFirstName.Location = new System.Drawing.Point(11, 91);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(127, 20);
             this.lblFirstName.TabIndex = 42;
@@ -570,9 +571,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(11, 310);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 32);
+            this.label2.Size = new System.Drawing.Size(219, 32);
             this.label2.TabIndex = 57;
-            this.label2.Text = "Membership";
+            this.label2.Text = "Membership Type";
             // 
             // lblMembership
             // 
@@ -582,9 +583,9 @@
             this.lblMembership.ForeColor = System.Drawing.Color.White;
             this.lblMembership.Location = new System.Drawing.Point(272, 352);
             this.lblMembership.Name = "lblMembership";
-            this.lblMembership.Size = new System.Drawing.Size(201, 20);
+            this.lblMembership.Size = new System.Drawing.Size(236, 20);
             this.lblMembership.TabIndex = 56;
-            this.lblMembership.Text = "Please select a membership";
+            this.lblMembership.Text = "Please select a membership type";
             this.lblMembership.Visible = false;
             // 
             // label16
@@ -614,7 +615,7 @@
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
             this.button5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(18, 398);
+            this.button5.Location = new System.Drawing.Point(209, 398);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(206, 57);
             this.button5.TabIndex = 51;
@@ -627,7 +628,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
             this.button4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(246, 398);
+            this.button4.Location = new System.Drawing.Point(437, 398);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(206, 57);
             this.button4.TabIndex = 50;
@@ -662,7 +663,7 @@
             this.lblGaurdianContactNumber.AutoSize = true;
             this.lblGaurdianContactNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblGaurdianContactNumber.ForeColor = System.Drawing.Color.White;
-            this.lblGaurdianContactNumber.Location = new System.Drawing.Point(359, 277);
+            this.lblGaurdianContactNumber.Location = new System.Drawing.Point(363, 277);
             this.lblGaurdianContactNumber.Name = "lblGaurdianContactNumber";
             this.lblGaurdianContactNumber.Size = new System.Drawing.Size(153, 20);
             this.lblGaurdianContactNumber.TabIndex = 47;
@@ -674,7 +675,7 @@
             this.lblGaurdianName.AutoSize = true;
             this.lblGaurdianName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGaurdianName.ForeColor = System.Drawing.Color.White;
-            this.lblGaurdianName.Location = new System.Drawing.Point(25, 277);
+            this.lblGaurdianName.Location = new System.Drawing.Point(11, 277);
             this.lblGaurdianName.Name = "lblGaurdianName";
             this.lblGaurdianName.Size = new System.Drawing.Size(89, 20);
             this.lblGaurdianName.TabIndex = 46;
@@ -687,7 +688,7 @@
             this.lblAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblAddress.ForeColor = System.Drawing.Color.White;
-            this.lblAddress.Location = new System.Drawing.Point(25, 162);
+            this.lblAddress.Location = new System.Drawing.Point(11, 162);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(148, 20);
             this.lblAddress.TabIndex = 45;
@@ -699,7 +700,7 @@
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(362, 91);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(363, 91);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(192, 20);
             this.lblPhoneNumber.TabIndex = 44;
@@ -711,7 +712,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(25, 93);
+            this.lblEmail.Location = new System.Drawing.Point(11, 93);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(124, 20);
             this.lblEmail.TabIndex = 43;
@@ -754,11 +755,11 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(645, 269);
+            this.label17.Location = new System.Drawing.Point(597, 269);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(120, 50);
+            this.label17.Size = new System.Drawing.Size(216, 50);
             this.label17.TabIndex = 55;
-            this.label17.Text = "Your data is\r\nsafe with us.";
+            this.label17.Text = "The data you submit  is\r\nsafe with us.";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
@@ -791,6 +792,17 @@
             this.richTextBox1.Size = new System.Drawing.Size(540, 351);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(190, 238);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 32);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "and your age is";
             // 
             // New_Member
             // 
@@ -879,5 +891,6 @@
         private Windows.Forms.Label label2;
         private Windows.Forms.Label lblMembership;
         private Windows.Forms.Button button6;
+        private Windows.Forms.Label label1;
     }
 }

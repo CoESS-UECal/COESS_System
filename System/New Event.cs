@@ -43,6 +43,19 @@ namespace System
         public static string finalevent;
         bool duplicate=false;
 
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
+            base.WndProc(ref m);
+        }
+
         public void GetEname(string ename)
         {
             int dup = 1;
@@ -173,7 +186,7 @@ namespace System
             if (event_name.Text == "Event Name")
             {
                 event_name.Text = "";
-                event_name.ForeColor = SystemColors.WindowText;
+                event_name.ForeColor = Color.White;
                 lblEventName.Visible = true;
             }
         }
@@ -183,7 +196,7 @@ namespace System
             if (event_location.Text == "Event Location")
             {
                 event_location.Text = "";
-                event_location.ForeColor = SystemColors.WindowText;
+                event_location.ForeColor = Color.White;
             }
         }
 
@@ -212,6 +225,7 @@ namespace System
             {
                 pnlEventImage.BringToFront();
                 button3.Visible = false;
+                label1.Visible = true;
             }
 
             if (event_name.Text == "Event Name")
@@ -261,6 +275,7 @@ namespace System
         {
             pnlEventDetails.BringToFront();
             button3.Visible = true;
+            label1.Visible = false;
         }
     }
 

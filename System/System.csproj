@@ -372,6 +372,10 @@
     <None Include="Resources\CREATE_EVENT.png" />
     <None Include="Resources\CREATE_NEW.png" />
     <None Include="Resources\ELECTION_SYSTEM_V2.png" />
+    <None Include="Resources\Close Window_40px.png" />
+    <None Include="Resources\Customer_50px.png" />
+    <None Include="Resources\Add List_50px.png" />
+    <None Include="Resources\Add_Image_64px.png" />
     <Content Include="Resources\Events.png" />
     <None Include="Resources\Events2.png" />
     <None Include="Resources\image.png" />

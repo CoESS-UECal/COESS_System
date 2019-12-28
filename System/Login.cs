@@ -89,7 +89,7 @@ namespace System
             if (UserBox.Text == "Username")
             {
                 UserBox.Text = "";
-                UserBox.ForeColor = SystemColors.WindowText;
+                UserBox.ForeColor = Color.White;
             }
         }
 
@@ -107,7 +107,7 @@ namespace System
             if (PasswordBox.Text == "Password")
             {
                 PasswordBox.Text = "";
-                PasswordBox.ForeColor = SystemColors.WindowText;
+                PasswordBox.ForeColor = Color.White;
             }
         }
 
