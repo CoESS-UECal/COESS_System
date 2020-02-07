@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace System
 {
     public partial class MainMenu : Form
@@ -16,6 +17,16 @@ namespace System
         public MainMenu()
         {
             InitializeComponent();
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
         }
 
         int user_accounts;
