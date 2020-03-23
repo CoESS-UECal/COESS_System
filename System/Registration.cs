@@ -6,20 +6,23 @@ namespace System
     public partial class Registration : Form
     {
 
-        public Event_List eventlist { get; set; }
-
+        public Event_List eventlist { get; set; } //This is also used along with the delcaration at the bottom to manipulate controls on other forms, like setting labels or updating listviews.
+                                                  //Diba minsan may gusto tayong imanimpulate na controls sa kabilang form, 
+                                                  //for example mag uupdate yung listview sa kabilang form using this form.
         int ID;
         int query_ID;
 
         public static bool isregistration = false;
         public static bool duplicate = false;
 
+        //This declares that even when a new form is called, like when Form registration = new Registration() is used, the forms being created is still the same.(OOP thing)
         public Registration(Event_List _form1)
         {
             eventlist = _form1;
             InitializeComponent();
         }
 
+        //This is used to allow the user to move the form even when there are no handles/windows.
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -33,7 +36,7 @@ namespace System
             base.WndProc(ref m);
         }
 
-        public static void GetSN(int id)
+        public static void GetSN(int id)//Get Student Number/ Search for duplicates on the list
         {
             int dup = 1;
             string query = "select count(*) from " + Event_List.event_name + " where ID_No = " + id + ";";
@@ -66,7 +69,7 @@ namespace System
             }
         }
 
-        public void Max_ID()
+        public void Max_ID()//Gets the maximum ID number for use in validation
         {
             string query = "select max(ID_No) from member_list;";
             if (MainMenu.OpenConnection())
@@ -198,6 +201,5 @@ namespace System
                 }
             }
         }
-
     }
 }

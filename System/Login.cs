@@ -38,10 +38,10 @@ namespace System
             else if (tries >= 1)
             {
                 tries--;
-                MessageBox.Show("Invalid Username/Password\nNumber of Tries Left :" + tries.ToString());
+                MessageBox.Show("Invalid Username/Password\nNumber of Tries Left :" + tries.ToString(),"Username/Password Error",MessageBoxButtons.RetryCancel,MessageBoxIcon.Warning);
                 if (tries == 0)
                 {
-                    MessageBox.Show("Application Closing\nUsername/Password Error");
+                    MessageBox.Show("Application Closing\nUsername/Password Error","Username/Password Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     Application.Exit();
                 }
             }

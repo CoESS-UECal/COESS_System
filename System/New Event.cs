@@ -7,8 +7,6 @@ namespace System
 {
     public partial class New_Event : Form
     {
-
-
         public New_Event()
         {
             InitializeComponent();
@@ -26,7 +24,6 @@ namespace System
             event_name.ForeColor = SystemColors.GrayText;
             lblEnterEventName.Visible = false;
             lblEnterLocation.Visible = false;
-
         }
 
         //Color
@@ -97,25 +94,6 @@ namespace System
             return event_complete;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.Title = "Insert an Image";
-            openFileDialog1.InitialDirectory = location;
-            openFileDialog1.FileName = "";
-            openFileDialog1.Filter = "JPEG Images|*.jpg|GIF Images|*.gif|BITMAPS|*.bmp|TIFF Images|*.tif|PNG Images|*.png|All Files|*.*";
-            if (openFileDialog1.ShowDialog() != DialogResult.Cancel)
-            {
-                imageList1.Dispose();
-                imageList1.Images.Clear();
-                file1 = openFileDialog1.SafeFileName;
-                fileName = openFileDialog1.FileName;
-                Image pickedImage = Image.FromFile(fileName);
-                imageList1.Images.Add(pickedImage);
-                event_pubmat.BackgroundImage = imageList1.Images[0];
-                event_pubmat.BackgroundImageLayout = ImageLayout.Stretch;
-            }
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             Form mainmenu = new MainMenu();
@@ -169,7 +147,7 @@ namespace System
         private void New_Event_Load(object sender, EventArgs e)
         {
             finalevent = "";
-
+            event_date.MinDate = DateTime.Now;
         }
 
         private void event_name_Leave(object sender, EventArgs e)
@@ -208,9 +186,6 @@ namespace System
                 event_location.ForeColor = SystemColors.GrayText;
             }
         }
-
-
-
 
         private void New_Event_Paint(object sender, PaintEventArgs e)
         {
@@ -265,7 +240,6 @@ namespace System
                 rect_event_location.Height = 0;
                 rect_event_location.Width = 0;
                 lblEnterLocation.Visible = false;
-       
             }
 
             Invalidate();
@@ -276,6 +250,25 @@ namespace System
             pnlEventDetails.BringToFront();
             button3.Visible = true;
             label1.Visible = false;
+        }
+
+        private void event_pubmat_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            openFileDialog1.Title = "Insert an Image";
+            openFileDialog1.InitialDirectory = location;
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "JPEG Images|*.jpg|GIF Images|*.gif|BITMAPS|*.bmp|TIFF Images|*.tif|PNG Images|*.png|All Files|*.*";
+            if (openFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                imageList1.Dispose();
+                imageList1.Images.Clear();
+                file1 = openFileDialog1.SafeFileName;
+                fileName = openFileDialog1.FileName;
+                Image pickedImage = Image.FromFile(fileName);
+                imageList1.Images.Add(pickedImage);
+                event_pubmat.BackgroundImage = imageList1.Images[0];
+                event_pubmat.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
     }
 

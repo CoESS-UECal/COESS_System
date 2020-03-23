@@ -8,10 +8,12 @@ namespace System
         int tries = 3;
         public static bool access;
 
+        //This form is for accessing Officer/Faculty-related options such as Member Lists or exporting member data.
         public Access()
         {
             InitializeComponent();
         }
+
         private void Loginbutton_Click(object sender, EventArgs e)
         {
             if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == Properties.Settings.Default.Alt_Pass)
@@ -19,18 +21,16 @@ namespace System
                 access = true;
                 Close();
             }
-
             else if (tries >= 1)
             {
                 tries--;
-                MessageBox.Show("Invalid Username/Password\nNumber of Tries Left :" + tries.ToString());
+                MessageBox.Show("Invalid Username/Password\nNumber of Tries Left :" + tries.ToString(), "Username/Password Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
                 if (tries == 0)
                 {
-                    MessageBox.Show("Access Denied\nUsername/Password Error");
-                    Close();
+                    MessageBox.Show("Application Closing\nUsername/Password Error", "Username/Password Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
                 }
             }
-
         }
 
         private void Access_Load(object sender, EventArgs e)

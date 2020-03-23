@@ -36,7 +36,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.event_pubmat = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlEventDetails = new System.Windows.Forms.Panel();
@@ -94,7 +93,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(292, 373);
+            this.button1.Location = new System.Drawing.Point(292, 386);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 60);
             this.button1.TabIndex = 10;
@@ -106,32 +105,16 @@
             // 
             this.event_pubmat.BackColor = System.Drawing.Color.DimGray;
             this.event_pubmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.event_pubmat.Location = new System.Drawing.Point(17, 29);
+            this.event_pubmat.Location = new System.Drawing.Point(17, 52);
             this.event_pubmat.Name = "event_pubmat";
             this.event_pubmat.Size = new System.Drawing.Size(478, 307);
             this.event_pubmat.TabIndex = 11;
             this.event_pubmat.TabStop = false;
+            this.event_pubmat.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.event_pubmat_MouseDoubleClick);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = global::System.Properties.Resources.Add_Image_64px;
-            this.button2.Location = new System.Drawing.Point(211, 137);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 90);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Browse";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -256,7 +239,7 @@
             // 
             this.pnlEventImage.BackColor = System.Drawing.Color.Transparent;
             this.pnlEventImage.Controls.Add(this.btnEventImageBack);
-            this.pnlEventImage.Controls.Add(this.button2);
+            this.pnlEventImage.Controls.Add(this.label1);
             this.pnlEventImage.Controls.Add(this.button1);
             this.pnlEventImage.Controls.Add(this.event_pubmat);
             this.pnlEventImage.Location = new System.Drawing.Point(0, 50);
@@ -269,7 +252,7 @@
             this.btnEventImageBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
             this.btnEventImageBack.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnEventImageBack.ForeColor = System.Drawing.Color.White;
-            this.btnEventImageBack.Location = new System.Drawing.Point(17, 371);
+            this.btnEventImageBack.Location = new System.Drawing.Point(17, 384);
             this.btnEventImageBack.Name = "btnEventImageBack";
             this.btnEventImageBack.Size = new System.Drawing.Size(200, 60);
             this.btnEventImageBack.TabIndex = 37;
@@ -281,11 +264,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Location = new System.Drawing.Point(11, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 30);
+            this.label1.Size = new System.Drawing.Size(196, 37);
             this.label1.TabIndex = 34;
             this.label1.Text = "Event Pubmat";
             this.label1.Visible = false;
@@ -296,10 +279,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.NEW_EVENT_BACKGROUND;
             this.ClientSize = new System.Drawing.Size(512, 576);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.pnlEventDetails);
             this.Controls.Add(this.pnlEventImage);
+            this.Controls.Add(this.pnlEventDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_Event";
@@ -311,8 +293,8 @@
             this.pnlEventDetails.ResumeLayout(false);
             this.pnlEventDetails.PerformLayout();
             this.pnlEventImage.ResumeLayout(false);
+            this.pnlEventImage.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -323,7 +305,6 @@
         private Windows.Forms.Button button1;
         private Windows.Forms.PictureBox event_pubmat;
         private Windows.Forms.OpenFileDialog openFileDialog1;
-        private Windows.Forms.Button button2;
         private Windows.Forms.Button button3;
         private Windows.Forms.ImageList imageList1;
         private Windows.Forms.Panel pnlEventDetails;

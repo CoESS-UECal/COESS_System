@@ -36,9 +36,11 @@
             this.imageLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createSlaveAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importCoESSRegistrySettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -119,9 +121,11 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printToolStripMenuItem,
+            this.createDatabaseToolStripMenuItem,
             this.createSlaveAccountToolStripMenuItem,
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem,
             this.exportDatabaseToolStripMenuItem,
-            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem});
+            this.importCoESSRegistrySettingsToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
@@ -134,12 +138,30 @@
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
+            // createDatabaseToolStripMenuItem
+            // 
+            this.createDatabaseToolStripMenuItem.Name = "createDatabaseToolStripMenuItem";
+            this.createDatabaseToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.createDatabaseToolStripMenuItem.Text = "Create Database";
+            this.createDatabaseToolStripMenuItem.Visible = false;
+            this.createDatabaseToolStripMenuItem.Click += new System.EventHandler(this.createDatabaseToolStripMenuItem_Click);
+            // 
             // createSlaveAccountToolStripMenuItem
             // 
             this.createSlaveAccountToolStripMenuItem.Name = "createSlaveAccountToolStripMenuItem";
             this.createSlaveAccountToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
             this.createSlaveAccountToolStripMenuItem.Text = "Create Slave Account";
+            this.createSlaveAccountToolStripMenuItem.Visible = false;
             this.createSlaveAccountToolStripMenuItem.Click += new System.EventHandler(this.createSlaveAccountToolStripMenuItem_Click);
+            // 
+            // convertPlaintextCSVToEncryptedCSVToolStripMenuItem
+            // 
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.AutoToolTip = true;
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Name = "convertPlaintextCSVToEncryptedCSVToolStripMenuItem";
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Text = "Convert Plaintext CSV to EncryptedCSV";
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.ToolTipText = "Encrypts member data from plaintext.";
+            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Click += new System.EventHandler(this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem_Click);
             // 
             // exportDatabaseToolStripMenuItem
             // 
@@ -148,12 +170,12 @@
             this.exportDatabaseToolStripMenuItem.Text = "Export Database";
             this.exportDatabaseToolStripMenuItem.Click += new System.EventHandler(this.exportDatabaseToolStripMenuItem_Click);
             // 
-            // convertPlaintextCSVToEncryptedCSVToolStripMenuItem
+            // importCoESSRegistrySettingsToolStripMenuItem
             // 
-            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Name = "convertPlaintextCSVToEncryptedCSVToolStripMenuItem";
-            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
-            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Text = "Convert Plaintext CSV to EncryptedCSV";
-            this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem.Click += new System.EventHandler(this.convertPlaintextCSVToEncryptedCSVToolStripMenuItem_Click);
+            this.importCoESSRegistrySettingsToolStripMenuItem.Name = "importCoESSRegistrySettingsToolStripMenuItem";
+            this.importCoESSRegistrySettingsToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.importCoESSRegistrySettingsToolStripMenuItem.Text = "Import CoESS Registry Settings";
+            this.importCoESSRegistrySettingsToolStripMenuItem.Click += new System.EventHandler(this.importCoESSRegistrySettingsToolStripMenuItem_Click);
             // 
             // button3
             // 
@@ -531,5 +553,7 @@
         private Windows.Forms.PictureBox pictureBox2;
         private Windows.Forms.Label label1;
         private Windows.Forms.Label label2;
+        private Windows.Forms.ToolStripMenuItem createDatabaseToolStripMenuItem;
+        private Windows.Forms.ToolStripMenuItem importCoESSRegistrySettingsToolStripMenuItem;
     }
 }

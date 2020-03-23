@@ -337,8 +337,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\coess.reg" />
-    <None Include="Resources\coess_events.reg" />
+    <None Include="Resources\coess.reg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\coess_events.reg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\main.png" />
   </ItemGroup>
   <ItemGroup>

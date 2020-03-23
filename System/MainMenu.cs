@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using System.Diagnostics;
 
 namespace System
 {
@@ -280,35 +280,6 @@ namespace System
         private void localhostToolStripMenuItem_Click(object sender, EventArgs e)
         {
             isMaster = true;
-            Initialize("server=localhost;uid=root;pwd=;sslmode=none;");
-            if (DialogResult.Yes == MessageBox.Show("Would you like to check if the database exists?", "Check", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
-                checkdb("coess", coess);
-                if (!coessdb)
-                {
-                    createdb("create database coess;");
-                    Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
-                    createdb("create table event_list (Event_No int(3) auto_increment, Event_Name varchar(300) not null, Event_Date varchar(255) not null, Event_Location varchar(300) not null, Event_Pubmat varchar(300) null, primary key(Event_No));");
-                    createdb("create table member_list (ID_No int(3) auto_increment, SN varchar(255) not null, FN varchar(255) not null, MI varchar(255) not null, LN varchar(255) not null, Email varchar(255) not null, Address varchar(300) not null, Contact_No varchar(255) not null, BDay varchar(255) not null, Age varchar(255) not null, Year_Level varchar(255) not null, Comm varchar(255) not null, Guard_Name varchar(255) not null, Guard_Contact varchar(255) not null, Membership varchar(255) not null, ID_Address varchar(255) null, primary key(ID_No));");
-                    createdb("create table report_table (LN varchar(255) null, FN varchar(255) null, SN varchar(255) not null, Yr_Lvl varchar(255) null, primary key(SN));");
-                    MessageBox.Show("CoESS Database has been created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("CoESS Database Exists!", "Success", MessageBoxButtons.OK);
-                }
-                checkdb("coess_events", coess_events);
-                if (!coess_eventsdb)
-                {
-                    Initialize("server=localhost;uid=root;pwd=;sslmode=none;");
-                    createdb("create database coess_events;");
-                    MessageBox.Show("CoESS Events Database has been created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("CoESS Events Database Exists!", "Success", MessageBoxButtons.OK);
-                }
-            }
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -442,6 +413,8 @@ namespace System
             {
                 toolStripLabel3.BackgroundImage = System.Properties.Resources.on_button;
                 toolStripLabel2.Text = "Master";
+                createDatabaseToolStripMenuItem.Visible = true;
+                createSlaveAccountToolStripMenuItem.Visible = true;
             }
             else
             {
@@ -456,11 +429,15 @@ namespace System
             {
                 isMaster = true;
                 Initialize("server=localhost;user=root;sslmode=none;");
+                createDatabaseToolStripMenuItem.Visible = true;
+                createSlaveAccountToolStripMenuItem.Visible = true;
                 toolStripLabel3.BackgroundImage = System.Properties.Resources.on_button;
                 toolStripLabel2.Text = "Master";
             }
             else
             {
+                createDatabaseToolStripMenuItem.Visible = false;
+                createSlaveAccountToolStripMenuItem.Visible = false;
                 toolStripLabel3.BackgroundImage = System.Properties.Resources.off_button;
                 isMaster = false;
                 toolStripLabel2.Text = "Slave";
@@ -469,7 +446,7 @@ namespace System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            toolStripLabel5.Text = "Today is " + DateTime.Now.ToShortDateString() + " and the time is " + DateTime.Now.ToLongTimeString();
+            toolStripLabel5.Text = DateTime.Now.ToString("H:mm:ss tt");
         }
 
         private void convertPlaintextCSVToEncryptedCSVToolStripMenuItem_Click(object sender, EventArgs e)
@@ -508,6 +485,47 @@ namespace System
             Form eventlist = new Event_List();
             eventlist.Show();
             Close();
+        }
+
+        private void createDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Would you like to check if the database exists?", "Database Check", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                checkdb("coess", coess);
+                if (!coessdb)
+                {
+                    createdb("create database coess;");
+                    Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
+                    createdb("create table event_list (Event_No int(3) auto_increment, Event_Name varchar(300) not null, Event_Date varchar(255) not null, Event_Location varchar(300) not null, Event_Pubmat varchar(300) null, primary key(Event_No));");
+                    createdb("create table member_list (ID_No int(3) auto_increment, SN varchar(255) not null, FN varchar(255) not null, MI varchar(255) not null, LN varchar(255) not null, Email varchar(255) not null, Address varchar(300) not null, Contact_No varchar(255) not null, BDay varchar(255) not null, Age varchar(255) not null, Year_Level varchar(255) not null, Comm varchar(255) not null, Guard_Name varchar(255) not null, Guard_Contact varchar(255) not null, Membership varchar(255) not null, ID_Address varchar(255) null, primary key(ID_No));");
+                    createdb("create table report_table (LN varchar(255) null, FN varchar(255) null, SN varchar(255) not null, Yr_Lvl varchar(255) null, primary key(SN));");
+                    MessageBox.Show("CoESS Database has been created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("CoESS Database Exists!", "Success", MessageBoxButtons.OK);
+                }
+                checkdb("coess_events", coess_events);
+                if (!coess_eventsdb)
+                {
+                    Initialize("server=localhost;uid=root;pwd=;sslmode=none;");
+                    createdb("create database coess_events;");
+                    MessageBox.Show("CoESS Events Database has been created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("CoESS Events Database Exists!", "Success", MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        private void importCoESSRegistrySettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process coess = Process.Start("regedit.exe","/s "+Application.ExecutablePath+"\\Resources\\coess.reg");
+            coess.WaitForExit();
+            Process coess_event = Process.Start("regedit.exe", "/s " + Application.ExecutablePath + "\\Resources\\coess_events.reg");
+            coess_event.WaitForExit();
+            MessageBox.Show("Registry Entries created!","Succcess");
         }
     }
 }

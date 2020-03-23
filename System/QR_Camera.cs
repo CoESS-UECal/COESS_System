@@ -16,6 +16,10 @@ namespace System
 {
     public partial class QR_Camera : Form
     {
+        //THIS IS EXPERIMENTAL SHIT PA LANG. DO NOT MODIFY.
+        //Unless trip nyo idevelop, oks lang din.
+        //This is for use sa registration sana sa events para di na gumamit ng external camera, webcam nalang ng laptop.
+        //Goodluck!
         public QR_Camera()
         {
             InitializeComponent();

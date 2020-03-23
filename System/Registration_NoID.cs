@@ -76,7 +76,7 @@ namespace System
                         MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                     }
 
-                    GetSN(EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true));//Finish dis tonight verifying for duplicate SN to avoid error in primary key
+                    GetSN(EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true));
 
                     if (!duplicate)
                     {

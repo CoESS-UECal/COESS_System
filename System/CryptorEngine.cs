@@ -21,7 +21,7 @@ namespace EnCryptDecrypt
 
 
             // Get the key from config file
-            string key = System.Properties.Settings.Default.Security_Key;
+            string key = System.Properties.Settings.Default.Security_Key; //<--This is where the Security_Key key is used for encrypting the member data.
             //System.Windows.Forms.MessageBox.Show(key);
             if (useHashing)
             {
