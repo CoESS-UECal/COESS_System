@@ -12,7 +12,7 @@ namespace System
         //Database connection variables
         public static MySqlConnection conn;
         public static string myConnectionString;
-        public static bool isMaster = true;
+        public static bool isMaster;
 
         public MainMenu()
         {
@@ -246,9 +246,11 @@ namespace System
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This CoESS Master Database System is created by CoESS 2018-2019." + Environment.NewLine +
-            "\n©Christer Jude A. Mananquil, Vice President - Internal (2018-2019)\n©Charles Edward D. Bernardo, Lead Programmer (2018-2019)\n©Mark Generson D. Espiritu, " +
-            "Lead Designer (2018-2019)\n©Kent Andrew Norca, Lead Designer (2019-2020)\n\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developers.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("This CoESS Database System is created by CoESS 2018-2019." + Environment.NewLine +
+            "\n©Christer Jude A. Mananquil, Vice President - Internal (2018-2019)\n©Charles Edward D. Bernardo, Lead Programmer (2018-2019)"+
+            "\n©Mark Generson D. Espiritu, " +"Lead Designer (2018-2019)\n©Kent Andrew Norca, Lead Designer (2019-2020"+
+            "\n\nAll Rights Reserved.\nNo part of this system can be reproduced nor modified without consent from the developers.", "About",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -291,19 +293,13 @@ namespace System
         {
             MainMenu.Initialize("server=localhost;user=root;sslmode=none;");
             checkuser();
-            if (user_accounts != 2)
+            if (user_accounts != 1)
             {
-                Insert("create user 'access'@'192.168.1.2';");
-                Insert("GRANT USAGE ON *.* TO 'access'@'192.168.1.2';");
-                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess\\_events`.*TO 'access'@'192.168.1.2';");
-                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess`.*TO 'access'@'192.168.1.2';");
-                Insert("GRANT ALL PRIVILEGES ON `access\\_ %`.*TO 'access'@'192.168.1.2';");
-
-                Insert("create user 'access'@'192.168.1.3';");
-                Insert("GRANT USAGE ON *.* TO 'access'@'192.168.1.3';");
-                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess\\_events`.*TO 'access'@'192.168.1.3';");
-                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess`.*TO 'access'@'192.168.1.3';");
-                Insert("GRANT ALL PRIVILEGES ON `access\\_ %`.*TO 'access'@'192.168.1.3';");
+                Insert("create user 'access'@'%';");
+                Insert("GRANT USAGE ON *.* TO 'access'@'%';");
+                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess\\_events`.*TO 'access'@'%';");
+                Insert("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `coess`.*TO 'access'@'%';");
+                Insert("GRANT ALL PRIVILEGES ON `access\\_ %`.*TO 'access'@'%';");
 
                 MessageBox.Show("User Accounts Created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -409,6 +405,7 @@ namespace System
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            isMaster = true;
             if (isMaster)
             {
                 toolStripLabel3.BackgroundImage = System.Properties.Resources.on_button;
@@ -491,6 +488,7 @@ namespace System
         {
             if (DialogResult.Yes == MessageBox.Show("Would you like to check if the database exists?", "Database Check", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
+                Initialize("server=localhost;uid=root;pwd=;sslmode=none;");
                 checkdb("coess", coess);
                 if (!coessdb)
                 {
@@ -521,11 +519,18 @@ namespace System
 
         private void importCoESSRegistrySettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process coess = Process.Start("regedit.exe","/s "+Application.ExecutablePath+"\\Resources\\coess.reg");
+            Process coess = Process.Start("regedit.exe", "/s "+Application.StartupPath+"\\Resources\\coess.reg");
             coess.WaitForExit();
-            Process coess_event = Process.Start("regedit.exe", "/s " + Application.ExecutablePath + "\\Resources\\coess_events.reg");
+            Process coess_event = Process.Start("regedit.exe", "/s "+Application.StartupPath+ "\\Resources\\coess_events.reg");
             coess_event.WaitForExit();
-            MessageBox.Show("Registry Entries created!","Succcess");
+            if(coess.HasExited && coess_event.HasExited)
+            {
+                MessageBox.Show("Registry Entries created!", "Succcess");
+            }
+            else
+            {
+                MessageBox.Show("Registry Entries failed!", "Fail");
+            }
         }
     }
 }

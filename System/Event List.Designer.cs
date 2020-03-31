@@ -142,7 +142,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(556, 411);
+            this.label5.Location = new System.Drawing.Point(515, 411);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 21);
             this.label5.TabIndex = 28;
@@ -154,7 +154,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(508, 406);
+            this.label4.Location = new System.Drawing.Point(428, 411);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 27;
@@ -168,7 +168,7 @@
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(502, 328);
+            this.checkBox1.Location = new System.Drawing.Point(430, 326);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(86, 25);
             this.checkBox1.TabIndex = 26;
@@ -216,15 +216,15 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "FN";
+            this.columnHeader4.Text = "First Name";
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "LN";
+            this.columnHeader5.Text = "Last Name";
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "SN";
+            this.columnHeader6.Text = "Student No";
             this.columnHeader6.Width = 90;
             // 
             // columnHeader8

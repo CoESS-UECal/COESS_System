@@ -280,8 +280,8 @@
             this.BackgroundImage = global::System.Properties.Resources.NEW_EVENT_BACKGROUND;
             this.ClientSize = new System.Drawing.Size(512, 576);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.pnlEventImage);
             this.Controls.Add(this.pnlEventDetails);
+            this.Controls.Add(this.pnlEventImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_Event";
