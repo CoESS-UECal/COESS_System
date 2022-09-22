@@ -34,7 +34,7 @@ namespace System
         
         //Image variables
         //string pickedImage = "";
-        string location = @"C:\\COESS\\Images\\Pubmat\\";
+        string location = @"C:\COESS\Images\Pubmat\";
         string fileName = "";
         string file1;
         public static string finalevent;
@@ -103,6 +103,7 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(event_date.Value.ToShortDateString());
             finalevent = event_name.Text;
             finalevent = finalevent.Replace(' ', '_');
             GetEname(event_name.Text);
@@ -118,10 +119,10 @@ namespace System
                     MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess_events;sslmode=none;");
                 }
                 MainMenu.Insert("create table " + finalevent + " (ID_No int(3) null, FN varchar(255) not null, LN varchar(255) not null, SN varchar(255) not null, Year_Level varchar(255) null, Time_In varchar(255) null, Time_Out varchar(255) null, primary key(SN));");
-                File.Copy(fileName, @"C:\\COESS\\Images\\Pubmat\\" + file1);
+                File.Copy(fileName, @"C:\COESS\Images\Pubmat\" + file1);
                 event_name.Text = null;
                 event_location.Text = null;
-                event_date.Value = DateTime.Today;
+                event_date.Value = DateTime.Now;
                 Image dump = event_pubmat.BackgroundImage;
                 if (dump != null)
                     dump.Dispose();

@@ -99,7 +99,14 @@ namespace System
                     listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
                     listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                     label5.Text = listView2.Items.Count.ToString();
-                    listView2.Items[listView2.Items.Count - 1].EnsureVisible();
+                    if (listView2.Items.Count == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        listView2.Items[listView2.Items.Count - 1].EnsureVisible();
+                    }
                 }
             }
         }
