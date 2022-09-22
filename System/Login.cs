@@ -25,11 +25,16 @@ namespace System
                 Process[] pname = Process.GetProcessesByName("mysqld");
                 if (pname.Length == 0)
                 {
-                    Process.Start(@"C:\xampp\mysql\bin\mysqld.exe");
+                    ProcessStartInfo xampp = new ProcessStartInfo();
+                    xampp.FileName = @"C:\xampp\mysql\bin\mysqld.exe";
+                    xampp.UseShellExecute = false;
+                    xampp.CreateNoWindow = true;
+                    Process proc = Process.Start(xampp);
+
                 }
                 else
                 {
-
+                    MessageBox.Show("MySQL Servier is already Running!", "Information", MessageBoxButtons.OK);
                 }
                 Form mainmenu = new MainMenu();
                 mainmenu.Show();
