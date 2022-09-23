@@ -48,6 +48,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pnlInformation = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblBday = new System.Windows.Forms.Label();
             this.lblCommittee = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlContact.SuspendLayout();
@@ -141,6 +141,7 @@
             this.SN.PromptChar = 'X';
             this.SN.Size = new System.Drawing.Size(221, 39);
             this.SN.TabIndex = 4;
+            this.SN.Click += new System.EventHandler(this.SN_Click);
             // 
             // EMail
             // 
@@ -360,6 +361,17 @@
             this.pnlInformation.Size = new System.Drawing.Size(853, 469);
             this.pnlInformation.TabIndex = 38;
             this.pnlInformation.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlInformation_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(190, 238);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 32);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "and your age is";
             // 
             // lblBday
             // 
@@ -792,17 +804,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(540, 351);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(190, 238);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 32);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "and your age is";
             // 
             // New_Member
             // 

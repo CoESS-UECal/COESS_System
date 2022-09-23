@@ -98,13 +98,12 @@ namespace System
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("Do you want to go back?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
                 Close();
             }
         }
-
     }
 }

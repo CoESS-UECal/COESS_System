@@ -37,7 +37,7 @@ namespace System
 
         public void Populate_ListView(string myquery)
         {
-            listView1.Items.Clear();
+            MemberListView.Items.Clear();
             ListViewItem iItem;
             string query = myquery;
             if (MainMenu.OpenConnection())
@@ -52,7 +52,7 @@ namespace System
                         iItem.SubItems.Add(decode(dataReader[1].ToString()));
                         fullname = decode(dataReader[2].ToString()) + " " + decode(dataReader[3].ToString());
                         iItem.SubItems.Add(fullname);
-                        listView1.Items.Add(iItem);
+                        MemberListView.Items.Add(iItem);
                     }
                 }
                 catch (Exception ex)
@@ -63,8 +63,8 @@ namespace System
                 {
                     MainMenu.CloseConnection();
                 }
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                MemberListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                MemberListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
 
@@ -103,23 +103,23 @@ namespace System
                         Member_List.lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
                         Member_List.firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true);
                         Member_List.mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true);
-                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
-                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"), true);
-                        textBox3.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"), true);
-                        textBox4.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"), true);
-                        textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"), true);
-                        textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"), true);
-                        textBox7.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Age"), true);
-                        textBox8.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("SN"), true);
-                        textBox9.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Comm"), true);
-                        textBox10.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Membership"), true);
-                        textBox11.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("BDay"), true);
+                        tbName.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
+                        tbAddress.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"), true);
+                        tbContactNum.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"), true);
+                        tbYrLvl.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"), true);
+                        tbGuardianName.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"), true);
+                        tbGuardianContact.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"), true);
+                        tbAge.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Age"), true);
+                        tbSN.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("SN"), true);
+                        tbCommittee.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Comm"), true);
+                        tbMembership.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Membership"), true);
+                        tbBirthday.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("BDay"), true);
                         // MessageBox.Show(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Email"), true));
-                        Image dump = pictureBox1.BackgroundImage;
+                        Image dump = pbUserPic.BackgroundImage;
                         if (dump != null)
                             dump.Dispose();
-                        pictureBox1.BackgroundImage = Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"), true));
-                        pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                        pbUserPic.BackgroundImage = Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("ID_Address"), true));
+                        pbUserPic.BackgroundImageLayout = ImageLayout.Stretch;
 
                     }
                 }
@@ -186,59 +186,52 @@ namespace System
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form mainmenu = new MainMenu();
-            mainmenu.Show();
-            Close();
-        }
-
         private void Member_List_Load(object sender, EventArgs e)
         {
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
-        private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbAddress_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox2.Text;
+            GeneralEdit.data = tbAddress.Text;
             GeneralEdit.col = "Address";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox2.Text = GeneralEdit.data;
+            tbAddress.Text = GeneralEdit.data;
         }
 
-        private void textBox3_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbContactNum_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox3.Text;
+            GeneralEdit.data = tbContactNum.Text;
             GeneralEdit.col = "Contact_No";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox3.Text = GeneralEdit.data;
+            tbContactNum.Text = GeneralEdit.data;
         }
 
-        private void textBox4_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbYrLvl_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox4.Text;
+            GeneralEdit.data = tbYrLvl.Text;
             GeneralEdit.col = "Year_Level";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox4.Text = GeneralEdit.data;
+            tbYrLvl.Text = GeneralEdit.data;
         }
 
-        private void textBox5_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbGuardianName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox5.Text;
+            GeneralEdit.data = tbGuardianName.Text;
             GeneralEdit.col = "Guard_Name";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox5.Text = GeneralEdit.data;
+            tbGuardianName.Text = GeneralEdit.data;
         }
 
-        private void textBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Form form1 = new NameEdit();
             form1.ShowDialog();
-            textBox1.Text = Member_List.fullname;
+            tbName.Text = Member_List.fullname;
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
@@ -249,16 +242,22 @@ namespace System
 
         private void clearMemberInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.Text = null;
-            textBox2.Text = null;
-            textBox3.Text = null;
-            textBox4.Text = null;
-            textBox5.Text = null;
-            textBox6.Text = null;
-            Image dump = pictureBox1.BackgroundImage;
+            tbName.Text = null;
+            tbAddress.Text = null;
+            tbContactNum.Text = null;
+            tbYrLvl.Text = null;
+            tbGuardianName.Text = null;
+            tbGuardianContact.Text = null;
+            tbMembership.Text = null;
+            tbAge.Text = null;
+            tbBirthday.Text = null;
+            tbYrLvl.Text = null;
+            tbCommittee.Text = null;
+            tbSN.Text = null;
+            Image dump = pbUserPic.BackgroundImage;
             if (dump != null)
                 dump.Dispose();
-            pictureBox1.BackgroundImage = Properties.Resources.full_logo_transparent_clear_c;
+            pbUserPic.BackgroundImage = Properties.Resources.full_logo_transparent_clear_c;
         }
 
         private void countNewMemberToolStripMenuItem_Click(object sender, EventArgs e)
@@ -271,88 +270,95 @@ namespace System
             countold();
         }
 
-        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        private void tbBirthday_DoubleClick(object sender, MouseEventArgs e)
         {
-            listView1.Sort();
-        }
-
-        private void textBox11_DoubleClick(object sender, MouseEventArgs e)
-        {
-            GeneralEdit.data = textBox11.Text;
+            GeneralEdit.data = tbBirthday.Text;
             GeneralEdit.col = "BDay";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox11.Text = GeneralEdit.data;
+            tbBirthday.Text = GeneralEdit.data;
         }
 
-        private void textBox10_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbMembership_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox10.Text;
+            GeneralEdit.data = tbMembership.Text;
             GeneralEdit.col = "Membership";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox10.Text = GeneralEdit.data;
+            tbMembership.Text = GeneralEdit.data;
         }
 
-        private void textBox7_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbAge_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox7.Text;
+            GeneralEdit.data = tbAge.Text;
             GeneralEdit.col = "Age";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox7.Text = GeneralEdit.data;
+            tbAge.Text = GeneralEdit.data;
         }
 
-        private void textBox8_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbSN_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox8.Text;
+            GeneralEdit.data = tbSN.Text;
             GeneralEdit.col = "SN";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox8.Text = GeneralEdit.data;
+            tbSN.Text = GeneralEdit.data;
         }
 
-        private void textBox9_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbCommittee_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox9.Text;
+            GeneralEdit.data = tbCommittee.Text;
             GeneralEdit.col = "Comm";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox9.Text = GeneralEdit.data;
+            tbCommittee.Text = GeneralEdit.data;
         }
 
-        private void textBox6_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
-            GeneralEdit.data = textBox6.Text;
-            GeneralEdit.col = "Guard_Contact";
-            Form form1 = new GeneralEdit();
-            form1.ShowDialog();
-            textBox6.Text = GeneralEdit.data;
+            Form mainmenu = new MainMenu();
+            mainmenu.Show();
+            Close();
         }
 
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void MemberListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            foreach (ListViewItem item in listView1.SelectedItems)
+            MemberListView.Sort();
+        }
+
+        private void MemberListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            foreach (ListViewItem item in MemberListView.SelectedItems)
             {
                 Member_List.idnumber = item.SubItems[0].Text;
                 LMI(item.SubItems[0].Text);
             }
         }
 
-        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
+        private void tbGuardianContact_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (maskedTextBox1.Text == null)
+            GeneralEdit.data = tbGuardianContact.Text;
+            GeneralEdit.col = "Guard_Contact";
+            Form form1 = new GeneralEdit();
+            form1.ShowDialog();
+            tbGuardianContact.Text = GeneralEdit.data;
+        }
+
+        private void mtbSearchSN_TextChanged(object sender, EventArgs e)
+        {
+            if (mtbSearchSN.Text == null)
             {
                 Populate_ListView("select ID_No,SN,FN,LN from member_list;");
             }
             else
             {
-                Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "%'");
-                listView1.Refresh();
+                Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '" + EnCryptDecrypt.CryptorEngine.Encrypt(mtbSearchSN.Text, true) + "%'");
+                MemberListView.Refresh();
             }
         }
 
-        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        private void pbUserPic_DoubleClick(object sender, EventArgs e)
         {
             string location = @"C:\COESS\Images\Member\";
             string filename = "";
@@ -363,17 +369,17 @@ namespace System
             openFileDialog1.Filter = "JPEG Images|*.jpg|GIF Images|*.gif|BITMAPS|*.bmp|TIFF Images|*.tif|PNG Images|*.png|All Files|*.*";
             if (openFileDialog1.ShowDialog() != DialogResult.Cancel)
             {
-                string oldimage = pictureBox1.ImageLocation;
+                string oldimage = pbUserPic.ImageLocation;
                 filename = openFileDialog1.SafeFileName;
                 pickedImage = openFileDialog1.FileName;
-                pictureBox1.BackgroundImage = Image.FromFile(location + filename);
+                pbUserPic.BackgroundImage = Image.FromFile(location + filename);
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     Updated("ID_Address", location + filename, idnumber);
                 }
                 else
                 {
-                    pictureBox1.BackgroundImage = Image.FromFile(oldimage);
+                    pbUserPic.BackgroundImage = Image.FromFile(oldimage);
                 }
             }
         }

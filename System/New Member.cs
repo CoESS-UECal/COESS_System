@@ -687,6 +687,10 @@ namespace System
             pnlContact.BringToFront();
         }
 
+        private void SN_Click(object sender, EventArgs e)
+        {
+            SN.Select(0, 2);
+        }
     }
 }
 #endregion
