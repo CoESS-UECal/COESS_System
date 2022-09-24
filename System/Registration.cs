@@ -96,7 +96,7 @@ namespace System
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (eventlist.checkBox1.Checked == true)
+            if (eventlist.cbTime.Checked == true)
             {
                 if (e.KeyCode == Keys.Enter)
                 {
@@ -154,7 +154,7 @@ namespace System
                     }
                 }
             }
-            else if (eventlist.checkBox1.Checked == false)
+            else if (eventlist.cbTime.Checked == false)
             {
                 if (e.KeyCode == Keys.Enter)
                 {

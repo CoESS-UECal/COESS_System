@@ -65,7 +65,7 @@ namespace System
             }
             else
             {
-                if (eventlist.checkBox1.Checked)
+                if (eventlist.cbTime.Checked)
                 {
                     if (MainMenu.isMaster == true)
                     {

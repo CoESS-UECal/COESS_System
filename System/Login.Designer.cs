@@ -32,13 +32,13 @@
             this.UserBox = new System.Windows.Forms.TextBox();
             this.PasswordBox = new System.Windows.Forms.TextBox();
             this.Loginbutton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.pbPassword = new System.Windows.Forms.PictureBox();
+            this.pbUser = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // UserBox
@@ -94,54 +94,54 @@
             this.Loginbutton.UseVisualStyleBackColor = false;
             this.Loginbutton.Click += new System.EventHandler(this.Loginbutton_Click);
             // 
-            // button1
+            // CloseButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::System.Properties.Resources.Close_Window_40px;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button1.Location = new System.Drawing.Point(970, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
+            this.CloseButton.BackgroundImage = global::System.Properties.Resources.Close_Window_40px;
+            this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.CloseButton.Location = new System.Drawing.Point(970, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(40, 40);
+            this.CloseButton.TabIndex = 5;
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // pictureBox3
+            // pbPassword
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = global::System.Properties.Resources.Secure_50px;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(278, 334);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(43, 43);
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
+            this.pbPassword.BackColor = System.Drawing.Color.Transparent;
+            this.pbPassword.BackgroundImage = global::System.Properties.Resources.Secure_50px;
+            this.pbPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPassword.Location = new System.Drawing.Point(278, 334);
+            this.pbPassword.Name = "pbPassword";
+            this.pbPassword.Size = new System.Drawing.Size(43, 43);
+            this.pbPassword.TabIndex = 17;
+            this.pbPassword.TabStop = false;
             // 
-            // pictureBox2
+            // pbUser
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::System.Properties.Resources.Male_User_50px;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(278, 269);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 43);
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
+            this.pbUser.BackColor = System.Drawing.Color.Transparent;
+            this.pbUser.BackgroundImage = global::System.Properties.Resources.Male_User_50px;
+            this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbUser.Location = new System.Drawing.Point(278, 269);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(43, 43);
+            this.pbUser.TabIndex = 16;
+            this.pbUser.TabStop = false;
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::System.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(422, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.Image = global::System.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(422, 67);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(180, 180);
+            this.pbLogo.TabIndex = 15;
+            this.pbLogo.TabStop = false;
             // 
             // Login
             // 
@@ -149,10 +149,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.NewMemberBackgroundVersion2;
             this.ClientSize = new System.Drawing.Size(1024, 576);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pbPassword);
+            this.Controls.Add(this.pbUser);
+            this.Controls.Add(this.pbLogo);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.Loginbutton);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.UserBox);
@@ -162,9 +162,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,9 +174,9 @@
         private Windows.Forms.TextBox UserBox;
         private Windows.Forms.TextBox PasswordBox;
         private Windows.Forms.Button Loginbutton;
-        private Windows.Forms.Button button1;
-        private Windows.Forms.PictureBox pictureBox3;
-        private Windows.Forms.PictureBox pictureBox2;
-        private Windows.Forms.PictureBox pictureBox1;
+        private Windows.Forms.Button CloseButton;
+        private Windows.Forms.PictureBox pbPassword;
+        private Windows.Forms.PictureBox pbUser;
+        private Windows.Forms.PictureBox pbLogo;
     }
 }

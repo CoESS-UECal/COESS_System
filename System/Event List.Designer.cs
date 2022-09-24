@@ -29,65 +29,66 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Event_List));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.gbEventList = new System.Windows.Forms.GroupBox();
+            this.EventListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.gbEventInfo = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.lblTotalWord = new System.Windows.Forms.Label();
+            this.cbTime = new System.Windows.Forms.CheckBox();
+            this.gbRegistered = new System.Windows.Forms.GroupBox();
+            this.RegisteredListView = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnRegistration = new System.Windows.Forms.Button();
+            this.tbEventLocation = new System.Windows.Forms.TextBox();
+            this.tbEventName = new System.Windows.Forms.TextBox();
+            this.lblEventLocation = new System.Windows.Forms.Label();
+            this.lblEventName = new System.Windows.Forms.Label();
+            this.pbPubmat = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.gbEventList.SuspendLayout();
+            this.gbEventInfo.SuspendLayout();
+            this.gbRegistered.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPubmat)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbEventList
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(409, 514);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Event List";
+            this.gbEventList.BackColor = System.Drawing.Color.Transparent;
+            this.gbEventList.Controls.Add(this.EventListView);
+            this.gbEventList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEventList.ForeColor = System.Drawing.Color.White;
+            this.gbEventList.Location = new System.Drawing.Point(12, 50);
+            this.gbEventList.Name = "gbEventList";
+            this.gbEventList.Size = new System.Drawing.Size(409, 514);
+            this.gbEventList.TabIndex = 12;
+            this.gbEventList.TabStop = false;
+            this.gbEventList.Text = "Event List";
             // 
-            // listView1
+            // EventListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.EventListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listView1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(6, 24);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(397, 484);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
+            this.EventListView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventListView.FullRowSelect = true;
+            this.EventListView.HideSelection = false;
+            this.EventListView.Location = new System.Drawing.Point(6, 24);
+            this.EventListView.MultiSelect = false;
+            this.EventListView.Name = "EventListView";
+            this.EventListView.Size = new System.Drawing.Size(397, 484);
+            this.EventListView.TabIndex = 0;
+            this.EventListView.UseCompatibleStateImageBehavior = false;
+            this.EventListView.View = System.Windows.Forms.View.Details;
+            this.EventListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EventListView_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -99,115 +100,116 @@
             this.columnHeader2.Text = "Date";
             this.columnHeader2.Width = 98;
             // 
-            // groupBox2
+            // gbEventInfo
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(427, 50);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(585, 514);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Event Information";
+            this.gbEventInfo.BackColor = System.Drawing.Color.Transparent;
+            this.gbEventInfo.Controls.Add(this.btnReset);
+            this.gbEventInfo.Controls.Add(this.lblCount);
+            this.gbEventInfo.Controls.Add(this.lblTotalWord);
+            this.gbEventInfo.Controls.Add(this.cbTime);
+            this.gbEventInfo.Controls.Add(this.gbRegistered);
+            this.gbEventInfo.Controls.Add(this.btnRemove);
+            this.gbEventInfo.Controls.Add(this.btnRegistration);
+            this.gbEventInfo.Controls.Add(this.tbEventLocation);
+            this.gbEventInfo.Controls.Add(this.tbEventName);
+            this.gbEventInfo.Controls.Add(this.lblEventLocation);
+            this.gbEventInfo.Controls.Add(this.lblEventName);
+            this.gbEventInfo.Controls.Add(this.pbPubmat);
+            this.gbEventInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEventInfo.ForeColor = System.Drawing.Color.White;
+            this.gbEventInfo.Location = new System.Drawing.Point(427, 50);
+            this.gbEventInfo.Name = "gbEventInfo";
+            this.gbEventInfo.Size = new System.Drawing.Size(585, 514);
+            this.gbEventInfo.TabIndex = 13;
+            this.gbEventInfo.TabStop = false;
+            this.gbEventInfo.Text = "Event Information";
             // 
-            // button4
+            // btnReset
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(430, 435);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(149, 37);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "RESET FIELDS";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(430, 435);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(149, 37);
+            this.btnReset.TabIndex = 33;
+            this.btnReset.Text = "RESET FIELDS";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // label5
+            // lblCount
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(515, 411);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 21);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "0";
+            this.lblCount.AutoSize = true;
+            this.lblCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCount.ForeColor = System.Drawing.Color.White;
+            this.lblCount.Location = new System.Drawing.Point(515, 411);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(19, 21);
+            this.lblCount.TabIndex = 28;
+            this.lblCount.Text = "0";
             // 
-            // label4
+            // lblTotalWord
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(428, 411);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 21);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Total:";
+            this.lblTotalWord.AutoSize = true;
+            this.lblTotalWord.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalWord.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalWord.ForeColor = System.Drawing.Color.White;
+            this.lblTotalWord.Location = new System.Drawing.Point(428, 411);
+            this.lblTotalWord.Name = "lblTotalWord";
+            this.lblTotalWord.Size = new System.Drawing.Size(52, 21);
+            this.lblTotalWord.TabIndex = 27;
+            this.lblTotalWord.Text = "Total:";
             // 
-            // checkBox1
+            // cbTime
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(430, 326);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(86, 25);
-            this.checkBox1.TabIndex = 26;
-            this.checkBox1.Text = "Time In";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbTime.AutoSize = true;
+            this.cbTime.BackColor = System.Drawing.Color.Transparent;
+            this.cbTime.Checked = true;
+            this.cbTime.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cbTime.ForeColor = System.Drawing.Color.White;
+            this.cbTime.Location = new System.Drawing.Point(430, 326);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(86, 25);
+            this.cbTime.TabIndex = 26;
+            this.cbTime.Text = "Time In";
+            this.cbTime.UseVisualStyleBackColor = false;
+            this.cbTime.CheckedChanged += new System.EventHandler(this.cbTime_CheckedChanged);
             // 
-            // groupBox3
+            // gbRegistered
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.listView2);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(6, 265);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(416, 243);
-            this.groupBox3.TabIndex = 23;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Registered";
+            this.gbRegistered.BackColor = System.Drawing.Color.Transparent;
+            this.gbRegistered.Controls.Add(this.RegisteredListView);
+            this.gbRegistered.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbRegistered.ForeColor = System.Drawing.Color.White;
+            this.gbRegistered.Location = new System.Drawing.Point(6, 265);
+            this.gbRegistered.Name = "gbRegistered";
+            this.gbRegistered.Size = new System.Drawing.Size(416, 243);
+            this.gbRegistered.TabIndex = 23;
+            this.gbRegistered.TabStop = false;
+            this.gbRegistered.Text = "Registered";
             // 
-            // listView2
+            // RegisteredListView
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.RegisteredListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader8,
             this.columnHeader9});
-            this.listView2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView2.FullRowSelect = true;
-            this.listView2.Location = new System.Drawing.Point(8, 18);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(401, 219);
-            this.listView2.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            this.listView2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView2_ColumnClick);
+            this.RegisteredListView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisteredListView.FullRowSelect = true;
+            this.RegisteredListView.HideSelection = false;
+            this.RegisteredListView.Location = new System.Drawing.Point(8, 18);
+            this.RegisteredListView.Name = "RegisteredListView";
+            this.RegisteredListView.Size = new System.Drawing.Size(401, 219);
+            this.RegisteredListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.RegisteredListView.TabIndex = 1;
+            this.RegisteredListView.UseCompatibleStateImageBehavior = false;
+            this.RegisteredListView.View = System.Windows.Forms.View.Details;
+            this.RegisteredListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.RegisteredListView_ColumnClick);
             // 
             // columnHeader7
             // 
@@ -237,99 +239,99 @@
             this.columnHeader9.Text = "Time Out";
             this.columnHeader9.Width = 82;
             // 
-            // button2
+            // btnRemove
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(428, 361);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 37);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "REMOVE";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
+            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRemove.Location = new System.Drawing.Point(428, 361);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(149, 37);
+            this.btnRemove.TabIndex = 22;
+            this.btnRemove.Text = "REMOVE";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // button1
+            // btnRegistration
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(428, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 37);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "REGISTRATION";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(219)))));
+            this.btnRegistration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRegistration.Location = new System.Drawing.Point(428, 283);
+            this.btnRegistration.Name = "btnRegistration";
+            this.btnRegistration.Size = new System.Drawing.Size(149, 37);
+            this.btnRegistration.TabIndex = 21;
+            this.btnRegistration.Text = "REGISTRATION";
+            this.btnRegistration.UseVisualStyleBackColor = false;
+            this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
             // 
-            // textBox2
+            // tbEventLocation
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(86, 225);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(491, 29);
-            this.textBox2.TabIndex = 20;
+            this.tbEventLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.tbEventLocation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbEventLocation.ForeColor = System.Drawing.Color.White;
+            this.tbEventLocation.Location = new System.Drawing.Point(86, 225);
+            this.tbEventLocation.Name = "tbEventLocation";
+            this.tbEventLocation.ReadOnly = true;
+            this.tbEventLocation.Size = new System.Drawing.Size(491, 29);
+            this.tbEventLocation.TabIndex = 20;
             // 
-            // textBox1
+            // tbEventName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(86, 185);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(491, 29);
-            this.textBox1.TabIndex = 19;
+            this.tbEventName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.tbEventName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbEventName.ForeColor = System.Drawing.Color.White;
+            this.tbEventName.Location = new System.Drawing.Point(86, 185);
+            this.tbEventName.Name = "tbEventName";
+            this.tbEventName.ReadOnly = true;
+            this.tbEventName.Size = new System.Drawing.Size(491, 29);
+            this.tbEventName.TabIndex = 19;
             // 
-            // label3
+            // lblEventLocation
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 228);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 21);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Location:";
+            this.lblEventLocation.AutoSize = true;
+            this.lblEventLocation.BackColor = System.Drawing.Color.Transparent;
+            this.lblEventLocation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblEventLocation.ForeColor = System.Drawing.Color.White;
+            this.lblEventLocation.Location = new System.Drawing.Point(6, 228);
+            this.lblEventLocation.Name = "lblEventLocation";
+            this.lblEventLocation.Size = new System.Drawing.Size(80, 21);
+            this.lblEventLocation.TabIndex = 14;
+            this.lblEventLocation.Text = "Location:";
             // 
-            // label2
+            // lblEventName
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 188);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 21);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Name:";
+            this.lblEventName.AutoSize = true;
+            this.lblEventName.BackColor = System.Drawing.Color.Transparent;
+            this.lblEventName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblEventName.ForeColor = System.Drawing.Color.White;
+            this.lblEventName.Location = new System.Drawing.Point(6, 188);
+            this.lblEventName.Name = "lblEventName";
+            this.lblEventName.Size = new System.Drawing.Size(60, 21);
+            this.lblEventName.TabIndex = 13;
+            this.lblEventName.Text = "Name:";
             // 
-            // pictureBox1
+            // pbPubmat
             // 
-            this.pictureBox1.BackgroundImage = global::System.Properties.Resources.Blank_BG1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(567, 150);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pbPubmat.BackgroundImage = global::System.Properties.Resources.Blank_BG1;
+            this.pbPubmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbPubmat.Location = new System.Drawing.Point(10, 19);
+            this.pbPubmat.Name = "pbPubmat";
+            this.pbPubmat.Size = new System.Drawing.Size(567, 150);
+            this.pbPubmat.TabIndex = 1;
+            this.pbPubmat.TabStop = false;
             // 
-            // button3
+            // btnExit
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::System.Properties.Resources.BACK;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button3.Location = new System.Drawing.Point(9, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(35, 35);
-            this.button3.TabIndex = 32;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImage = global::System.Properties.Resources.BACK;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.btnExit.Location = new System.Drawing.Point(9, 9);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(35, 35);
+            this.btnExit.TabIndex = 32;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Event_List
             // 
@@ -337,50 +339,50 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.NewMemberBackgroundVersion2;
             this.ClientSize = new System.Drawing.Size(1024, 576);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.gbEventInfo);
+            this.Controls.Add(this.gbEventList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Event_List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event_List";
             this.Load += new System.EventHandler(this.Event_List_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gbEventList.ResumeLayout(false);
+            this.gbEventInfo.ResumeLayout(false);
+            this.gbEventInfo.PerformLayout();
+            this.gbRegistered.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPubmat)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Windows.Forms.GroupBox groupBox1;
-        private Windows.Forms.ListView listView1;
-        private Windows.Forms.GroupBox groupBox2;
-        private Windows.Forms.TextBox textBox2;
-        private Windows.Forms.Label label3;
-        private Windows.Forms.Label label2;
-        private Windows.Forms.PictureBox pictureBox1;
-        private Windows.Forms.GroupBox groupBox3;
-        private Windows.Forms.Button button2;
-        private Windows.Forms.Button button1;
-        private Windows.Forms.Button button3;
+        private Windows.Forms.GroupBox gbEventList;
+        private Windows.Forms.ListView EventListView;
+        private Windows.Forms.GroupBox gbEventInfo;
+        private Windows.Forms.TextBox tbEventLocation;
+        private Windows.Forms.Label lblEventLocation;
+        private Windows.Forms.Label lblEventName;
+        private Windows.Forms.PictureBox pbPubmat;
+        private Windows.Forms.GroupBox gbRegistered;
+        private Windows.Forms.Button btnRemove;
+        private Windows.Forms.Button btnRegistration;
+        private Windows.Forms.Button btnExit;
         private Windows.Forms.ColumnHeader columnHeader1;
         private Windows.Forms.ColumnHeader columnHeader2;
         private Windows.Forms.ColumnHeader columnHeader4;
         private Windows.Forms.ColumnHeader columnHeader5;
-        public Windows.Forms.ListView listView2;
+        public Windows.Forms.ListView RegisteredListView;
         private Windows.Forms.ColumnHeader columnHeader6;
         private Windows.Forms.ColumnHeader columnHeader7;
         private Windows.Forms.ColumnHeader columnHeader8;
         private Windows.Forms.ColumnHeader columnHeader9;
-        private Windows.Forms.TextBox textBox1;
-        public Windows.Forms.CheckBox checkBox1;
-        private Windows.Forms.Label label5;
-        private Windows.Forms.Label label4;
-        private Windows.Forms.Button button4;
+        private Windows.Forms.TextBox tbEventName;
+        public Windows.Forms.CheckBox cbTime;
+        private Windows.Forms.Label lblCount;
+        private Windows.Forms.Label lblTotalWord;
+        private Windows.Forms.Button btnReset;
     }
 }

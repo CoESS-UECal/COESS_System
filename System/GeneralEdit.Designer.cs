@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralEdit));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbEdit = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbEdit
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(12, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(532, 29);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.tbEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.tbEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbEdit.ForeColor = System.Drawing.Color.White;
+            this.tbEdit.Location = new System.Drawing.Point(12, 16);
+            this.tbEdit.Name = "tbEdit";
+            this.tbEdit.Size = new System.Drawing.Size(532, 29);
+            this.tbEdit.TabIndex = 0;
+            this.tbEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbEdit_KeyDown);
             // 
             // GeneralEdit
             // 
@@ -50,7 +50,7 @@
             this.BackgroundImage = global::System.Properties.Resources.BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(556, 61);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbEdit);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -65,6 +65,6 @@
 
         #endregion
 
-        private Windows.Forms.TextBox textBox1;
+        private Windows.Forms.TextBox tbEdit;
     }
 }

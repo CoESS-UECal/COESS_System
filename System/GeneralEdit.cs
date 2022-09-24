@@ -23,11 +23,11 @@ namespace System
 
         private void GeneralEdit_Load(object sender, EventArgs e)
         {
-            textBox1.Text = data;
-            textBox1.Focus();
+            tbEdit.Text = data;
+            tbEdit.Focus();
         }
 
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        private void tbEdit_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -40,10 +40,10 @@ namespace System
             {
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    Member_List.Updated(col, textBox1.Text, Member_List.idnumber);
+                    Member_List.Updated(col, tbEdit.Text, Member_List.idnumber);
                     MessageBox.Show("Data Updated!", "Update Successful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
-                    data = textBox1.Text;
+                    data = tbEdit.Text;
                 }
             }
         }

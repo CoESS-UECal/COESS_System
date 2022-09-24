@@ -17,7 +17,7 @@ namespace System
             // Create an instance of a ListView column sorter and assign it 
             // to the ListView control.
             lvwColumnSorter = new ListViewColumnSorter();
-            this.listView2.ListViewItemSorter = lvwColumnSorter;
+            this.RegisteredListView.ListViewItemSorter = lvwColumnSorter;
 
             if (MainMenu.isMaster == true)
             {
@@ -40,13 +40,13 @@ namespace System
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[0].ToString(), true);
-                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[1].ToString(), true);
-                        Image dump = pictureBox1.BackgroundImage;
+                        tbEventName.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[0].ToString(), true);
+                        tbEventLocation.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader[1].ToString(), true);
+                        Image dump = pbPubmat.BackgroundImage;
                         if (dump != null)
                             dump.Dispose();
-                        pictureBox1.BackgroundImage = Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader[2].ToString(), true));
-                        pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                        pbPubmat.BackgroundImage = Image.FromFile(EnCryptDecrypt.CryptorEngine.Decrypt(reader[2].ToString(), true));
+                        pbPubmat.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
                 catch (MySqlException ex)
@@ -69,7 +69,7 @@ namespace System
             else
             {
                 string query = "Select FN, LN, SN, ID_No, Time_In, Time_Out from " + event_name + ";";
-                listView2.Items.Clear();
+                RegisteredListView.Items.Clear();
                 ListViewItem iItem;
                 if (MainMenu.OpenConnection())
                 {
@@ -85,7 +85,7 @@ namespace System
                             iItem.SubItems.Add(dataReader[3].ToString());
                             iItem.SubItems.Add(dataReader[4].ToString());
                             iItem.SubItems.Add(dataReader[5].ToString());
-                            listView2.Items.Add(iItem);
+                            RegisteredListView.Items.Add(iItem);
                         }
                     }
                     catch (Exception ex)
@@ -96,16 +96,16 @@ namespace System
                     {
                         MainMenu.CloseConnection();
                     }
-                    listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                    listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-                    label5.Text = listView2.Items.Count.ToString();
-                    if (listView2.Items.Count == 0)
+                    RegisteredListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    RegisteredListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    lblCount.Text = RegisteredListView.Items.Count.ToString();
+                    if (RegisteredListView.Items.Count == 0)
                     {
 
                     }
                     else
                     {
-                        listView2.Items[listView2.Items.Count - 1].EnsureVisible();
+                        RegisteredListView.Items[RegisteredListView.Items.Count - 1].EnsureVisible();
                     }
                 }
             }
@@ -113,7 +113,7 @@ namespace System
 
         public void Populate_ListView(string myquery)
         {
-            listView1.Items.Clear();
+            EventListView.Items.Clear();
             ListViewItem iItem;
             string query = myquery;
             if (MainMenu.OpenConnection())
@@ -126,7 +126,7 @@ namespace System
                     {
                         iItem = new ListViewItem(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[0].ToString(), true));
                         iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[1].ToString(), true));
-                        listView1.Items.Add(iItem);
+                        EventListView.Items.Add(iItem);
 
                     }
                 }
@@ -138,12 +138,12 @@ namespace System
                 {
                     MainMenu.CloseConnection();
                 }
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                EventListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                EventListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRegistration_Click(object sender, EventArgs e)
         {
             Form reg_noid = new Registration_NoID(this);
             Form registration = new Registration(this);
@@ -151,7 +151,7 @@ namespace System
             reg_noid.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Form mainmenu = new MainMenu();
             mainmenu.Show();
@@ -163,9 +163,9 @@ namespace System
             Populate_ListView("select Event_Name,Event_Date from event_list;");
         }
 
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void EventListView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            foreach (ListViewItem item in listView1.SelectedItems)
+            foreach (ListViewItem item in EventListView.SelectedItems)
             {
                 event_name = item.SubItems[0].Text;
                 event_name = event_name.Replace(' ', '_');
@@ -190,9 +190,9 @@ namespace System
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void cbTime_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if (cbTime.Checked)
             {
                 istimein = true;
             }
@@ -202,9 +202,9 @@ namespace System
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)//remove button
+        private void btnRemove_Click(object sender, EventArgs e)//remove button
         {
-            foreach (ListViewItem item in listView2.SelectedItems)
+            foreach (ListViewItem item in RegisteredListView.SelectedItems)
             {
                 SN = item.SubItems[2].Text;
                 if (MainMenu.isMaster == true)
@@ -219,7 +219,7 @@ namespace System
 
                 MainMenu.Insert("delete from " + event_name + " where SN = '" + EnCryptDecrypt.CryptorEngine.Encrypt(SN, true) + "';");
 
-                listView2.Items.Remove(item);
+                RegisteredListView.Items.Remove(item);
 
                 if (MainMenu.isMaster == true)
                 {
@@ -230,34 +230,34 @@ namespace System
                     MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                 }
 
-                if (label5.Text == "0")
+                if (lblCount.Text == "0")
                 {
                     MessageBox.Show("There are no more participants!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
                 else
                 {
-                    label5.Text = Convert.ToString(Convert.ToInt32(label5.Text) - 1);
+                    lblCount.Text = Convert.ToString(Convert.ToInt32(lblCount.Text) - 1);
                 }
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
             Populate_ListView("select Event_Name,Event_Date from event_list;");
-            Image dump = pictureBox1.BackgroundImage;
+            Image dump = pbPubmat.BackgroundImage;
             if (dump != null)
                 dump.Dispose();
-            pictureBox1.BackgroundImage = Properties.Resources.Blank_BG1;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            textBox1.Text = null;
-            textBox2.Text = null;
+            pbPubmat.BackgroundImage = Properties.Resources.Blank_BG1;
+            pbPubmat.BackgroundImageLayout = ImageLayout.None;
+            tbEventName.Text = null;
+            tbEventLocation.Text = null;
             event_name = null;
-            listView2.Items.Clear();
-            checkBox1.Checked = true;
-            label5.Text = "0";
+            RegisteredListView.Items.Clear();
+            cbTime.Checked = true;
+            lblCount.Text = "0";
         }
 
-        private void listView2_ColumnClick(object sender, ColumnClickEventArgs e)
+        private void RegisteredListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             // Determine if clicked column is already the column that is being sorted.
             if (e.Column == lvwColumnSorter.SortColumn)
@@ -280,8 +280,7 @@ namespace System
             }
 
             // Perform the sort with these new sort options.
-            this.listView2.Sort();
+            this.RegisteredListView.Sort();
         }
-
     }
 }

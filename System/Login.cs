@@ -22,6 +22,14 @@ namespace System
         {
             if ((UserBox.Text == "Officer" || UserBox.Text == "Professor") && PasswordBox.Text == Properties.Settings.Default.Password)
             {
+                string dir = @"C:\CoESS\Images\";
+                if (!System.IO.Directory.Exists(dir))
+                {
+                    System.IO.Directory.CreateDirectory(dir);
+                    System.IO.Directory.CreateDirectory(dir + "Member");
+                    System.IO.Directory.CreateDirectory(dir + "Pubmat");
+                    MessageBox.Show("Created required folders", "Information", MessageBoxButtons.OK);
+                }
                 Process[] pname = Process.GetProcessesByName("mysqld");
                 if (pname.Length == 0)
                 {
@@ -30,7 +38,6 @@ namespace System
                     xampp.UseShellExecute = false;
                     xampp.CreateNoWindow = true;
                     Process proc = Process.Start(xampp);
-
                 }
                 else
                 {
@@ -81,7 +88,7 @@ namespace System
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("Do you want to quit?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {

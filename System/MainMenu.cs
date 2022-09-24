@@ -253,7 +253,7 @@ namespace System
             MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("You will be Logged Out. Continue?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
@@ -451,7 +451,7 @@ namespace System
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnMemberList_Click(object sender, EventArgs e)
         {
             Form access = new Access();
             access.ShowDialog();
@@ -463,21 +463,21 @@ namespace System
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnNewMember_Click(object sender, EventArgs e)
         {
             Form newmember = new New_Member();
             newmember.Show();
             Close();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnNewEvent_Click(object sender, EventArgs e)
         {
             Form newevent = new New_Event();
             newevent.Show();
             Close();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnEventList_Click(object sender, EventArgs e)
         {
             Form eventlist = new Event_List();
             eventlist.Show();

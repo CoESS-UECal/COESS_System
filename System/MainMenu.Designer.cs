@@ -42,7 +42,7 @@
             this.exportDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importCoESSRegistrySettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.fn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,10 +64,10 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnEventList = new System.Windows.Forms.Button();
+            this.btnNewEvent = new System.Windows.Forms.Button();
+            this.btnNewMember = new System.Windows.Forms.Button();
+            this.btnMemberList = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -194,20 +194,20 @@
             this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnExit
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button4.Location = new System.Drawing.Point(9, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(35, 35);
-            this.button4.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.button4, "Log-out");
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.btnExit.Location = new System.Drawing.Point(9, 9);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(35, 35);
+            this.btnExit.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnExit, "Log-out");
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // listView1
             // 
@@ -221,6 +221,7 @@
             this.guard_contact,
             this.address,
             this.bday});
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(929, 542);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(25, 25);
@@ -369,71 +370,71 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button7
+            // btnEventList
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = global::System.Properties.Resources.EVENT_LIST_V2;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(547, 89);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(260, 350);
-            this.button7.TabIndex = 7;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnEventList.BackColor = System.Drawing.Color.Transparent;
+            this.btnEventList.BackgroundImage = global::System.Properties.Resources.EVENT_LIST_V2;
+            this.btnEventList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEventList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEventList.Location = new System.Drawing.Point(547, 89);
+            this.btnEventList.Name = "btnEventList";
+            this.btnEventList.Size = new System.Drawing.Size(260, 350);
+            this.btnEventList.TabIndex = 7;
+            this.btnEventList.UseVisualStyleBackColor = false;
+            this.btnEventList.Click += new System.EventHandler(this.btnEventList_Click);
             // 
-            // button8
+            // btnNewEvent
             // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = global::System.Properties.Resources.CREATE_NEW;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = global::System.Properties.Resources.Add_List_50px;
-            this.button8.Location = new System.Drawing.Point(547, 445);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(260, 60);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "CREATE NEW";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnNewEvent.BackColor = System.Drawing.Color.Transparent;
+            this.btnNewEvent.BackgroundImage = global::System.Properties.Resources.CREATE_NEW;
+            this.btnNewEvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewEvent.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnNewEvent.ForeColor = System.Drawing.Color.White;
+            this.btnNewEvent.Image = global::System.Properties.Resources.Add_List_50px;
+            this.btnNewEvent.Location = new System.Drawing.Point(547, 445);
+            this.btnNewEvent.Name = "btnNewEvent";
+            this.btnNewEvent.Size = new System.Drawing.Size(260, 60);
+            this.btnNewEvent.TabIndex = 6;
+            this.btnNewEvent.Text = "CREATE NEW";
+            this.btnNewEvent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewEvent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNewEvent.UseVisualStyleBackColor = false;
+            this.btnNewEvent.Click += new System.EventHandler(this.btnNewEvent_Click);
             // 
-            // button6
+            // btnNewMember
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = global::System.Properties.Resources.CREATE_NEW;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(218, 445);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(260, 60);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "CREATE NEW";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnNewMember.BackColor = System.Drawing.Color.Transparent;
+            this.btnNewMember.BackgroundImage = global::System.Properties.Resources.CREATE_NEW;
+            this.btnNewMember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewMember.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewMember.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewMember.ForeColor = System.Drawing.Color.White;
+            this.btnNewMember.Image = ((System.Drawing.Image)(resources.GetObject("btnNewMember.Image")));
+            this.btnNewMember.Location = new System.Drawing.Point(218, 445);
+            this.btnNewMember.Name = "btnNewMember";
+            this.btnNewMember.Size = new System.Drawing.Size(260, 60);
+            this.btnNewMember.TabIndex = 3;
+            this.btnNewMember.Text = "CREATE NEW";
+            this.btnNewMember.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewMember.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNewMember.UseVisualStyleBackColor = false;
+            this.btnNewMember.Click += new System.EventHandler(this.btnNewMember_Click);
             // 
-            // button5
+            // btnMemberList
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::System.Properties.Resources.MEMBER_LIST_V2;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(218, 89);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(260, 350);
-            this.button5.TabIndex = 4;
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnMemberList.BackColor = System.Drawing.Color.Transparent;
+            this.btnMemberList.BackgroundImage = global::System.Properties.Resources.MEMBER_LIST_V2;
+            this.btnMemberList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMemberList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemberList.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberList.Location = new System.Drawing.Point(218, 89);
+            this.btnMemberList.Name = "btnMemberList";
+            this.btnMemberList.Size = new System.Drawing.Size(260, 350);
+            this.btnMemberList.TabIndex = 4;
+            this.btnMemberList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMemberList.UseVisualStyleBackColor = false;
+            this.btnMemberList.Click += new System.EventHandler(this.btnMemberList_Click);
             // 
             // pictureBox2
             // 
@@ -480,15 +481,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnEventList);
+            this.Controls.Add(this.btnNewEvent);
+            this.Controls.Add(this.btnMemberList);
+            this.Controls.Add(this.btnNewMember);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -518,7 +519,7 @@
         private Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private Windows.Forms.ToolStripMenuItem imageLocationToolStripMenuItem;
         private Windows.Forms.Button button3;
-        private Windows.Forms.Button button4;
+        private Windows.Forms.Button btnExit;
         private Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private Windows.Forms.ToolStripMenuItem createSlaveAccountToolStripMenuItem;
@@ -545,10 +546,10 @@
         private Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private Windows.Forms.ToolStripLabel toolStripLabel5;
         private Windows.Forms.Timer timer1;
-        private Windows.Forms.Button button7;
-        private Windows.Forms.Button button8;
-        private Windows.Forms.Button button6;
-        private Windows.Forms.Button button5;
+        private Windows.Forms.Button btnEventList;
+        private Windows.Forms.Button btnNewEvent;
+        private Windows.Forms.Button btnNewMember;
+        private Windows.Forms.Button btnMemberList;
         private Windows.Forms.ToolTip toolTip1;
         private Windows.Forms.PictureBox pictureBox2;
         private Windows.Forms.Label label1;
