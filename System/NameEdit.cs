@@ -10,13 +10,13 @@ namespace System
         }
         private void NameEdit_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Member_List.firstname;
-            textBox2.Text = Member_List.mi;
-            textBox4.Text = Member_List.lastname;
-            textBox1.Focus();
+            tbEditFN.Text = Member_List.firstname;
+            tbEditMI.Text = Member_List.mi;
+            tbEditLN.Text = Member_List.lastname;
+            tbEditFN.Focus();
         }
 
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        private void tbEditFN_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -29,22 +29,17 @@ namespace System
             {
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    Member_List.Updated("FN", textBox1.Text, Member_List.idnumber);
-                    Member_List.Updated("MI", textBox2.Text, Member_List.idnumber);
-                    Member_List.Updated("LN", textBox4.Text, Member_List.idnumber);
+                    Member_List.Updated("FN", tbEditFN.Text, Member_List.idnumber);
+                    Member_List.Updated("MI", tbEditMI.Text, Member_List.idnumber);
+                    Member_List.Updated("LN", tbEditLN.Text, Member_List.idnumber);
                     MessageBox.Show("Data Updated!", "Update Successful!");
-                    Member_List.fullname = textBox1.Text + " " + textBox2.Text + " " + textBox4.Text;
+                    Member_List.fullname = tbEditFN.Text + " " + tbEditMI.Text + " " + tbEditLN.Text;
                     Close();
                 }
             }
         }
 
-        private void textBox4_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        private void tbEditLN_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -57,15 +52,37 @@ namespace System
             {
                 if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    Member_List.Updated("FN", textBox1.Text, Member_List.idnumber);
-                    Member_List.Updated("MI", textBox2.Text, Member_List.idnumber);
-                    Member_List.Updated("LN", textBox4.Text, Member_List.idnumber);
+                    Member_List.Updated("FN", tbEditFN.Text, Member_List.idnumber);
+                    Member_List.Updated("MI", tbEditMI.Text, Member_List.idnumber);
+                    Member_List.Updated("LN", tbEditLN.Text, Member_List.idnumber);
                     MessageBox.Show("Data Updated!", "Update Successful!");
-                    Member_List.fullname = textBox1.Text + " " + textBox2.Text + " " + textBox4.Text;
+                    Member_List.fullname = tbEditFN.Text + " " + tbEditMI.Text + " " + tbEditLN.Text;
                     Close();
                 }
             }
         }
 
+        private void tbEditMI_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (DialogResult.Yes == MessageBox.Show("Would you like to go back?\n\nAll information will be discarded.", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    Close();
+                }
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                if (DialogResult.Yes == MessageBox.Show("Would you like to save changes?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    Member_List.Updated("FN", tbEditFN.Text, Member_List.idnumber);
+                    Member_List.Updated("MI", tbEditMI.Text, Member_List.idnumber);
+                    Member_List.Updated("LN", tbEditLN.Text, Member_List.idnumber);
+                    MessageBox.Show("Data Updated!", "Update Successful!");
+                    Member_List.fullname = tbEditFN.Text + " " + tbEditMI.Text + " " + tbEditLN.Text;
+                    Close();
+                }
+            }
+        }
     }
 }

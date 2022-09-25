@@ -36,7 +36,7 @@ namespace System
 
         public void Populate_ListView(string myquery)
         {
-            listView1.Items.Clear();
+            MemberListView.Items.Clear();
             ListViewItem iItem;
             string query = myquery;
             if (MainMenu.OpenConnection())
@@ -51,7 +51,7 @@ namespace System
                         iItem.SubItems.Add(decode(dataReader[1].ToString()));
                         fullname = decode(dataReader[2].ToString()) + " " + decode(dataReader[3].ToString());
                         iItem.SubItems.Add(fullname);
-                        listView1.Items.Add(iItem);
+                        MemberListView.Items.Add(iItem);
                     }
                 }
                 catch (Exception ex)
@@ -62,8 +62,8 @@ namespace System
                 {
                     MainMenu.CloseConnection();
                 }
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                MemberListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                MemberListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
 
@@ -103,13 +103,12 @@ namespace System
                         lastname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
                         firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true);
                         mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true);
-                        textBox1.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
-                        textBox2.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"), true);
-                        textBox3.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"), true);
-                        textBox4.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"), true);
-                        textBox5.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"), true);
-                        textBox6.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"), true);
-                        textBox7.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Age"), true);
+                        tbName.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
+                        tbContactNum.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"), true);
+                        tbYrLvl.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"), true);
+                        tbGuardianContact.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"), true);
+                        tbGuardianName.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Contact"), true);
+                        tbAge.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Age"), true);
                         Image dump = pictureBox1.BackgroundImage;
                         if (dump != null)
                             dump.Dispose();
@@ -180,7 +179,7 @@ namespace System
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
             Form mainmenu = new MainMenu();
             mainmenu.Show();
@@ -192,47 +191,38 @@ namespace System
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
-        private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbContactNum_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox2.Text;
-            GeneralEdit.col = "Address";
-            Form form1 = new GeneralEdit();
-            form1.ShowDialog();
-            textBox2.Text = GeneralEdit.data;
-        }
-
-        private void textBox3_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            GeneralEdit.data = textBox3.Text;
+            GeneralEdit.data = tbContactNum.Text;
             GeneralEdit.col = "Contact_No";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox3.Text = GeneralEdit.data;
+            tbContactNum.Text = GeneralEdit.data;
         }
 
-        private void textBox4_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbYrLvl_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox4.Text;
+            GeneralEdit.data = tbYrLvl.Text;
             GeneralEdit.col = "Year_Level";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox4.Text = GeneralEdit.data;
+            tbYrLvl.Text = GeneralEdit.data;
         }
 
-        private void textBox5_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbGuardianContact_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox5.Text;
+            GeneralEdit.data = tbGuardianContact.Text;
             GeneralEdit.col = "Guard_Name";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox5.Text = GeneralEdit.data;
+            tbGuardianContact.Text = GeneralEdit.data;
         }
 
-        private void textBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Form form1 = new NameEdit();
             form1.ShowDialog();
-            textBox1.Text = fullname;
+            tbName.Text = fullname;
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
@@ -243,12 +233,12 @@ namespace System
 
         private void clearMemberInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.Text = null;
-            textBox2.Text = null;
-            textBox3.Text = null;
-            textBox4.Text = null;
-            textBox5.Text = null;
-            textBox6.Text = null;
+            tbName.Text = null;
+            tbContactNum.Text = null;
+            tbYrLvl.Text = null;
+            tbGuardianContact.Text = null;
+            tbAge = null;
+            tbGuardianName.Text = null;
             Image dump = pictureBox1.BackgroundImage;
             if (dump != null)
                 dump.Dispose();
@@ -267,37 +257,37 @@ namespace System
 
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            listView1.Sort();
+            MemberListView.Sort();
         }
 
-        private void textBox6_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tbGuardianName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GeneralEdit.data = textBox6.Text;
+            GeneralEdit.data = tbGuardianName.Text;
             GeneralEdit.col = "Guard_Contact";
             Form form1 = new GeneralEdit();
             form1.ShowDialog();
-            textBox6.Text = GeneralEdit.data;
+            tbGuardianName.Text = GeneralEdit.data;
         }
 
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void MemberListView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            foreach (ListViewItem item in listView1.SelectedItems)
+            foreach (ListViewItem item in MemberListView.SelectedItems)
             {
                 idnumber = item.SubItems[0].Text;
                 LMI(item.SubItems[0].Text);
             }
         }
 
-        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
+        private void mtbSearchSN_TextChanged(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text == null)
+            if (pbUserPic.Text == null)
             {
                 Populate_ListView("select ID_No,SN,FN,LN from member_list;");
             }
             else
             {
-                Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '" + EnCryptDecrypt.CryptorEngine.Encrypt(maskedTextBox1.Text, true) + "%'");
-                listView1.Refresh();
+                Populate_ListView("select ID_No,SN,FN,LN from member_list where SN like '" + EnCryptDecrypt.CryptorEngine.Encrypt(pbUserPic.Text, true) + "%'");
+                MemberListView.Refresh();
             }
         }
 

@@ -221,7 +221,6 @@ namespace System
                         iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[5].ToString(), true));
                         iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[6].ToString(), true));
                         iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[7].ToString(), true));
-                        iItem.SubItems.Add(EnCryptDecrypt.CryptorEngine.Decrypt(dataReader[8].ToString(), true));
                         listView1.Items.Add(iItem);
 
                     }
@@ -332,13 +331,13 @@ namespace System
                     {
                         MainMenu.Initialize("server=192.168.1.4;uid=access;pwd=;database=coess;sslmode=none;");
                     }
-                    Insert("create table report_table_1 (First varchar(255) not null, Middle varchar(255) not null, Last varchar(255) not null,Year_Level varchar(255) not null, SN varchar(255) not null, Guardian_Name varchar(255) not null, `Guardian_Contact` VARCHAR(255) NOT NULL,address varchar(255) not null,bday varchar(255) not null);");
+                    Insert("create table report_table_1 (First varchar(255) not null, Middle varchar(255) not null, Last varchar(255) not null,Year_Level varchar(255) not null, SN varchar(255) not null, Guardian_Name varchar(255) not null, `Guardian_Contact` VARCHAR(255) NOT NULL,bday varchar(255) not null);");
                     Insert("Delete from report_table_1;");
 
-                    Populate_ListView("Select fn,mi,ln,year_level,SN,Guard_name,Guard_contact,address,bday from member_list;");
+                    Populate_ListView("Select fn,mi,ln,year_level,SN,Guard_name,Guard_contact,bday from member_list;");
                     foreach (ListViewItem item in listView1.Items)
                     {
-                        string ln, mi, fn, yr, sn, guard_name, guard_contact, address, bday;
+                        string ln, mi, fn, yr, sn, guard_name, guard_contact, bday;
                         fn = item.SubItems[0].Text;
                         mi = item.SubItems[1].Text;
                         ln = item.SubItems[2].Text;
@@ -346,9 +345,8 @@ namespace System
                         sn = item.SubItems[4].Text;
                         guard_name = item.SubItems[5].Text;
                         guard_contact = item.SubItems[6].Text;
-                        address = item.SubItems[7].Text;
-                        bday = item.SubItems[8].Text;
-                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + sn + "','" + guard_name + "','" + guard_contact + "','" + address + "','" + bday + "');");
+                        bday = item.SubItems[7].Text;
+                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + sn + "','" + guard_name + "','" + guard_contact + "','" + bday + "');");
                     }
 
                     crystalReportViewer1.RefreshReport();
@@ -367,10 +365,10 @@ namespace System
                     }
                     Insert("Delete from report_table_1;");
 
-                    Populate_ListView("Select fn,mi,ln,year_level,SN,Guard_name,Guard_contact,address,bday from member_list;");
+                    Populate_ListView("Select fn,mi,ln,year_level,SN,Guard_name,Guard_contact,bday from member_list;");
                     foreach (ListViewItem item in listView1.Items)
                     {
-                        string ln, mi, fn, yr, sn, guard_name, guard_contact, address, bday;
+                        string ln, mi, fn, yr, sn, guard_name, guard_contact, bday;
                         fn = item.SubItems[0].Text;
                         mi = item.SubItems[1].Text;
                         ln = item.SubItems[2].Text;
@@ -378,9 +376,8 @@ namespace System
                         sn = item.SubItems[4].Text;
                         guard_name = item.SubItems[5].Text;
                         guard_contact = item.SubItems[6].Text;
-                        address = item.SubItems[7].Text;
-                        bday = item.SubItems[8].Text;
-                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + sn + "','" + guard_name + "','" + guard_contact + "','" + address + "','" + bday + "');");
+                        bday = item.SubItems[7].Text;
+                        Insert("insert into report_table_1 values ('" + fn + "','" + mi + "','" + ln + "','" + yr + "','" + sn + "','" + guard_name + "','" + guard_contact + "','" + bday + "');");
                     }
 
                     crystalReportViewer1.RefreshReport();
@@ -495,7 +492,7 @@ namespace System
                     createdb("create database coess;");
                     Initialize("server=localhost;uid=root;pwd=;database=coess;sslmode=none;");
                     createdb("create table event_list (Event_No int(3) auto_increment, Event_Name varchar(300) not null, Event_Date varchar(255) not null, Event_Location varchar(300) not null, Event_Pubmat varchar(300) null, primary key(Event_No));");
-                    createdb("create table member_list (ID_No int(3) auto_increment, SN varchar(255) not null, FN varchar(255) not null, MI varchar(255) not null, LN varchar(255) not null, Email varchar(255) not null, Address varchar(300) not null, Contact_No varchar(255) not null, BDay varchar(255) not null, Age varchar(255) not null, Year_Level varchar(255) not null, Comm varchar(255) not null, Guard_Name varchar(255) not null, Guard_Contact varchar(255) not null, Membership varchar(255) not null, ID_Address varchar(255) null, primary key(ID_No));");
+                    createdb("create table member_list (ID_No int(3) auto_increment, SN varchar(255) not null, FN varchar(255) not null, MI varchar(255) not null, LN varchar(255) not null, Email varchar(255) not null, Contact_No varchar(255) not null, BDay varchar(255) not null, Age varchar(255) not null, Year_Level varchar(255) not null, Comm varchar(255) not null, Guard_Name varchar(255) not null, Guard_Contact varchar(255) not null, Membership varchar(255) not null, ID_Address varchar(255) null, primary key(ID_No));");
                     createdb("create table report_table (LN varchar(255) null, FN varchar(255) null, SN varchar(255) not null, Yr_Lvl varchar(255) null, primary key(SN));");
                     MessageBox.Show("CoESS Database has been created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

@@ -50,13 +50,11 @@
             this.tbGuardianName = new System.Windows.Forms.TextBox();
             this.tbYrLvl = new System.Windows.Forms.TextBox();
             this.tbContactNum = new System.Windows.Forms.TextBox();
-            this.tbAddress = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.lblGuardianContact = new System.Windows.Forms.Label();
             this.lblGuardianName = new System.Windows.Forms.Label();
             this.lblYrLvl = new System.Windows.Forms.Label();
             this.lblContactNum = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -113,7 +111,7 @@
             this.pbUserPic.BackgroundImage = global::System.Properties.Resources.logo;
             this.pbUserPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbUserPic.ImageLocation = "";
-            this.pbUserPic.Location = new System.Drawing.Point(744, 100);
+            this.pbUserPic.Location = new System.Drawing.Point(744, 118);
             this.pbUserPic.Name = "pbUserPic";
             this.pbUserPic.Size = new System.Drawing.Size(123, 125);
             this.pbUserPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -151,7 +149,7 @@
             this.tbBirthday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.tbBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBirthday.ForeColor = System.Drawing.Color.White;
-            this.tbBirthday.Location = new System.Drawing.Point(710, 268);
+            this.tbBirthday.Location = new System.Drawing.Point(710, 305);
             this.tbBirthday.Name = "tbBirthday";
             this.tbBirthday.ReadOnly = true;
             this.tbBirthday.Size = new System.Drawing.Size(97, 29);
@@ -164,7 +162,7 @@
             this.lblBirthday.BackColor = System.Drawing.Color.Transparent;
             this.lblBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBirthday.ForeColor = System.Drawing.Color.White;
-            this.lblBirthday.Location = new System.Drawing.Point(622, 271);
+            this.lblBirthday.Location = new System.Drawing.Point(622, 308);
             this.lblBirthday.Name = "lblBirthday";
             this.lblBirthday.Size = new System.Drawing.Size(83, 21);
             this.lblBirthday.TabIndex = 33;
@@ -175,7 +173,7 @@
             this.tbMembership.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.tbMembership.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMembership.ForeColor = System.Drawing.Color.White;
-            this.tbMembership.Location = new System.Drawing.Point(735, 232);
+            this.tbMembership.Location = new System.Drawing.Point(735, 269);
             this.tbMembership.Name = "tbMembership";
             this.tbMembership.ReadOnly = true;
             this.tbMembership.Size = new System.Drawing.Size(111, 29);
@@ -188,7 +186,7 @@
             this.lblMembership.BackColor = System.Drawing.Color.Transparent;
             this.lblMembership.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMembership.ForeColor = System.Drawing.Color.White;
-            this.lblMembership.Location = new System.Drawing.Point(622, 235);
+            this.lblMembership.Location = new System.Drawing.Point(622, 272);
             this.lblMembership.Name = "lblMembership";
             this.lblMembership.Size = new System.Drawing.Size(114, 21);
             this.lblMembership.TabIndex = 31;
@@ -223,7 +221,7 @@
             this.tbSN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.tbSN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSN.ForeColor = System.Drawing.Color.White;
-            this.tbSN.Location = new System.Drawing.Point(761, 304);
+            this.tbSN.Location = new System.Drawing.Point(761, 341);
             this.tbSN.Name = "tbSN";
             this.tbSN.ReadOnly = true;
             this.tbSN.Size = new System.Drawing.Size(223, 29);
@@ -236,7 +234,7 @@
             this.lblSN.BackColor = System.Drawing.Color.Transparent;
             this.lblSN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSN.ForeColor = System.Drawing.Color.White;
-            this.lblSN.Location = new System.Drawing.Point(621, 307);
+            this.lblSN.Location = new System.Drawing.Point(621, 344);
             this.lblSN.Name = "lblSN";
             this.lblSN.Size = new System.Drawing.Size(142, 21);
             this.lblSN.TabIndex = 27;
@@ -247,7 +245,7 @@
             this.tbAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.tbAge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAge.ForeColor = System.Drawing.Color.White;
-            this.tbAge.Location = new System.Drawing.Point(902, 232);
+            this.tbAge.Location = new System.Drawing.Point(902, 269);
             this.tbAge.Name = "tbAge";
             this.tbAge.ReadOnly = true;
             this.tbAge.Size = new System.Drawing.Size(82, 29);
@@ -260,7 +258,7 @@
             this.lblAge.BackColor = System.Drawing.Color.Transparent;
             this.lblAge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAge.ForeColor = System.Drawing.Color.White;
-            this.lblAge.Location = new System.Drawing.Point(852, 235);
+            this.lblAge.Location = new System.Drawing.Point(852, 272);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(44, 21);
             this.lblAge.TabIndex = 25;
@@ -295,7 +293,7 @@
             this.tbYrLvl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.tbYrLvl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbYrLvl.ForeColor = System.Drawing.Color.White;
-            this.tbYrLvl.Location = new System.Drawing.Point(902, 268);
+            this.tbYrLvl.Location = new System.Drawing.Point(902, 305);
             this.tbYrLvl.Name = "tbYrLvl";
             this.tbYrLvl.ReadOnly = true;
             this.tbYrLvl.Size = new System.Drawing.Size(82, 29);
@@ -314,24 +312,12 @@
             this.tbContactNum.TabIndex = 21;
             this.tbContactNum.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tbContactNum_MouseDoubleClick);
             // 
-            // tbAddress
-            // 
-            this.tbAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAddress.ForeColor = System.Drawing.Color.White;
-            this.tbAddress.Location = new System.Drawing.Point(701, 376);
-            this.tbAddress.Name = "tbAddress";
-            this.tbAddress.ReadOnly = true;
-            this.tbAddress.Size = new System.Drawing.Size(283, 29);
-            this.tbAddress.TabIndex = 20;
-            this.tbAddress.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tbAddress_MouseDoubleClick);
-            // 
             // tbName
             // 
             this.tbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.tbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.ForeColor = System.Drawing.Color.White;
-            this.tbName.Location = new System.Drawing.Point(687, 340);
+            this.tbName.Location = new System.Drawing.Point(687, 377);
             this.tbName.Name = "tbName";
             this.tbName.ReadOnly = true;
             this.tbName.Size = new System.Drawing.Size(297, 29);
@@ -368,7 +354,7 @@
             this.lblYrLvl.BackColor = System.Drawing.Color.Transparent;
             this.lblYrLvl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYrLvl.ForeColor = System.Drawing.Color.White;
-            this.lblYrLvl.Location = new System.Drawing.Point(805, 271);
+            this.lblYrLvl.Location = new System.Drawing.Point(805, 308);
             this.lblYrLvl.Name = "lblYrLvl";
             this.lblYrLvl.Size = new System.Drawing.Size(91, 21);
             this.lblYrLvl.TabIndex = 16;
@@ -386,25 +372,13 @@
             this.lblContactNum.TabIndex = 15;
             this.lblContactNum.Text = "Contact Number:";
             // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.ForeColor = System.Drawing.Color.White;
-            this.lblAddress.Location = new System.Drawing.Point(621, 379);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(74, 21);
-            this.lblAddress.TabIndex = 14;
-            this.lblAddress.Text = "Address:";
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(621, 343);
+            this.lblName.Location = new System.Drawing.Point(621, 380);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(60, 21);
             this.lblName.TabIndex = 13;
@@ -519,7 +493,6 @@
             this.Controls.Add(this.lblSN);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tbAge);
-            this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.lblContactNum);
             this.Controls.Add(this.tbGuardianContact);
@@ -529,7 +502,6 @@
             this.Controls.Add(this.lblGuardianContact);
             this.Controls.Add(this.tbContactNum);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.tbAddress);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -557,13 +529,11 @@
         private Windows.Forms.TextBox tbGuardianName;
         private Windows.Forms.TextBox tbYrLvl;
         private Windows.Forms.TextBox tbContactNum;
-        private Windows.Forms.TextBox tbAddress;
         private Windows.Forms.TextBox tbName;
         private Windows.Forms.Label lblGuardianContact;
         private Windows.Forms.Label lblGuardianName;
         private Windows.Forms.Label lblYrLvl;
         private Windows.Forms.Label lblContactNum;
-        private Windows.Forms.Label lblAddress;
         private Windows.Forms.Label lblName;
         private Windows.Forms.Button BackButton;
         private Windows.Forms.ColumnHeader IDHeader;

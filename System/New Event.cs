@@ -94,7 +94,7 @@ namespace System
             return event_complete;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
             Form mainmenu = new MainMenu();
             mainmenu.Show();
@@ -200,7 +200,7 @@ namespace System
             if(event_name.Text != "Event Name" && event_location.Text != "Event Location")
             {
                 pnlEventImage.BringToFront();
-                button3.Visible = false;
+                BackButton.Visible = false;
                 label1.Visible = true;
             }
 
@@ -249,7 +249,7 @@ namespace System
         private void btnEventImageBack_Click(object sender, EventArgs e)
         {
             pnlEventDetails.BringToFront();
-            button3.Visible = true;
+            BackButton.Visible = true;
             label1.Visible = false;
         }
 

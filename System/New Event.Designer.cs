@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_Event));
             this.event_location = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEventDate = new System.Windows.Forms.Label();
             this.event_date = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.event_pubmat = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlEventDetails = new System.Windows.Forms.Panel();
             this.lblEnterEventName = new System.Windows.Forms.Label();
@@ -66,17 +66,17 @@
             this.event_location.Enter += new System.EventHandler(this.event_location_Enter);
             this.event_location.Leave += new System.EventHandler(this.event_location_Leave);
             // 
-            // label3
+            // lblEventDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(26, 267);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 37);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Event Date:";
+            this.lblEventDate.AutoSize = true;
+            this.lblEventDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblEventDate.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEventDate.ForeColor = System.Drawing.Color.White;
+            this.lblEventDate.Location = new System.Drawing.Point(26, 267);
+            this.lblEventDate.Name = "lblEventDate";
+            this.lblEventDate.Size = new System.Drawing.Size(163, 37);
+            this.lblEventDate.TabIndex = 8;
+            this.lblEventDate.Text = "Event Date:";
             // 
             // event_date
             // 
@@ -116,19 +116,19 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button3
+            // BackButton
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button3.Location = new System.Drawing.Point(9, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(35, 35);
-            this.button3.TabIndex = 31;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BackButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
+            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.BackButton.Location = new System.Drawing.Point(9, 9);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(35, 35);
+            this.BackButton.TabIndex = 31;
+            this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // imageList1
             // 
@@ -147,7 +147,7 @@
             this.pnlEventDetails.Controls.Add(this.btnEventDetailsNext);
             this.pnlEventDetails.Controls.Add(this.event_location);
             this.pnlEventDetails.Controls.Add(this.event_date);
-            this.pnlEventDetails.Controls.Add(this.label3);
+            this.pnlEventDetails.Controls.Add(this.lblEventDate);
             this.pnlEventDetails.Controls.Add(this.event_name);
             this.pnlEventDetails.Location = new System.Drawing.Point(0, 50);
             this.pnlEventDetails.Name = "pnlEventDetails";
@@ -279,7 +279,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.NEW_EVENT_BACKGROUND;
             this.ClientSize = new System.Drawing.Size(512, 576);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.pnlEventDetails);
             this.Controls.Add(this.pnlEventImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -300,12 +300,12 @@
 
         #endregion
         private Windows.Forms.TextBox event_location;
-        private Windows.Forms.Label label3;
+        private Windows.Forms.Label lblEventDate;
         private Windows.Forms.DateTimePicker event_date;
         private Windows.Forms.Button button1;
         private Windows.Forms.PictureBox event_pubmat;
         private Windows.Forms.OpenFileDialog openFileDialog1;
-        private Windows.Forms.Button button3;
+        private Windows.Forms.Button BackButton;
         private Windows.Forms.ImageList imageList1;
         private Windows.Forms.Panel pnlEventDetails;
         private Windows.Forms.Label label4;

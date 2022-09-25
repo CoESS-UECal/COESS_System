@@ -104,7 +104,6 @@ namespace System
                         Member_List.firstname = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true);
                         Member_List.mi = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true);
                         tbName.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("FN"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("MI"), true) + " " + EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("LN"), true);
-                        tbAddress.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Address"), true);
                         tbContactNum.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Contact_No"), true);
                         tbYrLvl.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Year_Level"), true);
                         tbGuardianName.Text = EnCryptDecrypt.CryptorEngine.Decrypt(reader.GetString("Guard_Name"), true);
@@ -191,15 +190,6 @@ namespace System
             Populate_ListView("select ID_No,SN,FN,LN from member_list;");
         }
 
-        private void tbAddress_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            GeneralEdit.data = tbAddress.Text;
-            GeneralEdit.col = "Address";
-            Form form1 = new GeneralEdit();
-            form1.ShowDialog();
-            tbAddress.Text = GeneralEdit.data;
-        }
-
         private void tbContactNum_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             GeneralEdit.data = tbContactNum.Text;
@@ -243,7 +233,6 @@ namespace System
         private void clearMemberInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tbName.Text = null;
-            tbAddress.Text = null;
             tbContactNum.Text = null;
             tbYrLvl.Text = null;
             tbGuardianName.Text = null;

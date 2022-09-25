@@ -34,7 +34,6 @@
             this.LN = new System.Windows.Forms.TextBox();
             this.SN = new System.Windows.Forms.MaskedTextBox();
             this.EMail = new System.Windows.Forms.TextBox();
-            this.Address = new System.Windows.Forms.TextBox();
             this.Year = new System.Windows.Forms.ComboBox();
             this.Comm = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -75,7 +74,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lblGaurdianContactNumber = new System.Windows.Forms.Label();
             this.lblGaurdianName = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.pnlUAC = new System.Windows.Forms.Panel();
@@ -148,24 +146,12 @@
             this.EMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.EMail.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.EMail.ForeColor = System.Drawing.Color.White;
-            this.EMail.Location = new System.Drawing.Point(11, 49);
+            this.EMail.Location = new System.Drawing.Point(11, 96);
             this.EMail.Name = "EMail";
             this.EMail.Size = new System.Drawing.Size(346, 39);
             this.EMail.TabIndex = 9;
             this.EMail.Enter += new System.EventHandler(this.EMail_Enter);
             this.EMail.Leave += new System.EventHandler(this.EMail_Leave);
-            // 
-            // Address
-            // 
-            this.Address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.Address.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.Address.ForeColor = System.Drawing.Color.White;
-            this.Address.Location = new System.Drawing.Point(11, 118);
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(543, 39);
-            this.Address.TabIndex = 11;
-            this.Address.Enter += new System.EventHandler(this.Address_Enter);
-            this.Address.Leave += new System.EventHandler(this.Address_Leave);
             // 
             // Year
             // 
@@ -283,7 +269,7 @@
             this.Contact.BeepOnError = true;
             this.Contact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.Contact.ForeColor = System.Drawing.Color.White;
-            this.Contact.Location = new System.Drawing.Point(363, 49);
+            this.Contact.Location = new System.Drawing.Point(363, 96);
             this.Contact.Mask = "\\0\\9000000000";
             this.Contact.Name = "Contact";
             this.Contact.PromptChar = 'X';
@@ -560,7 +546,6 @@
             this.pnlContact.Controls.Add(this.label11);
             this.pnlContact.Controls.Add(this.lblGaurdianContactNumber);
             this.pnlContact.Controls.Add(this.lblGaurdianName);
-            this.pnlContact.Controls.Add(this.lblAddress);
             this.pnlContact.Controls.Add(this.lblPhoneNumber);
             this.pnlContact.Controls.Add(this.lblEmail);
             this.pnlContact.Controls.Add(this.radioButton1);
@@ -568,7 +553,6 @@
             this.pnlContact.Controls.Add(this.GuardName);
             this.pnlContact.Controls.Add(this.GuardContact);
             this.pnlContact.Controls.Add(this.EMail);
-            this.pnlContact.Controls.Add(this.Address);
             this.pnlContact.Controls.Add(this.Contact);
             this.pnlContact.Location = new System.Drawing.Point(86, 54);
             this.pnlContact.Name = "pnlContact";
@@ -664,7 +648,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(11, 11);
+            this.label11.Location = new System.Drawing.Point(11, 58);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(242, 32);
             this.label11.TabIndex = 48;
@@ -694,25 +678,12 @@
             this.lblGaurdianName.Text = "Enter name";
             this.lblGaurdianName.Visible = false;
             // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblAddress.ForeColor = System.Drawing.Color.White;
-            this.lblAddress.Location = new System.Drawing.Point(11, 162);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(148, 20);
-            this.lblAddress.TabIndex = 45;
-            this.lblAddress.Text = "Enter home address";
-            this.lblAddress.Visible = false;
-            // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(363, 91);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(363, 138);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(192, 20);
             this.lblPhoneNumber.TabIndex = 44;
@@ -724,7 +695,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(11, 93);
+            this.lblEmail.Location = new System.Drawing.Point(11, 140);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(124, 20);
             this.lblEmail.TabIndex = 43;
@@ -843,7 +814,6 @@
         private Windows.Forms.TextBox LN;
         private Windows.Forms.MaskedTextBox SN;
         private Windows.Forms.TextBox EMail;
-        private Windows.Forms.TextBox Address;
         private Windows.Forms.ComboBox Year;
         private Windows.Forms.ComboBox Comm;
         private Windows.Forms.Button button1;
@@ -867,7 +837,6 @@
         private Windows.Forms.TextBox Age;
         private Windows.Forms.Label lblGaurdianContactNumber;
         private Windows.Forms.Label lblGaurdianName;
-        private Windows.Forms.Label lblAddress;
         private Windows.Forms.Label lblPhoneNumber;
         private Windows.Forms.Label lblEmail;
         private Windows.Forms.Button button3;

@@ -29,43 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NameEdit));
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbEditLN = new System.Windows.Forms.TextBox();
+            this.tbEditMI = new System.Windows.Forms.TextBox();
+            this.tbEditFN = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox4
+            // tbEditLN
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(43, 130);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(485, 29);
-            this.textBox4.TabIndex = 5;
-            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
+            this.tbEditLN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.tbEditLN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbEditLN.ForeColor = System.Drawing.Color.White;
+            this.tbEditLN.Location = new System.Drawing.Point(43, 130);
+            this.tbEditLN.Name = "tbEditLN";
+            this.tbEditLN.Size = new System.Drawing.Size(485, 29);
+            this.tbEditLN.TabIndex = 5;
+            this.tbEditLN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbEditLN_KeyDown);
             // 
-            // textBox2
+            // tbEditMI
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(43, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(485, 29);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            this.tbEditMI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.tbEditMI.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbEditMI.ForeColor = System.Drawing.Color.White;
+            this.tbEditMI.Location = new System.Drawing.Point(43, 75);
+            this.tbEditMI.Name = "tbEditMI";
+            this.tbEditMI.Size = new System.Drawing.Size(485, 29);
+            this.tbEditMI.TabIndex = 4;
+            this.tbEditMI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbEditMI_KeyDown);
             // 
-            // textBox1
+            // tbEditFN
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(43, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(485, 29);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.tbEditFN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.tbEditFN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbEditFN.ForeColor = System.Drawing.Color.White;
+            this.tbEditFN.Location = new System.Drawing.Point(43, 20);
+            this.tbEditFN.Name = "tbEditFN";
+            this.tbEditFN.Size = new System.Drawing.Size(485, 29);
+            this.tbEditFN.TabIndex = 3;
+            this.tbEditFN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbEditFN_KeyDown);
             // 
             // NameEdit
             // 
@@ -73,9 +73,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::System.Properties.Resources.BG21;
             this.ClientSize = new System.Drawing.Size(570, 180);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbEditLN);
+            this.Controls.Add(this.tbEditMI);
+            this.Controls.Add(this.tbEditFN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NameEdit";
@@ -89,8 +89,8 @@
 
         #endregion
 
-        private Windows.Forms.TextBox textBox4;
-        private Windows.Forms.TextBox textBox2;
-        private Windows.Forms.TextBox textBox1;
+        private Windows.Forms.TextBox tbEditLN;
+        private Windows.Forms.TextBox tbEditMI;
+        private Windows.Forms.TextBox tbEditFN;
     }
 }

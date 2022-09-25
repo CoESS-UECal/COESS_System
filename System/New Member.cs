@@ -46,8 +46,6 @@ namespace System
             LN.ForeColor = SystemColors.GrayText;
             EMail.Text = "someone@example.com";
             EMail.ForeColor = SystemColors.GrayText;
-            Address.Text = "Address";
-            Address.ForeColor = SystemColors.GrayText;
             GuardName.Text = "Guardian Name";
             GuardName.ForeColor = SystemColors.GrayText;
 
@@ -103,7 +101,6 @@ namespace System
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(MI.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(LN.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(EMail.Text, true);
-            complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Address.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Contact.Text, true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Convert.ToString(Bday.Value.ToShortDateString()), true);
             complete = complete + "','" + EnCryptDecrypt.CryptorEngine.Encrypt(Age.Text, true);
@@ -123,7 +120,6 @@ namespace System
             bool mi_flag = MI.Text != "";
             bool ln_flag = LN.Text != "";
             bool email_flag = EMail.Text != "";
-            bool address_flag = Address.Text != "";
             bool contact_flag = Contact.MaskCompleted != false;
             bool bday_flag = Bday.Value.ToShortDateString() != DateTime.Now.ToShortDateString();
             bool age_flag = Int32.Parse(Age.Text) > 0;
@@ -135,7 +131,7 @@ namespace System
             bool membership = radioButton1.Checked != false || radioButton2.Checked != false;
 
             error = null;
-            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !address_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag || !age_flag || !membership)
+            if (!sn_flag || !fn_flag || !mi_flag || !ln_flag || !email_flag || !contact_flag || !bday_flag || !year_flag || !com_flag || !Guardname_flag || !Guardcontact_flag || !DPA_flag || !age_flag || !membership)
             {
 
                 if (!fn_flag)
@@ -157,10 +153,6 @@ namespace System
                 if (!email_flag)
                 {
                     error += "Email must not be Empty \n";
-                }
-                if (!address_flag)
-                {
-                    error += "Address must not be Empty \n";
                 }
                 if (!contact_flag)
                 {
@@ -209,13 +201,12 @@ namespace System
             }
             else
             {
-                MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Address,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,Membership,ID_Address) values('" + requirements() + "');");
+                MainMenu.Insert("insert into member_list(SN,FN,MI,LN,Email,Contact_No,BDay,Age,Year_Level,Comm,Guard_Name,Guard_Contact,Membership,ID_Address) values('" + requirements() + "');");
                 FN.Text = null;
                 MI.Text = null;
                 LN.Text = null;
                 SN.Text = null;
                 EMail.Text = null;
-                Address.Text = null;
                 Contact.Text = null;
                 Bday.Value = DateTime.Today;
                 Age.Text = null;
@@ -352,24 +343,6 @@ namespace System
             {
                 EMail.Text = "someone@example.com";
                 EMail.ForeColor = SystemColors.GrayText;
-            }
-        }
-
-        private void Address_Enter(object sender, EventArgs e)
-        {
-            if (Address.Text == "Address")
-            {
-                Address.Text = "";
-                Address.ForeColor = Color.White;
-            }
-        }
-
-        private void Address_Leave(object sender, EventArgs e)
-        {
-            if (Address.Text.Length == 0)
-            {
-                Address.Text = "Address";
-                Address.ForeColor = SystemColors.GrayText;
             }
         }
 
@@ -571,7 +544,7 @@ namespace System
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (EMail.Text != "someone@example.com" && Contact.MaskCompleted != false && Address.Text != "Address" && GuardName.Text != "Guardian Name" && GuardContact.MaskCompleted != false && (radioButton1.Checked == true || radioButton2.Checked == true))
+            if (EMail.Text != "someone@example.com" && Contact.MaskCompleted != false &&  GuardName.Text != "Guardian Name" && GuardContact.MaskCompleted != false && (radioButton1.Checked == true || radioButton2.Checked == true))
             {
                 pnlUAC.BringToFront();
                 button2.Visible = false;
@@ -612,25 +585,6 @@ namespace System
                 rectPhoneNumber.Height = 0;
                 rectPhoneNumber.Width = 0;
                 lblPhoneNumber.Visible = false;
-            }
-
-
-            if (Address.Text == "Address")
-            {
-                Address.BorderStyle = BorderStyle.FixedSingle;
-                rectAddress.X = Address.Location.X - 2;
-                rectAddress.Y = Address.Location.Y - 2;
-                rectAddress.Height = Address.Height + 2;
-                rectAddress.Width = Address.Width + 2;
-                lblAddress.ForeColor = Color.FromArgb(249, 69, 69);
-                lblAddress.Visible = true;
-            }
-            else if (lblAddress.Visible == true)
-            {
-                Address.BorderStyle = BorderStyle.Fixed3D;
-                rectAddress.Height = 0;
-                rectAddress.Width = 0;
-                lblAddress.Visible = false;
             }
 
             if (GuardName.Text == "Guardian Name")
